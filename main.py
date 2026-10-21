@@ -1,98 +1,186 @@
-import os
-import time
-import requests
+
+import csv
 import json
-from google import genai  # Menggunakan package Gemini terbaru
+import os
+from datetime import datetime, timezone
+from pathlib import Path
 
-# Ambil API Key dari Secret GitHub secara aman
-GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
+PROJECT = "DJIWA Liquidity Provider"
+INITIAL_CASH = float(os.getenv("SIMULATION_CASH", "1000"))
+MAX_POSITION = 50.0
+FEE_RATE = 0.01
 
-if not GEMINI_API_KEY:
-    print("❌ Error: GEMINI_API_KEY tidak ditemukan di environment variables!")
-    exit(1)
+ROOT = Path(__file__).resolve().parent
+REPORTS = ROOT / "reports"
+REPORTS.mkdir(exist_ok=True)
 
-# Inisialisasi client Gemini versi baru
-client = genai.Client(api_key=GEMINI_API_KEY)
+# Data contoh untuk menguji sistem.
+# Belum merupakan data pasar live dari GMGN.
+DEMO_TOKENS = [
+    {
+        "symbol": "DEMO1",
+        "price": 1.00,
+        "liquidity": 50000,
+        "volume": 12000,
+    },
+    {
+        "symbol": "DEMO2",
+        "price": 0.50,
+        "liquidity": 12000,
+        "volume": 3000,
+    },
+    {
+        "symbol": "DEMO3",
+        "price": 2.00,
+        "liquidity": 1500,
+        "volume": 500,
+    },
+]
 
-# Parameter Target Token (Contoh: Wrapped SOL di Solana)
-TOKEN_ADDRESS = "So11111111111111111111111111111111111111112"
-CHAIN = "sol"
 
-def get_gmgn_data(token_address, chain):
-    """Mengambil data harga dengan header browser lengkap untuk bypass proteksi 403"""
-    url = f"https://gmgn.ai/defi/quotation/v1/tokens/{chain}/{token_address}"
-    
-    # Headers lengkap menyerupai browser asli (Chrome di Windows)
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-        "Accept": "application/json, text/plain, */*",
-        "Accept-Language": "en-US,en;q=0.9",
-        "Referer": "https://gmgn.ai/"
+def scout(tokens):
+    """DJIWA LP SCOUT: mengumpulkan kandidat token."""
+    print("\n[DJIWA LP SCOUT] Memindai kandidat...")
+    return tokens
+
+
+def guard(tokens):
+    """DJIWA LP GUARD: menyaring kandidat berdasarkan aturan demo."""
+    print("[DJIWA LP GUARD] Memeriksa likuiditas dan volume...")
+    approved = []
+
+    for token in tokens:
+        if token["price"] <= 0:
+            continue
+        if token["liquidity"] < 10000:
+            print(f"DITOLAK {token['symbol']}: likuiditas terlalu rendah")
+            continue
+        if token["volume"] < 1000:
+            print(f"DITOLAK {token['symbol']}: volume terlalu rendah")
+            continue
+        approved.append(token)
+
+    return approved
+
+
+def execute_simulation(tokens):
+    """DJIWA LP EXECUTOR: simulasi, tidak mengirim transaksi nyata."""
+    print("[DJIWA LP EXECUTOR] PAPER TRADING AKTIF")
+    cash = INITIAL_CASH
+    positions = []
+    trades = []
+
+    for token in tokens:
+        amount = min(MAX_POSITION, cash)
+        if amount <= 0:
+            break
+
+        fee = amount * FEE_RATE
+        quantity = (amount - fee) / token["price"]
+        cash -= amount
+
+        # Simulasi perubahan harga -1%, 0%, atau +2%.
+        # Bukan prediksi maupun harga pasar aktual.
+        simulated_change = {
+            "DEMO1": 0.02,
+            "DEMO2": -0.01,
+            "DEMO3": 0.00,
+        }.get(token["symbol"], 0.00)
+
+        exit_price = token["price"] * (1 + simulated_change)
+        gross_exit = quantity * exit_price
+        exit_fee = gross_exit * FEE_RATE
+        net_exit = gross_exit - exit_fee
+        pnl = net_exit - amount
+
+        cash += net_exit
+
+        positions.append({
+            "symbol": token["symbol"],
+            "entry_price": token["price"],
+            "exit_price": round(exit_price, 8),
+            "amount_usd": round(amount, 2),
+            "quantity": round(quantity, 8),
+            "pnl_usd": round(pnl, 4),
+        })
+        trades.append({
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "symbol": token["symbol"],
+            "mode": "PAPER",
+            "buy_usd": round(amount, 2),
+            "entry_price": token["price"],
+            "exit_price": round(exit_price, 8),
+            "pnl_usd": round(pnl, 4),
+            "real_transaction": False,
+        })
+
+    return cash, positions, trades
+
+
+def manager(cash, positions, trades):
+    """DJIWA LP MANAGER: membuat laporan kerja."""
+    pnl = sum(item["pnl_usd"] for item in positions)
+    report = {
+        "project": PROJECT,
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "mode": "PAPER_TRADING_ONLY",
+        "real_transactions_enabled": False,
+        "initial_cash_usd": INITIAL_CASH,
+        "ending_cash_usd": round(cash, 4),
+        "total_pnl_usd": round(pnl, 4),
+        "trade_count": len(trades),
+        "workers": [
+            "DJIWA LP SCOUT",
+            "DJIWA LP GUARD",
+            "DJIWA LP EXECUTOR",
+            "DJIWA LP MANAGER",
+        ],
+        "positions": positions,
+        "trades": trades,
+        "notice": (
+            "Data dan hasil harga adalah simulasi. "
+            "Belum terhubung ke data live GMGN."
+        ),
     }
-    
-    try:
-        response = requests.get(url, headers=headers, timeout=15)
-        print(f"📡 Status HTTP GMGN: {response.status_code}")
-        
-        if response.status_code == 200:
-            res_data = response.json().get('data', {})
-            token_info = res_data.get('token', {})
-            return {
-                "symbol": token_info.get('symbol', 'SOL'),
-                "price": float(token_info.get('price', 0))
-            }
-        else:
-            print(f"⚠️ Gagal akses GMGN. Respon teks: {response.text[:200]}")
-            return None
-    except Exception as e:
-        print(f"❌ Error koneksi GMGN: {e}")
-        return None
 
-def ask_ai_agent(current_price, symbol):
-    """Meminta analisis dan keputusan dari Otak AI Gemini"""
-    prompt = f"""
-    Kamu adalah Karyawan Digital profesional sebagai Liquidity Provider (LP) Manager.
-    Token yang dipantau: {symbol}
-    Harga terkini di pasaran: ${current_price}
-    
-    Tugasmu: Berikan analisis singkat apakah saat ini kondisi pasar stabil untuk posisi LP, dan berikan keputusan dengan format JSON:
-    {{
-        "action": "HOLD" atau "REBALANCE",
-        "reason": "Penjelasan singkat logis dalam 1-2 kalimat"
-    }}
-    Berikan output FORMAT JSON SAJA tanpa teks tambahan di luar markdown.
-    """
-    
-    try:
-        # Menggunakan format pemanggilan client Gemini terbaru
-        response = client.models.generate_content(
-            model='gemini-2.5-flash',
-            contents=prompt,
-        )
-        clean_text = response.text.replace("```json", "").replace("```", "").strip()
-        return json.loads(clean_text)
-    except Exception as e:
-        print(f"⚠️ Gagal mendapatkan respons dari Gemini AI: {e}")
-        return {"action": "HOLD", "reason": "Error parsing AI response, defaulting to HOLD."}
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+    json_path = REPORTS / f"report_{stamp}.json"
+    csv_path = REPORTS / f"trades_{stamp}.csv"
+
+    json_path.write_text(
+        json.dumps(report, indent=2),
+        encoding="utf-8",
+    )
+
+    with csv_path.open("w", newline="", encoding="utf-8") as file:
+        fields = [
+            "timestamp", "symbol", "mode", "buy_usd",
+            "entry_price", "exit_price", "pnl_usd",
+            "real_transaction",
+        ]
+        writer = csv.DictWriter(file, fieldnames=fields)
+        writer.writeheader()
+        writer.writerows(trades)
+
+    print("\n=== DJIWA LP MANAGER ===")
+    print(f"Modal awal     : ${INITIAL_CASH:.2f}")
+    print(f"Saldo akhir    : ${cash:.2f}")
+    print(f"Untung/rugi    : ${pnl:.2f}")
+    print(f"Jumlah simulasi: {len(trades)}")
+    print("Transaksi nyata: NONAKTIF")
+    print(f"Laporan JSON   : {json_path}")
+    print(f"Laporan CSV    : {csv_path}")
+
+
+def main():
+    print(f"=== {PROJECT} ===")
+    print("MODE: SIMULASI — UANG ASLI TIDAK DIGUNAKAN")
+
+    candidates = scout(DEMO_TOKENS)
+    approved = guard(candidates)
+    cash, positions, trades = execute_simulation(approved)
+    manager(cash, positions, trades)
+
 
 if __name__ == "__main__":
-    print("🚀 [Karyawan Digital LP]: Memulai pemeriksaan rutin pasar...")
-    
-    # 1. Ambil data harga dari GMGN
-    market_data = get_gmgn_data(TOKEN_ADDRESS, CHAIN)
-    
-    if market_data and market_data['price'] > 0:
-        symbol = market_data['symbol']
-        price = market_data['price']
-        print(f"✅ Data Berhasil Diambil -> Token: {symbol} | Harga: ${price}")
-        
-        # 2. Konsultasi ke Otak AI
-        decision = ask_ai_agent(price, symbol)
-        
-        print("\n" + "="*40)
-        print(f"🤖 KEPUTUSAN KARYAWAN DIGITAL:")
-        print(f"   ► Aksi Dipilih : {decision.get('action')}")
-        print(f"   ► Alasan Analisis: {decision.get('reason')}")
-        print("="*40)
-    else:
-        print("❌ Gagal mendapatkan harga valid dari GMGN.")
+    main()
