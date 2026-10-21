@@ -402,6 +402,83 @@ def write_reports(pairs, state, discovery_errors, pair_errors, token_count):
     (REPORT_DIR / "events.json").write_text(json.dumps(state.get("events", [])[-MAX_EVENTS_KEPT:], indent=2), encoding="utf-8")
     (REPORT_DIR / "closed_trades.json").write_text(json.dumps(state.get("closed_trades", [])[-MAX_EVENTS_KEPT:], indent=2), encoding="utf-8")
 
+
+def send_discord_notification(pairs, state, discovery_errors, pair_errors, token_count):
+    """Send a compact run summary to Discord via an optional GitHub Actions secret."""
+    webhook_url = os.environ.get("DISCORD_WEBHOOK_URL", "").strip()
+    if not webhook_url:
+        print("Discord webhook not configured; skipping notification.")
+        return
+
+    eligible = [m for m in pairs if m.get("eligible")]
+    eligible.sort(key=lambda m: (m.get("score", 0), m.get("liquidity_usd", 0)), reverse=True)
+    total_position_value = 0.0
+    for pos in state.get("positions", {}).values():
+        value = position_value(pos, number(pos.get("last_price_usd"), number(pos.get("entry_price"), 0)))
+        total_position_value += value + number(pos.get("estimated_fees_usd"), 0)
+    cash = number(state.get("cash_usd"), 0)
+    equity = cash + total_position_value
+    starting = number(state.get("starting_cash_usd"), STARTING_CASH_USD)
+    pnl = equity - starting
+
+    def usd(value):
+        return f"${value:,.2f}"
+
+    lines = [
+        f"**Mode:** PAPER SIMULATION ONLY — tidak ada transaksi blockchain",
+        f"**Waktu (UTC):** {state.get('last_run_at') or iso_now()}",
+        f"**Token discovery diperiksa:** {token_count}",
+        f"**Pool terpantau:** {len(pairs)}",
+        f"**Pool lolos filter:** {len(eligible)}",
+        f"**Posisi LP virtual terbuka:** {len(state.get('positions', {}))}",
+        f"**Saldo virtual:** {usd(cash)}",
+        f"**Estimasi nilai portofolio:** {usd(equity)}",
+        f"**Estimasi P/L total:** {'+' if pnl >= 0 else ''}{usd(pnl)}",
+    ]
+    if eligible:
+        lines.append("")
+        lines.append("**Top pool lolos filter:**")
+        for m in eligible[:5]:
+            symbol = str(m.get("symbol", "UNKNOWN"))[:24]
+            url = str(m.get("pair_url", "")).strip()
+            score = number(m.get("score"), 0)
+            liq = usd(number(m.get("liquidity_usd"), 0))
+            vol = usd(number(m.get("volume_24h_usd"), 0))
+            line = f"• **{symbol}** — skor `{score}` | likuiditas {liq} | volume 24j {vol}"
+            if url.startswith("https://") or url.startswith("http://"):
+                line += f" | [DexScreener]({url})"
+            lines.append(line)
+    if discovery_errors or pair_errors:
+        lines.append("")
+        lines.append(f"⚠️ Peringatan API: {len(discovery_errors) + len(pair_errors)} masalah (lihat log GitHub Actions).")
+    description = "\n".join(lines)
+    # Discord embed description limit is 4096 characters.
+    description = description[:3900]
+    payload = {
+        "username": "DJIWA LP Manager",
+        "allowed_mentions": {"parse": []},
+        "embeds": [{
+            "title": "📊 Laporan Karyawan Digital DJIWA LP",
+            "description": description,
+            "color": 3447003 if pnl >= 0 else 15158332,
+            "footer": {"text": "DexScreener public data • Paper simulation • Bukan saran investasi"},
+        }],
+    }
+    req = Request(
+        webhook_url,
+        data=json.dumps(payload).encode("utf-8"),
+        headers={"Content-Type": "application/json", "User-Agent": "DJIWA-LP-Discord-Notifier/1.0"},
+        method="POST",
+    )
+    try:
+        with urlopen(req, timeout=15) as response:
+            if response.status not in (200, 204):
+                raise RuntimeError(f"Discord returned HTTP {response.status}")
+        print("Discord notification sent.")
+    except Exception as exc:
+        # Keep scan/report output usable even if Discord is temporarily unavailable.
+        print(f"WARNING: Discord notification failed: {type(exc).__name__}: {exc}")
+
 def main():
     print("=== DJIWA LP: LIVE DATA + PAPER-ONLY LP SIMULATION ===")
     print("No wallet, no private key, no transaction signing.")
@@ -412,6 +489,7 @@ def main():
     state["last_run_at"] = iso_now()
     save_state(state)
     write_reports(pairs, state, discovery_errors, pair_errors, token_count)
+    send_discord_notification(pairs, state, discovery_errors, pair_errors, token_count)
     eligible_count = sum(1 for m in pairs if m["eligible"])
     print(f"Eligible pools: {eligible_count}")
     print(f"Open virtual LP positions: {len(state['positions'])}")
