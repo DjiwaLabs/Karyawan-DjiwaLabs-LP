@@ -1,11 +1,8 @@
 name: Karyawan Digital LP Automation
 
 on:
-  # Jadwal otomatis: Berjalan setiap 6 jam sekali (bisa diubah sesuai kebutuhan)
   schedule:
     - cron: '0 */6 * * *'
-  
-  # Tombol manual: Memungkinkan Anda menjalankan simulasi kapan saja lewat web GitHub
   workflow_dispatch:
 
 jobs:
@@ -24,7 +21,7 @@ jobs:
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install requests google-generativeai
+        pip install requests google-genai
 
     - name: Run Digital Employee Script
       env:
