@@ -1,7 +1,7 @@
 {
   "version": 1,
   "starting_cash_usd": 10000.0,
-  "cash_usd": 25762.352571847165,
+  "cash_usd": 25409.003540357626,
   "positions": {
     "bsc:0x5a606e1533fb11870f3b6c2f98a7edda699b94bf": {
       "symbol": "SI",
@@ -16,30 +16,11 @@
       "entry_volume_24h_usd": 235284.09,
       "entry_score": 128.57,
       "entry_time": "2026-10-21T13:47:57+00:00",
-      "last_updated_at": "2026-10-21T15:43:25+00:00",
-      "last_price_usd": 5.427e-10,
-      "last_liquidity_usd": 66347.82,
-      "estimated_fees_usd": 0.5996368680009623,
-      "last_score": 129.07
-    },
-    "solana:azjdbhjeuqlmkukyfmsnrpguheexkpwedbvv8hcnta1e": {
-      "symbol": "DOT",
-      "name": "dotcom",
-      "chain": "solana",
-      "dex": "pumpswap",
-      "pair_address": "AZJDbhjEUQLmKUKYfmsNrPguHEEXKPWEdBvV8hCNTa1E",
-      "pair_url": "https://dexscreener.com/solana/azjdbhjeuqlmkukyfmsnrpguheexkpwedbvv8hcnta1e",
-      "invested_usd": 500.0,
-      "entry_price": 0.000295,
-      "entry_liquidity_usd": 46691.8,
-      "entry_volume_24h_usd": 151799.7,
-      "entry_score": 133.49,
-      "entry_time": "2026-10-21T14:43:06+00:00",
-      "last_updated_at": "2026-10-21T15:43:25+00:00",
-      "last_price_usd": 0.0002902,
-      "last_liquidity_usd": 46712.28,
-      "estimated_fees_usd": 0.21630585848045428,
-      "last_score": 133.64
+      "last_updated_at": "2026-10-21T16:41:17+00:00",
+      "last_price_usd": 5.504e-10,
+      "last_liquidity_usd": 66961.54,
+      "estimated_fees_usd": 0.9873929180483798,
+      "last_score": 129.31
     },
     "solana:uxad6fszaybhhuztaef5cgasmhnh84duijsxrrvx46k": {
       "symbol": "AOP",
@@ -54,29 +35,11 @@
       "entry_volume_24h_usd": 66100.23,
       "entry_score": 109.86,
       "entry_time": "2026-10-21T14:43:06+00:00",
-      "last_updated_at": "2026-10-21T15:43:25+00:00",
-      "last_price_usd": 0.0002675,
-      "last_liquidity_usd": 43529.35,
-      "estimated_fees_usd": 0.09615728968300985,
-      "last_score": 109.27
-    },
-    "robinhood:0x8db4e9424db45dba23fea5af3c884c9d1ad4e55b4a084c72a45195c365c0ed5b": {
-      "symbol": "USFD",
-      "name": "United States Fund Dividend",
-      "chain": "robinhood",
-      "dex": "uniswap",
-      "pair_address": "0x8db4e9424db45dba23fea5af3c884c9d1ad4e55b4a084c72a45195c365c0ed5b",
-      "pair_url": "https://dexscreener.com/robinhood/0x8db4e9424db45dba23fea5af3c884c9d1ad4e55b4a084c72a45195c365c0ed5b",
-      "invested_usd": 500.0,
-      "entry_price": 0.0001563,
-      "entry_liquidity_usd": 87061.91,
-      "entry_volume_24h_usd": 3871176.04,
-      "entry_score": 112.75,
-      "entry_time": "2026-10-21T15:43:25+00:00",
-      "last_updated_at": "2026-10-21T15:43:25+00:00",
-      "last_price_usd": 0.0001563,
-      "last_liquidity_usd": 87061.91,
-      "estimated_fees_usd": 0.0
+      "last_updated_at": "2026-10-21T16:41:18+00:00",
+      "last_price_usd": 0.0002732,
+      "last_liquidity_usd": 43994.78,
+      "estimated_fees_usd": 0.18776739504524048,
+      "last_score": 108.75
     },
     "robinhood:0x0bf15da7e9f0fb53ba519df8c0c6e4566df7cd78890ea34de3f7f49e38e47265": {
       "symbol": "DARWIN",
@@ -91,9 +54,46 @@
       "entry_volume_24h_usd": 62112.79,
       "entry_score": 82.47,
       "entry_time": "2026-10-21T15:43:25+00:00",
-      "last_updated_at": "2026-10-21T15:43:25+00:00",
-      "last_price_usd": 0.000428,
-      "last_liquidity_usd": 60720.79,
+      "last_updated_at": "2026-10-21T16:41:18+00:00",
+      "last_price_usd": 0.0005093,
+      "last_liquidity_usd": 66110.61,
+      "estimated_fees_usd": 0.05880291578972947,
+      "last_score": 80.14
+    },
+    "solana:bhhx4s4nrdyxfpb1xbp6hdid1ml9feccksafu4djftg7": {
+      "symbol": "Ser",
+      "name": "El Ser de Valle de Juárez",
+      "chain": "solana",
+      "dex": "pumpswap",
+      "pair_address": "BHhx4S4nrDYxFPb1xBp6hDiD1mL9feCcKSaFu4djFtg7",
+      "pair_url": "https://dexscreener.com/solana/bhhx4s4nrdyxfpb1xbp6hdid1ml9feccksafu4djftg7",
+      "invested_usd": 500.0,
+      "entry_price": 8.688e-05,
+      "entry_liquidity_usd": 25349.56,
+      "entry_volume_24h_usd": 867378.15,
+      "entry_score": 122.17,
+      "entry_time": "2026-10-21T16:41:18+00:00",
+      "last_updated_at": "2026-10-21T16:41:18+00:00",
+      "last_price_usd": 8.688e-05,
+      "last_liquidity_usd": 25349.56,
+      "estimated_fees_usd": 0.0
+    },
+    "robinhood:0x467154dcdcf38f448e4742b81464a9b9e1d2b3a6b538b92f66f77d3436249825": {
+      "symbol": "SEVREN",
+      "name": "Sevren AI",
+      "chain": "robinhood",
+      "dex": "uniswap",
+      "pair_address": "0x467154dcdcf38f448e4742b81464a9b9e1d2b3a6b538b92f66f77d3436249825",
+      "pair_url": "https://dexscreener.com/robinhood/0x467154dcdcf38f448e4742b81464a9b9e1d2b3a6b538b92f66f77d3436249825",
+      "invested_usd": 500.0,
+      "entry_price": 9.699e-05,
+      "entry_liquidity_usd": 28878.33,
+      "entry_volume_24h_usd": 202549.17,
+      "entry_score": 115.0,
+      "entry_time": "2026-10-21T16:41:18+00:00",
+      "last_updated_at": "2026-10-21T16:41:18+00:00",
+      "last_price_usd": 9.699e-05,
+      "last_liquidity_usd": 28878.33,
       "estimated_fees_usd": 0.0
     }
   },
@@ -175,6 +175,32 @@
       "pnl_usd": 19407.0747,
       "reason": "GUARD: pool liquidity fell more than 40% from entry",
       "pair_url": "https://dexscreener.com/robinhood/0xb56232b0764299cfdf7b15a06fb64f55df88b708"
+    },
+    {
+      "closed_at": "2026-10-21T16:41:18+00:00",
+      "symbol": "DOT",
+      "chain": "solana",
+      "pair_address": "AZJDbhjEUQLmKUKYfmsNrPguHEEXKPWEdBvV8hCNTa1E",
+      "invested_usd": 500.0,
+      "lp_value_usd": 375.6351,
+      "estimated_fees_usd": 0.509,
+      "proceeds_usd": 376.1441,
+      "pnl_usd": -123.8559,
+      "reason": "GUARD: token price fell more than 35% from entry",
+      "pair_url": "https://dexscreener.com/solana/azjdbhjeuqlmkukyfmsnrpguheexkpwedbvv8hcnta1e"
+    },
+    {
+      "closed_at": "2026-10-21T16:41:18+00:00",
+      "symbol": "USFD",
+      "chain": "robinhood",
+      "pair_address": "0x8db4e9424db45dba23fea5af3c884c9d1ad4e55b4a084c72a45195c365c0ed5b",
+      "invested_usd": 500.0,
+      "lp_value_usd": 263.1992,
+      "estimated_fees_usd": 7.3077,
+      "proceeds_usd": 270.5069,
+      "pnl_usd": -229.4931,
+      "reason": "GUARD: pool liquidity fell more than 40% from entry",
+      "pair_url": "https://dexscreener.com/robinhood/0x8db4e9424db45dba23fea5af3c884c9d1ad4e55b4a084c72a45195c365c0ed5b"
     }
   ],
   "events": [
@@ -361,7 +387,55 @@
       "invested_usd": 500.0,
       "score": 82.47,
       "pair_url": "https://dexscreener.com/robinhood/0x0bf15da7e9f0fb53ba519df8c0c6e4566df7cd78890ea34de3f7f49e38e47265"
+    },
+    {
+      "time": "2026-10-21T16:41:18+00:00",
+      "type": "LP_CLOSE",
+      "message": "Closed virtual LP DOT: GUARD: token price fell more than 35% from entry",
+      "closed_at": "2026-10-21T16:41:18+00:00",
+      "symbol": "DOT",
+      "chain": "solana",
+      "pair_address": "AZJDbhjEUQLmKUKYfmsNrPguHEEXKPWEdBvV8hCNTa1E",
+      "invested_usd": 500.0,
+      "lp_value_usd": 375.6351,
+      "estimated_fees_usd": 0.509,
+      "proceeds_usd": 376.1441,
+      "pnl_usd": -123.8559,
+      "reason": "GUARD: token price fell more than 35% from entry",
+      "pair_url": "https://dexscreener.com/solana/azjdbhjeuqlmkukyfmsnrpguheexkpwedbvv8hcnta1e"
+    },
+    {
+      "time": "2026-10-21T16:41:18+00:00",
+      "type": "LP_CLOSE",
+      "message": "Closed virtual LP USFD: GUARD: pool liquidity fell more than 40% from entry",
+      "closed_at": "2026-10-21T16:41:18+00:00",
+      "symbol": "USFD",
+      "chain": "robinhood",
+      "pair_address": "0x8db4e9424db45dba23fea5af3c884c9d1ad4e55b4a084c72a45195c365c0ed5b",
+      "invested_usd": 500.0,
+      "lp_value_usd": 263.1992,
+      "estimated_fees_usd": 7.3077,
+      "proceeds_usd": 270.5069,
+      "pnl_usd": -229.4931,
+      "reason": "GUARD: pool liquidity fell more than 40% from entry",
+      "pair_url": "https://dexscreener.com/robinhood/0x8db4e9424db45dba23fea5af3c884c9d1ad4e55b4a084c72a45195c365c0ed5b"
+    },
+    {
+      "time": "2026-10-21T16:41:18+00:00",
+      "type": "LP_OPEN",
+      "message": "Opened virtual LP Ser on solana",
+      "invested_usd": 500.0,
+      "score": 122.17,
+      "pair_url": "https://dexscreener.com/solana/bhhx4s4nrdyxfpb1xbp6hdid1ml9feccksafu4djftg7"
+    },
+    {
+      "time": "2026-10-21T16:41:18+00:00",
+      "type": "LP_OPEN",
+      "message": "Opened virtual LP SEVREN on robinhood",
+      "invested_usd": 500.0,
+      "score": 115.0,
+      "pair_url": "https://dexscreener.com/robinhood/0x467154dcdcf38f448e4742b81464a9b9e1d2b3a6b538b92f66f77d3436249825"
     }
   ],
-  "last_run_at": "2026-10-21T15:43:25+00:00"
+  "last_run_at": "2026-10-21T16:41:18+00:00"
 }
