@@ -1,7 +1,7 @@
 {
   "version": 1,
   "starting_cash_usd": 10000.0,
-  "cash_usd": 7598.820838700591,
+  "cash_usd": 7274.27911853616,
   "positions": {
     "robinhood:0x55e0a094ca5d911bcddaea0d4d2751aca668cb83": {
       "symbol": "Pepina",
@@ -16,49 +16,11 @@
       "entry_volume_24h_usd": 4665223.63,
       "entry_score": 127.48,
       "entry_time": "2026-10-21T11:57:18+00:00",
-      "last_updated_at": "2026-10-21T13:11:11+00:00",
-      "last_price_usd": 0.003525,
-      "last_liquidity_usd": 185467.62,
-      "estimated_fees_usd": 1.9480490758704798,
-      "last_score": 128.5
-    },
-    "solana:bm24guw2pn5perohsoalkpybqcmzvajdcvay7cxfxyt7": {
-      "symbol": "HUSH",
-      "name": "HUSHFUND",
-      "chain": "solana",
-      "dex": "pumpswap",
-      "pair_address": "Bm24gUw2PN5peRohSoaLKpYBqCmZvAjdcvAY7cxfxYt7",
-      "pair_url": "https://dexscreener.com/solana/bm24guw2pn5perohsoalkpybqcmzvajdcvay7cxfxyt7",
-      "invested_usd": 500.0,
-      "entry_price": 6.602e-05,
-      "entry_liquidity_usd": 21038.97,
-      "entry_volume_24h_usd": 111411.5,
-      "entry_score": 113.13,
-      "entry_time": "2026-10-21T11:57:18+00:00",
-      "last_updated_at": "2026-10-21T13:11:11+00:00",
-      "last_price_usd": 8.744e-05,
-      "last_liquidity_usd": 24857.44,
-      "estimated_fees_usd": 0.5106453534254032,
-      "last_score": 113.43
-    },
-    "solana:9xnpqaxhfgwbfyshxnbg1tfc19ey6n79bwgklhkhnhsg": {
-      "symbol": "TRUMP",
-      "name": "Trump",
-      "chain": "solana",
-      "dex": "pumpswap",
-      "pair_address": "9XnpQAxHFGWBFYsHxNBG1TFC19Ey6N79bwgKLHKhnhsg",
-      "pair_url": "https://dexscreener.com/solana/9xnpqaxhfgwbfyshxnbg1tfc19ey6n79bwgklhkhnhsg",
-      "invested_usd": 500.0,
-      "entry_price": 0.0002403,
-      "entry_liquidity_usd": 41334.74,
-      "entry_volume_24h_usd": 221115.0,
-      "entry_score": 114.25,
-      "entry_time": "2026-10-21T12:50:10+00:00",
-      "last_updated_at": "2026-10-21T13:11:12+00:00",
-      "last_price_usd": 0.0002123,
-      "last_liquidity_usd": 38770.38,
-      "estimated_fees_usd": 0.13131962230228095,
-      "last_score": 114.97
+      "last_updated_at": "2026-10-21T13:47:57+00:00",
+      "last_price_usd": 0.00315,
+      "last_liquidity_usd": 174330.7,
+      "estimated_fees_usd": 3.013916627181465,
+      "last_score": 129.02
     },
     "robinhood:0x82fc11f076817e52438d8e41da54edf086d829aa": {
       "symbol": "PHP",
@@ -73,11 +35,47 @@
       "entry_volume_24h_usd": 543629.02,
       "entry_score": 113.26,
       "entry_time": "2026-10-21T12:50:10+00:00",
-      "last_updated_at": "2026-10-21T13:11:12+00:00",
-      "last_price_usd": 0.0005742,
-      "last_liquidity_usd": 141228.1,
-      "estimated_fees_usd": 0.10990611022382278,
-      "last_score": 113.51
+      "last_updated_at": "2026-10-21T13:47:57+00:00",
+      "last_price_usd": 0.0004301,
+      "last_liquidity_usd": 120388.75,
+      "estimated_fees_usd": 0.462556770262179,
+      "last_score": 113.9
+    },
+    "bsc:0x5a606e1533fb11870f3b6c2f98a7edda699b94bf": {
+      "symbol": "SI",
+      "name": "SpaceX Inu",
+      "chain": "bsc",
+      "dex": "pancakeswap",
+      "pair_address": "0x5A606e1533Fb11870f3B6c2f98a7eDdA699B94BF",
+      "pair_url": "https://dexscreener.com/bsc/0x5a606e1533fb11870f3b6c2f98a7edda699b94bf",
+      "invested_usd": 500.0,
+      "entry_price": 5.98e-10,
+      "entry_liquidity_usd": 69030.5,
+      "entry_volume_24h_usd": 235284.09,
+      "entry_score": 128.57,
+      "entry_time": "2026-10-21T13:47:57+00:00",
+      "last_updated_at": "2026-10-21T13:47:57+00:00",
+      "last_price_usd": 5.98e-10,
+      "last_liquidity_usd": 69030.5,
+      "estimated_fees_usd": 0.0
+    },
+    "robinhood:0xb56232b0764299cfdf7b15a06fb64f55df88b708": {
+      "symbol": "microduck",
+      "name": "microduck",
+      "chain": "robinhood",
+      "dex": "uniswap",
+      "pair_address": "0xb56232B0764299cfDf7b15A06FB64f55df88b708",
+      "pair_url": "https://dexscreener.com/robinhood/0xb56232b0764299cfdf7b15a06fb64f55df88b708",
+      "invested_usd": 500.0,
+      "entry_price": 0.0004614,
+      "entry_liquidity_usd": 49049.08,
+      "entry_volume_24h_usd": 450164.21,
+      "entry_score": 108.41,
+      "entry_time": "2026-10-21T13:47:57+00:00",
+      "last_updated_at": "2026-10-21T13:47:57+00:00",
+      "last_price_usd": 0.0004614,
+      "last_liquidity_usd": 49049.08,
+      "estimated_fees_usd": 0.0
     }
   },
   "closed_trades": [
@@ -93,6 +91,32 @@
       "pnl_usd": -401.1792,
       "reason": "GUARD: pool liquidity fell more than 40% from entry",
       "pair_url": "https://dexscreener.com/solana/hu9iazuwpj94k41y34g64rkqjwyo7ds5hynfdcbg4ban"
+    },
+    {
+      "closed_at": "2026-10-21T13:47:57+00:00",
+      "symbol": "HUSH",
+      "chain": "solana",
+      "pair_address": "Bm24gUw2PN5peRohSoaLKpYBqCmZvAjdcvAY7cxfxYt7",
+      "invested_usd": 500.0,
+      "lp_value_usd": 347.6127,
+      "estimated_fees_usd": 1.0793,
+      "proceeds_usd": 348.692,
+      "pnl_usd": -151.308,
+      "reason": "GUARD: token price fell more than 35% from entry",
+      "pair_url": "https://dexscreener.com/solana/bm24guw2pn5perohsoalkpybqcmzvajdcvay7cxfxyt7"
+    },
+    {
+      "closed_at": "2026-10-21T13:47:57+00:00",
+      "symbol": "TRUMP",
+      "chain": "solana",
+      "pair_address": "9XnpQAxHFGWBFYsHxNBG1TFC19Ey6N79bwgKLHKhnhsg",
+      "invested_usd": 500.0,
+      "lp_value_usd": 326.2353,
+      "estimated_fees_usd": 0.531,
+      "proceeds_usd": 326.7663,
+      "pnl_usd": -173.2337,
+      "reason": "GUARD: token price fell more than 35% from entry",
+      "pair_url": "https://dexscreener.com/solana/9xnpqaxhfgwbfyshxnbg1tfc19ey6n79bwgklhkhnhsg"
     }
   ],
   "events": [
@@ -151,7 +175,55 @@
       "invested_usd": 500.0,
       "score": 113.26,
       "pair_url": "https://dexscreener.com/robinhood/0x82fc11f076817e52438d8e41da54edf086d829aa"
+    },
+    {
+      "time": "2026-10-21T13:47:57+00:00",
+      "type": "LP_CLOSE",
+      "message": "Closed virtual LP HUSH: GUARD: token price fell more than 35% from entry",
+      "closed_at": "2026-10-21T13:47:57+00:00",
+      "symbol": "HUSH",
+      "chain": "solana",
+      "pair_address": "Bm24gUw2PN5peRohSoaLKpYBqCmZvAjdcvAY7cxfxYt7",
+      "invested_usd": 500.0,
+      "lp_value_usd": 347.6127,
+      "estimated_fees_usd": 1.0793,
+      "proceeds_usd": 348.692,
+      "pnl_usd": -151.308,
+      "reason": "GUARD: token price fell more than 35% from entry",
+      "pair_url": "https://dexscreener.com/solana/bm24guw2pn5perohsoalkpybqcmzvajdcvay7cxfxyt7"
+    },
+    {
+      "time": "2026-10-21T13:47:57+00:00",
+      "type": "LP_CLOSE",
+      "message": "Closed virtual LP TRUMP: GUARD: token price fell more than 35% from entry",
+      "closed_at": "2026-10-21T13:47:57+00:00",
+      "symbol": "TRUMP",
+      "chain": "solana",
+      "pair_address": "9XnpQAxHFGWBFYsHxNBG1TFC19Ey6N79bwgKLHKhnhsg",
+      "invested_usd": 500.0,
+      "lp_value_usd": 326.2353,
+      "estimated_fees_usd": 0.531,
+      "proceeds_usd": 326.7663,
+      "pnl_usd": -173.2337,
+      "reason": "GUARD: token price fell more than 35% from entry",
+      "pair_url": "https://dexscreener.com/solana/9xnpqaxhfgwbfyshxnbg1tfc19ey6n79bwgklhkhnhsg"
+    },
+    {
+      "time": "2026-10-21T13:47:57+00:00",
+      "type": "LP_OPEN",
+      "message": "Opened virtual LP SI on bsc",
+      "invested_usd": 500.0,
+      "score": 128.57,
+      "pair_url": "https://dexscreener.com/bsc/0x5a606e1533fb11870f3b6c2f98a7edda699b94bf"
+    },
+    {
+      "time": "2026-10-21T13:47:57+00:00",
+      "type": "LP_OPEN",
+      "message": "Opened virtual LP microduck on robinhood",
+      "invested_usd": 500.0,
+      "score": 108.41,
+      "pair_url": "https://dexscreener.com/robinhood/0xb56232b0764299cfdf7b15a06fb64f55df88b708"
     }
   ],
-  "last_run_at": "2026-10-21T13:11:12+00:00"
+  "last_run_at": "2026-10-21T13:47:57+00:00"
 }
