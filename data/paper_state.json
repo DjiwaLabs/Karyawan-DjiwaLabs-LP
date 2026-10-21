@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "starting_cash_usd": 10000.0,
+  "cash_usd": 10000.0,
+  "positions": {},
+  "closed_trades": [],
+  "events": [],
+  "last_run_at": null
+}
