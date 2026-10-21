@@ -30,6 +30,8 @@ jobs:
           python-version: "3.12"
 
       - name: Run live scan and virtual LP simulation
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: python main.py
 
       - name: Save paper state to repository
