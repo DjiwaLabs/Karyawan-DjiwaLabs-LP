@@ -16,11 +16,11 @@
       "entry_volume_24h_usd": 4665223.63,
       "entry_score": 127.48,
       "entry_time": "2026-10-21T11:57:18+00:00",
-      "last_updated_at": "2026-10-21T12:50:10+00:00",
-      "last_price_usd": 0.003688,
-      "last_liquidity_usd": 189121.22,
-      "estimated_fees_usd": 1.382610525911333,
-      "last_score": 128.21
+      "last_updated_at": "2026-10-21T13:11:11+00:00",
+      "last_price_usd": 0.003525,
+      "last_liquidity_usd": 185467.62,
+      "estimated_fees_usd": 1.9480490758704798,
+      "last_score": 128.5
     },
     "solana:bm24guw2pn5perohsoalkpybqcmzvajdcvay7cxfxyt7": {
       "symbol": "HUSH",
@@ -35,11 +35,11 @@
       "entry_volume_24h_usd": 111411.5,
       "entry_score": 113.13,
       "entry_time": "2026-10-21T11:57:18+00:00",
-      "last_updated_at": "2026-10-21T12:50:10+00:00",
-      "last_price_usd": 0.0001092,
-      "last_liquidity_usd": 27931.03,
-      "estimated_fees_usd": 0.3434802686098562,
-      "last_score": 113.07
+      "last_updated_at": "2026-10-21T13:11:11+00:00",
+      "last_price_usd": 8.744e-05,
+      "last_liquidity_usd": 24857.44,
+      "estimated_fees_usd": 0.5106453534254032,
+      "last_score": 113.43
     },
     "solana:9xnpqaxhfgwbfyshxnbg1tfc19ey6n79bwgklhkhnhsg": {
       "symbol": "TRUMP",
@@ -54,10 +54,11 @@
       "entry_volume_24h_usd": 221115.0,
       "entry_score": 114.25,
       "entry_time": "2026-10-21T12:50:10+00:00",
-      "last_updated_at": "2026-10-21T12:50:10+00:00",
-      "last_price_usd": 0.0002403,
-      "last_liquidity_usd": 41334.74,
-      "estimated_fees_usd": 0.0
+      "last_updated_at": "2026-10-21T13:11:12+00:00",
+      "last_price_usd": 0.0002123,
+      "last_liquidity_usd": 38770.38,
+      "estimated_fees_usd": 0.13131962230228095,
+      "last_score": 114.97
     },
     "robinhood:0x82fc11f076817e52438d8e41da54edf086d829aa": {
       "symbol": "PHP",
@@ -72,10 +73,11 @@
       "entry_volume_24h_usd": 543629.02,
       "entry_score": 113.26,
       "entry_time": "2026-10-21T12:50:10+00:00",
-      "last_updated_at": "2026-10-21T12:50:10+00:00",
-      "last_price_usd": 0.0005049,
-      "last_liquidity_usd": 131365.12,
-      "estimated_fees_usd": 0.0
+      "last_updated_at": "2026-10-21T13:11:12+00:00",
+      "last_price_usd": 0.0005742,
+      "last_liquidity_usd": 141228.1,
+      "estimated_fees_usd": 0.10990611022382278,
+      "last_score": 113.51
     }
   },
   "closed_trades": [
@@ -151,5 +153,5 @@
       "pair_url": "https://dexscreener.com/robinhood/0x82fc11f076817e52438d8e41da54edf086d829aa"
     }
   ],
-  "last_run_at": "2026-10-21T12:50:10+00:00"
+  "last_run_at": "2026-10-21T13:11:12+00:00"
 }
