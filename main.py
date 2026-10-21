@@ -2,7 +2,7 @@ import os
 import time
 import requests
 import json
-import google.generativeai as genai
+from google import genai  # Menggunakan package Gemini terbaru
 
 # Ambil API Key dari Secret GitHub secara aman
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
@@ -11,22 +11,29 @@ if not GEMINI_API_KEY:
     print("❌ Error: GEMINI_API_KEY tidak ditemukan di environment variables!")
     exit(1)
 
-# Konfigurasi Gemini
-genai.configure(api_key=GEMINI_API_KEY)
-model = genai.GenerativeModel('gemini-1.5-flash')
+# Inisialisasi client Gemini versi baru
+client = genai.Client(api_key=GEMINI_API_KEY)
 
 # Parameter Target Token (Contoh: Wrapped SOL di Solana)
 TOKEN_ADDRESS = "So11111111111111111111111111111111111111112"
 CHAIN = "sol"
-MODAL_AWAL_USD = 1000.0
 
 def get_gmgn_data(token_address, chain):
-    """Mengambil data harga real-time dari GMGN.ai"""
+    """Mengambil data harga dengan header browser lengkap untuk bypass proteksi 403"""
     url = f"https://gmgn.ai/defi/quotation/v1/tokens/{chain}/{token_address}"
-    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
+    
+    # Headers lengkap menyerupai browser asli (Chrome di Windows)
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "Accept": "application/json, text/plain, */*",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Referer": "https://gmgn.ai/"
+    }
     
     try:
-        response = requests.get(url, headers=headers, timeout=10)
+        response = requests.get(url, headers=headers, timeout=15)
+        print(f"📡 Status HTTP GMGN: {response.status_code}")
+        
         if response.status_code == 200:
             res_data = response.json().get('data', {})
             token_info = res_data.get('token', {})
@@ -35,7 +42,7 @@ def get_gmgn_data(token_address, chain):
                 "price": float(token_info.get('price', 0))
             }
         else:
-            print(f"⚠️ Gagal akses GMGN. Status: {response.status_code}")
+            print(f"⚠️ Gagal akses GMGN. Respon teks: {response.text[:200]}")
             return None
     except Exception as e:
         print(f"❌ Error koneksi GMGN: {e}")
@@ -57,7 +64,11 @@ def ask_ai_agent(current_price, symbol):
     """
     
     try:
-        response = model.generate_content(prompt)
+        # Menggunakan format pemanggilan client Gemini terbaru
+        response = client.models.generate_content(
+            model='gemini-2.5-flash',
+            contents=prompt,
+        )
         clean_text = response.text.replace("```json", "").replace("```", "").strip()
         return json.loads(clean_text)
     except Exception as e:
@@ -73,7 +84,7 @@ if __name__ == "__main__":
     if market_data and market_data['price'] > 0:
         symbol = market_data['symbol']
         price = market_data['price']
-        print(f"📡 Data GMGN Berhasil Diambil -> Token: {symbol} | Harga: ${price}")
+        print(f"✅ Data Berhasil Diambil -> Token: {symbol} | Harga: ${price}")
         
         # 2. Konsultasi ke Otak AI
         decision = ask_ai_agent(price, symbol)
