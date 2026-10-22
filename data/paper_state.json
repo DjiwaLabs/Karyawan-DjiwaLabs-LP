@@ -16,11 +16,11 @@
       "entry_volume_24h_usd": 235284.09,
       "entry_score": 128.57,
       "entry_time": "2026-10-21T13:47:57+00:00",
-      "last_updated_at": "2026-10-22T00:51:40+00:00",
-      "last_price_usd": 7.097e-10,
-      "last_liquidity_usd": 76356.55,
-      "estimated_fees_usd": 4.924124503229598,
-      "last_score": 127.36
+      "last_updated_at": "2026-10-22T01:42:34+00:00",
+      "last_price_usd": 8.797e-10,
+      "last_liquidity_usd": 84983.17,
+      "estimated_fees_usd": 5.438719602783728,
+      "last_score": 127.01
     },
     "solana:uxad6fszaybhhuztaef5cgasmhnh84duijsxrrvx46k": {
       "symbol": "AOP",
@@ -35,11 +35,11 @@
       "entry_volume_24h_usd": 66100.23,
       "entry_score": 109.86,
       "entry_time": "2026-10-21T14:43:06+00:00",
-      "last_updated_at": "2026-10-22T00:51:40+00:00",
-      "last_price_usd": 0.0002812,
-      "last_liquidity_usd": 44457.45,
-      "estimated_fees_usd": 0.9962987954522107,
-      "last_score": 117.89
+      "last_updated_at": "2026-10-22T01:42:34+00:00",
+      "last_price_usd": 0.0002786,
+      "last_liquidity_usd": 44053.78,
+      "estimated_fees_usd": 1.0871147528874379,
+      "last_score": 118.46
     },
     "robinhood:0x0bf15da7e9f0fb53ba519df8c0c6e4566df7cd78890ea34de3f7f49e38e47265": {
       "symbol": "DARWIN",
@@ -54,11 +54,11 @@
       "entry_volume_24h_usd": 62112.79,
       "entry_score": 82.47,
       "entry_time": "2026-10-21T15:43:25+00:00",
-      "last_updated_at": "2026-10-22T00:51:40+00:00",
-      "last_price_usd": 0.001338,
-      "last_liquidity_usd": 106582.1,
-      "estimated_fees_usd": 1.9350693200573361,
-      "last_score": 134.53
+      "last_updated_at": "2026-10-22T01:42:34+00:00",
+      "last_price_usd": 0.001276,
+      "last_liquidity_usd": 103899.82,
+      "estimated_fees_usd": 2.2804577570916584,
+      "last_score": 134.65
     },
     "robinhood:0x467154dcdcf38f448e4742b81464a9b9e1d2b3a6b538b92f66f77d3436249825": {
       "symbol": "SEVREN",
@@ -73,11 +73,11 @@
       "entry_volume_24h_usd": 202549.17,
       "entry_score": 115.0,
       "entry_time": "2026-10-21T16:41:18+00:00",
-      "last_updated_at": "2026-10-22T00:51:40+00:00",
-      "last_price_usd": 0.000187,
-      "last_liquidity_usd": 39848.75,
-      "estimated_fees_usd": 5.945375854449127,
-      "last_score": 122.11
+      "last_updated_at": "2026-10-22T01:42:34+00:00",
+      "last_price_usd": 0.000177,
+      "last_liquidity_usd": 38695.86,
+      "estimated_fees_usd": 6.6125875438952155,
+      "last_score": 122.86
     },
     "solana:6yknbt32e2m9sf9jpbgwetd5qqgpvedndgnn87a9addr": {
       "symbol": "PANGEA",
@@ -92,11 +92,11 @@
       "entry_volume_24h_usd": 565663.89,
       "entry_score": 114.95,
       "entry_time": "2026-10-21T17:38:29+00:00",
-      "last_updated_at": "2026-10-22T00:51:40+00:00",
-      "last_price_usd": 0.001968,
-      "last_liquidity_usd": 155003.27,
-      "estimated_fees_usd": 9.359166147990283,
-      "last_score": 121.18
+      "last_updated_at": "2026-10-22T01:42:34+00:00",
+      "last_price_usd": 0.001955,
+      "last_liquidity_usd": 153582.8,
+      "estimated_fees_usd": 11.104325451983886,
+      "last_score": 121.93
     }
   },
   "closed_trades": [
@@ -476,5 +476,5 @@
       "pair_url": "https://dexscreener.com/solana/6yknbt32e2m9sf9jpbgwetd5qqgpvedndgnn87a9addr"
     }
   ],
-  "last_run_at": "2026-10-22T00:51:40+00:00"
+  "last_run_at": "2026-10-22T01:42:34+00:00"
 }
