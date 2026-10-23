@@ -36,7 +36,6 @@ def write_reports(pairs, state, discovery_errors, pair_errors, token_count):
     
     (REPORT_DIR / "summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
     
-    # Simpan CSV sederhana
     if open_rows:
         with (REPORT_DIR / "open_positions.csv").open("w", newline="") as f:
             writer = csv.DictWriter(f, fieldnames=open_rows[0].keys())
@@ -78,7 +77,7 @@ def send_discord_notification(state, summary):
         }]
     }
     
-try:
+    try:
         req = Request(
             webhook_url,
             data=json.dumps(payload).encode("utf-8"),
@@ -89,7 +88,8 @@ try:
         )
         
         with urlopen(req, timeout=15) as response:
-            if response.status not in (200, 204): raise Exception("HTTP Error")
+            if response.status not in (200, 204): 
+                raise Exception("HTTP Error")
         print("Discord notification sent.")
     except Exception as exc:
         print(f"WARNING: Discord failed: {exc}")
