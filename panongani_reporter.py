@@ -78,8 +78,16 @@ def send_discord_notification(state, summary):
         }]
     }
     
-    try:
-        req = Request(webhook_url, data=json.dumps(payload).encode("utf-8"), headers={"Content-Type": "application/json"})
+try:
+        req = Request(
+            webhook_url,
+            data=json.dumps(payload).encode("utf-8"),
+            headers={
+                "Content-Type": "application/json",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+            }
+        )
+        
         with urlopen(req, timeout=15) as response:
             if response.status not in (200, 204): raise Exception("HTTP Error")
         print("Discord notification sent.")
