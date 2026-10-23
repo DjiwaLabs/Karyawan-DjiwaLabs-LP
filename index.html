@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJIWA Labs - Kantor Virtual</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0d1117; /* Warna gelap ala GitHub */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .header {
+            color: #58a6ff;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .office-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            /* Menggunakan gambar kantor yang di-upload */
+            background-image: url('kantor_djiwa.png');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            aspect-ratio: 1 / 1; /* Menjaga rasio gambar isometrik */
+        }
+
+        /* Pengaturan Posisi Karakter */
+        .character {
+            position: absolute;
+            width: 25%; /* Ukuran karakter */
+            transition: all 0.5s ease;
+            filter: drop-shadow(0 10px 10px rgba(0,0,0,0.5)); /* Efek bayangan */
+        }
+
+        /* Meja Kiri Depan */
+        .siboru { bottom: 15%; left: 15%; }
+        
+        /* Meja Kanan Depan */
+        .parhata { bottom: 15%; right: 15%; }
+        
+        /* Meja Kiri Belakang */
+        .raja { top: 20%; left: 20%; width: 22%; }
+        
+        /* Meja Kanan Belakang (Nanti untuk Panongani) */
+        .panongani { top: 20%; right: 20%; width: 22%; display: none; /* Sembunyikan dulu karena belum ada gambarnya */ }
+
+        /* Animasi melayang kecil agar tidak terlalu kaku */
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Balon Percakapan (Bubble Chat) */
+        .bubble {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 10px 15px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #333;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            opacity: 0.9;
+        }
+        .siboru .bubble { top: -20px; left: 50%; transform: translateX(-50%); }
+        .parhata .bubble { top: -20px; left: 50%; transform: translateX(-50%); }
+        .raja .bubble { top: -20px; left: 50%; transform: translateX(-50%); }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>🏢 DJIWA Labs - Pusat Komando</h1>
+        <p>Shift Malam: Memantau Market 24/7</p>
+    </div>
+
+    <div class="office-container">
+        <!-- Karakter 1 -->
+        <div class="character siboru float">
+            <div class="bubble">Mencari token...</div>
+            <img src="siboru.png" alt="Siboru" style="width: 100%;">
+        </div>
+
+        <!-- Karakter 2 -->
+        <div class="character parhata float">
+            <div class="bubble">Cek scam dulu!</div>
+            <img src="parhata.png" alt="Parhata" style="width: 100%;">
+        </div>
+
+        <!-- Karakter 3 -->
+        <div class="character raja float">
+            <div class="bubble">Awasi posisi.</div>
+            <img src="raja.png" alt="Raja" style="width: 100%;">
+        </div>
+
+        <!-- Karakter 4 (Nanti) -->
+        <div class="character panongani">
+            <img src="panongani.png" alt="Panongani" style="width: 100%;">
+        </div>
+    </div>
+
+</body>
+</html>
