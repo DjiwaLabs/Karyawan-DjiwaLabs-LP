@@ -65,6 +65,37 @@ def main():
     equity = state["cash_usd"] + sum(p.get("invested_usd", 0) for p in state["positions"].values()) # simplified
     summary = {"generated_at": state["last_run_at"], "equity_usd": equity, "total_pnl_usd": equity - 10000, "cash_usd": state["cash_usd"], "open_positions": len(state["positions"])}
     send_discord_notification(state, summary)
+
+    # --- FITUR BARU: UPDATE KANTOR VIRTUAL (index.html) ---
+    try:
+        import re
+        html_path = Path("index.html")
+        if html_path.exists():
+            html_content = html_path.read_text(encoding="utf-8")
+            
+            # Format angka PnL
+            pnl_str = f"+${pnl:.2f}" if pnl >= 0 else f"-${abs(pnl):.2f}"
+            pnl_class = "profit" if pnl >= 0 else "loss"
+            
+            # Format PnL Mengambang (kita pakai nilai pnl yang sama untuk sementara)
+            float_str = f"+${pnl:.2f}" if pnl >= 0 else f"-${abs(pnl):.2f}"
+            float_class = "profit" if pnl >= 0 else "loss"
+
+            # Ganti teks statis di HTML dengan angka asli
+            html_content = re.sub(r'<strong class="[^"]*">[-+]\$[\d\.]+</strong>\s*</div>\s*<div class="stat-box">\s*<span>PnL Mengambang', 
+                                  f'<strong class="{pnl_class}">{pnl_str}</strong></div><div class="stat-box"><span>PnL Mengambang', html_content, count=1)
+            
+            html_content = re.sub(r'<strong class="[^"]*">[-+]\$[\d\.]+</strong>\s*</div>\s*<div class="stat-box">\s*<span>Posisi Terbuka', 
+                                  f'<strong class="{float_class}">{float_str}</strong></div><div class="stat-box"><span>Posisi Terbuka', html_content, count=1)
+            
+            html_content = re.sub(r'<strong>\d+/\d+</strong>', 
+                                  f'<strong>{len(state["positions"])}/5</strong>', html_content, count=1)
+            
+            # Simpan kembali ke index.html
+            html_path.write_text(html_content, encoding="utf-8")
+            log.info("Kantor Virtual (index.html) berhasil diperbarui!")
+    except Exception as e:
+        log.error(f"Gagal update Kantor Virtual: {e}")
     
     print("=== RAPAT SELESAI ===")
 
