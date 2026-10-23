@@ -99,7 +99,9 @@ def pair_metrics(pair):
     return {
         "chain": str(pair.get("chainId") or ""), "dex": str(pair.get("dexId") or ""),
         "pair_address": str(pair.get("pairAddress") or ""), "pair_url": str(pair.get("url") or ""),
-        "token_address": str(base.get("address") or ""), "symbol": str(base.get("symbol") or "UNKNOWN"),
+        "token_address": str(base.get("address") or ""),
+        "name": str(base.get("name") or "Unknown"), 
+        "symbol": str(base.get("symbol") or "UNKNOWN"),
         "quote_symbol": str(quote.get("symbol") or "").upper(),
         "price_usd": number(pair.get("priceUsd"), 0), "liquidity_usd": number(liquidity.get("usd"), 0),
         "volume_24h_usd": number(volume.get("h24"), 0), "buys_24h": buys, "sells_24h": sells,
