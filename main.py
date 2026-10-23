@@ -1,12 +1,21 @@
 # main.py - Sang Manajer (Kepala Divisi)
-import json, os
+import json
+import os
+import sys
+import logging
+import re
 from pathlib import Path
+from datetime import datetime, timezone
 
-# Panggil Karyawan
+# Import Karyawan
 from siboru_scanner import scan_market, fetch_pair_by_address
-from parhata_validator import process_and_validate
-from raja_executor import execute_trades
+from parhata_validator import process_and_validate, pair_metrics, score_pair, is_eligible
+from raja_executor import execute_trades, position_value, number
 from panongani_reporter import write_reports, send_discord_notification
+from config import STARTING_CASH_USD
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
+log = logging.getLogger("manajer")
 
 DATA_DIR = Path("data")
 STATE_FILE = DATA_DIR / "paper_state.json"
@@ -14,13 +23,14 @@ STATE_FILE = DATA_DIR / "paper_state.json"
 def load_state():
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     if not STATE_FILE.exists():
-        return {"version": 2, "starting_cash_usd": 10000.0, "cash_usd": 10000.0, "positions": {}, "closed_trades": [], "events": [], "last_run_at": None}
+        return {"version": 2, "starting_cash_usd": STARTING_CASH_USD, "cash_usd": STARTING_CASH_USD, "positions": {}, "closed_trades": [], "events": [], "last_run_at": None}
     try:
         state = json.loads(STATE_FILE.read_text(encoding="utf-8"))
         state.setdefault("positions", {})
         return state
-    except Exception:
-        return {"version": 2, "starting_cash_usd": 10000.0, "cash_usd": 10000.0, "positions": {}, "closed_trades": [], "events": [], "last_run_at": None}
+    except Exception as exc:
+        log.error(f"Gagal baca state: {exc}")
+        return {"version": 2, "starting_cash_usd": STARTING_CASH_USD, "cash_usd": STARTING_CASH_USD, "positions": {}, "closed_trades": [], "events": [], "last_run_at": None}
 
 def save_state(state):
     DATA_DIR.mkdir(parents=True, exist_ok=True)
@@ -29,59 +39,73 @@ def save_state(state):
     os.replace(tmp, STATE_FILE)
 
 def main():
-    print("=== MANAJER: Memulai Rapat Karyawan DJIWA LP ===")
+    log.info("=== MANAJER: Memulai Rapat Karyawan DJIWA LP ===")
     
     # 1. Siboru Mencari Data
     raw_pairs, disc_err, pair_err, token_count = scan_market()
-    print(f"Siboru selesai: {len(raw_pairs)} data mentah ditemukan.")
+    log.info(f"Siboru selesai: {len(raw_pairs)} data mentah ditemukan.")
     
     # 2. Parhata Memvalidasi
     valid_pairs = process_and_validate(raw_pairs)
-    print(f"Parhata selesai: {sum(1 for p in valid_pairs if p['eligible'])} pool lolos seleksi.")
+    log.info(f"Parhata selesai: {sum(1 for p in valid_pairs if p['eligible'])} pool lolos seleksi.")
     
-    # Tambahkan data posisi lama ke valid_pairs agar Raja bisa evaluasi
     state = load_state()
+    
+    # Tambahkan data posisi lama agar Raja bisa evaluasi harga terbarunya
     for pos in state["positions"].values():
         try:
             p = fetch_pair_by_address(pos["chain"], pos["pair_address"])
             if p:
-                from parhata_validator import pair_metrics, score_pair, is_eligible
                 m = pair_metrics(p)
                 m["score"] = score_pair(m)
                 m["eligible"] = is_eligible(m)
                 valid_pairs.append(m)
-        except: pass
+        except Exception as exc: 
+            log.warning(f"Gagal refresh {pos.get('symbol')}: {exc}")
     
     # 3. Raja Eksekusi
     execute_trades(valid_pairs, state)
-    print(f"Raja selesai: {len(state['positions'])} posisi aktif saat ini.")
+    log.info(f"Raja selesai: {len(state['positions'])} posisi aktif saat ini.")
     
     # 4. Panongani Lapor
-    state["last_run_at"] = __import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat(timespec="seconds")
+    state["last_run_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
     save_state(state)
+    
+    # Tulis laporan ke file
     write_reports(valid_pairs, state, disc_err, pair_err, token_count)
     
-    # Ambil ringkasan untuk discord
-    equity = state["cash_usd"] + sum(p.get("invested_usd", 0) for p in state["positions"].values()) # simplified
-    summary = {"generated_at": state["last_run_at"], "equity_usd": equity, "total_pnl_usd": equity - 10000, "cash_usd": state["cash_usd"], "open_positions": len(state["positions"])}
-    send_discord_notification(state, summary)
-
-    # --- FITUR BARU: UPDATE KANTOR VIRTUAL (index.html) ---
+    # --- PERHITUNGAN EKUITAS ---
+    total_position_value = 0.0
+    for p in state["positions"].values():
+        total_position_value += position_value(p, number(p.get("last_price_usd"), 0)) + number(p.get("estimated_fees_usd"), 0)
+        
+    cash = number(state.get("cash_usd"), 0)
+    equity = cash + total_position_value
+    pnl = equity - number(state.get("starting_cash_usd"), STARTING_CASH_USD)
+    
+    summary_for_discord = {
+        "generated_at": state["last_run_at"], 
+        "equity_usd": equity, 
+        "total_pnl_usd": pnl, 
+        "cash_usd": cash, 
+        "open_positions": len(state["positions"])
+    }
+    
+    # Suruh Panongani kirim ke Discord
+    send_discord_notification(state, summary_for_discord)
+    
+    # 5. Manajer Update Kantor Virtual (index.html)
     try:
-        import re
         html_path = Path("index.html")
         if html_path.exists():
             html_content = html_path.read_text(encoding="utf-8")
             
-            # Format angka PnL
             pnl_str = f"+${pnl:.2f}" if pnl >= 0 else f"-${abs(pnl):.2f}"
             pnl_class = "profit" if pnl >= 0 else "loss"
             
-            # Format PnL Mengambang (kita pakai nilai pnl yang sama untuk sementara)
-            float_str = f"+${pnl:.2f}" if pnl >= 0 else f"-${abs(pnl):.2f}"
-            float_class = "profit" if pnl >= 0 else "loss"
+            float_str = pnl_str
+            float_class = pnl_class
 
-            # Ganti teks statis di HTML dengan angka asli
             html_content = re.sub(r'<strong class="[^"]*">[-+]\$[\d\.]+</strong>\s*</div>\s*<div class="stat-box">\s*<span>PnL Mengambang', 
                                   f'<strong class="{pnl_class}">{pnl_str}</strong></div><div class="stat-box"><span>PnL Mengambang', html_content, count=1)
             
@@ -91,13 +115,12 @@ def main():
             html_content = re.sub(r'<strong>\d+/\d+</strong>', 
                                   f'<strong>{len(state["positions"])}/5</strong>', html_content, count=1)
             
-            # Simpan kembali ke index.html
             html_path.write_text(html_content, encoding="utf-8")
             log.info("Kantor Virtual (index.html) berhasil diperbarui!")
     except Exception as e:
         log.error(f"Gagal update Kantor Virtual: {e}")
     
-    print("=== RAPAT SELESAI ===")
+    log.info("=== RAPAT SELESAI ===")
 
 if __name__ == "__main__":
     main()
