@@ -3,116 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DJIWA Labs - Kantor Virtual</title>
+    <title>DJIWA Labs - Pusat Komando</title>
     <style>
         body {
             margin: 0;
             padding: 0;
-            background-color: #0d1117; /* Warna gelap ala GitHub */
+            background-color: #0d1117;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
             display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
         }
 
-        .header {
-            color: #58a6ff;
-            text-align: center;
+        /* Papan Kinerja Atas */
+        .dashboard {
+            width: 90%;
+            max-width: 1000px;
+            background-color: #161b22;
+            border-radius: 15px;
+            padding: 20px;
             margin-top: 20px;
-            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            border: 1px solid #30363d;
+            box-sizing: border-box;
         }
 
+        .dashboard h2 { margin: 0; font-size: 20px; letter-spacing: 2px; color: #58a6ff; }
+
+        .stats-container { display: flex; gap: 15px; }
+        
+        .stat-box {
+            background-color: #21262d;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-align: left;
+            min-width: 120px;
+        }
+
+        .stat-box span { display: block; font-size: 12px; color: #8b949e; margin-bottom: 5px; }
+        .stat-box strong { font-size: 20px; }
+        .profit { color: #3fb950; }
+        .loss { color: #f85149; }
+
+        /* Area Kantor Utama (Rasio 1280x698) */
         .office-container {
             position: relative;
+            width: 95%;
+            max-width: 1000px;
+            margin-top: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            /* Memaksa rasio gambar agar tidak gepeng */
+            aspect-ratio: 1280 / 698; 
+        }
+
+        .office-bg {
             width: 100%;
-            max-width: 900px;
-            /* Menggunakan gambar kantor yang di-upload */
-            background-image: url('kantor_djiwa.png');
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
-            aspect-ratio: 1 / 1; /* Menjaga rasio gambar isometrik */
-        }
-
-        /* Pengaturan Posisi Karakter */
-        .character {
-            position: absolute;
-            width: 25%; /* Ukuran karakter */
-            transition: all 0.5s ease;
-            filter: drop-shadow(0 10px 10px rgba(0,0,0,0.5)); /* Efek bayangan */
-        }
-
-        /* Meja Kiri Depan */
-        .siboru { bottom: 15%; left: 15%; }
-        
-        /* Meja Kanan Depan */
-        .parhata { bottom: 15%; right: 15%; }
-        
-        /* Meja Kiri Belakang */
-        .raja { top: 20%; left: 20%; width: 22%; }
-        
-        /* Meja Kanan Belakang (Nanti untuk Panongani) */
-        .panongani { top: 20%; right: 20%; width: 22%; display: none; /* Sembunyikan dulu karena belum ada gambarnya */ }
-
-        /* Animasi melayang kecil agar tidak terlalu kaku */
-        .float {
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-5px); }
-            100% { transform: translateY(0px); }
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         /* Balon Percakapan (Bubble Chat) */
         .bubble {
             position: absolute;
-            background: rgba(255, 255, 255, 0.9);
+            background: white;
             border-radius: 15px;
-            padding: 10px 15px;
-            font-size: 12px;
+            padding: 8px 12px;
+            font-size: 13px; /* Ukuran font standar */
             font-weight: bold;
             color: #333;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            opacity: 0.9;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            white-space: nowrap;
+            animation: float 3s ease-in-out infinite;
+            z-index: 10;
         }
-        .siboru .bubble { top: -20px; left: 50%; transform: translateX(-50%); }
-        .parhata .bubble { top: -20px; left: 50%; transform: translateX(-50%); }
-        .raja .bubble { top: -20px; left: 50%; transform: translateX(-50%); }
+
+        /* Panah kecil di bawah balon */
+        .bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 8px 8px 0;
+            border-style: solid;
+            border-color: white transparent transparent transparent;
+        }
+
+        /* KOORDINAT BALON (Disesuaikan untuk rasio 1280x698) */
+        /* Raja (Kiri Belakang) */
+        .bubble-raja { top: 18%; left: 32%; transform: translateX(-50%); }
+        /* Panongani (Kanan Belakang) */
+        .bubble-panongani { top: 20%; left: 75%; transform: translateX(-50%); }
+        /* Siboru (Kiri Depan) */
+        .bubble-siboru { top: 50%; left: 12%; transform: translateX(-50%); }
+        /* Parhata (Kanan Depan) */
+        .bubble-parhata { top: 62%; left: 65%; transform: translateX(-50%); }
+
+        @keyframes float {
+            0% { transform: translateY(0px) translateX(-50%); }
+            50% { transform: translateY(-8px) translateX(-50%); }
+            100% { transform: translateY(0px) translateX(-50%); }
+        }
+
+        /* Responsif untuk Layar HP */
+        @media (max-width: 600px) {
+            .dashboard { flex-direction: column; gap: 10px; padding: 15px; text-align: center; }
+            .stats-container { flex-wrap: wrap; justify-content: center; }
+            .stat-box { padding: 8px 12px; min-width: 90px; }
+            .stat-box strong { font-size: 16px; }
+            
+            /* Perkecil balon chat agar tidak menutupi seluruh layar HP */
+            .bubble { 
+                font-size: 8px; 
+                padding: 4px 6px; 
+                border-radius: 8px;
+            }
+            .bubble::after {
+                border-width: 5px 5px 0;
+                bottom: -5px;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>🏢 DJIWA Labs - Pusat Komando</h1>
-        <p>Shift Malam: Memantau Market 24/7</p>
+    <!-- Papan Kinerja -->
+    <div class="dashboard">
+        <h2>PAPAN KINERJA</h2>
+        <div class="stats-container">
+            <div class="stat-box">
+                <span>PnL Total</span>
+                <!-- Angka akan di-update otomatis oleh main.py -->
+                <strong class="loss">-$45.55</strong> 
+            </div>
+            <div class="stat-box">
+                <span>PnL Mengambang</span>
+                <strong class="loss">-$1.16</strong>
+            </div>
+            <div class="stat-box">
+                <span>Posisi Terbuka</span>
+                <strong>1/5</strong>
+            </div>
+        </div>
     </div>
 
+    <!-- Ruangan Kantor -->
     <div class="office-container">
-        <!-- Karakter 1 -->
-        <div class="character siboru float">
-            <div class="bubble">Mencari token...</div>
-            <img src="siboru.png" alt="Siboru" style="width: 100%;">
-        </div>
-
-        <!-- Karakter 2 -->
-        <div class="character parhata float">
-            <div class="bubble">Cek scam dulu!</div>
-            <img src="parhata.png" alt="Parhata" style="width: 100%;">
-        </div>
-
-        <!-- Karakter 3 -->
-        <div class="character raja float">
-            <div class="bubble">Awasi posisi.</div>
-            <img src="raja.png" alt="Raja" style="width: 100%;">
-        </div>
-
-        <!-- Karakter 4 (Nanti) -->
-        <div class="character panongani">
-            <img src="panongani.png" alt="Panongani" style="width: 100%;">
-        </div>
+        <!-- Pastikan nama file gambarnya kantor_utama.png -->
+        <img src="kantor_utama.png" alt="Kantor DJIWA" class="office-bg">
+        
+        <!-- Balon Chat Melayang -->
+        <div class="bubble bubble-raja">Awasi Market!</div>
+        <div class="bubble bubble-panongani">Lapor Bos!</div>
+        <div class="bubble bubble-siboru">Cari Token...</div>
+        <div class="bubble bubble-parhata">Cek Scam!</div>
     </div>
 
 </body>
