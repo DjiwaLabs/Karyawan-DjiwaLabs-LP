@@ -7,7 +7,6 @@ import re
 from pathlib import Path
 from datetime import datetime, timezone
 
-# Import Karyawan
 from siboru_scanner import scan_market, fetch_pair_by_address
 from parhata_validator import process_and_validate, pair_metrics, score_pair, is_eligible
 from raja_executor import execute_trades, position_value, number
@@ -40,18 +39,13 @@ def save_state(state):
 
 def main():
     log.info("=== MANAJER: Memulai Rapat Karyawan DJIWA LP ===")
-    
-    # 1. Siboru Mencari Data
     raw_pairs, disc_err, pair_err, token_count = scan_market()
     log.info(f"Siboru selesai: {len(raw_pairs)} data mentah ditemukan.")
     
-    # 2. Parhata Memvalidasi
     valid_pairs = process_and_validate(raw_pairs)
     log.info(f"Parhata selesai: {sum(1 for p in valid_pairs if p['eligible'])} pool lolos seleksi.")
     
     state = load_state()
-    
-    # Tambahkan data posisi lama agar Raja bisa evaluasi harga terbarunya
     for pos in state["positions"].values():
         try:
             p = fetch_pair_by_address(pos["chain"], pos["pair_address"])
@@ -63,18 +57,13 @@ def main():
         except Exception as exc: 
             log.warning(f"Gagal refresh {pos.get('symbol')}: {exc}")
     
-    # 3. Raja Eksekusi
     execute_trades(valid_pairs, state)
     log.info(f"Raja selesai: {len(state['positions'])} posisi aktif saat ini.")
     
-    # 4. Panongani Lapor
     state["last_run_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
     save_state(state)
-    
-    # Tulis laporan ke file
     write_reports(valid_pairs, state, disc_err, pair_err, token_count)
     
-    # --- PERHITUNGAN EKUITAS ---
     total_position_value = 0.0
     for p in state["positions"].values():
         total_position_value += position_value(p, number(p.get("last_price_usd"), 0)) + number(p.get("estimated_fees_usd"), 0)
@@ -91,10 +80,9 @@ def main():
         "open_positions": len(state["positions"])
     }
     
-    # Suruh Panongani kirim ke Discord
     send_discord_notification(state, summary_for_discord)
     
-    # 5. Manajer Update Kantor Virtual (index.html)
+    # --- UPDATE KANTOR VIRTUAL (index.html) ---
     try:
         html_path = Path("index.html")
         if html_path.exists():
@@ -103,17 +91,14 @@ def main():
             pnl_str = f"+${pnl:.2f}" if pnl >= 0 else f"-${abs(pnl):.2f}"
             pnl_class = "profit" if pnl >= 0 else "loss"
             
-            float_str = pnl_str
-            float_class = pnl_class
-
-            html_content = re.sub(r'<strong class="[^"]*">[-+]\$[\d\.]+</strong>\s*</div>\s*<div class="stat-box">\s*<span>PnL Mengambang', 
-                                  f'<strong class="{pnl_class}">{pnl_str}</strong></div><div class="stat-box"><span>PnL Mengambang', html_content, count=1)
+            html_content = re.sub(r'<strong id="pnl-total" class="[^"]*">.*?</strong>', 
+                                  f'<strong id="pnl-total" class="{pnl_class}">{pnl_str}</strong>', html_content)
             
-            html_content = re.sub(r'<strong class="[^"]*">[-+]\$[\d\.]+</strong>\s*</div>\s*<div class="stat-box">\s*<span>Posisi Terbuka', 
-                                  f'<strong class="{float_class}">{float_str}</strong></div><div class="stat-box"><span>Posisi Terbuka', html_content, count=1)
+            html_content = re.sub(r'<strong id="pnl-mengambang" class="[^"]*">.*?</strong>', 
+                                  f'<strong id="pnl-mengambang" class="{pnl_class}">{pnl_str}</strong>', html_content)
             
-            html_content = re.sub(r'<strong>\d+/\d+</strong>', 
-                                  f'<strong>{len(state["positions"])}/5</strong>', html_content, count=1)
+            html_content = re.sub(r'<strong id="posisi-terbuka">.*?</strong>', 
+                                  f'<strong id="posisi-terbuka">{len(state["positions"])}/5</strong>', html_content)
             
             html_path.write_text(html_content, encoding="utf-8")
             log.info("Kantor Virtual (index.html) berhasil diperbarui!")
