@@ -1,7 +1,7 @@
 {
   "version": 1,
   "starting_cash_usd": 10000.0,
-  "cash_usd": 26148.920264251883,
+  "cash_usd": 25148.920264251883,
   "positions": {
     "bsc:0x5a606e1533fb11870f3b6c2f98a7edda699b94bf": {
       "symbol": "SI",
@@ -16,14 +16,15 @@
       "entry_volume_24h_usd": 235284.09,
       "entry_score": 128.57,
       "entry_time": "2026-10-21T13:47:57+00:00",
-      "last_updated_at": "2026-10-23T08:57:36+00:00",
-      "last_price_usd": 7.058e-10,
-      "last_liquidity_usd": 77459.73,
-      "estimated_fees_usd": 28.559585910404618,
-      "last_score": 99.02,
+      "last_updated_at": "2026-10-23T09:11:35+00:00",
+      "last_price_usd": 7.339e-10,
+      "last_liquidity_usd": 79022.78,
+      "estimated_fees_usd": 28.67300505179956,
+      "last_score": 99.05,
       "data_stale": false,
       "volume_history": [
-        616331.12
+        616331.12,
+        613723.88
       ]
     },
     "solana:uxad6fszaybhhuztaef5cgasmhnh84duijsxrrvx46k": {
@@ -39,14 +40,15 @@
       "entry_volume_24h_usd": 66100.23,
       "entry_score": 109.86,
       "entry_time": "2026-10-21T14:43:06+00:00",
-      "last_updated_at": "2026-10-23T08:57:36+00:00",
-      "last_price_usd": 0.000324,
-      "last_liquidity_usd": 47489.63,
-      "estimated_fees_usd": 4.3624438153387635,
-      "last_score": 88.29,
+      "last_updated_at": "2026-10-23T09:11:35+00:00",
+      "last_price_usd": 0.0003204,
+      "last_liquidity_usd": 47163.13,
+      "estimated_fees_usd": 4.385624364646223,
+      "last_score": 88.76,
       "data_stale": false,
       "volume_history": [
-        75007.27
+        75007.27,
+        75026.29
       ]
     },
     "solana:51ordgg8ff1ryyyhzqdvabby46ank1wu9wpfuz11nbh3": {
@@ -62,14 +64,15 @@
       "entry_volume_24h_usd": 287281.77,
       "entry_score": 114.74,
       "entry_time": "2026-10-22T17:38:23+00:00",
-      "last_updated_at": "2026-10-23T08:57:37+00:00",
-      "last_price_usd": 0.0003856,
-      "last_liquidity_usd": 52724.05,
-      "estimated_fees_usd": 6.967696311759265,
-      "last_score": 100.82,
+      "last_updated_at": "2026-10-23T09:11:35+00:00",
+      "last_price_usd": 0.0004337,
+      "last_liquidity_usd": 55969.44,
+      "estimated_fees_usd": 7.0820201128808415,
+      "last_score": 100.83,
       "data_stale": false,
       "volume_history": [
-        438170.94
+        438170.94,
+        440924.89
       ]
     },
     "solana:cb4gfrgeitfu5qtxfrmiqzsavpwgbd3heor4cs2jfpn": {
@@ -80,16 +83,16 @@
       "pair_address": "cb4GFRgEitfu5qtxfRMiqzsaVPwgbD3HEor4cs2jFpn",
       "pair_url": "https://dexscreener.com/solana/cb4gfrgeitfu5qtxfrmiqzsavpwgbd3heor4cs2jfpn",
       "invested_usd": 997.0,
-      "entry_price": 0.0002402,
-      "entry_liquidity_usd": 56397.28,
-      "entry_score": 81.83,
-      "entry_time": "2026-10-23T08:57:37+00:00",
-      "last_updated_at": "2026-10-23T08:57:37+00:00",
-      "last_price_usd": 0.0002402,
-      "last_liquidity_usd": 56397.28,
+      "entry_price": 0.0002432,
+      "entry_liquidity_usd": 56704.58,
+      "entry_score": 81.74,
+      "entry_time": "2026-10-23T09:11:35+00:00",
+      "last_updated_at": "2026-10-23T09:11:35+00:00",
+      "last_price_usd": 0.0002432,
+      "last_liquidity_usd": 56704.58,
       "estimated_fees_usd": 0.0,
       "volume_history": [
-        60298.93
+        60450.13
       ]
     }
   },
@@ -567,7 +570,15 @@
       "invested_usd": 997.0,
       "score": 81.83,
       "pair_url": "https://dexscreener.com/solana/cb4gfrgeitfu5qtxfrmiqzsavpwgbd3heor4cs2jfpn"
+    },
+    {
+      "time": "2026-10-23T09:11:35+00:00",
+      "type": "LP_OPEN",
+      "message": "Opened virtual LP QI on solana",
+      "invested_usd": 997.0,
+      "score": 81.74,
+      "pair_url": "https://dexscreener.com/solana/cb4gfrgeitfu5qtxfrmiqzsavpwgbd3heor4cs2jfpn"
     }
   ],
-  "last_run_at": "2026-10-23T08:57:37+00:00"
+  "last_run_at": "2026-10-23T09:11:35+00:00"
 }
