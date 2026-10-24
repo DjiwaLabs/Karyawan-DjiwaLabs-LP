@@ -60,12 +60,25 @@ def send_discord_notification(state, summary):
         f"**Posisi Terbuka:** {summary['open_positions']} / 5\n"
     )
     
+    # --- FITUR BARU: Aksi Terakhir (Recent Actions) ---
+    recent_events = state.get("events", [])[-3:] # Ambil 3 aksi terakhir
+    if recent_events:
+        desc += "\n**Aksi Terakhir Raja:**\n"
+        for ev in reversed(recent_events):
+            if ev["type"] == "LP_OPEN":
+                desc += f"🟢 {ev['message']}\n"
+            elif ev["type"] == "LP_CLOSE":
+                pnl_trade = ev.get("pnl_usd", 0)
+                desc += f"🔴 {ev['message']} (PnL: {'+' if pnl_trade >= 0 else ''}{usd(pnl_trade)})\n"
+    
     if state["positions"]:
         desc += "\n**Detail Posisi:**\n"
         for pos in state["positions"].values():
             val = position_value(pos, number(pos.get("last_price_usd"), 0)) + number(pos.get("estimated_fees_usd"), 0)
             roi = ((val / number(pos.get("invested_usd"), 1)) - 1) * 100
-            desc += f"• {pos['symbol']} ({pos['chain']}): {roi:+.1f}% | {usd(val)}\n"
+            # Tanda peringatan jika minus lebih dari 20%
+            warning = " ⚠️" if roi < -20 else ""
+            desc += f"• {pos['symbol']} ({pos['chain']}): {roi:+.1f}% | {usd(val)}{warning}\n"
             
     payload = {
         "username": "Panongani (DJIWA LP)",
