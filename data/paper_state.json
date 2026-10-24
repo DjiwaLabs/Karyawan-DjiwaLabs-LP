@@ -1,7 +1,7 @@
 {
   "version": 1,
   "starting_cash_usd": 10000.0,
-  "cash_usd": 23854.928679579432,
+  "cash_usd": 23649.42779315347,
   "positions": {
     "bsc:0x5a606e1533fb11870f3b6c2f98a7edda699b94bf": {
       "symbol": "SI",
@@ -16,10 +16,10 @@
       "entry_volume_24h_usd": 235284.09,
       "entry_score": 128.57,
       "entry_time": "2026-10-21T13:47:57+00:00",
-      "last_updated_at": "2026-10-23T23:38:00+00:00",
-      "last_price_usd": 6.792e-10,
-      "last_liquidity_usd": 76138.73,
-      "estimated_fees_usd": 35.77277778843108,
+      "last_updated_at": "2026-10-24T00:57:46+00:00",
+      "last_price_usd": 6.448e-10,
+      "last_liquidity_usd": 74025.51,
+      "estimated_fees_usd": 36.417764759194945,
       "last_score": 99.05,
       "data_stale": false,
       "volume_history": [
@@ -43,7 +43,8 @@
         559671.0,
         557907.18,
         554426.76,
-        523079.53
+        523079.53,
+        497693.58
       ]
     },
     "solana:uxad6fszaybhhuztaef5cgasmhnh84duijsxrrvx46k": {
@@ -59,10 +60,10 @@
       "entry_volume_24h_usd": 66100.23,
       "entry_score": 109.86,
       "entry_time": "2026-10-21T14:43:06+00:00",
-      "last_updated_at": "2026-10-23T23:38:00+00:00",
-      "last_price_usd": 0.0003394,
-      "last_liquidity_usd": 48461.73,
-      "estimated_fees_usd": 5.783239674310412,
+      "last_updated_at": "2026-10-24T00:57:46+00:00",
+      "last_price_usd": 0.0003317,
+      "last_liquidity_usd": 47582.85,
+      "estimated_fees_usd": 5.912117926713617,
       "last_score": 88.76,
       "data_stale": false,
       "volume_history": [
@@ -86,7 +87,8 @@
         73586.5,
         73429.69,
         72433.54,
-        69530.19
+        69530.19,
+        68368.19
       ]
     },
     "solana:cb4gfrgeitfu5qtxfrmiqzsavpwgbd3heor4cs2jfpn": {
@@ -101,10 +103,10 @@
       "entry_liquidity_usd": 56704.58,
       "entry_score": 81.74,
       "entry_time": "2026-10-23T09:11:35+00:00",
-      "last_updated_at": "2026-10-23T23:38:00+00:00",
-      "last_price_usd": 0.0002296,
-      "last_liquidity_usd": 54568.64,
-      "estimated_fees_usd": 1.9474890083228396,
+      "last_updated_at": "2026-10-24T00:57:46+00:00",
+      "last_price_usd": 0.0002107,
+      "last_liquidity_usd": 52147.72,
+      "estimated_fees_usd": 2.141016492069726,
       "volume_history": [
         60450.13,
         60752.41,
@@ -125,7 +127,8 @@
         62166.64,
         61282.09,
         59024.17,
-        60049.45
+        60049.45,
+        60945.67
       ],
       "data_stale": false
     },
@@ -141,10 +144,10 @@
       "entry_liquidity_usd": 186810.96,
       "entry_score": 119.02,
       "entry_time": "2026-10-23T11:42:32+00:00",
-      "last_updated_at": "2026-10-23T23:38:00+00:00",
-      "last_price_usd": 0.003106,
-      "last_liquidity_usd": 173214.78,
-      "estimated_fees_usd": 3.6497294680496712,
+      "last_updated_at": "2026-10-24T00:57:46+00:00",
+      "last_price_usd": 0.003428,
+      "last_liquidity_usd": 181847.86,
+      "estimated_fees_usd": 3.991841321837436,
       "volume_history": [
         515118.21,
         509037.67,
@@ -160,38 +163,30 @@
         327491.61,
         315011.58,
         290415.78,
-        289944.9
+        289944.9,
+        297101.92
       ],
       "data_stale": false
     },
-    "solana:gkvfziv4eunvimrfuejen5qjn29oxgcyk7fy2iuv3bgi": {
-      "symbol": "Pepper",
-      "name": "Pepper The Raccoon",
+    "solana:5e3dxlxgwmtdcoka51wyyakttjfzbwqcoyuhbui5gt2m": {
+      "symbol": "GATO",
+      "name": "GTA6CAT",
       "chain": "solana",
       "dex": "pumpswap",
-      "pair_address": "GKVfZiv4EUNViMRfUejEn5QJN29oXGCyk7FY2iUv3bGi",
-      "pair_url": "https://dexscreener.com/solana/gkvfziv4eunvimrfuejen5qjn29oxgcyk7fy2iuv3bgi",
+      "pair_address": "5E3dXLXGwmTDCokA51WYYaKttjFZBwqCoyUHBUi5gt2m",
+      "pair_url": "https://dexscreener.com/solana/5e3dxlxgwmtdcoka51wyyakttjfzbwqcoyuhbui5gt2m",
       "invested_usd": 997.0,
-      "entry_price": 0.0005416,
-      "entry_liquidity_usd": 82804.88,
-      "entry_score": 118.49,
-      "entry_time": "2026-10-23T15:45:46+00:00",
-      "last_updated_at": "2026-10-23T23:38:00+00:00",
-      "last_price_usd": 0.0003575,
-      "last_liquidity_usd": 66534.35,
-      "estimated_fees_usd": 13.504425806150081,
+      "entry_price": 0.003564,
+      "entry_liquidity_usd": 180661.24,
+      "entry_score": 112.66,
+      "entry_time": "2026-10-24T00:57:46+00:00",
+      "last_updated_at": "2026-10-24T00:57:46+00:00",
+      "last_price_usd": 0.003564,
+      "last_liquidity_usd": 180661.24,
+      "estimated_fees_usd": 0.0,
       "volume_history": [
-        1360664.08,
-        1384058.08,
-        1295056.91,
-        511078.36,
-        379045.41,
-        355815.87,
-        320471.58,
-        302835.8,
-        299637.86
-      ],
-      "data_stale": false
+        890455.81
+      ]
     }
   },
   "closed_trades": [
@@ -360,6 +355,18 @@
       "net_proceeds_usd": 706.0084,
       "pnl_usd": 206.0084,
       "reason": "TAKE PROFIT: Harga naik >50.0%"
+    },
+    {
+      "closed_at": "2026-10-24T00:57:46+00:00",
+      "symbol": "Pepper",
+      "chain": "solana",
+      "pair_address": "GKVfZiv4EUNViMRfUejEn5QJN29oXGCyk7FY2iUv3bGi",
+      "invested_usd": 997.0,
+      "lp_value_usd": 786.3327,
+      "estimated_fees_usd": 15.1739,
+      "net_proceeds_usd": 794.4991,
+      "pnl_usd": -202.5009,
+      "reason": "STOP LOSS: Harga turun >35.0%"
     }
   ],
   "events": [
@@ -717,7 +724,29 @@
       "message": "Opened LP Pepper on solana",
       "invested_usd": 997.0,
       "score": 118.49
+    },
+    {
+      "time": "2026-10-24T00:57:46+00:00",
+      "type": "LP_CLOSE",
+      "message": "Closed Pepper: STOP LOSS: Harga turun >35.0%",
+      "closed_at": "2026-10-24T00:57:46+00:00",
+      "symbol": "Pepper",
+      "chain": "solana",
+      "pair_address": "GKVfZiv4EUNViMRfUejEn5QJN29oXGCyk7FY2iUv3bGi",
+      "invested_usd": 997.0,
+      "lp_value_usd": 786.3327,
+      "estimated_fees_usd": 15.1739,
+      "net_proceeds_usd": 794.4991,
+      "pnl_usd": -202.5009,
+      "reason": "STOP LOSS: Harga turun >35.0%"
+    },
+    {
+      "time": "2026-10-24T00:57:46+00:00",
+      "type": "LP_OPEN",
+      "message": "Opened LP GATO on solana",
+      "invested_usd": 997.0,
+      "score": 112.66
     }
   ],
-  "last_run_at": "2026-10-23T23:38:00+00:00"
+  "last_run_at": "2026-10-24T00:57:46+00:00"
 }
