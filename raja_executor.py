@@ -27,7 +27,6 @@ def event(state, kind, message, extra=None):
 def execute_trades(pairs, state):
     # 1. CEK POSISI TERBUKA (Cari alasan untuk CLOSE)
     for key, pos in list(state["positions"].items()):
-        # Cari data terbaru untuk posisi ini
         m = next((p for p in pairs if p["chain"].lower() == pos["chain"].lower() and p["pair_address"].lower() == pos["pair_address"].lower()), None)
         
         if not m or m["price_usd"] <= 0:
@@ -80,16 +79,21 @@ def execute_trades(pairs, state):
             net_proceeds = (raw_proceeds * (1 - SIMULATED_SLIPPAGE)) - (SIMULATED_GAS_USD * 2)
             
             state["cash_usd"] = number(state.get("cash_usd"), 0) + max(0, net_proceeds)
+            pnl_trade = net_proceeds - number(pos.get("invested_usd"), 0)
+            
             trade = {
                 "closed_at": iso_now(), "symbol": pos.get("symbol"), "chain": pos.get("chain"), 
                 "pair_address": pos.get("pair_address"), "invested_usd": number(pos.get("invested_usd"), 0), 
                 "lp_value_usd": round(lp_value, 4), "estimated_fees_usd": round(fees, 4), 
                 "net_proceeds_usd": round(net_proceeds, 4),
-                "pnl_usd": round(net_proceeds - number(pos.get("invested_usd"), 0), 4), "reason": close_reason
+                "pnl_usd": round(pnl_trade, 4), "reason": close_reason
             }
             state["closed_trades"].append(trade)
             state["closed_trades"] = state["closed_trades"][-100:]
+            
+            # Catat Event untuk Panongani
             event(state, "LP_CLOSE", f"Closed {pos.get('symbol')}: {close_reason}", trade)
+            
             del state["positions"][key]
 
     # 2. BUKA POSISI BARU
@@ -114,4 +118,6 @@ def execute_trades(pairs, state):
             "last_price_usd": m["price_usd"], "last_liquidity_usd": m["liquidity_usd"],
             "estimated_fees_usd": 0.0, "volume_history": [m["volume_24h_usd"]]
         }
+        
+        # Catat Event untuk Panongani
         event(state, "LP_OPEN", f'Opened LP {m["symbol"]} on {m["chain"]}', {"invested_usd": net_allocation, "score": m["score"]})
