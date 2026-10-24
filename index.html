@@ -14,15 +14,22 @@
         .stat-box strong { font-size: 20px; }
         .profit { color: #3fb950; }
         .loss { color: #f85149; }
+        
         .office-container { position: relative; width: 95%; max-width: 1000px; margin-top: 20px; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.8); aspect-ratio: 1280 / 698; }
         .office-bg { width: 100%; height: 100%; object-fit: cover; display: block; }
+        
+        /* Styling Bubble Chat */
         .bubble { position: absolute; background: white; border-radius: 15px; padding: 8px 12px; font-size: 13px; font-weight: bold; color: #333; box-shadow: 0 4px 10px rgba(0,0,0,0.5); white-space: nowrap; animation: float 3s ease-in-out infinite; z-index: 10; }
         .bubble::after { content: ''; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); border-width: 8px 8px 0; border-style: solid; border-color: white transparent transparent transparent; }
+        
+        /* Posisi Bubble */
         .bubble-raja { top: 18%; left: 32%; transform: translateX(-50%); }
         .bubble-panongani { top: 20%; left: 75%; transform: translateX(-50%); }
         .bubble-siboru { top: 50%; left: 12%; transform: translateX(-50%); }
         .bubble-parhata { top: 62%; left: 65%; transform: translateX(-50%); }
+        
         @keyframes float { 0% { transform: translateY(0px) translateX(-50%); } 50% { transform: translateY(-8px) translateX(-50%); } 100% { transform: translateY(0px) translateX(-50%); } }
+        
         @media (max-width: 600px) { .dashboard { flex-direction: column; gap: 10px; padding: 15px; text-align: center; } .stats-container { flex-wrap: wrap; justify-content: center; } .stat-box { padding: 8px 12px; min-width: 90px; } .stat-box strong { font-size: 16px; } .bubble { font-size: 8px; padding: 4px 6px; border-radius: 8px; } .bubble::after { border-width: 5px 5px 0; bottom: -5px; } }
     </style>
 </head>
@@ -32,25 +39,27 @@
         <div class="stats-container">
             <div class="stat-box">
                 <span>PnL Total</span>
-                <strong id="pnl-total" class="profit">+$17653.68</strong>
+                <strong id="pnl-total" class="loss">-$45.55</strong>
             </div>
             <div class="stat-box">
                 <span>PnL Mengambang</span>
-                <strong id="pnl-mengambang" class="profit">+$17653.68</strong>
+                <strong id="pnl-mengambang" class="loss">-$1.16</strong>
             </div>
             <div class="stat-box">
                 <span>Posisi Terbuka</span>
-                <strong id="posisi-terbuka">5/5</strong>
+                <strong id="posisi-terbuka">1/5</strong>
             </div>
         </div>
     </div>
 
     <div class="office-container">
         <img src="kantor_utama.png" alt="Kantor DJIWA" class="office-bg">
-        <div class="bubble bubble-raja">Awasi Market!</div>
-        <div class="bubble bubble-panongani">Lapor Bos!</div>
-        <div class="bubble bubble-siboru">Cari Token...</div>
-        <div class="bubble bubble-parhata">Cek Scam!</div>
+        
+        <!-- Bubble dengan ID khusus agar mudah diganti oleh Python -->
+        <div class="bubble bubble-raja" id="bubble-raja">Awasi Market!</div>
+        <div class="bubble bubble-panongani" id="bubble-panongani">Lapor Bos!</div>
+        <div class="bubble bubble-siboru" id="bubble-siboru">Cari Token...</div>
+        <div class="bubble bubble-parhata" id="bubble-parhata">Cek Scam!</div>
     </div>
 </body>
 </html>
