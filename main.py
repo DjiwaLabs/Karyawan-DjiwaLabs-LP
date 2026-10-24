@@ -43,7 +43,8 @@ def main():
     log.info(f"Siboru selesai: {len(raw_pairs)} data mentah ditemukan.")
     
     valid_pairs = process_and_validate(raw_pairs)
-    log.info(f"Parhata selesai: {sum(1 for p in valid_pairs if p['eligible'])} pool lolos seleksi.")
+    eligible_count = sum(1 for p in valid_pairs if p['eligible'])
+    log.info(f"Parhata selesai: {eligible_count} pool lolos seleksi.")
     
     state = load_state()
     for pos in state["positions"].values():
@@ -82,12 +83,13 @@ def main():
     
     send_discord_notification(state, summary_for_discord)
     
-    # --- UPDATE KANTOR VIRTUAL (index.html) ---
+    # --- 5. MANAJER UPDATE KANTOR VIRTUAL & BUBBLE CHAT ---
     try:
         html_path = Path("index.html")
         if html_path.exists():
             html_content = html_path.read_text(encoding="utf-8")
             
+            # 1. Update Papan Kinerja
             pnl_str = f"+${pnl:.2f}" if pnl >= 0 else f"-${abs(pnl):.2f}"
             pnl_class = "profit" if pnl >= 0 else "loss"
             
@@ -99,9 +101,47 @@ def main():
             
             html_content = re.sub(r'<strong id="posisi-terbuka">.*?</strong>', 
                                   f'<strong id="posisi-terbuka">{len(state["positions"])}/5</strong>', html_content)
+
+            # 2. Logika Bubble Chat Dinamis
+            # Siboru (Scanner)
+            if token_count > 0:
+                teks_siboru = f"Radar temukan {token_count} token!"
+            else:
+                teks_siboru = "Pasar sepi, tidak ada token."
+                
+            # Parhata (Validator)
+            if eligible_count > 0:
+                teks_parhata = f"Lolos {eligible_count} pool."
+            else:
+                teks_parhata = "Semua token ditolak!"
+                
+            # Raja (Eksekutor)
+            recent_events = state.get("events", [])[-1:] # Ambil 1 event terakhir
+            if recent_events:
+                ev = recent_events[0]
+                if ev["type"] == "LP_OPEN":
+                    teks_raja = f"Buka posisi {ev.get('symbol', 'Token')}!"
+                elif ev["type"] == "LP_CLOSE":
+                    teks_raja = f"Tutup {ev.get('symbol', 'Token')}!"
+                else:
+                    teks_raja = "Awasi Market!"
+            else:
+                teks_raja = "Awasi Market!"
+                
+            # Panongani (Reporter)
+            if len(state["positions"]) > 0:
+                teks_panongani = "Lapor Bos, ada posisi!"
+            else:
+                teks_panongani = "Laporan terkirim."
+
+            # 3. Ganti teks di dalam HTML (Berdasarkan Class Bubble)
+            html_content = re.sub(r'(<div class="bubble bubble-siboru">).*?(</div>)', f'\\1{teks_siboru}\\2', html_content)
+            html_content = re.sub(r'(<div class="bubble bubble-parhata">).*?(</div>)', f'\\1{teks_parhata}\\2', html_content)
+            html_content = re.sub(r'(<div class="bubble bubble-raja">).*?(</div>)', f'\\1{teks_raja}\\2', html_content)
+            html_content = re.sub(r'(<div class="bubble bubble-panongani">).*?(</div>)', f'\\1{teks_panongani}\\2', html_content)
             
             html_path.write_text(html_content, encoding="utf-8")
-            log.info("Kantor Virtual (index.html) berhasil diperbarui!")
+            log.info("Kantor Virtual & Bubble Chat berhasil diperbarui!")
     except Exception as e:
         log.error(f"Gagal update Kantor Virtual: {e}")
     
