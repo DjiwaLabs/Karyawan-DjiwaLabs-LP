@@ -16,14 +16,13 @@
       "entry_volume_24h_usd": 235284.09,
       "entry_score": 128.57,
       "entry_time": "2026-10-21T13:47:57+00:00",
-      "last_updated_at": "2026-10-26T01:52:23+00:00",
-      "last_price_usd": 4.857e-10,
-      "last_liquidity_usd": 65285.53,
-      "estimated_fees_usd": 58.26459936702016,
+      "last_updated_at": "2026-10-26T02:43:42+00:00",
+      "last_price_usd": 4.514e-10,
+      "last_liquidity_usd": 62950.61,
+      "estimated_fees_usd": 58.43291286847363,
       "last_score": 99.05,
       "data_stale": false,
       "volume_history": [
-        329322.49,
         308882.95,
         293405.85,
         284724.32,
@@ -46,7 +45,8 @@
         141978.89,
         143357.14,
         143889.78,
-        143801.8
+        143801.8,
+        138650.95
       ]
     },
     "solana:uxad6fszaybhhuztaef5cgasmhnh84duijsxrrvx46k": {
@@ -62,14 +62,13 @@
       "entry_volume_24h_usd": 66100.23,
       "entry_score": 109.86,
       "entry_time": "2026-10-21T14:43:06+00:00",
-      "last_updated_at": "2026-10-26T01:52:23+00:00",
-      "last_price_usd": 0.0005723,
-      "last_liquidity_usd": 62937.13,
-      "estimated_fees_usd": 9.539473657026061,
+      "last_updated_at": "2026-10-26T02:43:42+00:00",
+      "last_price_usd": 0.0005819,
+      "last_liquidity_usd": 63447.22,
+      "estimated_fees_usd": 9.597075388260002,
       "last_score": 88.76,
       "data_stale": false,
       "volume_history": [
-        67212.35,
         66886.25,
         66633.93,
         66761.2,
@@ -92,7 +91,8 @@
         70054.72,
         70565.76,
         71000.35,
-        71226.1
+        71226.1,
+        71491.91
       ]
     },
     "solana:cb4gfrgeitfu5qtxfrmiqzsavpwgbd3heor4cs2jfpn": {
@@ -107,12 +107,11 @@
       "entry_liquidity_usd": 56704.58,
       "entry_score": 81.74,
       "entry_time": "2026-10-23T09:11:35+00:00",
-      "last_updated_at": "2026-10-26T01:52:23+00:00",
-      "last_price_usd": 0.0002292,
-      "last_liquidity_usd": 54224.89,
-      "estimated_fees_usd": 7.410494989102436,
+      "last_updated_at": "2026-10-26T02:43:42+00:00",
+      "last_price_usd": 0.000245,
+      "last_liquidity_usd": 56074.49,
+      "estimated_fees_usd": 7.458339176662371,
       "volume_history": [
-        37752.79,
         36994.16,
         36959.15,
         36622.37,
@@ -135,7 +134,8 @@
         14936.23,
         16027.58,
         16914.82,
-        17920.88
+        17920.88,
+        19435.57
       ],
       "data_stale": false
     },
@@ -151,12 +151,11 @@
       "entry_liquidity_usd": 186810.96,
       "entry_score": 119.02,
       "entry_time": "2026-10-23T11:42:32+00:00",
-      "last_updated_at": "2026-10-26T01:52:23+00:00",
-      "last_price_usd": 0.003519,
-      "last_liquidity_usd": 184044.01,
-      "estimated_fees_usd": 12.973911178821808,
+      "last_updated_at": "2026-10-26T02:43:42+00:00",
+      "last_price_usd": 0.003549,
+      "last_liquidity_usd": 184747.47,
+      "estimated_fees_usd": 13.113833449701328,
       "volume_history": [
-        193201.77,
         193321.61,
         194907.49,
         189273.56,
@@ -179,7 +178,8 @@
         327672.3,
         305311.24,
         295944.58,
-        301707.78
+        301707.78,
+        310756.73
       ],
       "data_stale": false
     },
@@ -195,12 +195,11 @@
       "entry_liquidity_usd": 180661.24,
       "entry_score": 112.66,
       "entry_time": "2026-10-24T00:57:46+00:00",
-      "last_updated_at": "2026-10-26T01:52:23+00:00",
-      "last_price_usd": 0.003445,
-      "last_liquidity_usd": 179704.32,
-      "estimated_fees_usd": 29.298265348691675,
+      "last_updated_at": "2026-10-26T02:43:42+00:00",
+      "last_price_usd": 0.003148,
+      "last_liquidity_usd": 171715.7,
+      "estimated_fees_usd": 29.737735461034998,
       "volume_history": [
-        837925.92,
         834493.3,
         767414.26,
         745686.43,
@@ -223,7 +222,8 @@
         679797.18,
         685034.68,
         767411.12,
-        755554.56
+        755554.56,
+        782634.48
       ],
       "data_stale": false
     }
@@ -787,5 +787,5 @@
       "score": 112.66
     }
   ],
-  "last_run_at": "2026-10-26T01:52:23+00:00"
+  "last_run_at": "2026-10-26T02:43:42+00:00"
 }
