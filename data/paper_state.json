@@ -1,7 +1,7 @@
 {
   "version": 1,
   "starting_cash_usd": 10000.0,
-  "cash_usd": 23649.42779315347,
+  "cash_usd": 23415.220562106708,
   "positions": {
     "bsc:0x5a606e1533fb11870f3b6c2f98a7edda699b94bf": {
       "symbol": "SI",
@@ -16,14 +16,13 @@
       "entry_volume_24h_usd": 235284.09,
       "entry_score": 128.57,
       "entry_time": "2026-10-21T13:47:57+00:00",
-      "last_updated_at": "2026-10-26T07:58:10+00:00",
-      "last_price_usd": 5.097e-10,
-      "last_liquidity_usd": 67022.56,
-      "estimated_fees_usd": 59.2889698336158,
+      "last_updated_at": "2026-10-26T08:52:55+00:00",
+      "last_price_usd": 4.942e-10,
+      "last_liquidity_usd": 65991.17,
+      "estimated_fees_usd": 59.42509872283803,
       "last_score": 99.05,
       "data_stale": false,
       "volume_history": [
-        254118.0,
         231093.2,
         214279.42,
         198494.05,
@@ -46,53 +45,8 @@
         134444.12,
         124484.44,
         110697.37,
-        100769.67
-      ]
-    },
-    "solana:uxad6fszaybhhuztaef5cgasmhnh84duijsxrrvx46k": {
-      "symbol": "AOP",
-      "name": "American Overwatch Protocol",
-      "chain": "solana",
-      "dex": "pumpswap",
-      "pair_address": "uxad6FsZAybhHUZtAef5CgASMHnH84DUijSXRrvX46k",
-      "pair_url": "https://dexscreener.com/solana/uxad6fszaybhhuztaef5cgasmhnh84duijsxrrvx46k",
-      "invested_usd": 500.0,
-      "entry_price": 0.000264,
-      "entry_liquidity_usd": 42863.3,
-      "entry_volume_24h_usd": 66100.23,
-      "entry_score": 109.86,
-      "entry_time": "2026-10-21T14:43:06+00:00",
-      "last_updated_at": "2026-10-26T07:58:10+00:00",
-      "last_price_usd": 0.0005996,
-      "last_liquidity_usd": 64455.4,
-      "estimated_fees_usd": 9.94946837428037,
-      "last_score": 88.76,
-      "data_stale": false,
-      "volume_history": [
-        67243.33,
-        67385.35,
-        67466.66,
-        67315.41,
-        67567.97,
-        67493.77,
-        67319.93,
-        67525.03,
-        67687.24,
-        67998.86,
-        68363.23,
-        69200.02,
-        69639.47,
-        69853.25,
-        70054.72,
-        70565.76,
-        71000.35,
-        71226.1,
-        71491.91,
-        71762.92,
-        72186.42,
-        72158.33,
-        72117.19,
-        72208.83
+        100769.67,
+        100961.34
       ]
     },
     "solana:cb4gfrgeitfu5qtxfrmiqzsavpwgbd3heor4cs2jfpn": {
@@ -107,12 +61,11 @@
       "entry_liquidity_usd": 56704.58,
       "entry_score": 81.74,
       "entry_time": "2026-10-23T09:11:35+00:00",
-      "last_updated_at": "2026-10-26T07:58:10+00:00",
-      "last_price_usd": 0.0001989,
-      "last_liquidity_usd": 50372.64,
-      "estimated_fees_usd": 7.739051514307342,
+      "last_updated_at": "2026-10-26T08:52:55+00:00",
+      "last_price_usd": 0.0002059,
+      "last_liquidity_usd": 51440.68,
+      "estimated_fees_usd": 7.787836280708423,
       "volume_history": [
-        34640.88,
         34845.39,
         34278.3,
         34538.68,
@@ -135,7 +88,8 @@
         21540.5,
         21330.62,
         21704.42,
-        27814.71
+        27814.71,
+        27924.4
       ],
       "data_stale": false
     },
@@ -151,12 +105,11 @@
       "entry_liquidity_usd": 186810.96,
       "entry_score": 119.02,
       "entry_time": "2026-10-23T11:42:32+00:00",
-      "last_updated_at": "2026-10-26T07:58:10+00:00",
-      "last_price_usd": 0.003465,
-      "last_liquidity_usd": 182568.36,
-      "estimated_fees_usd": 14.041385039058834,
+      "last_updated_at": "2026-10-26T08:52:55+00:00",
+      "last_price_usd": 0.003502,
+      "last_liquidity_usd": 184228.4,
+      "estimated_fees_usd": 14.210334936138965,
       "volume_history": [
-        205062.01,
         209001.38,
         209156.25,
         201334.05,
@@ -179,7 +132,8 @@
         312804.74,
         312754.57,
         314777.6,
-        333594.67
+        333594.67,
+        324637.93
       ],
       "data_stale": false
     },
@@ -195,12 +149,11 @@
       "entry_liquidity_usd": 180661.24,
       "entry_score": 112.66,
       "entry_time": "2026-10-24T00:57:46+00:00",
-      "last_updated_at": "2026-10-26T07:58:10+00:00",
-      "last_price_usd": 0.00325,
-      "last_liquidity_usd": 174766.77,
-      "estimated_fees_usd": 32.3972290622187,
+      "last_updated_at": "2026-10-26T08:52:55+00:00",
+      "last_price_usd": 0.003178,
+      "last_liquidity_usd": 173419.24,
+      "estimated_fees_usd": 32.87400223818502,
       "volume_history": [
-        716540.82,
         715755.9,
         706226.05,
         662758.61,
@@ -223,9 +176,30 @@
         811826.65,
         824161.57,
         840812.49,
-        859848.92
+        859848.92,
+        849639.84
       ],
       "data_stale": false
+    },
+    "solana:6jdispswbwcsn8xba4lnbzmzrikxksbxcto8j3elr4cg": {
+      "symbol": "REMUS",
+      "name": "Remus",
+      "chain": "solana",
+      "dex": "pumpswap",
+      "pair_address": "6JDiSPsWBwcSN8xBa4LNBzMZRikxksbxcto8J3ELR4cG",
+      "pair_url": "https://dexscreener.com/solana/6jdispswbwcsn8xba4lnbzmzrikxksbxcto8j3elr4cg",
+      "invested_usd": 997.0,
+      "entry_price": 0.00114,
+      "entry_liquidity_usd": 102026.62,
+      "entry_score": 103.93,
+      "entry_time": "2026-10-26T08:52:55+00:00",
+      "last_updated_at": "2026-10-26T08:52:55+00:00",
+      "last_price_usd": 0.00114,
+      "last_liquidity_usd": 102026.62,
+      "estimated_fees_usd": 0.0,
+      "volume_history": [
+        1442546.14
+      ]
     }
   },
   "closed_trades": [
@@ -406,6 +380,18 @@
       "net_proceeds_usd": 794.4991,
       "pnl_usd": -202.5009,
       "reason": "STOP LOSS: Harga turun >35.0%"
+    },
+    {
+      "closed_at": "2026-10-26T08:52:55+00:00",
+      "symbol": "AOP",
+      "chain": "solana",
+      "pair_address": "uxad6FsZAybhHUZtAef5CgASMHnH84DUijSXRrvX46k",
+      "invested_usd": 500.0,
+      "lp_value_usd": 762.6459,
+      "estimated_fees_usd": 10.0101,
+      "net_proceeds_usd": 765.7928,
+      "pnl_usd": 265.7928,
+      "reason": "TAKE PROFIT: Harga naik >50.0%"
     }
   ],
   "events": [
@@ -785,7 +771,29 @@
       "message": "Opened LP GATO on solana",
       "invested_usd": 997.0,
       "score": 112.66
+    },
+    {
+      "time": "2026-10-26T08:52:55+00:00",
+      "type": "LP_CLOSE",
+      "message": "Closed AOP: TAKE PROFIT: Harga naik >50.0%",
+      "closed_at": "2026-10-26T08:52:55+00:00",
+      "symbol": "AOP",
+      "chain": "solana",
+      "pair_address": "uxad6FsZAybhHUZtAef5CgASMHnH84DUijSXRrvX46k",
+      "invested_usd": 500.0,
+      "lp_value_usd": 762.6459,
+      "estimated_fees_usd": 10.0101,
+      "net_proceeds_usd": 765.7928,
+      "pnl_usd": 265.7928,
+      "reason": "TAKE PROFIT: Harga naik >50.0%"
+    },
+    {
+      "time": "2026-10-26T08:52:55+00:00",
+      "type": "LP_OPEN",
+      "message": "Opened LP REMUS on solana",
+      "invested_usd": 997.0,
+      "score": 103.93
     }
   ],
-  "last_run_at": "2026-10-26T07:58:10+00:00"
+  "last_run_at": "2026-10-26T08:52:55+00:00"
 }
