@@ -3,63 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DJIWA Labs - Pusat Komando</title>
+    <title>DJIWA Labs - Live Office</title>
     <style>
-        body { margin: 0; padding: 0; background-color: #0d1117; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
-        .dashboard { width: 90%; max-width: 1000px; background-color: #161b22; border-radius: 15px; padding: 20px; margin-top: 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.5); border: 1px solid #30363d; box-sizing: border-box; }
-        .dashboard h2 { margin: 0; font-size: 20px; letter-spacing: 2px; color: #58a6ff; }
-        .stats-container { display: flex; gap: 15px; }
-        .stat-box { background-color: #21262d; padding: 10px 20px; border-radius: 10px; text-align: left; min-width: 120px; }
-        .stat-box span { display: block; font-size: 12px; color: #8b949e; margin-bottom: 5px; }
-        .stat-box strong { font-size: 20px; }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0d1117;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .dashboard {
+            width: 100%;
+            background-color: #161b22;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            border-bottom: 2px solid #30363d;
+            z-index: 100;
+            box-sizing: border-box;
+        }
+        
+        .stat-box { text-align: center; }
+        .stat-box span { font-size: 12px; color: #8b949e; }
+        .stat-box strong { font-size: 18px; display: block; }
         .profit { color: #3fb950; }
         .loss { color: #f85149; }
-        
-        .office-container { position: relative; width: 95%; max-width: 1000px; margin-top: 20px; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.8); aspect-ratio: 1280 / 698; }
-        .office-bg { width: 100%; height: 100%; object-fit: cover; display: block; }
-        
-        /* Styling Bubble Chat */
-        .bubble { position: absolute; background: white; border-radius: 15px; padding: 8px 12px; font-size: 13px; font-weight: bold; color: #333; box-shadow: 0 4px 10px rgba(0,0,0,0.5); white-space: nowrap; animation: float 3s ease-in-out infinite; z-index: 10; }
-        .bubble::after { content: ''; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); border-width: 8px 8px 0; border-style: solid; border-color: white transparent transparent transparent; }
-        
-        /* Posisi Bubble */
-        .bubble-raja { top: 18%; left: 32%; transform: translateX(-50%); }
-        .bubble-panongani { top: 20%; left: 75%; transform: translateX(-50%); }
-        .bubble-siboru { top: 50%; left: 12%; transform: translateX(-50%); }
-        .bubble-parhata { top: 62%; left: 65%; transform: translateX(-50%); }
-        
-        @keyframes float { 0% { transform: translateY(0px) translateX(-50%); } 50% { transform: translateY(-8px) translateX(-50%); } 100% { transform: translateY(0px) translateX(-50%); } }
-        
-        @media (max-width: 600px) { .dashboard { flex-direction: column; gap: 10px; padding: 15px; text-align: center; } .stats-container { flex-wrap: wrap; justify-content: center; } .stat-box { padding: 8px 12px; min-width: 90px; } .stat-box strong { font-size: 16px; } .bubble { font-size: 8px; padding: 4px 6px; border-radius: 8px; } .bubble::after { border-width: 5px 5px 0; bottom: -5px; } }
+
+        #officeCanvas {
+            background-color: #1a1a2e;
+            box-shadow: inset 0 0 50px rgba(0,0,0,0.8);
+            margin-top: 10px;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
+
     <div class="dashboard">
-        <h2>PAPAN KINERJA</h2>
-        <div class="stats-container">
-            <div class="stat-box">
-                <span>PnL Total</span>
-                <strong id="pnl-total" class="profit">+$18374.56</strong>
-            </div>
-            <div class="stat-box">
-                <span>PnL Mengambang</span>
-                <strong id="pnl-mengambang" class="profit">+$18374.56</strong>
-            </div>
-            <div class="stat-box">
-                <span>Posisi Terbuka</span>
-                <strong id="posisi-terbuka">5/5</strong>
-            </div>
-        </div>
+        <div class="stat-box"><span>PnL Total</span><strong id="pnl-total" class="loss">+$18,374</strong></div>
+        <div class="stat-box"><span>Posisi</span><strong id="posisi-terbuka">5/5</strong></div>
+        <div class="stat-box"><span>Saldo Web3</span><strong id="saldo-devnet" class="profit">20.00 SOL</strong></div>
     </div>
 
-    <div class="office-container">
-        <img src="kantor_utama.png" alt="Kantor DJIWA" class="office-bg">
-        
-        <!-- Bubble dengan ID khusus agar mudah diganti oleh Python -->
-        <div class="bubble bubble-raja" id="bubble-raja">Beli CBUCKS! (Web3: 20.00 SOL)</div>
-        <div class="bubble bubble-panongani" id="bubble-panongani">Siap, catat CBUCKS!</div>
-        <div class="bubble bubble-siboru" id="bubble-siboru">Radar temukan 40 token!</div>
-        <div class="bubble bubble-parhata" id="bubble-parhata">Lolos 2 pool.</div>
-    </div>
+    <canvas id="officeCanvas"></canvas>
+
+    <script>
+        const canvas = document.getElementById('officeCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Ukuran Canvas
+        canvas.width = window.innerWidth > 1000 ? 1000 : window.innerWidth;
+        canvas.height = window.innerHeight - 100;
+
+        // Gambar Lantai & Grid
+        function drawFloor() {
+            ctx.fillStyle = "#16213e"; // Warna lantai
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.strokeStyle = "rgba(255, 255, 255, 0.05)";
+            for(let i=0; i<canvas.width; i+=40) {
+                ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i, canvas.height); ctx.stroke();
+            }
+            for(let i=0; i<canvas.height; i+=40) {
+                ctx.beginPath(); ctx.moveTo(0, i); ctx.lineTo(canvas.width, i); ctx.stroke();
+            }
+        }
+
+        // --- DESAIN ROBOT MINI ---
+        function drawRobot(x, y, color) {
+            // Bayangan
+            ctx.beginPath();
+            ctx.ellipse(x, y + 15, 12, 5, 0, 0, Math.PI * 2);
+            ctx.fillStyle = "rgba(0,0,0,0.5)";
+            ctx.fill();
+
+            // Badan Robot
+            ctx.beginPath();
+            ctx.roundRect(x - 10, y - 5, 20, 20, 5);
+            ctx.fillStyle = color;
+            ctx.fill();
+            ctx.strokeStyle = "#ffffff";
+            ctx.lineWidth = 1.5;
+            ctx.stroke();
+
+            // Kepala Robot (Helm/Antena)
+            ctx.beginPath();
+            ctx.arc(x, y - 12, 8, 0, Math.PI * 2);
+            ctx.fillStyle = "#e0e0e0"; // Warna logam
+            ctx.fill();
+            ctx.strokeStyle = "#333";
+            ctx.stroke();
+
+            // Mata Robot (Menyala)
+            ctx.beginPath();
+            ctx.arc(x - 3, y - 13, 2, 0, Math.PI * 2);
+            ctx.arc(x + 3, y - 13, 2, 0, Math.PI * 2);
+            ctx.fillStyle = "#00ffff"; // Warna mata cyan
+            ctx.fill();
+        }
+
+        // --- DATA KARYAWAN ---
+        const employees = [
+            { name: "Siboru", role: "Scanner", x: 200, y: 200, color: "#ff4d4d" },
+            { name: "Raja", role: "Eksekutor", x: 200, y: 450, color: "#f1c40f" },
+            { name: "Parhata", role: "Validator", x: 800, y: 200, color: "#3498db" },
+            { name: "Panongani", role: "Reporter", x: 800, y: 450, color: "#9b59b6" },
+            { name: "Pande", role: "Web3", x: 500, y: 150, color: "#2ecc71" },
+            { name: "Ompu", role: "Keamanan", x: 500, y: 500, color: "#e67e22" }
+        ];
+
+        // Tambahkan properti gerak (cx, cy, target, dll)
+        employees.forEach(emp => {
+            emp.cx = emp.x; 
+            emp.cy = emp.y;
+            emp.baseX = emp.x; // Titik awal (meja)
+            emp.baseY = emp.y;
+            emp.timeOffset = Math.random() * 100; // Agar gerakan tidak seragam
+        });
+
+        // Gambar Meja & Nama
+        function drawDesks() {
+            employees.forEach(emp => {
+                // Meja
+                ctx.fillStyle = "#2c3e50";
+                ctx.fillRect(emp.baseX - 25, emp.baseY - 5, 50, 30);
+                ctx.strokeStyle = "#58a6ff";
+                ctx.strokeRect(emp.baseX - 25, emp.baseY - 5, 50, 30);
+
+                // Layar Monitor
+                ctx.fillStyle = "#00ffff";
+                ctx.fillRect(emp.baseX - 15, emp.baseY, 30, 15);
+
+                // Nama
+                ctx.fillStyle = "white";
+                ctx.font = "bold 12px Arial";
+                ctx.textAlign = "center";
+                ctx.fillText(emp.name, emp.baseX, emp.baseY + 45);
+            });
+        }
+
+        // --- LOGIKA ANIMASI ---
+        let tick = 0;
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawFloor();
+            drawDesks();
+
+            tick += 0.05; // Kecepatan gerak global
+
+            employees.forEach(emp => {
+                // Logika agar robot bergerak mondar-mandir (menggunakan fungsi Sin/Cos)
+                // Setiap robot punya ritme sendiri berdasarkan timeOffset
+                const movementRange = 15; 
+                const offsetX = Math.sin(tick + emp.timeOffset) * movementRange;
+                const offsetY = Math.cos(tick + emp.timeOffset) * (movementRange / 2);
+
+                // Posisi saat ini
+                emp.cx = emp.baseX + offsetX;
+                emp.cy = emp.baseY + offsetY;
+
+                drawRobot(emp.cx, emp.cy, emp.color);
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        // Mulai animasi
+        animate();
+    </script>
 </body>
 </html>
