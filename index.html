@@ -7,12 +7,14 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
         body { margin: 0; padding: 0; background-color: #2b2b36; font-family: 'Poppins', sans-serif; display: flex; flex-direction: column; align-items: center; overflow: hidden; color: white; }
+        
         .dashboard { width: 90%; max-width: 800px; background-color: #161b22; border-radius: 15px; padding: 15px 30px; margin-top: 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid #30363d; z-index: 10; }
         .dashboard h2 { margin: 0; font-size: 18px; color: #58a6ff; }
         .stats { display: flex; gap: 20px; }
         .stat span { font-size: 11px; color: #8b949e; }
         .stat strong { font-size: 18px; color: #3fb950; display: block; text-align: right; }
-        canvas { background-color: #2b2b36; display: block; }
+        
+        canvas { display: block; }
     </style>
 </head>
 <body>
@@ -34,7 +36,7 @@
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight - 100;
 
-        // Fungsi Kotak Isometrik (Untuk Meja)
+        // Fungsi Menggambar Kotak Isometrik
         function drawIsometricBox(x, y, w, h, d, colorTop, colorLeft, colorRight) {
             ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + w, y + w/2); ctx.lineTo(x, y + w); ctx.lineTo(x - w, y + w/2); ctx.closePath(); ctx.fillStyle = colorTop; ctx.fill();
             ctx.beginPath(); ctx.moveTo(x - w, y + w/2); ctx.lineTo(x, y + w); ctx.lineTo(x, y + w + h); ctx.lineTo(x - w, y + w/2 + h); ctx.closePath(); ctx.fillStyle = colorLeft; ctx.fill();
@@ -43,40 +45,27 @@
 
         // --- VARIASI BENTUK KARAKTER ---
         function drawAlien(x, y, color) {
-            // Siboru & Parhata: Alien dengan antena
             ctx.beginPath(); ctx.ellipse(x, y, 20, 10, 0, 0, Math.PI * 2); ctx.fillStyle = "rgba(0,0,0,0.3)"; ctx.fill();
             ctx.beginPath(); ctx.arc(x, y - 15, 15, 0, Math.PI * 2); ctx.fillStyle = color; ctx.fill();
-            // Antena
             ctx.beginPath(); ctx.moveTo(x-5, y-28); ctx.lineTo(x-10, y-40); ctx.strokeStyle = color; ctx.lineWidth=3; ctx.stroke();
             ctx.beginPath(); ctx.arc(x-10, y-40, 4, 0, Math.PI * 2); ctx.fillStyle = "#fff"; ctx.fill();
             ctx.beginPath(); ctx.moveTo(x+5, y-28); ctx.lineTo(x+10, y-40); ctx.stroke();
             ctx.beginPath(); ctx.arc(x+10, y-40, 4, 0, Math.PI * 2); ctx.fillStyle = "#fff"; ctx.fill();
-            // Mata
             ctx.beginPath(); ctx.arc(x-5, y-15, 3, 0, Math.PI * 2); ctx.arc(x+5, y-15, 3, 0, Math.PI * 2); ctx.fillStyle = "white"; ctx.fill();
         }
 
         function drawRobot(x, y, color) {
-            // Raja & Ompu: Robot Kotak Tegas
             ctx.beginPath(); ctx.ellipse(x, y, 20, 10, 0, 0, Math.PI * 2); ctx.fillStyle = "rgba(0,0,0,0.3)"; ctx.fill();
             ctx.beginPath(); ctx.roundRect(x - 15, y - 25, 30, 25, 5); ctx.fillStyle = color; ctx.fill();
             ctx.strokeStyle = "#fff"; ctx.lineWidth = 2; ctx.stroke();
-            // Kepala
             ctx.beginPath(); ctx.roundRect(x - 12, y - 40, 24, 18, 5); ctx.fillStyle = "#bdc3c7"; ctx.fill();
             ctx.strokeStyle = "#333"; ctx.lineWidth = 1.5; ctx.stroke();
-            // Mata Laser
             ctx.beginPath(); ctx.arc(x-4, y-31, 2, 0, Math.PI * 2); ctx.arc(x+4, y-31, 2, 0, Math.PI * 2); ctx.fillStyle = "cyan"; ctx.fill();
         }
 
         function drawBlob(x, y, color) {
-            // Pande & Panongani: Hantu Data / Blob
             ctx.beginPath(); ctx.ellipse(x, y, 20, 10, 0, 0, Math.PI * 2); ctx.fillStyle = "rgba(0,0,0,0.3)"; ctx.fill();
-            ctx.beginPath();
-            ctx.moveTo(x - 15, y);
-            ctx.bezierCurveTo(x - 20, y - 30, x + 20, y - 30, x + 15, y);
-            ctx.bezierCurveTo(x + 15, y + 5, x + 10, y + 10, x, y + 5);
-            ctx.bezierCurveTo(x - 10, y + 10, x - 15, y + 5, x - 15, y);
-            ctx.fillStyle = color; ctx.fill();
-            // Mata Blob
+            ctx.beginPath(); ctx.moveTo(x - 15, y); ctx.bezierCurveTo(x - 20, y - 30, x + 20, y - 30, x + 15, y); ctx.bezierCurveTo(x + 15, y + 5, x + 10, y + 10, x, y + 5); ctx.bezierCurveTo(x - 10, y + 10, x - 15, y + 5, x - 15, y); ctx.fillStyle = color; ctx.fill();
             ctx.beginPath(); ctx.arc(x-5, y-12, 4, 0, Math.PI * 2); ctx.arc(x+5, y-12, 4, 0, Math.PI * 2); ctx.fillStyle = "white"; ctx.fill();
             ctx.beginPath(); ctx.arc(x-4, y-12, 2, 0, Math.PI * 2); ctx.arc(x+6, y-12, 2, 0, Math.PI * 2); ctx.fillStyle = "#333"; ctx.fill();
         }
@@ -92,14 +81,14 @@
             ctx.fillStyle = "white"; ctx.textAlign = "left"; ctx.fillText(text, bx + 22, by + 20);
         }
 
-        // Data Karyawan (Tentukan Tipe Karakternya)
+        // Data Karyawan
         const employees = [
-            { x: 200, y: 300, color: "#0984e3", type: "alien", text: "Lolos 2 pool." }, // Parhata
-            { x: 320, y: 200, color: "#00b894", type: "blob", text: "Cek TVL & volume" }, // Pande
-            { x: 480, y: 300, color: "#e17055", type: "robot", text: "Fee belum diklaim" }, // Ompu
-            { x: 400, y: 450, color: "#d63031", type: "alien", text: "Radar temukan 40 token" }, // Siboru
-            { x: 600, y: 400, color: "#6c5ce7", type: "blob", text: "Laporan terkirim" }, // Panongani
-            { x: 550, y: 250, color: "#fdcb6e", type: "robot", text: "Beli CBUCKS!" } // Raja
+            { x: 250, y: 250, color: "#00b894", type: "blob", text: "Cek TVL & volume" },
+            { x: 550, y: 250, color: "#fdcb6e", type: "robot", text: "Beli CBUCKS!" },
+            { x: 150, y: 400, color: "#0984e3", type: "alien", text: "Lolos 2 pool." },
+            { x: 450, y: 400, color: "#e17055", type: "robot", text: "Fee belum diklaim" },
+            { x: 350, y: 550, color: "#d63031", type: "alien", text: "Radar temukan 40 token" },
+            { x: 650, y: 550, color: "#6c5ce7", type: "blob", text: "Laporan terkirim" }
         ];
 
         let offset = 0;
@@ -108,23 +97,66 @@
             offset += 0.05;
 
             const centerX = canvas.width / 2;
-            const centerY = canvas.height / 2;
+            const centerY = canvas.height / 2 + 50;
 
-            // Gambar Lantai Isometrik
-            ctx.beginPath(); ctx.moveTo(centerX, centerY - 300); ctx.lineTo(centerX + 400, centerY); ctx.lineTo(centerX, centerY + 300); ctx.lineTo(centerX - 400, centerY); ctx.closePath(); ctx.fillStyle = "#3d3d5c"; ctx.fill(); ctx.strokeStyle = "#505070"; ctx.stroke();
+            // --- GAMBAR DINDING (DI BELAKANG LANTAI) ---
+            // Dinding Kiri
+            ctx.beginPath(); 
+            ctx.moveTo(centerX, centerY - 300); 
+            ctx.lineTo(centerX - 400, centerY); 
+            ctx.lineTo(centerX - 400, centerY - 200); 
+            ctx.lineTo(centerX, centerY - 500); 
+            ctx.closePath();
+            ctx.fillStyle = "#6a6a8e"; ctx.fill(); 
+            ctx.strokeStyle = "#505070"; ctx.stroke();
+
+            // Dinding Kanan
+            ctx.beginPath(); 
+            ctx.moveTo(centerX, centerY - 300); 
+            ctx.lineTo(centerX + 400, centerY); 
+            ctx.lineTo(centerX + 400, centerY - 200); 
+            ctx.lineTo(centerX, centerY - 500); 
+            ctx.closePath();
+            ctx.fillStyle = "#5a5a7e"; ctx.fill(); 
+            ctx.strokeStyle = "#4a4a6a"; ctx.stroke();
+
+            // Jendela Kiri
+            ctx.beginPath(); ctx.moveTo(centerX - 300, centerY - 250); ctx.lineTo(centerX - 150, centerY - 175); ctx.lineTo(centerX - 150, centerY - 275); ctx.lineTo(centerX - 300, centerY - 350); ctx.closePath();
+            ctx.fillStyle = "rgba(162, 194, 232, 0.3)"; ctx.fill(); ctx.strokeStyle = "#a2c2e8"; ctx.stroke();
+
+            // Jendela Kanan
+            ctx.beginPath(); ctx.moveTo(centerX + 300, centerY - 250); ctx.lineTo(centerX + 150, centerY - 175); ctx.lineTo(centerX + 150, centerY - 275); ctx.lineTo(centerX + 300, centerY - 350); ctx.closePath();
+            ctx.fillStyle = "rgba(162, 194, 232, 0.3)"; ctx.fill(); ctx.strokeStyle = "#a2c2e8"; ctx.stroke();
+
+            // --- GAMBAR LANTAI ---
+            ctx.beginPath(); 
+            ctx.moveTo(centerX, centerY - 300); 
+            ctx.lineTo(centerX + 400, centerY); 
+            ctx.lineTo(centerX, centerY + 300); 
+            ctx.lineTo(centerX - 400, centerY); 
+            ctx.closePath(); 
+            ctx.fillStyle = "#3d3d5c"; ctx.fill(); 
+            ctx.strokeStyle = "#505070"; ctx.stroke();
+
+            // Garis Lantai (Grid)
+            ctx.strokeStyle = "rgba(255,255,255,0.05)";
+            for(let i = -400; i <= 400; i+=40) {
+                ctx.beginPath(); ctx.moveTo(centerX + i, centerY); ctx.lineTo(centerX, centerY + (400 - Math.abs(i))/2); ctx.stroke();
+                ctx.beginPath(); ctx.moveTo(centerX + i, centerY); ctx.lineTo(centerX, centerY - (400 - Math.abs(i))/2); ctx.stroke();
+            }
 
             // Urutkan berdasarkan Y agar karakter depan menutupi karakter belakang
             employees.sort((a, b) => a.y - b.y);
 
             employees.forEach((emp, index) => {
-                const px = centerX + (emp.x - 400) * 1.5;
-                const py = centerY + (emp.y - 300) * 1.5;
+                const px = centerX + (emp.x - 400) * 1.2; // Skala disesuaikan
+                const py = centerY + (emp.y - 400) * 1.2;
                 const floatY = Math.sin(offset + index) * 5;
 
                 // Gambar Meja
-                drawIsometricBox(px, py + 20, 40, 20, 20, "#f0f0f0", "#d0d0d0", "#e0e0e0");
+                drawIsometricBox(px, py + 20, 35, 15, 15, "#e0e0e0", "#b0b0b0", "#c0c0c0");
                 
-                // Gambar Karakter Sesuai Tipe
+                // Gambar Karakter
                 if (emp.type === "alien") drawAlien(px, py + floatY, emp.color);
                 else if (emp.type === "robot") drawRobot(px, py + floatY, emp.color);
                 else if (emp.type === "blob") drawBlob(px, py + floatY, emp.color);
