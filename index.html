@@ -3,316 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DJIWA Labs - 3D Isometric Office</title>
+    <title>DJIWA Labs - Isometric Office</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #2b2b36; /* Warna latar belakang gelap */
-            font-family: 'Poppins', sans-serif;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            overflow: hidden;
-        }
-
-        /* Papan Kinerja */
-        .dashboard {
-            width: 90%;
-            max-width: 900px;
-            background-color: rgba(22, 27, 34, 0.9);
-            border-radius: 15px;
-            padding: 15px 30px;
-            margin-top: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            border: 1px solid #30363d;
-            z-index: 100;
-        }
-        .dashboard h2 { margin: 0; font-size: 18px; letter-spacing: 2px; color: #58a6ff; }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+        body { margin: 0; padding: 0; background-color: #2b2b36; font-family: 'Poppins', sans-serif; display: flex; flex-direction: column; align-items: center; overflow: hidden; color: white; }
+        .dashboard { width: 90%; max-width: 800px; background-color: #161b22; border-radius: 15px; padding: 15px 30px; margin-top: 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid #30363d; z-index: 10; }
+        .dashboard h2 { margin: 0; font-size: 18px; color: #58a6ff; }
         .stats { display: flex; gap: 20px; }
-        .stat { text-align: right; }
-        .stat span { display: block; font-size: 11px; color: #8b949e; margin-bottom: 2px; }
-        .stat strong { font-size: 18px; color: #3fb950; }
-
-        /* Kontainer Isometrik */
-        .isometric-container {
-            position: relative;
-            width: 100%;
-            height: 600px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            perspective: 1200px;
-        }
-
-        /* Ruangan Isometrik */
-        .room {
-            position: relative;
-            width: 400px;
-            height: 400px;
-            transform: rotateX(60deg) rotateZ(-45deg);
-            transform-style: preserve-3d;
-            background-color: #6a6a8e; /* Warna lantai */
-            border-radius: 20px;
-            box-shadow: 0 50px 100px rgba(0,0,0,0.8), inset 0 0 100px rgba(0,0,0,0.2);
-        }
-
-        /* Dinding Belakang */
-        .wall-back {
-            position: absolute;
-            width: 400px;
-            height: 150px;
-            background-color: #8585a8;
-            bottom: 100%;
-            left: 0;
-            transform-origin: bottom;
-            transform: rotateX(-90deg);
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-            display: flex;
-            justify-content: space-around;
-            align-items: flex-end;
-            padding-bottom: 20px;
-            box-sizing: border-box;
-        }
-        .wall-left {
-            position: absolute;
-            width: 150px;
-            height: 400px;
-            background-color: #7a7a9e;
-            top: 0;
-            right: 100%;
-            transform-origin: right;
-            transform: rotateY(90deg);
-            border-top-left-radius: 20px;
-            border-bottom-left-radius: 20px;
-        }
-
-        /* Jendela di Dinding */
-        .window {
-            width: 120px;
-            height: 100px;
-            background: linear-gradient(135deg, #a2c2e8, #e0eafc);
-            border-radius: 10px;
-            border: 4px solid #5a5a7a;
-            box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
-        }
-
-        /* Meja Kerja */
-        .desk {
-            position: absolute;
-            width: 80px;
-            height: 80px;
-            background-color: #f0f0f0;
-            border-radius: 10px;
-            box-shadow: 10px 10px 0px #d0d0d0;
-            transform: translateZ(20px);
-        }
-        .desk::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 20px;
-            background-color: #cccccc;
-            top: 100%;
-            left: 0;
-            transform-origin: top;
-            transform: rotateX(-90deg);
-        }
-
-        /* Posisi Meja */
-        .desk-1 { top: 50px; left: 50px; }
-        .desk-2 { top: 50px; right: 50px; }
-        .desk-3 { bottom: 50px; left: 50px; }
-        .desk-4 { bottom: 50px; right: 50px; }
-        .desk-5 { top: 160px; left: 160px; transform: translateZ(40px); } /* Meja Pande */
-        .desk-6 { bottom: 150px; right: 160px; transform: translateZ(60px); } /* Meja Ompu */
-
-        /* Layar Monitor */
-        .monitor {
-            position: absolute;
-            width: 40px;
-            height: 30px;
-            background-color: #2b2b36;
-            border-radius: 5px;
-            top: 10px;
-            left: 20px;
-            border: 2px solid #444;
-            animation: screenGlow 2s infinite alternate;
-        }
-        .screen-content {
-            width: 100%;
-            height: 100%;
-            background-color: #00ffff;
-            opacity: 0.3;
-            border-radius: 3px;
-        }
-
-        /* Karakter (Kapsul Lucu) */
-        .character {
-            position: absolute;
-            width: 40px;
-            height: 50px;
-            border-radius: 20px;
-            bottom: 20px;
-            left: 20px;
-            transform: translateZ(30px);
-            animation: floatChar 3s ease-in-out infinite;
-            box-shadow: inset -5px -5px 15px rgba(0,0,0,0.3);
-        }
-        
-        .char-1 { background: radial-gradient(circle at 30% 30%, #ff7675, #d63031); }
-        .char-2 { background: radial-gradient(circle at 30% 30%, #fdcb6e, #e17055); }
-        .char-3 { background: radial-gradient(circle at 30% 30%, #74b9ff, #0984e3); }
-        .char-4 { background: radial-gradient(circle at 30% 30%, #a29bfe, #6c5ce7); }
-        .char-5 { background: radial-gradient(circle at 30% 30%, #55efc4, #00b894); }
-        .char-6 { background: radial-gradient(circle at 30% 30%, #fab1a0, #e17055); }
-
-        /* Masker Kaca Karakter */
-        .character::after {
-            content: '';
-            position: absolute;
-            width: 30px;
-            height: 15px;
-            background: rgba(255,255,255,0.4);
-            border-radius: 10px;
-            top: 10px;
-            left: 5px;
-        }
-
-        /* Efek Bayangan Karakter */
-        .shadow {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(0,0,0,0.3);
-            border-radius: 50%;
-            bottom: -10px;
-            left: 0;
-            transform: translateZ(1px) rotateX(90deg);
-        }
-
-        /* Bubble Chat */
-        .bubble {
-            position: absolute;
-            background: #2d3436;
-            color: white;
-            padding: 8px 12px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: 600;
-            white-space: nowrap;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-            border: 1px solid #444;
-            transform: translateZ(100px) rotateZ(45deg) rotateX(-60deg); /* Membalikkan rotasi agar teks tegak */
-            animation: popBubble 0.5s ease-out, floatBubble 3s ease-in-out infinite;
-        }
-        
-        /* Titik Biru di Bubble */
-        .bubble::before {
-            content: '●';
-            color: #00cec9;
-            margin-right: 5px;
-            font-size: 14px;
-        }
-
-        /* Animasi */
-        @keyframes screenGlow {
-            0% { box-shadow: 0 0 5px #00ffff; opacity: 0.8; }
-            100% { box-shadow: 0 0 15px #00ffff; opacity: 1; }
-        }
-
-        @keyframes floatChar {
-            0% { transform: translateZ(30px) translateY(0); }
-            50% { transform: translateZ(30px) translateY(-5px); }
-            100% { transform: translateZ(30px) translateY(0); }
-        }
-
-        @keyframes floatBubble {
-            0% { transform: translateZ(100px) rotateZ(45deg) rotateX(-60deg) translateY(0); }
-            50% { transform: translateZ(100px) rotateZ(45deg) rotateX(-60deg) translateY(-8px); }
-            100% { transform: translateZ(100px) rotateZ(45deg) rotateX(-60deg) translateY(0); }
-        }
-
-        @keyframes popBubble {
-            0% { opacity: 0; transform: translateZ(100px) rotateZ(45deg) rotateX(-60deg) scale(0.5); }
-            100% { opacity: 1; transform: translateZ(100px) rotateZ(45deg) rotateX(-60deg) scale(1); }
-        }
+        .stat span { font-size: 11px; color: #8b949e; }
+        .stat strong { font-size: 18px; color: #3fb950; display: block; text-align: right; }
+        canvas { background-color: #2b2b36; display: block; }
     </style>
 </head>
 <body>
 
-    <!-- Papan Kinerja -->
     <div class="dashboard">
         <h2>DJIWA LABS</h2>
         <div class="stats">
-            <div class="stat"><span>PnL Total</span><strong id="pnl-total">+$18,374</strong></div>
-            <div class="stat"><span>Posisi</span><strong id="posisi-terbuka">5/5</strong></div>
-            <div class="stat"><span>Saldo Web3</span><strong id="saldo-devnet">20.00 SOL</strong></div>
+            <div class="stat"><span>PnL Total</span><strong>+$18,374.56</strong></div>
+            <div class="stat"><span>Posisi</span><strong>5/5</strong></div>
+            <div class="stat"><span>Saldo Web3</span><strong>20.00 SOL</strong></div>
         </div>
     </div>
 
-    <!-- Ruangan 3D -->
-    <div class="isometric-container">
-        <div class="room">
-            <!-- Dinding -->
-            <div class="wall-back">
-                <div class="window"></div>
-                <div class="window"></div>
-            </div>
-            <div class="wall-left"></div>
+    <canvas id="officeCanvas"></canvas>
 
-            <!-- Meja 1: Siboru -->
-            <div class="desk desk-1">
-                <div class="monitor"><div class="screen-content"></div></div>
-                <div class="character char-1"><div class="shadow"></div></div>
-                <div class="bubble">Radar temukan 40 token!</div>
-            </div>
+    <script>
+        const canvas = document.getElementById('officeCanvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight - 100;
 
-            <!-- Meja 2: Parhata -->
-            <div class="desk desk-2">
-                <div class="monitor"><div class="screen-content"></div></div>
-                <div class="character char-3"><div class="shadow"></div></div>
-                <div class="bubble" style="top: -40px; left: -50px;">Lolos 2 pool.</div>
-            </div>
+        // Fungsi Kotak Isometrik (Untuk Meja)
+        function drawIsometricBox(x, y, w, h, d, colorTop, colorLeft, colorRight) {
+            ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + w, y + w/2); ctx.lineTo(x, y + w); ctx.lineTo(x - w, y + w/2); ctx.closePath(); ctx.fillStyle = colorTop; ctx.fill();
+            ctx.beginPath(); ctx.moveTo(x - w, y + w/2); ctx.lineTo(x, y + w); ctx.lineTo(x, y + w + h); ctx.lineTo(x - w, y + w/2 + h); ctx.closePath(); ctx.fillStyle = colorLeft; ctx.fill();
+            ctx.beginPath(); ctx.moveTo(x, y + w); ctx.lineTo(x + w, y + w/2); ctx.lineTo(x + w, y + w/2 + h); ctx.lineTo(x, y + w + h); ctx.closePath(); ctx.fillStyle = colorRight; ctx.fill();
+        }
 
-            <!-- Meja 3: Raja -->
-            <div class="desk desk-3">
-                <div class="monitor"><div class="screen-content"></div></div>
-                <div class="character char-2"><div class="shadow"></div></div>
-                <div class="bubble" style="top: 20px; left: 50px;">Beli CBUCKS!</div>
-            </div>
+        // --- VARIASI BENTUK KARAKTER ---
+        function drawAlien(x, y, color) {
+            // Siboru & Parhata: Alien dengan antena
+            ctx.beginPath(); ctx.ellipse(x, y, 20, 10, 0, 0, Math.PI * 2); ctx.fillStyle = "rgba(0,0,0,0.3)"; ctx.fill();
+            ctx.beginPath(); ctx.arc(x, y - 15, 15, 0, Math.PI * 2); ctx.fillStyle = color; ctx.fill();
+            // Antena
+            ctx.beginPath(); ctx.moveTo(x-5, y-28); ctx.lineTo(x-10, y-40); ctx.strokeStyle = color; ctx.lineWidth=3; ctx.stroke();
+            ctx.beginPath(); ctx.arc(x-10, y-40, 4, 0, Math.PI * 2); ctx.fillStyle = "#fff"; ctx.fill();
+            ctx.beginPath(); ctx.moveTo(x+5, y-28); ctx.lineTo(x+10, y-40); ctx.stroke();
+            ctx.beginPath(); ctx.arc(x+10, y-40, 4, 0, Math.PI * 2); ctx.fillStyle = "#fff"; ctx.fill();
+            // Mata
+            ctx.beginPath(); ctx.arc(x-5, y-15, 3, 0, Math.PI * 2); ctx.arc(x+5, y-15, 3, 0, Math.PI * 2); ctx.fillStyle = "white"; ctx.fill();
+        }
 
-            <!-- Meja 4: Panongani -->
-            <div class="desk desk-4">
-                <div class="monitor"><div class="screen-content"></div></div>
-                <div class="character char-4"><div class="shadow"></div></div>
-                <div class="bubble" style="top: -30px; left: -20px;">Laporan terkirim!</div>
-            </div>
+        function drawRobot(x, y, color) {
+            // Raja & Ompu: Robot Kotak Tegas
+            ctx.beginPath(); ctx.ellipse(x, y, 20, 10, 0, 0, Math.PI * 2); ctx.fillStyle = "rgba(0,0,0,0.3)"; ctx.fill();
+            ctx.beginPath(); ctx.roundRect(x - 15, y - 25, 30, 25, 5); ctx.fillStyle = color; ctx.fill();
+            ctx.strokeStyle = "#fff"; ctx.lineWidth = 2; ctx.stroke();
+            // Kepala
+            ctx.beginPath(); ctx.roundRect(x - 12, y - 40, 24, 18, 5); ctx.fillStyle = "#bdc3c7"; ctx.fill();
+            ctx.strokeStyle = "#333"; ctx.lineWidth = 1.5; ctx.stroke();
+            // Mata Laser
+            ctx.beginPath(); ctx.arc(x-4, y-31, 2, 0, Math.PI * 2); ctx.arc(x+4, y-31, 2, 0, Math.PI * 2); ctx.fillStyle = "cyan"; ctx.fill();
+        }
 
-            <!-- Meja 5: Pande Harta (Tengah) -->
-            <div class="desk desk-5">
-                <div class="monitor"><div class="screen-content"></div></div>
-                <div class="character char-5"><div class="shadow"></div></div>
-                <div class="bubble" style="top: -40px; left: 30px;">Cek TVL & Volume</div>
-            </div>
+        function drawBlob(x, y, color) {
+            // Pande & Panongani: Hantu Data / Blob
+            ctx.beginPath(); ctx.ellipse(x, y, 20, 10, 0, 0, Math.PI * 2); ctx.fillStyle = "rgba(0,0,0,0.3)"; ctx.fill();
+            ctx.beginPath();
+            ctx.moveTo(x - 15, y);
+            ctx.bezierCurveTo(x - 20, y - 30, x + 20, y - 30, x + 15, y);
+            ctx.bezierCurveTo(x + 15, y + 5, x + 10, y + 10, x, y + 5);
+            ctx.bezierCurveTo(x - 10, y + 10, x - 15, y + 5, x - 15, y);
+            ctx.fillStyle = color; ctx.fill();
+            // Mata Blob
+            ctx.beginPath(); ctx.arc(x-5, y-12, 4, 0, Math.PI * 2); ctx.arc(x+5, y-12, 4, 0, Math.PI * 2); ctx.fillStyle = "white"; ctx.fill();
+            ctx.beginPath(); ctx.arc(x-4, y-12, 2, 0, Math.PI * 2); ctx.arc(x+6, y-12, 2, 0, Math.PI * 2); ctx.fillStyle = "#333"; ctx.fill();
+        }
 
-            <!-- Meja 6: Ompu Etika (Tengah) -->
-            <div class="desk desk-6">
-                <div class="monitor"><div class="screen-content"></div></div>
-                <div class="character char-6"><div class="shadow"></div></div>
-                <div class="bubble" style="top: 30px; left: -80px;">Fee $0.86 belum diklaim</div>
-            </div>
+        // Fungsi Bubble Chat
+        function drawBubble(x, y, text, isLeft = false) {
+            ctx.font = "600 12px Poppins";
+            const textWidth = ctx.measureText(text).width;
+            const bw = textWidth + 30; const bh = 30;
+            const bx = isLeft ? x - bw + 10 : x - 10; const by = y - 60;
+            ctx.beginPath(); ctx.roundRect(bx, by, bw, bh, 15); ctx.fillStyle = "#2d3436"; ctx.fill(); ctx.strokeStyle = "#555"; ctx.stroke();
+            ctx.beginPath(); ctx.arc(bx + 12, by + 15, 3, 0, Math.PI * 2); ctx.fillStyle = "#00cec9"; ctx.fill();
+            ctx.fillStyle = "white"; ctx.textAlign = "left"; ctx.fillText(text, bx + 22, by + 20);
+        }
 
-        </div>
-    </div>
+        // Data Karyawan (Tentukan Tipe Karakternya)
+        const employees = [
+            { x: 200, y: 300, color: "#0984e3", type: "alien", text: "Lolos 2 pool." }, // Parhata
+            { x: 320, y: 200, color: "#00b894", type: "blob", text: "Cek TVL & volume" }, // Pande
+            { x: 480, y: 300, color: "#e17055", type: "robot", text: "Fee belum diklaim" }, // Ompu
+            { x: 400, y: 450, color: "#d63031", type: "alien", text: "Radar temukan 40 token" }, // Siboru
+            { x: 600, y: 400, color: "#6c5ce7", type: "blob", text: "Laporan terkirim" }, // Panongani
+            { x: 550, y: 250, color: "#fdcb6e", type: "robot", text: "Beli CBUCKS!" } // Raja
+        ];
 
+        let offset = 0;
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            offset += 0.05;
+
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+
+            // Gambar Lantai Isometrik
+            ctx.beginPath(); ctx.moveTo(centerX, centerY - 300); ctx.lineTo(centerX + 400, centerY); ctx.lineTo(centerX, centerY + 300); ctx.lineTo(centerX - 400, centerY); ctx.closePath(); ctx.fillStyle = "#3d3d5c"; ctx.fill(); ctx.strokeStyle = "#505070"; ctx.stroke();
+
+            // Urutkan berdasarkan Y agar karakter depan menutupi karakter belakang
+            employees.sort((a, b) => a.y - b.y);
+
+            employees.forEach((emp, index) => {
+                const px = centerX + (emp.x - 400) * 1.5;
+                const py = centerY + (emp.y - 300) * 1.5;
+                const floatY = Math.sin(offset + index) * 5;
+
+                // Gambar Meja
+                drawIsometricBox(px, py + 20, 40, 20, 20, "#f0f0f0", "#d0d0d0", "#e0e0e0");
+                
+                // Gambar Karakter Sesuai Tipe
+                if (emp.type === "alien") drawAlien(px, py + floatY, emp.color);
+                else if (emp.type === "robot") drawRobot(px, py + floatY, emp.color);
+                else if (emp.type === "blob") drawBlob(px, py + floatY, emp.color);
+                
+                // Gambar Bubble
+                drawBubble(px, py + floatY, emp.text, index % 2 === 0);
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
 </body>
 </html>
