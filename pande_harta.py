@@ -45,9 +45,6 @@ def cek_saldo():
         return 0.0
 
 def kirim_sol(tujuan_address_str, jumlah_sol):
-    """
-    Fungsi untuk mengirim SOL ke alamat lain (menggunakan solders).
-    """
     try:
         client = get_client()
         wallet = get_wallet()
@@ -65,7 +62,6 @@ def kirim_sol(tujuan_address_str, jumlah_sol):
             )
         )
 
-        # Menggunakan Transaction dari solders
         txn = Transaction().add(transfer_ix)
 
         recent_blockhash = client.get_latest_blockhash().value.blockhash
