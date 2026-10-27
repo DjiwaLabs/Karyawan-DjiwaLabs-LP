@@ -4,6 +4,7 @@ import json
 from solana.rpc.api import Client
 from solders.keypair import Keypair
 from solders.pubkey import Pubkey
+from solders.message import Message
 from solders.transaction import Transaction
 from solders.system_program import TransferParams, transfer
 import base58
@@ -54,6 +55,7 @@ def kirim_sol(tujuan_address_str, jumlah_sol):
         tujuan_pubkey = Pubkey.from_string(tujuan_address_str)
         lamports = int(jumlah_sol * 1_000_000_000)
 
+        # 1. Buat instruksi transfer
         transfer_ix = transfer(
             TransferParams(
                 from_pubkey=wallet.pubkey(),
@@ -62,14 +64,20 @@ def kirim_sol(tujuan_address_str, jumlah_sol):
             )
         )
 
-        txn = Transaction().add(transfer_ix)
-
+        # 2. Dapatkan blockhash terbaru
         recent_blockhash = client.get_latest_blockhash().value.blockhash
-        txn.recent_blockhash = recent_blockhash
-        txn.fee_payer = wallet.pubkey()
 
-        txn.sign(wallet)
+        # 3. Buat Message (wajib di solders baru)
+        msg = Message.new_with_blockhash(
+            [transfer_ix], 
+            wallet.pubkey(), 
+            recent_blockhash
+        )
 
+        # 4. Buat Transaction dengan keypairs, message, dan blockhash
+        txn = Transaction([wallet], msg, recent_blockhash)
+
+        # 5. Kirim transaksi
         print(f"Mengirim {jumlah_sol} SOL ke {tujuan_address_str}...")
         response = client.send_transaction(txn)
         
