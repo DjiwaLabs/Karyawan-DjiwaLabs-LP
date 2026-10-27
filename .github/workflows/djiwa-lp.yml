@@ -29,9 +29,10 @@ jobs:
         with:
           python-version: "3.12"
 
+      # KUNCI VERSI KE 0.36.x AGAR CLIENT SINKRON BISA DIPAKAI
       - name: Install Dependencies
         run: |
-          pip install solana solders base58
+          pip install "solana>=0.36.0,<0.40" solders base58
 
       - name: Run live scan and virtual LP simulation
         env:
