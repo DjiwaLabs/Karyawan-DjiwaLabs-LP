@@ -3,6 +3,7 @@ import json
 import os
 import sys
 import logging
+import re
 from pathlib import Path
 from datetime import datetime, timezone
 
@@ -92,13 +93,6 @@ def main():
             pnl_str = f"+${pnl:.2f}" if pnl >= 0 else f"-${abs(pnl):.2f}"
             pnl_class = "profit" if pnl >= 0 else "loss"
             
-            # Ganti isi tag <strong> berdasarkan ID
-            html_content = html_content.replace(
-                f'<strong id="pnl-total" class="{ "profit" if "-$" not in pnl_str else "loss" }">', 
-                f'<strong id="pnl-total" class="{ "profit" if pnl >= 0 else "loss" }">'
-            )
-            # (Pendekatan sederhana: Kita ganti seluruh teks di dalam tag strong menggunakan pemisahan string)
-            import re
             html_content = re.sub(r'<strong id="pnl-total" class="[^"]*">.*?</strong>', 
                                   f'<strong id="pnl-total" class="{pnl_class}">{pnl_str}</strong>', html_content)
             html_content = re.sub(r'<strong id="pnl-mengambang" class="[^"]*">.*?</strong>', 
@@ -106,29 +100,43 @@ def main():
             html_content = re.sub(r'<strong id="posisi-terbuka">.*?</strong>', 
                                   f'<strong id="posisi-terbuka">{len(state["positions"])}/5</strong>', html_content)
 
-            # 2. Logika Teks Bubble Chat Dinamis
-            teks_siboru = f"Radar temukan {token_count} token!" if token_count > 0 else "Pasar sepi..."
-            teks_parhata = f"Lolos {eligible_count} pool." if eligible_count > 0 else "Semua ditolak!"
+            # 2. Logika Percakapan Natural (Bubble Chat)
+            recent_events = state.get("events", [])
+            last_event = recent_events[-1] if recent_events else None
             
-            recent_events = state.get("events", [])[-1:]
-            if recent_events:
-                ev = recent_events[0]
-                if ev["type"] == "LP_OPEN":
-                    teks_raja = f"Buka posisi {ev.get('symbol', 'Token')}!"
-                elif ev["type"] == "LP_CLOSE":
-                    teks_raja = f"Tutup {ev.get('symbol', 'Token')}!"
-                else:
-                    teks_raja = "Awasi Market!"
-            else:
-                teks_raja = "Awasi Market!"
-                
-            teks_panongani = "Lapor Bos, ada posisi!" if len(state["positions"]) > 0 else "Laporan terkirim."
+            # Default text
+            teks_siboru = f"Radar temukan {token_count} token!" if token_count > 0 else "Pasar sepi nih..."
+            teks_parhata = f"Lolos {eligible_count} pool." if eligible_count > 0 else "Semua token sampah, ditolak!"
+            teks_raja = "Siap awasi market."
+            teks_panongani = "Laporan terkirim ke Bos."
 
-            # 3. Update Teks Bubble (Menggunakan replace biasa yang 100% aman)
-            html_content = html_content.replace('Cari Token...', teks_siboru)
-            html_content = html_content.replace('Cek Scam!', teks_parhata)
-            html_content = html_content.replace('Awasi Market!', teks_raja)
-            html_content = html_content.replace('Lapor Bos!', teks_panongani)
+            # Jika ada event terakhir, buat percakapan yang saling merespons
+            if last_event:
+                msg = last_event.get("message", "")
+                pnl_trade = last_event.get("pnl_usd", 0)
+                
+                if "Opened LP" in msg:
+                    symbol = msg.replace("Opened LP ", "").split(" on ")[0]
+                    teks_raja = f"Eksekusi beli {symbol}!"
+                    teks_panongani = f"Siap, aku catat {symbol}!"
+                    
+                elif "TAKE PROFIT" in msg:
+                    symbol = msg.replace("Closed ", "").split(":")[0]
+                    teks_raja = f"TP {symbol}! Cuan +${pnl_trade:.0f}!"
+                    teks_panongani = "Mantap! Ekuitas naik Bos!"
+                    teks_siboru = "Asik, jajan kopi dulu!"
+                    
+                elif "STOP LOSS" in msg or "GUARD" in msg:
+                    symbol = msg.replace("Closed ", "").split(":")[0]
+                    teks_raja = f"Cut loss {symbol}. Rugi ${abs(pnl_trade):.0f}."
+                    teks_panongani = "Tenang, laporin ke Bos ah."
+                    teks_parhata = "Maaf, token itu lolos radar awal."
+
+            # 3. Update Teks Bubble di HTML (Menggunakan Regex per class)
+            html_content = re.sub(r'(<div class="bubble bubble-siboru" id="bubble-siboru">).*?(</div>)', f'\\1{teks_siboru}\\2', html_content)
+            html_content = re.sub(r'(<div class="bubble bubble-parhata" id="bubble-parhata">).*?(</div>)', f'\\1{teks_parhata}\\2', html_content)
+            html_content = re.sub(r'(<div class="bubble bubble-raja" id="bubble-raja">).*?(</div>)', f'\\1{teks_raja}\\2', html_content)
+            html_content = re.sub(r'(<div class="bubble bubble-panongani" id="bubble-panongani">).*?(</div>)', f'\\1{teks_panongani}\\2', html_content)
             
             html_path.write_text(html_content, encoding="utf-8")
             log.info("Kantor Virtual & Bubble Chat berhasil diperbarui!")
