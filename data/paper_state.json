@@ -1,54 +1,8 @@
 {
   "version": 1,
   "starting_cash_usd": 10000.0,
-  "cash_usd": 23662.444107360767,
+  "cash_usd": 23333.192818946474,
   "positions": {
-    "bsc:0x5a606e1533fb11870f3b6c2f98a7edda699b94bf": {
-      "symbol": "SI",
-      "name": "SpaceX Inu",
-      "chain": "bsc",
-      "dex": "pancakeswap",
-      "pair_address": "0x5A606e1533Fb11870f3B6c2f98a7eDdA699B94BF",
-      "pair_url": "https://dexscreener.com/bsc/0x5a606e1533fb11870f3b6c2f98a7edda699b94bf",
-      "invested_usd": 500.0,
-      "entry_price": 5.98e-10,
-      "entry_liquidity_usd": 69030.5,
-      "entry_volume_24h_usd": 235284.09,
-      "entry_score": 128.57,
-      "entry_time": "2026-10-21T13:47:57+00:00",
-      "last_updated_at": "2026-10-27T09:48:12+00:00",
-      "last_price_usd": 8.563e-10,
-      "last_liquidity_usd": 86960.45,
-      "estimated_fees_usd": 61.96642619156721,
-      "last_score": 99.05,
-      "data_stale": false,
-      "volume_history": [
-        51567.57,
-        82713.11,
-        83737.69,
-        77385.59,
-        75283.93,
-        75197.63,
-        75709.36,
-        79697.82,
-        88034.67,
-        94430.24,
-        100522.26,
-        101723.42,
-        101687.8,
-        102160.89,
-        111016.36,
-        122977.82,
-        122679.73,
-        123406.09,
-        123781.43,
-        123781.43,
-        125097.46,
-        129983.97,
-        130002.78,
-        130299.19
-      ]
-    },
     "solana:cb4gfrgeitfu5qtxfrmiqzsavpwgbd3heor4cs2jfpn": {
       "symbol": "QI",
       "name": "Quantum Inu",
@@ -61,12 +15,11 @@
       "entry_liquidity_usd": 56704.58,
       "entry_score": 81.74,
       "entry_time": "2026-10-23T09:11:35+00:00",
-      "last_updated_at": "2026-10-27T09:48:12+00:00",
-      "last_price_usd": 0.0001776,
-      "last_liquidity_usd": 47366.11,
-      "estimated_fees_usd": 9.48532022976435,
+      "last_updated_at": "2026-10-27T10:46:15+00:00",
+      "last_price_usd": 0.0001794,
+      "last_liquidity_usd": 47516.83,
+      "estimated_fees_usd": 9.580646327373177,
       "volume_history": [
-        31462.66,
         31061.22,
         30993.93,
         39392.0,
@@ -89,7 +42,8 @@
         35331.82,
         35874.34,
         35893.59,
-        35893.59
+        35893.59,
+        34886.79
       ],
       "data_stale": false
     },
@@ -105,12 +59,11 @@
       "entry_liquidity_usd": 186810.96,
       "entry_score": 119.02,
       "entry_time": "2026-10-23T11:42:32+00:00",
-      "last_updated_at": "2026-10-27T09:48:12+00:00",
-      "last_price_usd": 0.003547,
-      "last_liquidity_usd": 184257.38,
-      "estimated_fees_usd": 19.074113259422045,
+      "last_updated_at": "2026-10-27T10:46:15+00:00",
+      "last_price_usd": 0.003535,
+      "last_liquidity_usd": 184233.95,
+      "estimated_fees_usd": 19.233262184637027,
       "volume_history": [
-        362475.97,
         362341.25,
         289432.9,
         275153.8,
@@ -133,7 +86,8 @@
         216200.78,
         200042.62,
         196158.11,
-        196132.29
+        196132.29,
+        182421.63
       ],
       "data_stale": false
     },
@@ -149,12 +103,11 @@
       "entry_liquidity_usd": 180661.24,
       "entry_score": 112.66,
       "entry_time": "2026-10-24T00:57:46+00:00",
-      "last_updated_at": "2026-10-27T09:48:12+00:00",
-      "last_price_usd": 0.004545,
-      "last_liquidity_usd": 207862.53,
-      "estimated_fees_usd": 45.63664696042985,
+      "last_updated_at": "2026-10-27T10:46:15+00:00",
+      "last_price_usd": 0.0047,
+      "last_liquidity_usd": 211769.94,
+      "estimated_fees_usd": 46.12895665101509,
       "volume_history": [
-        812787.21,
         838807.25,
         851200.44,
         857242.39,
@@ -177,7 +130,8 @@
         860870.85,
         868675.63,
         869973.95,
-        873388.93
+        873388.93,
+        885331.18
       ],
       "data_stale": false
     },
@@ -193,10 +147,10 @@
       "entry_liquidity_usd": 248952.54,
       "entry_score": 113.26,
       "entry_time": "2026-10-26T20:43:11+00:00",
-      "last_updated_at": "2026-10-27T09:48:12+00:00",
-      "last_price_usd": 0.006521,
-      "last_liquidity_usd": 194701.09,
-      "estimated_fees_usd": 8.6760172521563,
+      "last_updated_at": "2026-10-27T10:46:15+00:00",
+      "last_price_usd": 0.006385,
+      "last_liquidity_usd": 193320.81,
+      "estimated_fees_usd": 9.290312266865177,
       "volume_history": [
         1400739.15,
         1297979.38,
@@ -217,9 +171,30 @@
         839655.63,
         829995.56,
         830089.38,
-        829878.81
+        829878.81,
+        831899.65
       ],
       "data_stale": false
+    },
+    "solana:b4cp45pgifvm5faxfh6aev8qz3eunqnqgbw7kuc7mhnb": {
+      "symbol": "CBUCKS",
+      "name": "Cartoon Money",
+      "chain": "solana",
+      "dex": "pumpswap",
+      "pair_address": "B4Cp45PGifVM5FAXfh6AeV8QZ3eUNQnqGBw7KuC7MHnB",
+      "pair_url": "https://dexscreener.com/solana/b4cp45pgifvm5faxfh6aev8qz3eunqnqgbw7kuc7mhnb",
+      "invested_usd": 997.0,
+      "entry_price": 0.0009547,
+      "entry_liquidity_usd": 101418.09,
+      "entry_score": 92.52,
+      "entry_time": "2026-10-27T10:46:15+00:00",
+      "last_updated_at": "2026-10-27T10:46:15+00:00",
+      "last_price_usd": 0.0009547,
+      "last_liquidity_usd": 101418.09,
+      "estimated_fees_usd": 0.0,
+      "volume_history": [
+        135906.3
+      ]
     }
   },
   "closed_trades": [
@@ -423,6 +398,18 @@
       "estimated_fees_usd": 20.1781,
       "net_proceeds_usd": 1247.2235,
       "pnl_usd": 250.2235,
+      "reason": "TAKE PROFIT: Harga naik >50.0%"
+    },
+    {
+      "closed_at": "2026-10-27T10:46:15+00:00",
+      "symbol": "SI",
+      "chain": "bsc",
+      "pair_address": "0x5A606e1533Fb11870f3B6c2f98a7eDdA699B94BF",
+      "invested_usd": 500.0,
+      "lp_value_usd": 615.0971,
+      "estimated_fees_usd": 62.0373,
+      "net_proceeds_usd": 670.7487,
+      "pnl_usd": 170.7487,
       "reason": "TAKE PROFIT: Harga naik >50.0%"
     }
   ],
@@ -847,7 +834,29 @@
       "message": "Opened LP BTC on solana",
       "invested_usd": 997.0,
       "score": 113.26
+    },
+    {
+      "time": "2026-10-27T10:46:15+00:00",
+      "type": "LP_CLOSE",
+      "message": "Closed SI: TAKE PROFIT: Harga naik >50.0%",
+      "closed_at": "2026-10-27T10:46:15+00:00",
+      "symbol": "SI",
+      "chain": "bsc",
+      "pair_address": "0x5A606e1533Fb11870f3B6c2f98a7eDdA699B94BF",
+      "invested_usd": 500.0,
+      "lp_value_usd": 615.0971,
+      "estimated_fees_usd": 62.0373,
+      "net_proceeds_usd": 670.7487,
+      "pnl_usd": 170.7487,
+      "reason": "TAKE PROFIT: Harga naik >50.0%"
+    },
+    {
+      "time": "2026-10-27T10:46:15+00:00",
+      "type": "LP_OPEN",
+      "message": "Opened LP CBUCKS on solana",
+      "invested_usd": 997.0,
+      "score": 92.52
     }
   ],
-  "last_run_at": "2026-10-27T09:48:12+00:00"
+  "last_run_at": "2026-10-27T10:46:15+00:00"
 }
