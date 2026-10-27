@@ -11,6 +11,7 @@ from siboru_scanner import scan_market, fetch_pair_by_address
 from parhata_validator import process_and_validate, pair_metrics, score_pair, is_eligible
 from raja_executor import execute_trades, position_value, number
 from panongani_reporter import write_reports, send_discord_notification
+from pande_harta import cek_saldo # <--- IMPORT PANDE
 from config import STARTING_CASH_USD
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
@@ -20,6 +21,7 @@ DATA_DIR = Path("data")
 STATE_FILE = DATA_DIR / "paper_state.json"
 
 def load_state():
+    # ... (sama seperti sebelumnya)
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     if not STATE_FILE.exists():
         return {"version": 2, "starting_cash_usd": STARTING_CASH_USD, "cash_usd": STARTING_CASH_USD, "positions": {}, "closed_trades": [], "events": [], "last_run_at": None}
@@ -39,6 +41,13 @@ def save_state(state):
 
 def main():
     log.info("=== MANAJER: Memulai Rapat Karyawan DJIWA LP ===")
+    
+    # --- UJI COBA KONEKSI WEB3 ---
+    log.info("Memanggil Pande untuk mengecek saldo Dompet Web3...")
+    saldo_devnet = cek_saldo()
+    log.info(f"💰 SALDO DEVNET SAAT INI: {saldo_devnet} SOL")
+    # -----------------------------
+
     raw_pairs, disc_err, pair_err, token_count = scan_market()
     log.info(f"Siboru selesai: {len(raw_pairs)} data mentah ditemukan.")
     
@@ -78,18 +87,18 @@ def main():
         "equity_usd": equity, 
         "total_pnl_usd": pnl, 
         "cash_usd": cash, 
-        "open_positions": len(state["positions"])
+        "open_positions": len(state["positions"]),
+        "saldo_devnet": saldo_devnet # Kirim saldo devnet ke discord
     }
     
     send_discord_notification(state, summary_for_discord)
     
-    # --- 5. MANAJER UPDATE KANTOR VIRTUAL & BUBBLE CHAT ---
+    # 5. MANAJER UPDATE KANTOR VIRTUAL & BUBBLE CHAT
     try:
         html_path = Path("index.html")
         if html_path.exists():
             html_content = html_path.read_text(encoding="utf-8")
             
-            # 1. Update Papan Kinerja (Angka)
             pnl_str = f"+${pnl:.2f}" if pnl >= 0 else f"-${abs(pnl):.2f}"
             pnl_class = "profit" if pnl >= 0 else "loss"
             
@@ -100,46 +109,39 @@ def main():
             html_content = re.sub(r'<strong id="posisi-terbuka">.*?</strong>', 
                                   f'<strong id="posisi-terbuka">{len(state["positions"])}/5</strong>', html_content)
 
-            # 2. Logika Percakapan Natural (Bubble Chat)
             recent_events = state.get("events", [])
             last_event = recent_events[-1] if recent_events else None
             
-            # Default text
             teks_siboru = f"Radar temukan {token_count} token!" if token_count > 0 else "Pasar sepi nih..."
             teks_parhata = f"Lolos {eligible_count} pool." if eligible_count > 0 else "Semua token sampah, ditolak!"
-            teks_raja = "Siap awasi market."
+            teks_raja = f"Saldo Devnet: {saldo_devnet:.2f} SOL" # Tampilkan di bubble Raja
             teks_panongani = "Laporan terkirim ke Bos."
 
-            # Jika ada event terakhir, buat percakapan yang saling merespons
             if last_event:
                 msg = last_event.get("message", "")
                 pnl_trade = last_event.get("pnl_usd", 0)
                 
                 if "Opened LP" in msg:
                     symbol = msg.replace("Opened LP ", "").split(" on ")[0]
-                    teks_raja = f"Eksekusi beli {symbol}!"
-                    teks_panongani = f"Siap, aku catat {symbol}!"
-                    
+                    teks_raja = f"Beli {symbol}! (Saldo: {saldo_devnet:.2f} SOL)"
+                    teks_panongani = f"Siap, catat {symbol}!"
                 elif "TAKE PROFIT" in msg:
                     symbol = msg.replace("Closed ", "").split(":")[0]
                     teks_raja = f"TP {symbol}! Cuan +${pnl_trade:.0f}!"
                     teks_panongani = "Mantap! Ekuitas naik Bos!"
                     teks_siboru = "Asik, jajan kopi dulu!"
-                    
                 elif "STOP LOSS" in msg or "GUARD" in msg:
                     symbol = msg.replace("Closed ", "").split(":")[0]
                     teks_raja = f"Cut loss {symbol}. Rugi ${abs(pnl_trade):.0f}."
                     teks_panongani = "Tenang, laporin ke Bos ah."
-                    teks_parhata = "Maaf, token itu lolos radar awal."
+                    teks_parhata = "Maaf, token itu lolos radar."
 
-            # 3. Update Teks Bubble di HTML (Menggunakan Regex per class)
             html_content = re.sub(r'(<div class="bubble bubble-siboru" id="bubble-siboru">).*?(</div>)', f'\\1{teks_siboru}\\2', html_content)
             html_content = re.sub(r'(<div class="bubble bubble-parhata" id="bubble-parhata">).*?(</div>)', f'\\1{teks_parhata}\\2', html_content)
             html_content = re.sub(r'(<div class="bubble bubble-raja" id="bubble-raja">).*?(</div>)', f'\\1{teks_raja}\\2', html_content)
             html_content = re.sub(r'(<div class="bubble bubble-panongani" id="bubble-panongani">).*?(</div>)', f'\\1{teks_panongani}\\2', html_content)
             
             html_path.write_text(html_content, encoding="utf-8")
-            log.info("Kantor Virtual & Bubble Chat berhasil diperbarui!")
     except Exception as e:
         log.error(f"Gagal update Kantor Virtual: {e}")
     
