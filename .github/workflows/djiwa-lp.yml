@@ -29,9 +29,16 @@ jobs:
         with:
           python-version: "3.12"
 
+      # TAMBAHAN BARU: INSTAL LIBRARY SOLANA
+      - name: Install Dependencies
+        run: |
+          pip install solana solders
+
       - name: Run live scan and virtual LP simulation
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          SOLANA_RPC_URL: ${{ secrets.SOLANA_RPC_URL }}
+          SOLANA_PRIVATE_KEY: ${{ secrets.SOLANA_PRIVATE_KEY }}
         run: python main.py
 
       - name: Save paper state to repository
