@@ -4,8 +4,8 @@ import json
 from solana.rpc.api import Client
 from solders.keypair import Keypair
 from solders.pubkey import Pubkey
-from solana.transaction import Transaction
-from solana.system_program import TransferParams, transfer
+from solders.transaction import Transaction
+from solders.system_program import TransferParams, transfer
 import base58
 
 def get_client():
@@ -46,7 +46,7 @@ def cek_saldo():
 
 def kirim_sol(tujuan_address_str, jumlah_sol):
     """
-    Fungsi untuk mengirim SOL ke alamat lain.
+    Fungsi untuk mengirim SOL ke alamat lain (menggunakan solders).
     """
     try:
         client = get_client()
@@ -54,13 +54,9 @@ def kirim_sol(tujuan_address_str, jumlah_sol):
         if not wallet:
             return False, "Wallet tidak ditemukan"
 
-        # 1. Siapkan alamat tujuan
         tujuan_pubkey = Pubkey.from_string(tujuan_address_str)
-        
-        # 2. Hitung jumlah dalam Lamports (1 SOL = 1_000_000_000 Lamports)
         lamports = int(jumlah_sol * 1_000_000_000)
 
-        # 3. Buat instruksi transfer
         transfer_ix = transfer(
             TransferParams(
                 from_pubkey=wallet.pubkey(),
@@ -69,18 +65,15 @@ def kirim_sol(tujuan_address_str, jumlah_sol):
             )
         )
 
-        # 4. Buat transaksi
+        # Menggunakan Transaction dari solders
         txn = Transaction().add(transfer_ix)
 
-        # 5. Dapatkan blockhash terbaru (wajib untuk Solana)
         recent_blockhash = client.get_latest_blockhash().value.blockhash
         txn.recent_blockhash = recent_blockhash
         txn.fee_payer = wallet.pubkey()
 
-        # 6. Tanda tangani transaksi (Sign)
         txn.sign(wallet)
 
-        # 7. Kirim ke jaringan (Broadcast)
         print(f"Mengirim {jumlah_sol} SOL ke {tujuan_address_str}...")
         response = client.send_transaction(txn)
         
