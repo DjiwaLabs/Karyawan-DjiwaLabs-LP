@@ -11,7 +11,7 @@ from siboru_scanner import scan_market, fetch_pair_by_address
 from parhata_validator import process_and_validate, pair_metrics, score_pair, is_eligible
 from raja_executor import execute_trades, position_value, number
 from panongani_reporter import write_reports, send_discord_notification
-from pande_harta import cek_saldo # <--- IMPORT PANDE
+from pande_harta import cek_saldo
 from config import STARTING_CASH_USD
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
@@ -21,7 +21,6 @@ DATA_DIR = Path("data")
 STATE_FILE = DATA_DIR / "paper_state.json"
 
 def load_state():
-    # ... (sama seperti sebelumnya)
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     if not STATE_FILE.exists():
         return {"version": 2, "starting_cash_usd": STARTING_CASH_USD, "cash_usd": STARTING_CASH_USD, "positions": {}, "closed_trades": [], "events": [], "last_run_at": None}
@@ -42,11 +41,10 @@ def save_state(state):
 def main():
     log.info("=== MANAJER: Memulai Rapat Karyawan DJIWA LP ===")
     
-    # --- UJI COBA KONEKSI WEB3 ---
+    # UJI COBA KONEKSI WEB3
     log.info("Memanggil Pande untuk mengecek saldo Dompet Web3...")
     saldo_devnet = cek_saldo()
     log.info(f"💰 SALDO DEVNET SAAT INI: {saldo_devnet} SOL")
-    # -----------------------------
 
     raw_pairs, disc_err, pair_err, token_count = scan_market()
     log.info(f"Siboru selesai: {len(raw_pairs)} data mentah ditemukan.")
@@ -88,7 +86,7 @@ def main():
         "total_pnl_usd": pnl, 
         "cash_usd": cash, 
         "open_positions": len(state["positions"]),
-        "saldo_devnet": saldo_devnet # Kirim saldo devnet ke discord
+        "saldo_devnet": saldo_devnet
     }
     
     send_discord_notification(state, summary_for_discord)
@@ -114,7 +112,7 @@ def main():
             
             teks_siboru = f"Radar temukan {token_count} token!" if token_count > 0 else "Pasar sepi nih..."
             teks_parhata = f"Lolos {eligible_count} pool." if eligible_count > 0 else "Semua token sampah, ditolak!"
-            teks_raja = f"Saldo Devnet: {saldo_devnet:.2f} SOL" # Tampilkan di bubble Raja
+            teks_raja = f"Saldo Devnet: {saldo_devnet:.2f} SOL" 
             teks_panongani = "Laporan terkirim ke Bos."
 
             if last_event:
@@ -123,7 +121,7 @@ def main():
                 
                 if "Opened LP" in msg:
                     symbol = msg.replace("Opened LP ", "").split(" on ")[0]
-                    teks_raja = f"Beli {symbol}! (Saldo: {saldo_devnet:.2f} SOL)"
+                    teks_raja = f"Beli {symbol}! (Devnet: {saldo_devnet:.2f} SOL)"
                     teks_panongani = f"Siap, catat {symbol}!"
                 elif "TAKE PROFIT" in msg:
                     symbol = msg.replace("Closed ", "").split(":")[0]
@@ -142,6 +140,7 @@ def main():
             html_content = re.sub(r'(<div class="bubble bubble-panongani" id="bubble-panongani">).*?(</div>)', f'\\1{teks_panongani}\\2', html_content)
             
             html_path.write_text(html_content, encoding="utf-8")
+            log.info("Kantor Virtual & Bubble Chat berhasil diperbarui!")
     except Exception as e:
         log.error(f"Gagal update Kantor Virtual: {e}")
     
