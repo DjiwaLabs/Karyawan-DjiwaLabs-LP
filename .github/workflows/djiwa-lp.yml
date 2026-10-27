@@ -29,10 +29,9 @@ jobs:
         with:
           python-version: "3.12"
 
-      # INSTALASI LENGKAP: Solana, Solders, dan Base58
       - name: Install Dependencies
         run: |
-          pip install "solana<0.40" solders base58
+          pip install solana solders base58
 
       - name: Run live scan and virtual LP simulation
         env:
