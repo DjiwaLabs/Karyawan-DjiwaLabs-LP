@@ -50,6 +50,7 @@ def send_discord_notification(state, summary):
 
     def usd(val): return f"${val:,.2f}"
     pnl = summary["total_pnl_usd"]
+    saldo_devnet = summary.get("saldo_devnet", 0.0)
     
     desc = (
         f"**Status:** PAPER SIMULATION 🟢\n"
@@ -58,10 +59,10 @@ def send_discord_notification(state, summary):
         f"**P/L Total:** {'+' if pnl >= 0 else ''}{usd(pnl)}\n"
         f"**Saldo Kas:** {usd(summary['cash_usd'])}\n"
         f"**Posisi Terbuka:** {summary['open_positions']} / 5\n"
+        f"**Saldo Devnet (Web3):** {saldo_devnet:.2f} SOL\n" # FITUR BARU: Saldo Web3
     )
     
-    # --- FITUR BARU: Aksi Terakhir (Recent Actions) ---
-    recent_events = state.get("events", [])[-3:] # Ambil 3 aksi terakhir
+    recent_events = state.get("events", [])[-3:]
     if recent_events:
         desc += "\n**Aksi Terakhir Raja:**\n"
         for ev in reversed(recent_events):
@@ -76,7 +77,6 @@ def send_discord_notification(state, summary):
         for pos in state["positions"].values():
             val = position_value(pos, number(pos.get("last_price_usd"), 0)) + number(pos.get("estimated_fees_usd"), 0)
             roi = ((val / number(pos.get("invested_usd"), 1)) - 1) * 100
-            # Tanda peringatan jika minus lebih dari 20%
             warning = " ⚠️" if roi < -20 else ""
             desc += f"• {pos['symbol']} ({pos['chain']}): {roi:+.1f}% | {usd(val)}{warning}\n"
             
