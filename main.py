@@ -11,7 +11,7 @@ from siboru_scanner import scan_market, fetch_pair_by_address
 from parhata_validator import process_and_validate, pair_metrics, score_pair, is_eligible
 from raja_executor import execute_trades, position_value, number
 from panongani_reporter import write_reports, send_discord_notification
-from pande_harta import cek_saldo
+from pande_harta import cek_saldo, get_wallet, kirim_sol # <-- IMPORT FUNGSI BARU
 from config import STARTING_CASH_USD
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
@@ -41,10 +41,24 @@ def save_state(state):
 def main():
     log.info("=== MANAJER: Memulai Rapat Karyawan DJIWA LP ===")
     
-    # UJI COBA KONEKSI WEB3
+    # 1. UJI COBA WEB3: CEK SALDO & KIRIM SOL
     log.info("Memanggil Pande untuk mengecek saldo Dompet Web3...")
     saldo_devnet = cek_saldo()
     log.info(f"💰 SALDO DEVNET SAAT INI: {saldo_devnet} SOL")
+
+    # --- SIMULASI LATIHAN MENEMBAK RAJA ---
+    wallet = get_wallet()
+    if wallet and saldo_devnet > 0.1:
+        alamat_sendiri = str(wallet.pubkey())
+        log.info(f"Raja mencoba mengirim 0.01 SOL ke diri sendiri ({alamat_sendiri})...")
+        sukses, tx_hash = kirim_sol(alamat_sendiri, 0.01)
+        if sukses:
+            log.info(f"🎯 TEMBAKAN BERHASIL! Lihat di Solscan: https://explorer.solana.com/tx/{tx_hash}?cluster=devnet")
+        else:
+            log.warning(f"Tembakan gagal: {tx_hash}")
+    else:
+        log.warning("Saldo tidak cukup atau wallet gagal dimuat, latihan tembak dilewati.")
+    # --------------------------------------
 
     raw_pairs, disc_err, pair_err, token_count = scan_market()
     log.info(f"Siboru selesai: {len(raw_pairs)} data mentah ditemukan.")
@@ -112,7 +126,7 @@ def main():
             
             teks_siboru = f"Radar temukan {token_count} token!" if token_count > 0 else "Pasar sepi nih..."
             teks_parhata = f"Lolos {eligible_count} pool." if eligible_count > 0 else "Semua token sampah, ditolak!"
-            teks_raja = f"Saldo Devnet: {saldo_devnet:.2f} SOL" 
+            teks_raja = f"Saldo Web3: {saldo_devnet:.2f} SOL" 
             teks_panongani = "Laporan terkirim ke Bos."
 
             if last_event:
@@ -121,7 +135,7 @@ def main():
                 
                 if "Opened LP" in msg:
                     symbol = msg.replace("Opened LP ", "").split(" on ")[0]
-                    teks_raja = f"Beli {symbol}! (Devnet: {saldo_devnet:.2f} SOL)"
+                    teks_raja = f"Beli {symbol}! (Web3: {saldo_devnet:.2f} SOL)"
                     teks_panongani = f"Siap, catat {symbol}!"
                 elif "TAKE PROFIT" in msg:
                     symbol = msg.replace("Closed ", "").split(":")[0]
