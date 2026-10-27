@@ -3,37 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DJIWA Labs - 3D Isometric Virtual Office</title>
+    <title>DJIWA LABS - Isometric Web3 Office</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
         
-        * { box-sizing: border-box; user-select: none; margin: 0; padding: 0; }
+        * {
+            box-sizing: border-box;
+            user-select: none;
+        }
 
         body { 
-            background: #181528; 
+            margin: 0; 
+            padding: 0; 
+            background: #110d1a; 
             font-family: 'Plus Jakarta Sans', sans-serif; 
-            display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
-            overflow: hidden; color: #ffffff; height: 100vh; width: 100vw;
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            overflow: hidden; 
+            color: white; 
+            height: 100vh;
         }
         
         .dashboard { 
-            width: 90%; max-width: 920px; background: rgba(30, 25, 52, 0.75);
-            backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-            border-radius: 20px; padding: 12px 28px; margin-top: 15px; 
-            display: flex; justify-content: space-between; align-items: center; 
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45); border: 1px solid rgba(255, 255, 255, 0.12); z-index: 10; 
+            width: 92%; 
+            max-width: 950px; 
+            background: rgba(28, 20, 48, 0.85);
+            backdrop-filter: blur(12px);
+            border-radius: 16px; 
+            padding: 12px 24px; 
+            margin-top: 15px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
+            border: 1px solid rgba(162, 138, 214, 0.2); 
+            z-index: 10; 
         }
-        .brand { display: flex; align-items: center; gap: 12px; }
-        .status-dot { width: 12px; height: 12px; background-color: #34d399; border-radius: 50%; box-shadow: 0 0 12px #34d399; animation: pulse 2s infinite; }
-        @keyframes pulse { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7); } 70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(52, 211, 153, 0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); } }
-        .dashboard h2 { font-size: 19px; font-weight: 800; background: linear-gradient(135deg, #a78bfa 0%, #38bdf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 1px; }
-        .stats { display: flex; gap: 22px; }
-        .stat { display: flex; flex-direction: column; align-items: flex-end; }
-        .stat span { font-size: 10px; color: #a78bfa; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; }
-        .stat strong { font-size: 15px; color: #34d399; font-weight: 700; }
-        .stat strong.badge { background: rgba(52, 211, 153, 0.15); padding: 3px 10px; border-radius: 8px; border: 1px solid rgba(52, 211, 153, 0.35); }
-        canvas { display: block; cursor: pointer; }
-        .instructions { position: absolute; bottom: 14px; font-size: 12px; color: #c084fc; background: rgba(26, 20, 48, 0.85); padding: 6px 18px; border-radius: 20px; border: 1px solid rgba(167, 139, 250, 0.25); pointer-events: none; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #3fb950;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #3fb950;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(63, 185, 80, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(63, 185, 80, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(63, 185, 80, 0); }
+        }
+
+        .dashboard h2 { 
+            margin: 0; 
+            font-size: 18px; 
+            font-weight: 800;
+            background: linear-gradient(135deg, #d2bcf3 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+        }
+
+        .stats { 
+            display: flex; 
+            gap: 20px; 
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .stat span { 
+            font-size: 10px; 
+            color: #9d8ec2; 
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .stat strong { 
+            font-size: 15px; 
+            color: #4ade80; 
+            font-weight: 700;
+        }
+
+        .badge {
+            background: rgba(74, 222, 128, 0.15);
+            padding: 2px 8px;
+            border-radius: 6px;
+            border: 1px solid rgba(74, 222, 128, 0.3);
+        }
+
+        canvas { 
+            display: block; 
+            cursor: pointer;
+        }
+
+        .instructions {
+            position: absolute;
+            bottom: 15px;
+            font-size: 12px;
+            color: #bfa8e6;
+            background: rgba(26, 18, 43, 0.8);
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(167, 139, 250, 0.3);
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
@@ -44,14 +129,14 @@
             <h2>DJIWA LABS</h2>
         </div>
         <div class="stats">
-            <div class="stat"><span>PnL Total</span><strong class="badge" id="pnl-total">+$18,374.56</strong></div>
-            <div class="stat"><span>Posisi Aktif</span><strong id="posisi-terbuka">5 / 5</strong></div>
-            <div class="stat"><span>Saldo Web3</span><strong style="color:#38bdf8;" id="saldo-devnet">20.00 SOL</strong></div>
+            <div class="stat"><span>PnL Total</span><strong class="badge">+$18,374.56</strong></div>
+            <div class="stat"><span>Posisi Aktif</span><strong>5 / 5</strong></div>
+            <div class="stat"><span>Saldo Web3</span><strong style="color:#a78bfa;">20.00 SOL</strong></div>
         </div>
     </div>
 
     <canvas id="officeCanvas"></canvas>
-    <div class="instructions">💡 Klik robot untuk melihat status & interaksi live</div>
+    <div class="instructions">💡 Klik karakter robot untuk mengganti aktivitas & pesan mereka</div>
 
     <script>
         const canvas = document.getElementById('officeCanvas');
@@ -59,166 +144,385 @@
 
         function resizeCanvas() {
             canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight - 75;
+            canvas.height = window.innerHeight - 70;
         }
         resizeCanvas();
         window.addEventListener('resize', resizeCanvas);
 
-        const GRID_ROWS = 5;
-        const GRID_COLS = 5;
-        const TILE_WIDTH = 100;
-        const TILE_HEIGHT = 50;
+        // --- DEKORASI BACKGROUND PARTIKEL ---
+        const particles = Array.from({ length: 25 }, () => ({
+            x: Math.random() * window.innerWidth,
+            y: Math.random() * window.innerHeight,
+            size: Math.random() * 2 + 1,
+            speedY: Math.random() * 0.3 + 0.1,
+            opacity: Math.random() * 0.4 + 0.1
+        }));
 
-        function gridToScreen(gx, gy, originX, originY) {
-            return { x: originX + (gx - gy) * TILE_WIDTH, y: originY + (gx + gy) * TILE_HEIGHT };
+        function drawParticles() {
+            particles.forEach(p => {
+                p.y -= p.speedY;
+                if (p.y < 0) p.y = canvas.height;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(167, 139, 250, ${p.opacity})`;
+                ctx.fill();
+            });
         }
 
-        function drawIsoBox(x, y, w, h, d, colorTop, colorLeft, colorRight) {
-            ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + w, y + w * 0.5); ctx.lineTo(x, y + w); ctx.lineTo(x - w, y + w * 0.5); ctx.closePath(); ctx.fillStyle = colorTop; ctx.fill();
-            ctx.beginPath(); ctx.moveTo(x - w, y + w * 0.5); ctx.lineTo(x, y + w); ctx.lineTo(x, y + w + h); ctx.lineTo(x - w, y + w * 0.5 + h); ctx.closePath(); ctx.fillStyle = colorLeft; ctx.fill();
-            ctx.beginPath(); ctx.moveTo(x, y + w); ctx.lineTo(x + w, y + w * 0.5); ctx.lineTo(x + w, y + w * 0.5 + h); ctx.lineTo(x, y + w + h); ctx.closePath(); ctx.fillStyle = colorRight; ctx.fill();
+        // --- ISOMETRIC HELPER FUNCTIONS ---
+        function toIso(x, y, z = 0, originX = canvas.width / 2, originY = canvas.height / 2 + 20) {
+            const isoX = originX + (x - y) * 1.5;
+            const isoY = originY + (x + y) * 0.75 - z;
+            return { x: isoX, y: isoY };
         }
 
-        function drawPlant(x, y) {
-            drawIsoBox(x, y + 5, 14, 22, 14, "#475569", "#334155", "#1e293b");
-            ctx.beginPath(); ctx.arc(x, y - 18, 18, 0, Math.PI * 2); ctx.fillStyle = "#10b981"; ctx.fill();
-            ctx.beginPath(); ctx.arc(x - 5, y - 22, 10, 0, Math.PI * 2); ctx.fillStyle = "#34d399"; ctx.fill();
+        function drawIsoTile(gx, gy, size, colorTop, colorLeft, colorRight, originX, originY) {
+            const p1 = toIso(gx * size, gy * size, 0, originX, originY);
+            const p2 = toIso((gx + 1) * size, gy * size, 0, originX, originY);
+            const p3 = toIso((gx + 1) * size, (gy + 1) * size, 0, originX, originY);
+            const p4 = toIso(gx * size, (gy + 1) * size, 0, originX, originY);
+
+            ctx.beginPath();
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.lineTo(p3.x, p3.y);
+            ctx.lineTo(p4.x, p4.y);
+            ctx.closePath();
+            ctx.fillStyle = colorTop;
+            ctx.fill();
+            ctx.strokeStyle = "rgba(167, 139, 250, 0.12)";
+            ctx.lineWidth = 1;
+            ctx.stroke();
         }
 
-        function drawBookshelf(x, y) {
-            drawIsoBox(x, y, 35, 75, 20, "#92400e", "#78350f", "#451a03");
-            const bookColors = ["#ef4444", "#3b82f6", "#10b981", "#f59e0b", "#8b5cf6", "#ec4899"];
-            for (let i = 0; i < 4; i++) {
-                ctx.fillStyle = bookColors[i % bookColors.length];
-                ctx.fillRect(x - 22 + i * 11, y + 12 - i * 4, 7, 24);
-                ctx.fillStyle = bookColors[(i + 2) % bookColors.length];
-                ctx.fillRect(x - 22 + i * 11, y + 36 - i * 4, 7, 24);
-            }
-        }
-
-        function drawDesk(x, y, isHovered, labelText, monitorState) {
-            ctx.beginPath(); ctx.ellipse(x, y + 25, 42, 20, 0, 0, Math.PI * 2); ctx.fillStyle = "rgba(15, 12, 29, 0.4)"; ctx.fill();
-            ctx.beginPath(); ctx.ellipse(x + 12, y - 8, 14, 7, 0, 0, Math.PI * 2); ctx.fillStyle = "#1e1b4b"; ctx.fill();
-            ctx.beginPath(); ctx.roundRect(x + 4, y - 30, 18, 20, 4); ctx.fillStyle = isHovered ? "#a78bfa" : "#312e81"; ctx.fill();
-
-            const deskW = 34;
-            drawIsoBox(x, y, deskW, 16, deskW, isHovered ? "#ffffff" : "#f1f5f9", isHovered ? "#e2e8f0" : "#cbd5e1", isHovered ? "#cbd5e1" : "#94a3b8");
-
-            ctx.font = "700 9px 'Plus Jakarta Sans', sans-serif"; ctx.fillStyle = "#64748b"; ctx.textAlign = "center"; ctx.fillText(labelText, x - 5, y + 24);
-
-            ctx.beginPath(); ctx.roundRect(x - 16, y - 22, 26, 16, 3); ctx.fillStyle = "#0f172a"; ctx.fill(); ctx.strokeStyle = "#475569"; ctx.lineWidth = 1.5; ctx.stroke();
-            ctx.beginPath(); ctx.roundRect(x - 14, y - 20, 22, 12, 2); ctx.fillStyle = monitorState === 0 ? "#1e1b4b" : (monitorState === 1 ? "#064e3b" : "#4c1d95"); ctx.fill();
+        // --- GAMBAR MEJA & SEAT KANTOR ---
+        function drawWorkstation(gx, gy, size, originX, originY, label, colorAccent, isHovered) {
+            const basePos = toIso((gx + 0.5) * size, (gy + 0.5) * size, 0, originX, originY);
             
-            ctx.fillStyle = "#34d399"; ctx.fillRect(x - 11, y - 14, 3, 5); ctx.fillRect(x - 5, y - 17, 3, 8);
-            ctx.fillStyle = "#f43f5e"; ctx.fillRect(x - 8, y - 12, 3, 4); ctx.fillRect(x - 1, y - 16, 3, 7);
+            // Bayangan Meja
+            ctx.beginPath();
+            ctx.ellipse(basePos.x, basePos.y + 10, 45, 20, 0, 0, Math.PI * 2);
+            ctx.fillStyle = "rgba(0,0,0,0.3)";
+            ctx.fill();
+
+            // Meja Putih Minimalis
+            const deskW = 32, deskH = 20, deskHeight = 22;
+            const deskTop = toIso((gx + 0.1) * size, (gy + 0.1) * size, deskHeight, originX, originY);
+            const deskRight = toIso((gx + 0.9) * size, (gy + 0.1) * size, deskHeight, originX, originY);
+            const deskBottom = toIso((gx + 0.9) * size, (gy + 0.9) * size, deskHeight, originX, originY);
+            const deskLeft = toIso((gx + 0.1) * size, (gy + 0.9) * size, deskHeight, originX, originY);
+
+            // Sisi Meja
+            ctx.beginPath();
+            ctx.moveTo(deskLeft.x, deskLeft.y);
+            ctx.lineTo(deskBottom.x, deskBottom.y);
+            ctx.lineTo(deskBottom.x, deskBottom.y + deskHeight);
+            ctx.lineTo(deskLeft.x, deskLeft.y + deskHeight);
+            ctx.closePath();
+            ctx.fillStyle = "#cbd5e1"; ctx.fill();
+
+            ctx.beginPath();
+            ctx.moveTo(deskBottom.x, deskBottom.y);
+            ctx.lineTo(deskRight.x, deskRight.y);
+            ctx.lineTo(deskRight.x, deskRight.y + deskHeight);
+            ctx.lineTo(deskBottom.x, deskBottom.y + deskHeight);
+            ctx.closePath();
+            ctx.fillStyle = "#94a3b8"; ctx.fill();
+
+            // Atas Meja (Putih)
+            ctx.beginPath();
+            ctx.moveTo(deskTop.x, deskTop.y);
+            ctx.lineTo(deskRight.x, deskRight.y);
+            ctx.lineTo(deskBottom.x, deskBottom.y);
+            ctx.lineTo(deskLeft.x, deskLeft.y);
+            ctx.closePath();
+            ctx.fillStyle = "#f8fafc"; ctx.fill();
+
+            // Monitor Komputer
+            const monPos = toIso((gx + 0.35) * size, (gy + 0.35) * size, deskHeight + 2, originX, originY);
+            ctx.beginPath();
+            ctx.roundRect(monPos.x - 14, monPos.y - 18, 28, 16, 3);
+            ctx.fillStyle = "#0f172a"; ctx.fill();
+            ctx.strokeStyle = isHovered ? colorAccent : "#3b82f6";
+            ctx.lineWidth = 1.5; ctx.stroke();
+
+            // Screen Display Chart
+            ctx.beginPath();
+            ctx.roundRect(monPos.x - 12, monPos.y - 16, 24, 12, 2);
+            ctx.fillStyle = "#1e1b4b"; ctx.fill();
+
+            // Candlestick Grafis Mini
+            ctx.fillStyle = "#22c55e"; ctx.fillRect(monPos.x - 8, monPos.y - 12, 3, 6);
+            ctx.fillStyle = "#ef4444"; ctx.fillRect(monPos.x - 3, monPos.y - 14, 3, 8);
+            ctx.fillStyle = "#22c55e"; ctx.fillRect(monPos.x + 2, monPos.y - 10, 3, 5);
+
+            // Label Nama Role di Depan Meja
+            ctx.font = "700 10px 'Plus Jakarta Sans', sans-serif";
+            ctx.fillStyle = "#64748b";
+            ctx.textAlign = "center";
+            ctx.fillText(label, basePos.x, basePos.y + 24);
         }
 
-        function drawCyborgRobot(x, y, color, isHovered) {
-            const floatY = y - 18;
-            ctx.beginPath(); ctx.ellipse(x, floatY + 22, 16, 7, 0, 0, Math.PI * 2); ctx.fillStyle = "rgba(0,0,0,0.3)"; ctx.fill();
-            ctx.beginPath(); ctx.ellipse(x - 10, floatY + 5, 4, 3, 0, 0, Math.PI * 2); ctx.ellipse(x + 2, floatY + 7, 4, 3, 0, 0, Math.PI * 2); ctx.fillStyle = color; ctx.fill();
-            ctx.beginPath(); ctx.arc(x - 4, floatY - 14, 16, 0, Math.PI * 2); ctx.fillStyle = color; ctx.fill();
-            if (isHovered) { ctx.shadowColor = color; ctx.shadowBlur = 15; ctx.stroke(); ctx.shadowBlur = 0; }
-            ctx.beginPath(); ctx.ellipse(x - 4, floatY - 14, 11, 10, 0, 0, Math.PI * 2); ctx.fillStyle = "#090d16"; ctx.fill(); ctx.strokeStyle = "rgba(255,255,255,0.2)"; ctx.lineWidth = 1; ctx.stroke();
-            ctx.fillStyle = "#ec4899"; ctx.shadowColor = "#ec4899"; ctx.shadowBlur = 8;
-            ctx.fillRect(x - 9, floatY - 17, 4, 3); ctx.fillRect(x - 2, floatY - 17, 4, 3); ctx.fillRect(x - 7, floatY - 11, 8, 2); ctx.shadowBlur = 0;
+        // --- GAMBAR ROBOT HELMET (CYBORG) ---
+        function drawCyborgRobot(x, y, color, floatOffset, isHovered) {
+            const py = y + floatOffset;
+
+            // Bayangan Robot
+            ctx.beginPath();
+            ctx.ellipse(x, y + 10, 16, 7, 0, 0, Math.PI * 2);
+            ctx.fillStyle = "rgba(0,0,0,0.35)";
+            ctx.fill();
+
+            if (isHovered) {
+                ctx.shadowColor = color;
+                ctx.shadowBlur = 15;
+            }
+
+            // Badan Robot
+            ctx.beginPath();
+            ctx.ellipse(x, py - 12, 14, 12, 0, 0, Math.PI * 2);
+            ctx.fillStyle = "#334155";
+            ctx.fill();
+
+            // Helm Bulat Utama
+            ctx.beginPath();
+            ctx.arc(x, py - 28, 16, 0, Math.PI * 2);
+            ctx.fillStyle = color;
+            ctx.fill();
+            ctx.strokeStyle = "#ffffff";
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            // Visor Hitam
+            ctx.beginPath();
+            ctx.roundRect(x - 10, py - 32, 20, 10, 5);
+            ctx.fillStyle = "#0f172a";
+            ctx.fill();
+
+            // Mata Digital Glow Magenta
+            ctx.beginPath();
+            ctx.arc(x - 4, py - 27, 2, 0, Math.PI * 2);
+            ctx.arc(x + 4, py - 27, 2, 0, Math.PI * 2);
+            ctx.fillStyle = "#ec4899";
+            ctx.fill();
+
+            // Telinga Headset
+            ctx.beginPath();
+            ctx.arc(x - 16, py - 28, 3, 0, Math.PI * 2);
+            ctx.arc(x + 16, py - 28, 3, 0, Math.PI * 2);
+            ctx.fillStyle = "#f43f5e";
+            ctx.fill();
+
+            ctx.shadowBlur = 0; // Reset
         }
 
-        function drawBubble(x, y, text, isHovered, dotColor) {
-            ctx.font = "700 12px 'Plus Jakarta Sans', sans-serif";
+        // --- BUBBLE CHAT STYLED ---
+        function drawBubble(x, y, text, badgeColor, isHovered) {
+            ctx.font = "700 11px 'Plus Jakarta Sans', sans-serif";
             const textWidth = ctx.measureText(text).width;
-            const bw = textWidth + 34; const bh = 32; const bx = x - bw / 2; const by = y - 75;
-            if (isHovered) { ctx.shadowColor = dotColor; ctx.shadowBlur = 14; }
-            ctx.beginPath(); ctx.roundRect(bx, by, bw, bh, 16); ctx.fillStyle = "rgba(22, 18, 42, 0.92)"; ctx.fill(); ctx.strokeStyle = isHovered ? dotColor : "rgba(167, 139, 250, 0.35)"; ctx.lineWidth = 1.5; ctx.stroke(); ctx.shadowBlur = 0;
-            ctx.beginPath(); ctx.arc(bx + 16, by + 16, 4.5, 0, Math.PI * 2); ctx.fillStyle = dotColor; ctx.shadowColor = dotColor; ctx.shadowBlur = 6; ctx.fill(); ctx.shadowBlur = 0;
-            ctx.fillStyle = "#ffffff"; ctx.textAlign = "left"; ctx.fillText(text, bx + 27, by + 20);
+            const bw = textWidth + 30;
+            const bh = 30;
+            const bx = x - bw / 2;
+            const by = y - 72;
+
+            if (isHovered) {
+                ctx.shadowColor = badgeColor;
+                ctx.shadowBlur = 12;
+            }
+
+            // Body Bubble
+            ctx.beginPath();
+            ctx.roundRect(bx, by, bw, bh, 15);
+            ctx.fillStyle = "#1e1b4b";
+            ctx.fill();
+            ctx.strokeStyle = badgeColor;
+            ctx.lineWidth = 1.5;
+            ctx.stroke();
+            ctx.shadowBlur = 0;
+
+            // Panah Bubble
+            ctx.beginPath();
+            ctx.moveTo(x - 4, by + bh);
+            ctx.lineTo(x, by + bh + 5);
+            ctx.lineTo(x + 4, by + bh);
+            ctx.fillStyle = "#1e1b4b";
+            ctx.fill();
+
+            // Indicator Dot
+            ctx.beginPath();
+            ctx.arc(bx + 12, by + 15, 3.5, 0, Math.PI * 2);
+            ctx.fillStyle = badgeColor;
+            ctx.fill();
+
+            // Text
+            ctx.fillStyle = "#ffffff";
+            ctx.textAlign = "left";
+            ctx.fillText(text, bx + 22, by + 19);
         }
 
-        // --- DATA 6 KARYAWAN DJIWA LABS ---
+        // --- DEKORASI RAK BUKU & BINGKAI DINDING ---
+        function drawDecorations(originX, originY) {
+            // Bingkai Chart 1 (Dinding Kiri)
+            const f1 = toIso(0, 1.5, 90, originX, originY);
+            ctx.beginPath(); ctx.roundRect(f1.x - 35, f1.y - 15, 30, 20, 3); ctx.fillStyle = "#2e1065"; ctx.fill(); ctx.strokeStyle = "#a78bfa"; ctx.stroke();
+            ctx.fillStyle = "#4ade80"; ctx.fillRect(f1.x - 30, f1.y - 8, 4, 10);
+            ctx.fillStyle = "#f43f5e"; ctx.fillRect(f1.x - 24, f1.y - 12, 4, 12);
+            ctx.fillStyle = "#4ade80"; ctx.fillRect(f1.x - 18, f1.y - 6, 4, 8);
+
+            // Bingkai Chart 2 (Dinding Kanan)
+            const f2 = toIso(2.5, 0, 95, originX, originY);
+            ctx.beginPath(); ctx.roundRect(f2.x + 5, f2.y - 15, 35, 20, 3); ctx.fillStyle = "#2e1065"; ctx.fill(); ctx.strokeStyle = "#38bdf8"; ctx.stroke();
+            ctx.fillStyle = "#38bdf8"; ctx.fillRect(f2.x + 10, f2.y - 10, 5, 12);
+            ctx.fillStyle = "#4ade80"; ctx.fillRect(f2.x + 18, f2.y - 12, 5, 14);
+
+            // Jam Dinding Bulat (Dinding Kanan)
+            const clockPos = toIso(4.2, 0, 100, originX, originY);
+            ctx.beginPath(); ctx.arc(clockPos.x + 10, clockPos.y - 10, 10, 0, Math.PI * 2); ctx.fillStyle = "#ffffff"; ctx.fill(); ctx.strokeStyle = "#64748b"; ctx.lineWidth = 2; ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(clockPos.x + 10, clockPos.y - 10); ctx.lineTo(clockPos.x + 10, clockPos.y - 16); ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(clockPos.x + 10, clockPos.y - 10); ctx.lineTo(clockPos.x + 15, clockPos.y - 10); ctx.stroke();
+
+            // Plang Kantor "DJIWA HQ"
+            const signPos = toIso(5.2, 0, 105, originX, originY);
+            ctx.beginPath(); ctx.roundRect(signPos.x + 5, signPos.y - 18, 60, 22, 4); ctx.fillStyle = "rgba(15, 23, 42, 0.8)"; ctx.fill(); ctx.strokeStyle = "#a78bfa"; ctx.stroke();
+            ctx.font = "800 9px 'Plus Jakarta Sans', sans-serif"; ctx.fillStyle = "#ffffff"; ctx.textAlign = "center";
+            ctx.fillText("DJIWA HQ", signPos.x + 35, signPos.y - 8);
+            ctx.font = "600 7px 'Plus Jakarta Sans', sans-serif"; ctx.fillStyle = "#94a3b8";
+            ctx.fillText("Digital Workforce", signPos.x + 35, signPos.y - 1);
+        }
+
+        // --- DATA KARYAWAN ROBOT ---
         const employees = [
-            { gx: 1.2, gy: 1.2, color: "#f59e0b", dotColor: "#f59e0b", label: "Siboru - Scanner", texts: ["Radar temukan 40 token", "Cek TVL & Volume", "Scanning DexScreener..."], textIdx: 0, monitorState: 0 },
-            { gx: 3.2, gy: 1.2, color: "#8b5cf6", dotColor: "#a78bfa", label: "Parhata - Validator", texts: ["Lolos 2 pool.", "Cek Scam & Honeypot", "Audit Smart Contract"], textIdx: 0, monitorState: 1 },
-            { gx: 1.2, gy: 3.2, color: "#ef4444", dotColor: "#f43f5e", label: "Raja - Eksekutor", texts: ["Beli CBUCKS!", "Take Profit +50%!", "Cut Loss Pepper"], textIdx: 0, monitorState: 2 },
-            { gx: 3.2, gy: 3.2, color: "#3b82f6", dotColor: "#60a5fa", label: "Panongani - Reporter", texts: ["Laporan terkirim", "Update PnL ke Discord", "Sync Website"], textIdx: 0, monitorState: 0 },
-            { gx: 2.2, gy: 1.8, color: "#10b981", dotColor: "#34d399", label: "Pande - Web3", texts: ["Fee $0.86 belum diklaim", "Saldo Devnet 20 SOL", "Swap SOL ke USDC"], textIdx: 0, monitorState: 1 },
-            { gx: 2.2, gy: 2.8, color: "#f97316", dotColor: "#fb923c", label: "Ompu - Keamanan", texts: ["Validasi Transaksi", "Cek Batas Aman", "Sanitasi Error OK"], textIdx: 0, monitorState: 2 }
+            { 
+                gx: 1.2, gy: 1.2, label: "Rara - Riset Pool", color: "#fbbf24", badgeColor: "#f59e0b",
+                texts: ["Cek TVL & volume", "Liquidity Pool +18%", "Volume SOL naik 25%"], textIdx: 0 
+            },
+            { 
+                gx: 3.8, gy: 1.2, label: "Bima - Manager", color: "#38bdf8", badgeColor: "#0284c7",
+                texts: ["Fee $0.86 belum diklaim", "Staking APY 14.2%", "Rebalancing Portfolio"], textIdx: 0 
+            },
+            { 
+                gx: 1.2, gy: 3.5, label: "Rala - Eksekutor", color: "#4ade80", badgeColor: "#16a34a",
+                texts: ["PnL +$0.34", "Order Buy terpasang", "Gas fee optimal"], textIdx: 0 
+            },
+            { 
+                gx: 3.8, gy: 3.5, label: "Fathata - Validator", color: "#c084fc", badgeColor: "#9333ea",
+                texts: ["Lolos 2 pool audit", "Smart contract safe", "Signatures valid!"], textIdx: 0 
+            },
+            { 
+                gx: 2.5, gy: 5.2, label: "Pandangan - Reporter", color: "#f43f5e", badgeColor: "#e11d48",
+                texts: ["Laporan terkirim!", "Notifikasi Telegram ON", "Daily summary ready"], textIdx: 0 
+            }
         ];
 
         let hoveredEmp = null;
-        let animOffset = 0;
+        let offset = 0;
 
+        // --- MAIN LOOP ANIMATOR ---
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            animOffset += 0.04;
+            drawParticles();
+            offset += 0.04;
 
             const originX = canvas.width / 2;
-            const originY = canvas.height / 2 - 130;
+            const originY = canvas.height / 2 - 20;
+            const tileSize = 60;
+            const gridSize = 6;
 
-            const pTop = gridToScreen(0, 0, originX, originY);
-            const pLeft = gridToScreen(0, GRID_ROWS, originX, originY);
-            const pRight = gridToScreen(GRID_COLS, 0, originX, originY);
-            const wallHeight = 240;
+            // --- 1. GAMBAR DINDING LAVENDER ---
+            // Dinding Kiri
+            const wallLeftTop = toIso(0, 0, 140, originX, originY);
+            const wallLeftBot = toIso(0, 0, 0, originX, originY);
+            const wallLeftEnd = toIso(0, gridSize, 0, originX, originY);
+            const wallLeftEndTop = toIso(0, gridSize, 140, originX, originY);
 
-            // Dinding
-            ctx.beginPath(); ctx.moveTo(pTop.x, pTop.y); ctx.lineTo(pLeft.x, pLeft.y); ctx.lineTo(pLeft.x, pLeft.y - wallHeight); ctx.lineTo(pTop.x, pTop.y - wallHeight); ctx.closePath(); ctx.fillStyle = "#8b78a5"; ctx.fill(); ctx.strokeStyle = "#73608d"; ctx.lineWidth = 1.5; ctx.stroke();
-            ctx.beginPath(); ctx.moveTo(pTop.x, pTop.y); ctx.lineTo(pRight.x, pRight.y); ctx.lineTo(pRight.x, pRight.y - wallHeight); ctx.lineTo(pTop.x, pTop.y - wallHeight); ctx.closePath(); ctx.fillStyle = "#9c87ba"; ctx.fill(); ctx.strokeStyle = "#8571a3"; ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(wallLeftBot.x, wallLeftBot.y);
+            ctx.lineTo(wallLeftEnd.x, wallLeftEnd.y);
+            ctx.lineTo(wallLeftEndTop.x, wallLeftEndTop.y);
+            ctx.lineTo(wallLeftTop.x, wallLeftTop.y);
+            ctx.closePath();
+            ctx.fillStyle = "#8b78a5"; ctx.fill();
+            ctx.strokeStyle = "#766390"; ctx.stroke();
 
-            // Dekorasi Dinding
-            ctx.fillStyle = "#1e1b4b"; ctx.fillRect(pTop.x + 40, pTop.y - 190, 36, 26); ctx.strokeStyle = "#cbd5e1"; ctx.lineWidth = 2; ctx.strokeRect(pTop.x + 40, pTop.y - 190, 36, 26);
-            ctx.fillRect(pTop.x + 85, pTop.y - 170, 24, 20); ctx.strokeRect(pTop.x + 85, pTop.y - 170, 24, 20);
-            ctx.beginPath(); ctx.arc(pTop.x + 140, pTop.y - 175, 12, 0, Math.PI * 2); ctx.fillStyle = "#ffffff"; ctx.fill(); ctx.stroke();
-            ctx.beginPath(); ctx.moveTo(pTop.x + 140, pTop.y - 175); ctx.lineTo(pTop.x + 140, pTop.y - 182); ctx.moveTo(pTop.x + 140, pTop.y - 175); ctx.lineTo(pTop.x + 144, pTop.y - 175); ctx.strokeStyle = "#0f172a"; ctx.lineWidth = 1.5; ctx.stroke();
-            ctx.font = "800 12px 'Plus Jakarta Sans', sans-serif"; ctx.fillStyle = "#475569"; ctx.fillText("DJIWA HQ", pTop.x + 175, pTop.y - 165);
-            ctx.font = "600 8px 'Plus Jakarta Sans', sans-serif"; ctx.fillText("Digital Workforce", pTop.x + 175, pTop.y - 153);
-            ctx.fillStyle = "rgba(255, 255, 255, 0.4)"; ctx.fillRect(pTop.x - 120, pTop.y - 190, 80, 50); ctx.strokeStyle = "#ffffff"; ctx.strokeRect(pTop.x - 120, pTop.y - 190, 80, 50);
+            // Dinding Kanan
+            const wallRightEnd = toIso(gridSize, 0, 0, originX, originY);
+            const wallRightEndTop = toIso(gridSize, 0, 140, originX, originY);
 
-            // Lantai Grid
-            for (let r = 0; r < GRID_ROWS; r++) {
-                for (let c = 0; c < GRID_COLS; c++) {
-                    const pos = gridToScreen(r, c, originX, originY);
-                    const isEven = (r + c) % 2 === 0;
-                    drawIsoBox(pos.x, pos.y, TILE_WIDTH, 10, TILE_WIDTH, isEven ? "#4c4669" : "#433d5e", isEven ? "#38324f" : "#312c47", isEven ? "#312c47" : "#2a253e");
-                    ctx.beginPath(); ctx.moveTo(pos.x, pos.y); ctx.lineTo(pos.x + TILE_WIDTH, pos.y + TILE_HEIGHT); ctx.lineTo(pos.x, pos.y + TILE_HEIGHT * 2); ctx.lineTo(pos.x - TILE_WIDTH, pos.y + TILE_HEIGHT); ctx.closePath(); ctx.strokeStyle = "rgba(167, 139, 250, 0.08)"; ctx.lineWidth = 1; ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(wallLeftBot.x, wallLeftBot.y);
+            ctx.lineTo(wallRightEnd.x, wallRightEnd.y);
+            ctx.lineTo(wallRightEndTop.x, wallRightEndTop.y);
+            ctx.lineTo(wallLeftTop.x, wallLeftTop.y);
+            ctx.closePath();
+            ctx.fillStyle = "#9c87ba"; ctx.fill();
+            ctx.strokeStyle = "#8973a8"; ctx.stroke();
+
+            // Render Dekorasi Dinding
+            drawDecorations(originX, originY);
+
+            // --- 2. GAMBAR LANTAI PURPLE CHECKERBOARD ---
+            for (let gx = 0; gx < gridSize; gx++) {
+                for (let gy = 0; gy < gridSize; gy++) {
+                    const isEven = (gx + gy) % 2 === 0;
+                    const tileColor = isEven ? "#5c4a78" : "#4e3d69";
+                    drawIsoTile(gx, gy, tileSize, tileColor, "#3d2d57", "#322349", originX, originY);
                 }
             }
 
-            // Props
-            drawPlant(gridToScreen(0.2, 4.2, originX, originY).x, gridToScreen(0.2, 4.2, originX, originY).y);
-            drawPlant(gridToScreen(4.2, 0.2, originX, originY).x, gridToScreen(4.2, 0.2, originX, originY).y);
-            drawBookshelf(gridToScreen(0.2, 2.2, originX, originY).x, gridToScreen(0.2, 2.2, originX, originY).y);
+            // Karpet Tengah "DJIWA LABS"
+            const rugPos = toIso(3, 3, 1, originX, originY);
+            ctx.font = "800 11px 'Plus Jakarta Sans', sans-serif";
+            ctx.fillStyle = "rgba(255, 255, 255, 0.15)";
+            ctx.textAlign = "center";
+            ctx.fillText("DJIWA LABS WORKFORCE", rugPos.x, rugPos.y);
 
-            // Render Karakter (Depth Sorted)
+            // --- 3. RENDERING KARYAWAN & MEJA (DEPTH SORTED) ---
             employees.sort((a, b) => (a.gx + a.gy) - (b.gx + b.gy));
+
             employees.forEach((emp, idx) => {
-                const pos = gridToScreen(emp.gx, emp.gy, originX, originY);
                 const isHovered = (hoveredEmp === emp);
-                const floatY = Math.sin(animOffset + idx * 1.5) * 3;
+                const floatOffset = Math.sin(offset + idx * 1.5) * 4;
 
-                drawDesk(pos.x, pos.y, isHovered, emp.label, emp.monitorState);
-                drawCyborgRobot(pos.x, pos.y + floatY, emp.color, isHovered);
-                drawBubble(pos.x, pos.y + floatY, emp.texts[emp.textIdx], isHovered, emp.dotColor);
+                // Render Meja & Kursi
+                drawWorkstation(emp.gx, emp.gy, tileSize, originX, originY, emp.label, emp.badgeColor, isHovered);
 
-                emp.renderX = pos.x;
-                emp.renderY = pos.y + floatY;
+                // Koordinat Robot di Belakang Meja
+                const robotPos = toIso((emp.gx + 0.5) * tileSize, (emp.gy + 0.3) * tileSize, 22, originX, originY);
+
+                // Render Robot
+                drawCyborgRobot(robotPos.x, robotPos.y, emp.color, floatOffset, isHovered);
+
+                // Render Bubble Chat
+                const currentText = emp.texts[emp.textIdx];
+                drawBubble(robotPos.x, robotPos.y + floatOffset, currentText, emp.badgeColor, isHovered);
+
+                // Simpan koordinat hit-test untuk hover/click
+                emp.renderX = robotPos.x;
+                emp.renderY = robotPos.y + floatOffset - 15;
             });
 
             requestAnimationFrame(animate);
         }
 
+        // --- MOUSE INTERACTION ---
         canvas.addEventListener('mousemove', (e) => {
             const rect = canvas.getBoundingClientRect();
             const mouseX = e.clientX - rect.left;
             const mouseY = e.clientY - rect.top;
-            hoveredEmp = employees.find(emp => Math.hypot(mouseX - emp.renderX, mouseY - (emp.renderY - 20)) < 42);
+
+            hoveredEmp = employees.find(emp => {
+                const dist = Math.hypot(mouseX - emp.renderX, mouseY - emp.renderY);
+                return dist < 35;
+            });
         });
 
         canvas.addEventListener('click', () => {
             if (hoveredEmp) {
                 hoveredEmp.textIdx = (hoveredEmp.textIdx + 1) % hoveredEmp.texts.length;
-                hoveredEmp.monitorState = (hoveredEmp.monitorState + 1) % 3;
             }
         });
 
+        // Start
         animate();
     </script>
 </body>
