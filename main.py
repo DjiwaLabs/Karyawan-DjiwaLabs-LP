@@ -11,7 +11,8 @@ from siboru_scanner import scan_market, fetch_pair_by_address
 from parhata_validator import process_and_validate, pair_metrics, score_pair, is_eligible
 from raja_executor import execute_trades, position_value, number
 from panongani_reporter import write_reports, send_discord_notification
-from pande_harta import cek_saldo, get_wallet, kirim_sol # <-- IMPORT FUNGSI BARU
+from pande_harta import cek_saldo, get_wallet, swap_token
+from ompu_etika import sanitasi_error, validasi_transaksi # <--- IMPORT BARU DARI OMPU
 from config import STARTING_CASH_USD
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
@@ -19,6 +20,12 @@ log = logging.getLogger("manajer")
 
 DATA_DIR = Path("data")
 STATE_FILE = DATA_DIR / "paper_state.json"
+
+# --- KONFIGURASI FASE 2 ---
+DRY_RUN = True  
+BATAS_MAKSIMAL_SOL = 0.1 
+TARGET_TOKEN_MINT = "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU" # Alamat USDC Devnet
+# ---------------------------
 
 def load_state():
     DATA_DIR.mkdir(parents=True, exist_ok=True)
@@ -41,25 +48,30 @@ def save_state(state):
 def main():
     log.info("=== MANAJER: Memulai Rapat Karyawan DJIWA LP ===")
     
-    # 1. UJI COBA WEB3: CEK SALDO & KIRIM SOL
     log.info("Memanggil Pande untuk mengecek saldo Dompet Web3...")
     saldo_devnet = cek_saldo()
     log.info(f"💰 SALDO DEVNET SAAT INI: {saldo_devnet} SOL")
 
-    # --- SIMULASI LATIHAN MENEMBAK RAJA ---
-    wallet = get_wallet()
-    if wallet and saldo_devnet > 0.1:
-        alamat_sendiri = str(wallet.pubkey())
-        log.info(f"Raja mencoba mengirim 0.01 SOL ke diri sendiri ({alamat_sendiri})...")
-        sukses, tx_hash = kirim_sol(alamat_sendiri, 0.01)
-        if sukses:
-            log.info(f"🎯 TEMBAKAN BERHASIL! Lihat di Solscan: https://explorer.solana.com/tx/{tx_hash}?cluster=devnet")
+    # --- SIMULASI SWAP (FASE 2) ---
+    jumlah_swap = 0.01 
+    valid, pesan = validasi_transaksi(saldo_devnet, jumlah_swap, BATAS_MAKSIMAL_SOL)
+    
+    if valid:
+        if DRY_RUN:
+            log.info(f"[DRY_RUN] Raja akan melakukan SWAP {jumlah_swap} SOL ke Token (Mint: {TARGET_TOKEN_MINT[:6]}...)")
+            log.info("[DRY_RUN] Transaksi TIDAK dikirim ke Blockchain (Uang aman).")
         else:
-            log.warning(f"Tembakan gagal: {tx_hash}")
+            log.info(f"Raja mencoba SWAP {jumlah_swap} SOL...")
+            sukses, hasil = swap_token(jumlah_swap, TARGET_TOKEN_MINT)
+            if sukses:
+                log.info(f"🎯 SWAP BERHASIL! Hash: {hasil}")
+                log.info(f"Lihat: https://explorer.solana.com/tx/{hasil}?cluster=devnet")
+            else:
+                log.warning(f"❌ SWAP GAGAL: {sanitasi_error(hasil)}")
     else:
-        log.warning("Saldo tidak cukup atau wallet gagal dimuat, latihan tembak dilewati.")
-    # --------------------------------------
+        log.warning(f"❌ Validasi Gagal: {pesan}")
 
+    # --- SCANNER & EKSEKUTOR SIMULASI ---
     raw_pairs, disc_err, pair_err, token_count = scan_market()
     log.info(f"Siboru selesai: {len(raw_pairs)} data mentah ditemukan.")
     
@@ -105,7 +117,7 @@ def main():
     
     send_discord_notification(state, summary_for_discord)
     
-    # 5. MANAJER UPDATE KANTOR VIRTUAL & BUBBLE CHAT
+    # --- UPDATE KANTOR VIRTUAL & BUBBLE CHAT ---
     try:
         html_path = Path("index.html")
         if html_path.exists():
