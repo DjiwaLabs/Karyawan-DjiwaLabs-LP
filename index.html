@@ -150,7 +150,7 @@
         </div>
         <div class="stats">
             <div class="stat"><span>PnL Total</span><strong class="badge" id="pnl-total">+$18,374.56</strong></div>
-            <div class="stat"><span>Posisi Aktif</span><strong id="posisi-terbuka">5/5</strong></div>
+            <div class="stat"><span>Posisi Aktif</span><strong id="posisi-terbuka">5 / 5</strong></div>
             <div class="stat"><span>Saldo Web3</span><strong style="color:#38bdf8;" id="saldo-devnet">20.00 SOL</strong></div>
         </div>
     </div>
@@ -184,7 +184,6 @@
 
         // Helper Box 3D Isometric
         function drawIsoBox(x, y, w, h, d, colorTop, colorLeft, colorRight) {
-            // Sisi Atas
             ctx.beginPath();
             ctx.moveTo(x, y);
             ctx.lineTo(x + w, y + w * 0.5);
@@ -194,7 +193,6 @@
             ctx.fillStyle = colorTop;
             ctx.fill();
 
-            // Sisi Kiri
             ctx.beginPath();
             ctx.moveTo(x - w, y + w * 0.5);
             ctx.lineTo(x, y + w);
@@ -204,7 +202,6 @@
             ctx.fillStyle = colorLeft;
             ctx.fill();
 
-            // Sisi Kanan
             ctx.beginPath();
             ctx.moveTo(x, y + w);
             ctx.lineTo(x + w, y + w * 0.5);
@@ -215,7 +212,6 @@
             ctx.fill();
         }
 
-        // Draw Server Rack / Mainframe
         function drawServerRack(x, y) {
             drawIsoBox(x, y, 26, 75, 26, "#1e1b4b", "#111827", "#1f2937");
             for (let i = 0; i < 6; i++) {
@@ -233,16 +229,13 @@
             }
         }
 
-        // Draw Breakroom Coffee Station / Lounge Desk
         function drawCoffeeStation(x, y) {
             drawIsoBox(x, y, 32, 22, 32, "#334155", "#1e293b", "#0f172a");
-            // Coffee Machine
             drawIsoBox(x - 8, y - 10, 10, 14, 10, "#475569", "#0f172a", "#1e293b");
             ctx.fillStyle = "#38bdf8";
-            ctx.fillRect(x - 10, y - 4, 4, 4); // Screen indicator
+            ctx.fillRect(x - 10, y - 4, 4, 4);
         }
 
-        // Draw Cyber Plant
         function drawPlant(x, y) {
             drawIsoBox(x, y + 10, 14, 20, 14, "#334155", "#1e293b", "#0f172a");
             ctx.beginPath();
@@ -259,24 +252,19 @@
             ctx.fill();
         }
 
-        // Draw Workstation Desk
         function drawDesk(x, y, isOccupied, labelText, monitorState) {
-            // Shadow
             ctx.beginPath();
             ctx.ellipse(x, y + 26, 38, 18, 0, 0, Math.PI * 2);
             ctx.fillStyle = "rgba(5, 4, 12, 0.55)";
             ctx.fill();
             
-            // Desk Legs
             ctx.fillStyle = "#334155";
             ctx.fillRect(x - 28, y + 15, 4, 18);
             ctx.fillRect(x + 24, y + 15, 4, 18);
 
-            // Desk Surface
             const deskW = 34;
             drawIsoBox(x, y, deskW, 12, deskW, "#f1f5f9", "#94a3b8", "#64748b");
 
-            // Monitor Setup
             const mx = x - 6;
             const my = y - 14;
             ctx.fillStyle = "#475569";
@@ -290,7 +278,6 @@
             ctx.lineWidth = 1.5;
             ctx.stroke();
 
-            // Monitor Content
             ctx.beginPath();
             ctx.roundRect(mx - 8, my - 10, 28, 14, 2);
             if (monitorState === 0) {
@@ -305,11 +292,9 @@
                 ctx.beginPath(); ctx.arc(mx + 6, my - 3, 4, 0, Math.PI * 2); ctx.strokeStyle = "#c084fc"; ctx.lineWidth = 1.5; ctx.stroke();
             }
 
-            // Keyboard & Mouse Pad
             ctx.fillStyle = "#1e293b"; ctx.fillRect(x - 10, y + 6, 14, 6);
             ctx.fillStyle = "#38bdf8"; ctx.fillRect(x + 7, y + 8, 4, 4);
 
-            // Label Nama Karakter / Meja
             ctx.font = "800 10px 'Plus Jakarta Sans', sans-serif";
             ctx.fillStyle = "#cbd5e1";
             ctx.textAlign = "center";
@@ -319,23 +304,19 @@
             ctx.shadowBlur = 0;
         }
 
-        // --- ROBOT CHARACTER RENDERER (CYBORG AVATAR WITH VISOR & LEGS/BOUNCE) ---
         function drawCyborgRobot(x, y, color, isHovered, isWalking, facingRight, state) {
             const floatY = y - (state === "WORKING" ? 24 : 32);
 
-            // Shadow
             ctx.beginPath();
             ctx.ellipse(x, y + 5, 12, 6, 0, 0, Math.PI * 2);
             ctx.fillStyle = "rgba(0, 0, 0, 0.45)";
             ctx.fill();
 
-            // Glow Aura
             if (isHovered) {
                 ctx.shadowColor = color;
                 ctx.shadowBlur = 18;
             }
 
-            // Robot Body (Cyber Armor)
             ctx.beginPath();
             ctx.arc(x, floatY + 12, 12, 0, Math.PI * 2);
             ctx.fillStyle = color;
@@ -344,7 +325,6 @@
             ctx.lineWidth = 1.5;
             ctx.stroke();
 
-            // Chest Core Light
             ctx.beginPath();
             ctx.arc(x, floatY + 14, 4, 0, Math.PI * 2);
             ctx.fillStyle = "#ffffff";
@@ -354,7 +334,6 @@
             ctx.fill();
             ctx.shadowBlur = 0;
 
-            // Robot Head
             ctx.beginPath();
             ctx.arc(x, floatY - 2, 10, 0, Math.PI * 2);
             ctx.fillStyle = "#1e1b4b";
@@ -363,14 +342,12 @@
             ctx.lineWidth = 2;
             ctx.stroke();
 
-            // Visor / Eyes (Facing Left or Right)
             const visorOffset = facingRight ? 3 : -3;
             ctx.beginPath();
             ctx.roundRect(x + visorOffset - 6, floatY - 6, 12, 6, 3);
             ctx.fillStyle = isHovered ? "#38bdf8" : "#34d399";
             ctx.fill();
 
-            // Antenna
             ctx.beginPath();
             ctx.moveTo(x, floatY - 12);
             ctx.lineTo(x, floatY - 20);
@@ -383,7 +360,6 @@
             ctx.fillStyle = state === "CHATTING" ? "#f43f5e" : (state === "WALKING" ? "#38bdf8" : "#10b981");
             ctx.fill();
 
-            // Dynamic Walking Legs Animation
             if (isWalking) {
                 const step = Math.sin(Date.now() * 0.015) * 6;
                 ctx.strokeStyle = color;
@@ -399,7 +375,6 @@
             ctx.shadowBlur = 0;
         }
 
-        // --- CHAT / DIALOG BUBBLE ---
         function drawBubble(x, y, text, isHovered, dotColor, isChatting) {
             ctx.font = "700 11px 'Plus Jakarta Sans', sans-serif";
             const textWidth = ctx.measureText(text).width;
@@ -422,7 +397,6 @@
             ctx.stroke();
             ctx.shadowBlur = 0;
 
-            // Indicator Dot
             ctx.beginPath();
             ctx.arc(bx + 14, by + 15, 4, 0, Math.PI * 2);
             ctx.fillStyle = dotColor;
@@ -431,23 +405,26 @@
             ctx.fill();
             ctx.shadowBlur = 0;
 
-            // Message Text
             ctx.fillStyle = "#ffffff";
             ctx.textAlign = "left";
             ctx.fillText(text, bx + 24, by + 19);
         }
 
-        // --- EMPLOYEE ROBOT DATA & AI STATE MACHINE ---
+        // --- DATA KARYAWAN DENGAN TEKS REALITA PEKERJAAN ---
         const employees = [
-            { id: 1, name: "Siboru", label: "Siboru - Scanner", color: "#f59e0b", dotColor: "#f59e0b", texts: ["Radar temukan 40 token", "Cek TVL & Volume"], deskGx: 2, deskGy: 6, gx: 2, gy: 6, targetGx: 2, targetGy: 6, state: "WORKING", textIdx: 0, monitorState: 0, waitTimer: 0, facingRight: true, chatPartner: null },
-            { id: 2, name: "Raja", label: "Raja - Eksekutor", color: "#ef4444", dotColor: "#f43f5e", texts: ["Beli CBUCKS!", "Take Profit +50%!"], deskGx: 2, deskGy: 4, gx: 2, gy: 4, targetGx: 2, targetGy: 4, state: "WORKING", textIdx: 0, monitorState: 2, waitTimer: 0, facingRight: true, chatPartner: null },
-            { id: 3, name: "Parhata", label: "Parhata - Validator", color: "#8b5cf6", dotColor: "#a78bfa", texts: ["Lolos 2 pool.", "Cek Scam & Honeypot"], deskGx: 2, deskGy: 2, gx: 2, gy: 2, targetGx: 2, targetGy: 2, state: "WORKING", textIdx: 0, monitorState: 1, waitTimer: 0, facingRight: true, chatPartner: null },
-            { id: 4, name: "Panongani", label: "Panongani - Reporter", color: "#3b82f6", dotColor: "#60a5fa", texts: ["Laporan terkirim", "Update PnL ke Discord"], deskGx: 6, deskGy: 6, gx: 6, gy: 6, targetGx: 6, targetGy: 6, state: "WORKING", textIdx: 0, monitorState: 0, waitTimer: 0, facingRight: false, chatPartner: null },
-            { id: 5, name: "Pande", label: "Pande - Web3", color: "#10b981", dotColor: "#34d399", texts: ["Fee $0.86 belum diklaim", "Saldo Devnet 20 SOL"], deskGx: 6, deskGy: 4, gx: 6, gy: 4, targetGx: 6, targetGy: 4, state: "WORKING", textIdx: 0, monitorState: 1, waitTimer: 0, facingRight: false, chatPartner: null },
-            { id: 6, name: "Ompu", label: "Ompu - Keamanan", color: "#f97316", dotColor: "#fb923c", texts: ["Validasi Transaksi", "Sanitasi Error OK"], deskGx: 6, deskGy: 2, gx: 6, gy: 2, targetGx: 6, targetGy: 2, state: "WORKING", textIdx: 0, monitorState: 2, waitTimer: 0, facingRight: false, chatPartner: null }
+            { id: 1, name: "Siboru", label: "Siboru - Scanner", color: "#f59e0b", dotColor: "#f59e0b", texts: ["Radar temukan 40 token baru!", "Scanning DexScreener...", "Ada token volume tinggi nih."], deskGx: 2, deskGy: 6, gx: 2, gy: 6, targetGx: 2, targetGy: 6, state: "WORKING", textIdx: 0, monitorState: 0, waitTimer: 0, facingRight: true, chatPartner: null },
+            
+            { id: 2, name: "Raja", label: "Raja - Eksekutor", color: "#ef4444", dotColor: "#f43f5e", texts: ["Eksekusi beli token!", "Take profit +50% tercapai!", "Cut loss, amankan modal."], deskGx: 2, deskGy: 4, gx: 2, gy: 4, targetGx: 2, targetGy: 4, state: "WORKING", textIdx: 0, monitorState: 2, waitTimer: 0, facingRight: true, chatPartner: null },
+            
+            { id: 3, name: "Parhata", label: "Parhata - Validator", color: "#8b5cf6", dotColor: "#a78bfa", texts: ["Lolos 2 pool aman.", "Hati-hati, ini honeypot!", "Cek likuiditas & umur pool."], deskGx: 2, deskGy: 2, gx: 2, gy: 2, targetGx: 2, targetGy: 2, state: "WORKING", textIdx: 0, monitorState: 1, waitTimer: 0, facingRight: true, chatPartner: null },
+            
+            { id: 4, name: "Panongani", label: "Panongani - Reporter", color: "#3b82f6", dotColor: "#60a5fa", texts: ["Laporan PnL terkirim ke Bos.", "Update Discord sukses!", "Sync data ke website..."], deskGx: 6, deskGy: 6, gx: 6, gy: 6, targetGx: 6, targetGy: 6, state: "WORKING", textIdx: 0, monitorState: 0, waitTimer: 0, facingRight: false, chatPartner: null },
+            
+            { id: 5, name: "Pande", label: "Pande - Web3", color: "#10b981", dotColor: "#34d399", texts: ["Saldo Devnet 20 SOL aman.", "Cek saldo dompet Phantom...", "Butuh gas fee untuk swap."], deskGx: 6, deskGy: 4, gx: 6, gy: 4, targetGx: 6, targetGy: 4, state: "WORKING", textIdx: 0, monitorState: 1, waitTimer: 0, facingRight: false, chatPartner: null },
+            
+            { id: 6, name: "Ompu", label: "Ompu - Keamanan", color: "#f97316", dotColor: "#fb923c", texts: ["Validasi transaksi aman.", "Sanitasi error selesai.", "Batas maksimal 0.1 SOL."], deskGx: 6, deskGy: 2, gx: 6, gy: 2, targetGx: 6, targetGy: 2, state: "WORKING", textIdx: 0, monitorState: 2, waitTimer: 0, facingRight: false, chatPartner: null }
         ];
 
-        // Open Walkable Destinations in Office
         const waypoints = [
             { gx: 4, gy: 4 }, // Center Lounge
             { gx: 4, gy: 2 }, // Top Corridor
@@ -459,12 +436,10 @@
 
         let hoveredEmp = null;
 
-        // --- AI AUTONOMOUS ROUTINE UPDATER ---
         function updateRobotAI(emp) {
             if (emp.state === "WORKING") {
                 emp.waitTimer++;
                 if (emp.waitTimer > 350 + Math.random() * 300) {
-                    // Decide to wander or visit break area
                     const dest = waypoints[Math.floor(Math.random() * waypoints.length)];
                     emp.targetGx = dest.gx;
                     emp.targetGy = dest.gy;
@@ -487,12 +462,10 @@
                     emp.gx += (dx / dist) * 0.025;
                     emp.gy += (dy / dist) * 0.025;
 
-                    // Check for social chat encounter with nearby walking/paused robots
                     employees.forEach(other => {
                         if (other.id !== emp.id && (other.state === "WALKING" || other.state === "PAUSED")) {
                             const botDist = Math.hypot(other.gx - emp.gx, other.gy - emp.gy);
                             if (botDist < 0.8) {
-                                // Initiate Chat Encounter!
                                 emp.state = "CHATTING";
                                 other.state = "CHATTING";
                                 emp.chatPartner = other;
@@ -508,7 +481,6 @@
             } else if (emp.state === "PAUSED") {
                 emp.waitTimer++;
                 if (emp.waitTimer > 180) {
-                    // Return to Desk
                     emp.targetGx = emp.deskGx;
                     emp.targetGy = emp.deskGy;
                     emp.state = "RETURNING";
@@ -534,7 +506,6 @@
             } else if (emp.state === "CHATTING") {
                 emp.waitTimer++;
                 if (emp.waitTimer > 240) {
-                    // End Chat & continue walking back
                     emp.state = "RETURNING";
                     emp.targetGx = emp.deskGx;
                     emp.targetGy = emp.deskGy;
@@ -544,7 +515,6 @@
             }
         }
 
-        // --- MAIN RENDER LOOP ---
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -556,7 +526,6 @@
             const pRight = gridToScreen(GRID_COLS, 0, originX, originY);
             const wallHeight = 240;
 
-            // 1. ISOMETRIC ROOM WALLS
             ctx.beginPath();
             ctx.moveTo(pTop.x, pTop.y);
             ctx.lineTo(pLeft.x, pLeft.y);
@@ -580,14 +549,12 @@
             ctx.strokeStyle = "rgba(167, 139, 250, 0.15)";
             ctx.stroke();
 
-            // Cyberpunk Wide Window on Wall
             ctx.fillStyle = "rgba(14, 165, 233, 0.08)";
             ctx.fillRect(pTop.x - 160, pTop.y - 170, 100, 100);
             ctx.strokeStyle = "#38bdf8";
             ctx.lineWidth = 1.5;
             ctx.strokeRect(pTop.x - 160, pTop.y - 170, 100, 100);
 
-            // Wall Brand Header
             ctx.fillStyle = "rgba(30, 27, 75, 0.85)";
             ctx.fillRect(pTop.x + 40, pTop.y - 180, 150, 48);
             ctx.strokeStyle = "#a78bfa";
@@ -597,7 +564,6 @@
             ctx.textAlign = "left";
             ctx.fillText("DJIWA LABS ⚡", pTop.x + 55, pTop.y - 150);
 
-            // 2. ISOMETRIC FLOOR GRID
             for (let r = 0; r < GRID_ROWS; r++) {
                 for (let c = 0; c < GRID_COLS; c++) {
                     const pos = gridToScreen(r, c, originX, originY);
@@ -611,26 +577,21 @@
                 }
             }
 
-            // Neon Pathway Accent
             for (let r = 1; r < 8; r++) {
                 const carpetPos = gridToScreen(r, 4, originX, originY);
                 drawIsoBox(carpetPos.x, carpetPos.y, TILE_WIDTH, 1, TILE_WIDTH * 0.4, "rgba(56, 189, 248, 0.14)", "transparent", "transparent");
             }
 
-            // 3. FIXED OFFICE FURNITURE
             drawServerRack(gridToScreen(0.5, 0.5, originX, originY).x, gridToScreen(0.5, 0.5, originX, originY).y);
             drawCoffeeStation(gridToScreen(0.5, 8.2, originX, originY).x, gridToScreen(0.5, 8.2, originX, originY).y);
             drawPlant(gridToScreen(8.2, 0.5, originX, originY).x, gridToScreen(8.2, 0.5, originX, originY).y);
             drawPlant(gridToScreen(8.2, 8.2, originX, originY).x, gridToScreen(8.2, 8.2, originX, originY).y);
 
-            // Draw Desks at fixed locations
             employees.forEach(emp => {
                 const deskPos = gridToScreen(emp.deskGx, emp.deskGy, originX, originY);
                 drawDesk(deskPos.x, deskPos.y, emp.state === "WORKING", emp.label, emp.monitorState);
             });
 
-            // 4. UPDATE AI & DRAW ROBOTS
-            // Depth sorting for rendering: sort by (gx + gy)
             const sortedEmployees = [...employees].sort((a, b) => (a.gx + a.gy) - (b.gx + b.gy));
 
             sortedEmployees.forEach(emp => {
@@ -650,7 +611,6 @@
             requestAnimationFrame(animate);
         }
 
-        // --- MOUSE & TOUCH INTERACTION ---
         canvas.addEventListener('mousemove', (e) => {
             const rect = canvas.getBoundingClientRect();
             const mouseX = e.clientX - rect.left;
@@ -666,11 +626,9 @@
 
         canvas.addEventListener('click', () => {
             if (hoveredEmp) {
-                // Cycle employee text message
                 hoveredEmp.textIdx = (hoveredEmp.textIdx + 1) % hoveredEmp.texts.length;
                 hoveredEmp.monitorState = (hoveredEmp.monitorState + 1) % 3;
 
-                // Force robot to talk / walk if idle
                 if (hoveredEmp.state === "WORKING") {
                     const dest = waypoints[Math.floor(Math.random() * waypoints.length)];
                     hoveredEmp.targetGx = dest.gx;
@@ -680,7 +638,6 @@
             }
         });
 
-        // Start animation frame
         animate();
     </script>
 </body>
