@@ -1,7 +1,7 @@
 {
   "version": 1,
   "starting_cash_usd": 10000.0,
-  "cash_usd": 22946.560089611372,
+  "cash_usd": 22994.29082806001,
   "positions": {
     "solana:2zpfdgd48k7b2u9yqz4hjspaptovu9uiebfqyxeoexkv": {
       "symbol": "EXFIL",
@@ -15,12 +15,11 @@
       "entry_liquidity_usd": 186810.96,
       "entry_score": 119.02,
       "entry_time": "2026-10-23T11:42:32+00:00",
-      "last_updated_at": "2026-10-29T21:50:30+00:00",
-      "last_price_usd": 0.002861,
-      "last_liquidity_usd": 164746.54,
-      "estimated_fees_usd": 29.227497077586914,
+      "last_updated_at": "2026-10-29T22:49:56+00:00",
+      "last_price_usd": 0.002719,
+      "last_liquidity_usd": 160557.08,
+      "estimated_fees_usd": 29.416340624398277,
       "volume_history": [
-        300980.0,
         282613.36,
         276200.48,
         274659.99,
@@ -43,7 +42,8 @@
         189945.25,
         206909.88,
         211387.02,
-        264573.92
+        264573.92,
+        271354.32
       ],
       "data_stale": false
     },
@@ -59,12 +59,11 @@
       "entry_liquidity_usd": 101418.09,
       "entry_score": 92.52,
       "entry_time": "2026-10-27T10:46:15+00:00",
-      "last_updated_at": "2026-10-29T21:50:30+00:00",
-      "last_price_usd": 0.0009185,
-      "last_liquidity_usd": 99848.87,
-      "estimated_fees_usd": 7.968490621920983,
+      "last_updated_at": "2026-10-29T22:49:56+00:00",
+      "last_price_usd": 0.0009332,
+      "last_liquidity_usd": 100658.49,
+      "estimated_fees_usd": 8.078601503630049,
       "volume_history": [
-        73541.18,
         73273.44,
         83163.38,
         105440.28,
@@ -87,51 +86,8 @@
         75417.05,
         75528.74,
         78564.48,
-        79996.63
-      ],
-      "data_stale": false
-    },
-    "solana:2tfyctqyj2pyrb7cea824o2ybq3jq7agvr3qpv2uvdml": {
-      "symbol": "BTC",
-      "name": "Big Titty Coin",
-      "chain": "solana",
-      "dex": "meteora",
-      "pair_address": "2tFYCTqYJ2pyrb7CeA824o2Ybq3jq7agvr3Qpv2uVDmL",
-      "pair_url": "https://dexscreener.com/solana/2tfyctqyj2pyrb7cea824o2ybq3jq7agvr3qpv2uvdml",
-      "invested_usd": 997.0,
-      "entry_price": 0.004551,
-      "entry_liquidity_usd": 167980.81,
-      "entry_score": 112.42,
-      "entry_time": "2026-10-28T07:01:55+00:00",
-      "last_updated_at": "2026-10-29T21:50:30+00:00",
-      "last_price_usd": 0.004402,
-      "last_liquidity_usd": 101050.92,
-      "estimated_fees_usd": 14.06192423129611,
-      "volume_history": [
-        340646.64,
-        331432.69,
-        291402.61,
-        306020.04,
-        440007.76,
-        440348.64,
-        432703.58,
-        435106.68,
-        420846.06,
-        418169.37,
-        419342.99,
-        423074.54,
-        418597.38,
-        429435.54,
-        449109.71,
-        421164.04,
-        433700.8,
-        440107.36,
-        442071.65,
-        446090.98,
-        437070.04,
-        439899.65,
-        440541.51,
-        457802.73
+        79996.63,
+        77959.95
       ],
       "data_stale": false
     },
@@ -147,10 +103,10 @@
       "entry_liquidity_usd": 233188.79,
       "entry_score": 119.49,
       "entry_time": "2026-10-29T02:54:11+00:00",
-      "last_updated_at": "2026-10-29T21:50:30+00:00",
-      "last_price_usd": 0.004607,
-      "last_liquidity_usd": 211501.07,
-      "estimated_fees_usd": 9.481998353332536,
+      "last_updated_at": "2026-10-29T22:49:56+00:00",
+      "last_price_usd": 0.004033,
+      "last_liquidity_usd": 197920.11,
+      "estimated_fees_usd": 10.083881976540985,
       "volume_history": [
         892609.03,
         860200.57,
@@ -171,7 +127,8 @@
         1038307.96,
         1052936.9,
         1056432.5,
-        1051750.52
+        1051750.52,
+        1071517.07
       ],
       "data_stale": false
     },
@@ -187,15 +144,36 @@
       "entry_liquidity_usd": 62200.77,
       "entry_score": 101.45,
       "entry_time": "2026-10-29T20:51:46+00:00",
-      "last_updated_at": "2026-10-29T21:50:30+00:00",
-      "last_price_usd": 0.001127,
-      "last_liquidity_usd": 82099.65,
-      "estimated_fees_usd": 1.536548606608066,
+      "last_updated_at": "2026-10-29T22:49:56+00:00",
+      "last_price_usd": 0.001015,
+      "last_liquidity_usd": 78129.5,
+      "estimated_fees_usd": 3.143315431099438,
       "volume_history": [
         1027536.29,
-        1040191.19
+        1040191.19,
+        982589.56
       ],
       "data_stale": false
+    },
+    "solana:2tfyctqyj2pyrb7cea824o2ybq3jq7agvr3qpv2uvdml": {
+      "symbol": "BTC",
+      "name": "Big Titty Coin",
+      "chain": "solana",
+      "dex": "meteora",
+      "pair_address": "2tFYCTqYJ2pyrb7CeA824o2Ybq3jq7agvr3Qpv2uVDmL",
+      "pair_url": "https://dexscreener.com/solana/2tfyctqyj2pyrb7cea824o2ybq3jq7agvr3qpv2uvdml",
+      "invested_usd": 997.0,
+      "entry_price": 0.004964,
+      "entry_liquidity_usd": 74960.12,
+      "entry_score": 116.47,
+      "entry_time": "2026-10-29T22:49:56+00:00",
+      "last_updated_at": "2026-10-29T22:49:56+00:00",
+      "last_price_usd": 0.004964,
+      "last_liquidity_usd": 74960.12,
+      "estimated_fees_usd": 0.0,
+      "volume_history": [
+        478077.86
+      ]
     }
   },
   "closed_trades": [
@@ -460,6 +438,18 @@
       "net_proceeds_usd": 733.1069,
       "pnl_usd": -263.8931,
       "reason": "STOP LOSS: Harga turun >35.0%"
+    },
+    {
+      "closed_at": "2026-10-29T22:49:56+00:00",
+      "symbol": "BTC",
+      "chain": "solana",
+      "pair_address": "2tFYCTqYJ2pyrb7CeA824o2Ybq3jq7agvr3Qpv2uVDmL",
+      "invested_usd": 997.0,
+      "lp_value_usd": 1041.2563,
+      "estimated_fees_usd": 14.7545,
+      "net_proceeds_usd": 1047.7307,
+      "pnl_usd": 50.7307,
+      "reason": "GUARD: Likuiditas turun >40.0%"
     }
   ],
   "events": [
@@ -993,7 +983,29 @@
       "message": "Opened LP jeff on solana",
       "invested_usd": 997.0,
       "score": 101.45
+    },
+    {
+      "time": "2026-10-29T22:49:56+00:00",
+      "type": "LP_CLOSE",
+      "message": "Closed BTC: GUARD: Likuiditas turun >40.0%",
+      "closed_at": "2026-10-29T22:49:56+00:00",
+      "symbol": "BTC",
+      "chain": "solana",
+      "pair_address": "2tFYCTqYJ2pyrb7CeA824o2Ybq3jq7agvr3Qpv2uVDmL",
+      "invested_usd": 997.0,
+      "lp_value_usd": 1041.2563,
+      "estimated_fees_usd": 14.7545,
+      "net_proceeds_usd": 1047.7307,
+      "pnl_usd": 50.7307,
+      "reason": "GUARD: Likuiditas turun >40.0%"
+    },
+    {
+      "time": "2026-10-29T22:49:56+00:00",
+      "type": "LP_OPEN",
+      "message": "Opened LP BTC on solana",
+      "invested_usd": 997.0,
+      "score": 116.47
     }
   ],
-  "last_run_at": "2026-10-29T21:50:30+00:00"
+  "last_run_at": "2026-10-29T22:49:56+00:00"
 }
