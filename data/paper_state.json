@@ -1,52 +1,8 @@
 {
   "version": 1,
   "starting_cash_usd": 10000.0,
-  "cash_usd": 24538.230548124764,
+  "cash_usd": 24803.512713182223,
   "positions": {
-    "solana:b4cp45pgifvm5faxfh6aev8qz3eunqnqgbw7kuc7mhnb": {
-      "symbol": "CBUCKS",
-      "name": "Cartoon Money",
-      "chain": "solana",
-      "dex": "pumpswap",
-      "pair_address": "B4Cp45PGifVM5FAXfh6AeV8QZ3eUNQnqGBw7KuC7MHnB",
-      "pair_url": "https://dexscreener.com/solana/b4cp45pgifvm5faxfh6aev8qz3eunqnqgbw7kuc7mhnb",
-      "invested_usd": 997.0,
-      "entry_price": 0.0009547,
-      "entry_liquidity_usd": 101418.09,
-      "entry_score": 92.52,
-      "entry_time": "2026-10-27T10:46:15+00:00",
-      "last_updated_at": "2026-10-31T19:44:16+00:00",
-      "last_price_usd": 0.001343,
-      "last_liquidity_usd": 121742.81,
-      "estimated_fees_usd": 12.400759862983648,
-      "volume_history": [
-        88108.21,
-        107762.55,
-        108848.16,
-        106364.46,
-        101266.31,
-        109157.66,
-        119043.6,
-        109861.75,
-        112608.46,
-        112052.11,
-        113721.17,
-        118786.93,
-        120263.42,
-        116760.56,
-        117434.67,
-        130750.65,
-        131597.15,
-        131816.65,
-        134629.32,
-        136181.37,
-        142557.69,
-        140778.36,
-        141174.83,
-        135929.77
-      ],
-      "data_stale": false
-    },
     "solana:5e3dxlxgwmtdcoka51wyyakttjfzbwqcoyuhbui5gt2m": {
       "symbol": "GATO",
       "name": "GTA6CAT",
@@ -59,12 +15,11 @@
       "entry_liquidity_usd": 233188.79,
       "entry_score": 119.49,
       "entry_time": "2026-10-29T02:54:11+00:00",
-      "last_updated_at": "2026-10-31T19:44:16+00:00",
-      "last_price_usd": 0.00636,
-      "last_liquidity_usd": 251344.58,
-      "estimated_fees_usd": 33.99558791532716,
+      "last_updated_at": "2026-10-31T20:43:08+00:00",
+      "last_price_usd": 0.006546,
+      "last_liquidity_usd": 254705.44,
+      "estimated_fees_usd": 34.47854194695299,
       "volume_history": [
-        851057.03,
         836331.22,
         837122.52,
         844562.87,
@@ -87,7 +42,8 @@
         1166250.31,
         1187057.32,
         1222275.31,
-        1233709.69
+        1233709.69,
+        1241117.78
       ],
       "data_stale": false
     },
@@ -103,10 +59,10 @@
       "entry_liquidity_usd": 166995.26,
       "entry_score": 119.22,
       "entry_time": "2026-10-30T21:45:11+00:00",
-      "last_updated_at": "2026-10-31T19:44:16+00:00",
-      "last_price_usd": 0.003774,
-      "last_liquidity_usd": 170216.81,
-      "estimated_fees_usd": 8.748988406607843,
+      "last_updated_at": "2026-10-31T20:43:08+00:00",
+      "last_price_usd": 0.003771,
+      "last_liquidity_usd": 169920.27,
+      "estimated_fees_usd": 9.126418329153976,
       "volume_history": [
         436755.14,
         537075.02,
@@ -130,7 +86,8 @@
         487521.84,
         495654.88,
         506125.32,
-        536268.54
+        536268.54,
+        515559.91
       ],
       "data_stale": false
     },
@@ -146,13 +103,15 @@
       "entry_liquidity_usd": 455283.7,
       "entry_score": 114.01,
       "entry_time": "2026-10-31T19:44:16+00:00",
-      "last_updated_at": "2026-10-31T19:44:16+00:00",
-      "last_price_usd": 0.02489,
-      "last_liquidity_usd": 455283.7,
-      "estimated_fees_usd": 0.0,
+      "last_updated_at": "2026-10-31T20:43:08+00:00",
+      "last_price_usd": 0.02434,
+      "last_liquidity_usd": 449636.99,
+      "estimated_fees_usd": 1.4569789455518232,
       "volume_history": [
-        5356850.24
-      ]
+        5356850.24,
+        5358013.9
+      ],
+      "data_stale": false
     },
     "solana:2zpfdgd48k7b2u9yqz4hjspaptovu9uiebfqyxeoexkv": {
       "symbol": "EXFIL",
@@ -166,12 +125,34 @@
       "entry_liquidity_usd": 181017.93,
       "entry_score": 67.41,
       "entry_time": "2026-10-31T19:44:16+00:00",
-      "last_updated_at": "2026-10-31T19:44:16+00:00",
-      "last_price_usd": 0.003464,
-      "last_liquidity_usd": 181017.93,
+      "last_updated_at": "2026-10-31T20:43:08+00:00",
+      "last_price_usd": 0.003304,
+      "last_liquidity_usd": 176495.04,
+      "estimated_fees_usd": 0.09007483854555645,
+      "volume_history": [
+        133922.2,
+        126098.16
+      ],
+      "data_stale": false
+    },
+    "solana:b4cp45pgifvm5faxfh6aev8qz3eunqnqgbw7kuc7mhnb": {
+      "symbol": "CBUCKS",
+      "name": "Cartoon Money",
+      "chain": "solana",
+      "dex": "pumpswap",
+      "pair_address": "B4Cp45PGifVM5FAXfh6AeV8QZ3eUNQnqGBw7KuC7MHnB",
+      "pair_url": "https://dexscreener.com/solana/b4cp45pgifvm5faxfh6aev8qz3eunqnqgbw7kuc7mhnb",
+      "invested_usd": 997.0,
+      "entry_price": 0.00153,
+      "entry_liquidity_usd": 130133.64,
+      "entry_score": 82.34,
+      "entry_time": "2026-10-31T20:43:08+00:00",
+      "last_updated_at": "2026-10-31T20:43:08+00:00",
+      "last_price_usd": 0.00153,
+      "last_liquidity_usd": 130133.64,
       "estimated_fees_usd": 0.0,
       "volume_history": [
-        133922.2
+        138563.44
       ]
     }
   },
@@ -532,6 +513,18 @@
       "estimated_fees_usd": 10.2314,
       "net_proceeds_usd": 1291.9158,
       "pnl_usd": 294.9158,
+      "reason": "TAKE PROFIT: Harga naik >50.0%"
+    },
+    {
+      "closed_at": "2026-10-31T20:43:08+00:00",
+      "symbol": "CBUCKS",
+      "chain": "solana",
+      "pair_address": "B4Cp45PGifVM5FAXfh6AeV8QZ3eUNQnqGBw7KuC7MHnB",
+      "invested_usd": 997.0,
+      "lp_value_usd": 1262.1397,
+      "estimated_fees_usd": 12.5158,
+      "net_proceeds_usd": 1265.2822,
+      "pnl_usd": 268.2822,
       "reason": "TAKE PROFIT: Harga naik >50.0%"
     }
   ],
@@ -1242,7 +1235,29 @@
       "message": "Opened LP EXFIL on solana",
       "invested_usd": 997.0,
       "score": 67.41
+    },
+    {
+      "time": "2026-10-31T20:43:08+00:00",
+      "type": "LP_CLOSE",
+      "message": "Closed CBUCKS: TAKE PROFIT: Harga naik >50.0%",
+      "closed_at": "2026-10-31T20:43:08+00:00",
+      "symbol": "CBUCKS",
+      "chain": "solana",
+      "pair_address": "B4Cp45PGifVM5FAXfh6AeV8QZ3eUNQnqGBw7KuC7MHnB",
+      "invested_usd": 997.0,
+      "lp_value_usd": 1262.1397,
+      "estimated_fees_usd": 12.5158,
+      "net_proceeds_usd": 1265.2822,
+      "pnl_usd": 268.2822,
+      "reason": "TAKE PROFIT: Harga naik >50.0%"
+    },
+    {
+      "time": "2026-10-31T20:43:08+00:00",
+      "type": "LP_OPEN",
+      "message": "Opened LP CBUCKS on solana",
+      "invested_usd": 997.0,
+      "score": 82.34
     }
   ],
-  "last_run_at": "2026-10-31T19:44:16+00:00"
+  "last_run_at": "2026-10-31T20:43:08+00:00"
 }
