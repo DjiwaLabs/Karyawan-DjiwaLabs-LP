@@ -11,7 +11,7 @@ from siboru_scanner import scan_market, fetch_pair_by_address
 from parhata_validator import process_and_validate, pair_metrics, score_pair, is_eligible
 from raja_executor import execute_trades, position_value, number
 from panongani_reporter import write_reports, send_discord_notification
-from pande_harta import cek_saldo, get_wallet, kirim_sol # Menggunakan kirim_sol, bukan swap_token
+from pande_harta import cek_saldo, get_wallet, kirim_sol 
 from ompu_etika import sanitasi_error, validasi_transaksi 
 from config import STARTING_CASH_USD
 
