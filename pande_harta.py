@@ -77,7 +77,7 @@ def kirim_sol(tujuan_address_str, jumlah_sol):
     except Exception as e:
         return False, str(e)
 
-def swap_token(jumlah_sol, target_mint_address, slippage_bps=50):
+def swap_token(jumlah_sol, target_mint_address, slippage_bps=200):
     """
     Fungsi untuk menukar SOL menjadi token lain menggunakan Jupiter API (Devnet).
     """
