@@ -12,7 +12,7 @@ from parhata_validator import process_and_validate, pair_metrics, score_pair, is
 from raja_executor import execute_trades, position_value, number
 from panongani_reporter import write_reports, send_discord_notification
 from pande_harta import cek_saldo, get_wallet, swap_token
-from ompu_etika import sanitasi_error, validasi_transaksi # <--- IMPORT BARU DARI OMPU
+from ompu_etika import sanitasi_error, validasi_transaksi 
 from config import STARTING_CASH_USD
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
@@ -21,10 +21,11 @@ log = logging.getLogger("manajer")
 DATA_DIR = Path("data")
 STATE_FILE = DATA_DIR / "paper_state.json"
 
-# --- KONFIGURASI FASE 2 ---
-DRY_RUN = True  
-BATAS_MAKSIMAL_SOL = 0.1 
-TARGET_TOKEN_MINT = "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU" # Alamat USDC Devnet
+# --- KONFIGURASI FASE 3 ---
+DRY_RUN = False  # <--- INI YANG DIUBAH! KITA SIAP TEMBAK BENERAN
+BATAS_MAKSIMAL_SOL = 0.05 # Batasi maksimal 0.05 SOL per transaksi (sangat kecil)
+# Alamat Mint USDC di Devnet (token yang aman untuk tes)
+TARGET_TOKEN_MINT = "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU" 
 # ---------------------------
 
 def load_state():
@@ -52,7 +53,7 @@ def main():
     saldo_devnet = cek_saldo()
     log.info(f"💰 SALDO DEVNET SAAT INI: {saldo_devnet} SOL")
 
-    # --- SIMULASI SWAP (FASE 2) ---
+    # --- EKSEKUSI FASE 3: SWAP BENERAN ---
     jumlah_swap = 0.01 
     valid, pesan = validasi_transaksi(saldo_devnet, jumlah_swap, BATAS_MAKSIMAL_SOL)
     
@@ -61,7 +62,7 @@ def main():
             log.info(f"[DRY_RUN] Raja akan melakukan SWAP {jumlah_swap} SOL ke Token (Mint: {TARGET_TOKEN_MINT[:6]}...)")
             log.info("[DRY_RUN] Transaksi TIDAK dikirim ke Blockchain (Uang aman).")
         else:
-            log.info(f"Raja mencoba SWAP {jumlah_swap} SOL...")
+            log.info(f"🚀 RAJA MENEMBAK! Mencoba SWAP {jumlah_swap} SOL ke Token Devnet...")
             sukses, hasil = swap_token(jumlah_swap, TARGET_TOKEN_MINT)
             if sukses:
                 log.info(f"🎯 SWAP BERHASIL! Hash: {hasil}")
@@ -71,7 +72,7 @@ def main():
     else:
         log.warning(f"❌ Validasi Gagal: {pesan}")
 
-    # --- SCANNER & EKSEKUTOR SIMULASI ---
+    # --- SCANNER & EKSEKUTOR SIMULASI (TETAP BERJALAN) ---
     raw_pairs, disc_err, pair_err, token_count = scan_market()
     log.info(f"Siboru selesai: {len(raw_pairs)} data mentah ditemukan.")
     
@@ -117,7 +118,7 @@ def main():
     
     send_discord_notification(state, summary_for_discord)
     
-    # --- UPDATE KANTOR VIRTUAL & BUBBLE CHAT ---
+    # --- UPDATE KANTOR VIRTUAL ---
     try:
         html_path = Path("index.html")
         if html_path.exists():
