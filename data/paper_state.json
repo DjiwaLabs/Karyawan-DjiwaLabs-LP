@@ -1,7 +1,7 @@
 {
   "version": 1,
   "starting_cash_usd": 10000.0,
-  "cash_usd": 25551.206805386177,
+  "cash_usd": 25353.70553865766,
   "positions": {
     "solana:em6rvzgxhd35pz7cvujctpenv4jaztscavhaxbxcbcg7": {
       "symbol": "GLITCH",
@@ -15,12 +15,11 @@
       "entry_liquidity_usd": 166995.26,
       "entry_score": 119.22,
       "entry_time": "2026-10-30T21:45:11+00:00",
-      "last_updated_at": "2026-11-06T18:59:25+00:00",
-      "last_price_usd": 0.003099,
-      "last_liquidity_usd": 153658.21,
-      "estimated_fees_usd": 49.991139552215714,
+      "last_updated_at": "2026-11-06T19:56:16+00:00",
+      "last_price_usd": 0.00303,
+      "last_liquidity_usd": 151687.41,
+      "estimated_fees_usd": 50.36603349559724,
       "volume_history": [
-        447454.78,
         558433.37,
         557232.46,
         595243.53,
@@ -43,7 +42,8 @@
         376129.06,
         363733.7,
         342950.3,
-        328523.86
+        328523.86,
+        292705.39
       ],
       "data_stale": false
     },
@@ -59,12 +59,11 @@
       "entry_liquidity_usd": 130133.64,
       "entry_score": 82.34,
       "entry_time": "2026-10-31T20:43:08+00:00",
-      "last_updated_at": "2026-11-06T18:59:25+00:00",
-      "last_price_usd": 0.001801,
-      "last_liquidity_usd": 142638.05,
-      "estimated_fees_usd": 14.419958453041742,
+      "last_updated_at": "2026-11-06T19:56:16+00:00",
+      "last_price_usd": 0.001887,
+      "last_liquidity_usd": 146083.45,
+      "estimated_fees_usd": 14.47072617035464,
       "volume_history": [
-        52062.2,
         56175.69,
         62109.19,
         52637.28,
@@ -87,7 +86,8 @@
         62452.0,
         58548.78,
         52130.92,
-        66296.09
+        66296.09,
+        69940.82
       ],
       "data_stale": false
     },
@@ -103,12 +103,11 @@
       "entry_liquidity_usd": 357508.34,
       "entry_score": 117.02,
       "entry_time": "2026-11-02T22:22:20+00:00",
-      "last_updated_at": "2026-11-06T18:59:25+00:00",
-      "last_price_usd": 0.01145,
-      "last_liquidity_usd": 354043.47,
-      "estimated_fees_usd": 84.36028654555398,
+      "last_updated_at": "2026-11-06T19:56:16+00:00",
+      "last_price_usd": 0.01163,
+      "last_liquidity_usd": 356463.25,
+      "estimated_fees_usd": 85.07070244966924,
       "volume_history": [
-        1708566.68,
         1803662.15,
         1945735.38,
         2077436.16,
@@ -131,7 +130,8 @@
         2012730.3,
         1887036.74,
         1817913.45,
-        1726742.2
+        1726742.2,
+        1598169.45
       ],
       "data_stale": false
     },
@@ -147,12 +147,11 @@
       "entry_liquidity_usd": 143079.29,
       "entry_score": 82.83,
       "entry_time": "2026-11-03T01:09:45+00:00",
-      "last_updated_at": "2026-11-06T18:59:25+00:00",
-      "last_price_usd": 0.002905,
-      "last_liquidity_usd": 162276.39,
-      "estimated_fees_usd": 9.49205174941786,
+      "last_updated_at": "2026-11-06T19:56:16+00:00",
+      "last_price_usd": 0.002932,
+      "last_liquidity_usd": 162835.66,
+      "estimated_fees_usd": 9.575527399920784,
       "volume_history": [
-        84065.34,
         95604.41,
         108152.55,
         113663.22,
@@ -175,7 +174,8 @@
         138352.07,
         133804.02,
         132652.85,
-        129706.21
+        129706.21,
+        126760.59
       ],
       "data_stale": false
     },
@@ -187,32 +187,17 @@
       "pair_address": "DEXTCER4k9dwbxTMU8zNVVwGevVmvHMB183pF2xxZwvH",
       "pair_url": "https://dexscreener.com/solana/dextcer4k9dwbxtmu8znvvwgevvmvhmb183pf2xxzwvh",
       "invested_usd": 997.0,
-      "entry_price": 0.03655,
-      "entry_liquidity_usd": 563696.23,
-      "entry_score": 119.74,
-      "entry_time": "2026-11-06T02:23:32+00:00",
-      "last_updated_at": "2026-11-06T18:59:25+00:00",
-      "last_price_usd": 0.02512,
-      "last_liquidity_usd": 470211.51,
-      "estimated_fees_usd": 19.308301366034343,
+      "entry_price": 0.0229,
+      "entry_liquidity_usd": 448350.18,
+      "entry_score": 119.32,
+      "entry_time": "2026-11-06T19:56:16+00:00",
+      "last_updated_at": "2026-11-06T19:56:16+00:00",
+      "last_price_usd": 0.0229,
+      "last_liquidity_usd": 448350.18,
+      "estimated_fees_usd": 0.0,
       "volume_history": [
-        4902921.62,
-        4989538.37,
-        5023830.12,
-        5027419.99,
-        5062504.25,
-        5077322.18,
-        5079828.81,
-        5063161.76,
-        5040696.1,
-        4962191.44,
-        4833192.49,
-        2302049.22,
-        1971054.12,
-        1914087.68,
-        1885760.44
-      ],
-      "data_stale": false
+        1891730.45
+      ]
     }
   },
   "closed_trades": [
@@ -669,6 +654,18 @@
       "net_proceeds_usd": 1615.987,
       "pnl_usd": 618.987,
       "reason": "TAKE PROFIT: Harga naik >50.0%"
+    },
+    {
+      "closed_at": "2026-11-06T19:56:16+00:00",
+      "symbol": "DESSA",
+      "chain": "solana",
+      "pair_address": "DEXTCER4k9dwbxTMU8zNVVwGevVmvHMB183pF2xxZwvH",
+      "invested_usd": 997.0,
+      "lp_value_usd": 789.1675,
+      "estimated_fees_usd": 20.3789,
+      "net_proceeds_usd": 802.4987,
+      "pnl_usd": -194.5013,
+      "reason": "STOP LOSS: Harga turun >35.0%"
     }
   ],
   "events": [
@@ -1554,7 +1551,29 @@
       "message": "Opened LP DESSA on solana",
       "invested_usd": 997.0,
       "score": 119.74
+    },
+    {
+      "time": "2026-11-06T19:56:16+00:00",
+      "type": "LP_CLOSE",
+      "message": "Closed DESSA: STOP LOSS: Harga turun >35.0%",
+      "closed_at": "2026-11-06T19:56:16+00:00",
+      "symbol": "DESSA",
+      "chain": "solana",
+      "pair_address": "DEXTCER4k9dwbxTMU8zNVVwGevVmvHMB183pF2xxZwvH",
+      "invested_usd": 997.0,
+      "lp_value_usd": 789.1675,
+      "estimated_fees_usd": 20.3789,
+      "net_proceeds_usd": 802.4987,
+      "pnl_usd": -194.5013,
+      "reason": "STOP LOSS: Harga turun >35.0%"
+    },
+    {
+      "time": "2026-11-06T19:56:16+00:00",
+      "type": "LP_OPEN",
+      "message": "Opened LP DESSA on solana",
+      "invested_usd": 997.0,
+      "score": 119.32
     }
   ],
-  "last_run_at": "2026-11-06T18:59:25+00:00"
+  "last_run_at": "2026-11-06T19:56:16+00:00"
 }
