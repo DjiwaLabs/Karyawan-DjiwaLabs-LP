@@ -1,7 +1,7 @@
 {
   "version": 1,
   "starting_cash_usd": 10000.0,
-  "cash_usd": 25585.87964370914,
+  "cash_usd": 25937.87210870998,
   "positions": {
     "solana:5e3dxlxgwmtdcoka51wyyakttjfzbwqcoyuhbui5gt2m": {
       "symbol": "GATO",
@@ -15,12 +15,11 @@
       "entry_liquidity_usd": 357508.34,
       "entry_score": 117.02,
       "entry_time": "2026-11-02T22:22:20+00:00",
-      "last_updated_at": "2026-11-08T15:44:39+00:00",
-      "last_price_usd": 0.01183,
-      "last_liquidity_usd": 365356.88,
-      "estimated_fees_usd": 112.29688445465531,
+      "last_updated_at": "2026-11-08T16:45:59+00:00",
+      "last_price_usd": 0.01188,
+      "last_liquidity_usd": 365613.59,
+      "estimated_fees_usd": 112.94373753860728,
       "volume_history": [
-        1792486.85,
         1972673.97,
         2042887.57,
         2063816.94,
@@ -43,51 +42,8 @@
         1740687.47,
         1747022.23,
         1739781.91,
-        1701306.46
-      ],
-      "data_stale": false
-    },
-    "solana:dextcer4k9dwbxtmu8znvvwgevvmvhmb183pf2xxzwvh": {
-      "symbol": "DESSA",
-      "name": "Dessa",
-      "chain": "solana",
-      "dex": "pumpswap",
-      "pair_address": "DEXTCER4k9dwbxTMU8zNVVwGevVmvHMB183pF2xxZwvH",
-      "pair_url": "https://dexscreener.com/solana/dextcer4k9dwbxtmu8znvvwgevvmvhmb183pf2xxzwvh",
-      "invested_usd": 997.0,
-      "entry_price": 0.0229,
-      "entry_liquidity_usd": 448350.18,
-      "entry_score": 119.32,
-      "entry_time": "2026-11-06T19:56:16+00:00",
-      "last_updated_at": "2026-11-08T15:44:39+00:00",
-      "last_price_usd": 0.02454,
-      "last_liquidity_usd": 465450.19,
-      "estimated_fees_usd": 16.142513152037502,
-      "volume_history": [
-        654826.84,
-        638077.62,
-        628956.18,
-        609184.27,
-        598643.91,
-        595750.27,
-        588401.95,
-        576254.8,
-        569247.59,
-        563748.85,
-        554506.5,
-        498202.44,
-        479877.98,
-        470007.36,
-        460678.68,
-        452952.66,
-        455674.83,
-        449913.38,
-        447140.36,
-        448506.92,
-        446544.98,
-        438862.49,
-        477252.43,
-        491023.47
+        1701306.46,
+        1687147.2
       ],
       "data_stale": false
     },
@@ -103,12 +59,11 @@
       "entry_liquidity_usd": 85083.34,
       "entry_score": 96.39,
       "entry_time": "2026-11-07T03:56:12+00:00",
-      "last_updated_at": "2026-11-08T15:44:39+00:00",
-      "last_price_usd": 0.0007705,
-      "last_liquidity_usd": 76789.54,
-      "estimated_fees_usd": 6.372458498210292,
+      "last_updated_at": "2026-11-08T16:45:59+00:00",
+      "last_price_usd": 0.0007575,
+      "last_liquidity_usd": 76041.04,
+      "estimated_fees_usd": 6.5130503258603305,
       "volume_history": [
-        96239.26,
         103211.77,
         108251.08,
         111642.02,
@@ -131,7 +86,8 @@
         77982.04,
         75325.85,
         76137.77,
-        76864.51
+        76864.51,
+        77179.9
       ],
       "data_stale": false
     },
@@ -147,10 +103,10 @@
       "entry_liquidity_usd": 88928.26,
       "entry_score": 118.49,
       "entry_time": "2026-11-07T23:42:45+00:00",
-      "last_updated_at": "2026-11-08T15:44:39+00:00",
-      "last_price_usd": 0.0008817,
-      "last_liquidity_usd": 91664.86,
-      "estimated_fees_usd": 6.084502634993151,
+      "last_updated_at": "2026-11-08T16:45:59+00:00",
+      "last_price_usd": 0.0008494,
+      "last_liquidity_usd": 89800.84,
+      "estimated_fees_usd": 6.4776323642531715,
       "volume_history": [
         313193.61,
         276051.0,
@@ -168,7 +124,8 @@
         275411.75,
         278686.0,
         278366.8,
-        278767.35
+        278767.35,
+        277666.22
       ],
       "data_stale": false
     },
@@ -184,10 +141,10 @@
       "entry_liquidity_usd": 120968.28,
       "entry_score": 116.5,
       "entry_time": "2026-11-08T07:07:44+00:00",
-      "last_updated_at": "2026-11-08T15:44:39+00:00",
-      "last_price_usd": 0.00202,
-      "last_liquidity_usd": 124587.27,
-      "estimated_fees_usd": 4.072380341179064,
+      "last_updated_at": "2026-11-08T16:45:59+00:00",
+      "last_price_usd": 0.001929,
+      "last_liquidity_usd": 121518.55,
+      "estimated_fees_usd": 4.538506368931091,
       "volume_history": [
         448103.7,
         461753.64,
@@ -198,9 +155,30 @@
         474882.79,
         476244.04,
         472523.25,
-        390028.74
+        390028.74,
+        325894.05
       ],
       "data_stale": false
+    },
+    "solana:dextcer4k9dwbxtmu8znvvwgevvmvhmb183pf2xxzwvh": {
+      "symbol": "DESSA",
+      "name": "Dessa",
+      "chain": "solana",
+      "dex": "pumpswap",
+      "pair_address": "DEXTCER4k9dwbxTMU8zNVVwGevVmvHMB183pF2xxZwvH",
+      "pair_url": "https://dexscreener.com/solana/dextcer4k9dwbxtmu8znvvwgevvmvhmb183pf2xxzwvh",
+      "invested_usd": 997.0,
+      "entry_price": 0.04171,
+      "entry_liquidity_usd": 608274.92,
+      "entry_score": 118.32,
+      "entry_time": "2026-11-08T16:45:59+00:00",
+      "last_updated_at": "2026-11-08T16:45:59+00:00",
+      "last_price_usd": 0.04171,
+      "last_liquidity_usd": 608274.92,
+      "estimated_fees_usd": 0.0,
+      "volume_history": [
+        1372595.38
+      ]
     }
   },
   "closed_trades": [
@@ -717,6 +695,18 @@
       "net_proceeds_usd": 797.8567,
       "pnl_usd": -199.1433,
       "reason": "STOP LOSS: Harga turun >35.0%"
+    },
+    {
+      "closed_at": "2026-11-08T16:45:59+00:00",
+      "symbol": "DESSA",
+      "chain": "solana",
+      "pair_address": "DEXTCER4k9dwbxTMU8zNVVwGevVmvHMB183pF2xxZwvH",
+      "invested_usd": 997.0,
+      "lp_value_usd": 1345.5428,
+      "estimated_fees_usd": 16.2587,
+      "net_proceeds_usd": 1351.9925,
+      "pnl_usd": 354.9925,
+      "reason": "TAKE PROFIT: Harga naik >50.0%"
     }
   ],
   "events": [
@@ -1712,7 +1702,29 @@
       "message": "Opened LP GLITCH on solana",
       "invested_usd": 997.0,
       "score": 116.5
+    },
+    {
+      "time": "2026-11-08T16:45:59+00:00",
+      "type": "LP_CLOSE",
+      "message": "Closed DESSA: TAKE PROFIT: Harga naik >50.0%",
+      "closed_at": "2026-11-08T16:45:59+00:00",
+      "symbol": "DESSA",
+      "chain": "solana",
+      "pair_address": "DEXTCER4k9dwbxTMU8zNVVwGevVmvHMB183pF2xxZwvH",
+      "invested_usd": 997.0,
+      "lp_value_usd": 1345.5428,
+      "estimated_fees_usd": 16.2587,
+      "net_proceeds_usd": 1351.9925,
+      "pnl_usd": 354.9925,
+      "reason": "TAKE PROFIT: Harga naik >50.0%"
+    },
+    {
+      "time": "2026-11-08T16:45:59+00:00",
+      "type": "LP_OPEN",
+      "message": "Opened LP DESSA on solana",
+      "invested_usd": 997.0,
+      "score": 118.32
     }
   ],
-  "last_run_at": "2026-11-08T15:44:39+00:00"
+  "last_run_at": "2026-11-08T16:45:59+00:00"
 }
