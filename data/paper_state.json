@@ -1,7 +1,7 @@
 {
   "version": 1,
   "starting_cash_usd": 10000.0,
-  "cash_usd": 25780.873891157935,
+  "cash_usd": 24780.873891157935,
   "positions": {
     "solana:em6rvzgxhd35pz7cvujctpenv4jaztscavhaxbxcbcg7": {
       "symbol": "GLITCH",
@@ -15,12 +15,11 @@
       "entry_liquidity_usd": 120968.28,
       "entry_score": 116.5,
       "entry_time": "2026-11-08T07:07:44+00:00",
-      "last_updated_at": "2026-11-12T06:10:55+00:00",
-      "last_price_usd": 0.001833,
-      "last_liquidity_usd": 115744.17,
-      "estimated_fees_usd": 28.419889363592407,
+      "last_updated_at": "2026-11-12T07:27:57+00:00",
+      "last_price_usd": 0.001879,
+      "last_liquidity_usd": 117125.08,
+      "estimated_fees_usd": 28.765103670733385,
       "volume_history": [
-        312251.75,
         301966.16,
         302197.97,
         298023.2,
@@ -43,7 +42,8 @@
         222035.54,
         224752.89,
         236584.61,
-        229997.97
+        229997.97,
+        229029.56
       ],
       "data_stale": false
     },
@@ -59,12 +59,11 @@
       "entry_liquidity_usd": 110509.83,
       "entry_score": 97.76,
       "entry_time": "2026-11-10T10:58:13+00:00",
-      "last_updated_at": "2026-11-12T06:10:55+00:00",
-      "last_price_usd": 0.001053,
-      "last_liquidity_usd": 98019.15,
-      "estimated_fees_usd": 11.871964072691618,
+      "last_updated_at": "2026-11-12T07:27:57+00:00",
+      "last_price_usd": 0.0009626,
+      "last_liquidity_usd": 93616.79,
+      "estimated_fees_usd": 12.363065369536585,
       "volume_history": [
-        257788.95,
         267122.04,
         270638.07,
         261999.7,
@@ -87,7 +86,8 @@
         300494.62,
         300070.21,
         301627.36,
-        307960.43
+        307960.43,
+        323134.68
       ],
       "data_stale": false
     },
@@ -103,12 +103,11 @@
       "entry_liquidity_usd": 104991.82,
       "entry_score": 119.55,
       "entry_time": "2026-11-10T23:43:26+00:00",
-      "last_updated_at": "2026-11-12T06:10:55+00:00",
-      "last_price_usd": 0.0009217,
-      "last_liquidity_usd": 105300.45,
-      "estimated_fees_usd": 22.83237048669199,
+      "last_updated_at": "2026-11-12T07:27:57+00:00",
+      "last_price_usd": 0.0009815,
+      "last_liquidity_usd": 108641.62,
+      "estimated_fees_usd": 23.571170080782434,
       "volume_history": [
-        673861.65,
         683656.21,
         676288.38,
         703012.83,
@@ -131,7 +130,8 @@
         299267.99,
         312371.45,
         278773.24,
-        274528.19
+        274528.19,
+        267321.78
       ],
       "data_stale": false
     },
@@ -147,15 +147,36 @@
       "entry_liquidity_usd": 265559.33,
       "entry_score": 115.63,
       "entry_time": "2026-11-12T05:08:15+00:00",
-      "last_updated_at": "2026-11-12T06:10:55+00:00",
-      "last_price_usd": 0.006393,
-      "last_liquidity_usd": 268688.97,
-      "estimated_fees_usd": 0.783204705446857,
+      "last_updated_at": "2026-11-12T07:27:57+00:00",
+      "last_price_usd": 0.006114,
+      "last_liquidity_usd": 262618.92,
+      "estimated_fees_usd": 1.763955826341443,
       "volume_history": [
         1588578.21,
-        1644730.98
+        1644730.98,
+        1595617.87
       ],
       "data_stale": false
+    },
+    "solana:dnml7vynntacb8e6a4epbeeendw8hwp1evqz4bwkcgjk": {
+      "symbol": "GATO",
+      "name": "GTA6CAT",
+      "chain": "solana",
+      "dex": "meteora",
+      "pair_address": "DnmL7vYnNTACb8e6a4EpbeeeNDW8hwp1EvQZ4BWKCgjK",
+      "pair_url": "https://dexscreener.com/solana/dnml7vynntacb8e6a4epbeeendw8hwp1evqz4bwkcgjk",
+      "invested_usd": 997.0,
+      "entry_price": 0.006088,
+      "entry_liquidity_usd": 143233.54,
+      "entry_score": 102.73,
+      "entry_time": "2026-11-12T07:27:57+00:00",
+      "last_updated_at": "2026-11-12T07:27:57+00:00",
+      "last_price_usd": 0.006088,
+      "last_liquidity_usd": 143233.54,
+      "estimated_fees_usd": 0.0,
+      "volume_history": [
+        231809.33
+      ]
     }
   },
   "closed_trades": [
@@ -795,14 +816,6 @@
     }
   ],
   "events": [
-    {
-      "time": "2026-10-21T13:47:57+00:00",
-      "type": "LP_OPEN",
-      "message": "Opened virtual LP microduck on robinhood",
-      "invested_usd": 500.0,
-      "score": 108.41,
-      "pair_url": "https://dexscreener.com/robinhood/0xb56232b0764299cfdf7b15a06fb64f55df88b708"
-    },
     {
       "time": "2026-10-21T14:43:05+00:00",
       "type": "LP_CLOSE",
@@ -1904,7 +1917,14 @@
       "net_proceeds_usd": 993.5548,
       "pnl_usd": -3.4452,
       "reason": "GUARD: Likuiditas turun >40.0%"
+    },
+    {
+      "time": "2026-11-12T07:27:57+00:00",
+      "type": "LP_OPEN",
+      "message": "Opened LP GATO on solana",
+      "invested_usd": 997.0,
+      "score": 102.73
     }
   ],
-  "last_run_at": "2026-11-12T06:10:55+00:00"
+  "last_run_at": "2026-11-12T07:27:57+00:00"
 }
