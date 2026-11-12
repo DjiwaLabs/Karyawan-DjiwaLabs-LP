@@ -1,7 +1,7 @@
 {
   "version": 1,
   "starting_cash_usd": 10000.0,
-  "cash_usd": 24787.31911898661,
+  "cash_usd": 25780.873891157935,
   "positions": {
     "solana:em6rvzgxhd35pz7cvujctpenv4jaztscavhaxbxcbcg7": {
       "symbol": "GLITCH",
@@ -15,12 +15,11 @@
       "entry_liquidity_usd": 120968.28,
       "entry_score": 116.5,
       "entry_time": "2026-11-08T07:07:44+00:00",
-      "last_updated_at": "2026-11-12T05:08:15+00:00",
-      "last_price_usd": 0.001892,
-      "last_liquidity_usd": 117481.12,
-      "estimated_fees_usd": 28.13181061119611,
+      "last_updated_at": "2026-11-12T06:10:55+00:00",
+      "last_price_usd": 0.001833,
+      "last_liquidity_usd": 115744.17,
+      "estimated_fees_usd": 28.419889363592407,
       "volume_history": [
-        308969.91,
         312251.75,
         301966.16,
         302197.97,
@@ -43,7 +42,8 @@
         221458.82,
         222035.54,
         224752.89,
-        236584.61
+        236584.61,
+        229997.97
       ],
       "data_stale": false
     },
@@ -59,12 +59,11 @@
       "entry_liquidity_usd": 110509.83,
       "entry_score": 97.76,
       "entry_time": "2026-11-10T10:58:13+00:00",
-      "last_updated_at": "2026-11-12T05:08:15+00:00",
-      "last_price_usd": 0.001032,
-      "last_liquidity_usd": 96907.78,
-      "estimated_fees_usd": 11.49401679800515,
+      "last_updated_at": "2026-11-12T06:10:55+00:00",
+      "last_price_usd": 0.001053,
+      "last_liquidity_usd": 98019.15,
+      "estimated_fees_usd": 11.871964072691618,
       "volume_history": [
-        255252.62,
         257788.95,
         267122.04,
         270638.07,
@@ -87,7 +86,8 @@
         307981.46,
         300494.62,
         300070.21,
-        301627.36
+        301627.36,
+        307960.43
       ],
       "data_stale": false
     },
@@ -103,12 +103,11 @@
       "entry_liquidity_usd": 104991.82,
       "entry_score": 119.55,
       "entry_time": "2026-11-10T23:43:26+00:00",
-      "last_updated_at": "2026-11-12T05:08:15+00:00",
-      "last_price_usd": 0.0009149,
-      "last_liquidity_usd": 104771.89,
-      "estimated_fees_usd": 22.191354590630628,
+      "last_updated_at": "2026-11-12T06:10:55+00:00",
+      "last_price_usd": 0.0009217,
+      "last_liquidity_usd": 105300.45,
+      "estimated_fees_usd": 22.83237048669199,
       "volume_history": [
-        669750.09,
         673861.65,
         683656.21,
         676288.38,
@@ -131,51 +130,8 @@
         322232.69,
         299267.99,
         312371.45,
-        278773.24
-      ],
-      "data_stale": false
-    },
-    "solana:astbb4jvbh1sueprhqz87am39sdy8dduzbvcvwbmmyyv": {
-      "symbol": "NIO",
-      "name": "Nigga Its Over",
-      "chain": "solana",
-      "dex": "meteora",
-      "pair_address": "AsTbb4jVBh1SUEPRHqZ87aM39sdy8DDUZBvCvwBmMyYV",
-      "pair_url": "https://dexscreener.com/solana/astbb4jvbh1sueprhqz87am39sdy8dduzbvcvwbmmyyv",
-      "invested_usd": 997.0,
-      "entry_price": 0.0009289,
-      "entry_liquidity_usd": 78933.42,
-      "entry_score": 119.21,
-      "entry_time": "2026-11-10T23:43:26+00:00",
-      "last_updated_at": "2026-11-12T05:08:15+00:00",
-      "last_price_usd": 0.0009073,
-      "last_liquidity_usd": 53184.56,
-      "estimated_fees_usd": 12.305887721198145,
-      "volume_history": [
-        215066.88,
-        216509.86,
-        223246.51,
-        219665.23,
-        227954.25,
-        231718.48,
-        237848.32,
-        236570.01,
-        235885.33,
-        229465.13,
-        224300.27,
-        221365.81,
-        205995.5,
-        190996.25,
-        179178.1,
-        174417.53,
-        170094.13,
-        169350.72,
-        167445.57,
-        153562.37,
-        150900.07,
-        132688.36,
-        135846.51,
-        122270.82
+        278773.24,
+        274528.19
       ],
       "data_stale": false
     },
@@ -191,13 +147,15 @@
       "entry_liquidity_usd": 265559.33,
       "entry_score": 115.63,
       "entry_time": "2026-11-12T05:08:15+00:00",
-      "last_updated_at": "2026-11-12T05:08:15+00:00",
-      "last_price_usd": 0.006265,
-      "last_liquidity_usd": 265559.33,
-      "estimated_fees_usd": 0.0,
+      "last_updated_at": "2026-11-12T06:10:55+00:00",
+      "last_price_usd": 0.006393,
+      "last_liquidity_usd": 268688.97,
+      "estimated_fees_usd": 0.783204705446857,
       "volume_history": [
-        1588578.21
-      ]
+        1588578.21,
+        1644730.98
+      ],
+      "data_stale": false
     }
   },
   "closed_trades": [
@@ -822,17 +780,21 @@
       "net_proceeds_usd": 644.971,
       "pnl_usd": -352.029,
       "reason": "STOP LOSS: Harga turun >35.0%"
+    },
+    {
+      "closed_at": "2026-11-12T06:10:55+00:00",
+      "symbol": "NIO",
+      "chain": "solana",
+      "pair_address": "AsTbb4jVBh1SUEPRHqZ87aM39sdy8DDUZBvCvwBmMyYV",
+      "invested_usd": 997.0,
+      "lp_value_usd": 988.701,
+      "estimated_fees_usd": 12.8616,
+      "net_proceeds_usd": 993.5548,
+      "pnl_usd": -3.4452,
+      "reason": "GUARD: Likuiditas turun >40.0%"
     }
   ],
   "events": [
-    {
-      "time": "2026-10-21T13:47:57+00:00",
-      "type": "LP_OPEN",
-      "message": "Opened virtual LP SI on bsc",
-      "invested_usd": 500.0,
-      "score": 128.57,
-      "pair_url": "https://dexscreener.com/bsc/0x5a606e1533fb11870f3b6c2f98a7edda699b94bf"
-    },
     {
       "time": "2026-10-21T13:47:57+00:00",
       "type": "LP_OPEN",
@@ -1927,7 +1889,22 @@
       "message": "Opened LP GATO on solana",
       "invested_usd": 997.0,
       "score": 115.63
+    },
+    {
+      "time": "2026-11-12T06:10:55+00:00",
+      "type": "LP_CLOSE",
+      "message": "Closed NIO: GUARD: Likuiditas turun >40.0%",
+      "closed_at": "2026-11-12T06:10:55+00:00",
+      "symbol": "NIO",
+      "chain": "solana",
+      "pair_address": "AsTbb4jVBh1SUEPRHqZ87aM39sdy8DDUZBvCvwBmMyYV",
+      "invested_usd": 997.0,
+      "lp_value_usd": 988.701,
+      "estimated_fees_usd": 12.8616,
+      "net_proceeds_usd": 993.5548,
+      "pnl_usd": -3.4452,
+      "reason": "GUARD: Likuiditas turun >40.0%"
     }
   ],
-  "last_run_at": "2026-11-12T05:08:15+00:00"
+  "last_run_at": "2026-11-12T06:10:55+00:00"
 }
