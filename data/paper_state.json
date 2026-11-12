@@ -1,7 +1,7 @@
 {
   "version": 1,
   "starting_cash_usd": 10000.0,
-  "cash_usd": 24780.873891157935,
+  "cash_usd": 24802.58851088322,
   "positions": {
     "solana:em6rvzgxhd35pz7cvujctpenv4jaztscavhaxbxcbcg7": {
       "symbol": "GLITCH",
@@ -15,12 +15,11 @@
       "entry_liquidity_usd": 120968.28,
       "entry_score": 116.5,
       "entry_time": "2026-11-08T07:07:44+00:00",
-      "last_updated_at": "2026-11-12T09:08:49+00:00",
-      "last_price_usd": 0.001812,
-      "last_liquidity_usd": 114926.75,
-      "estimated_fees_usd": 29.220551268948576,
+      "last_updated_at": "2026-11-12T10:10:38+00:00",
+      "last_price_usd": 0.001801,
+      "last_liquidity_usd": 114875.55,
+      "estimated_fees_usd": 29.49649471707305,
       "volume_history": [
-        302197.97,
         298023.2,
         304417.17,
         301956.61,
@@ -43,7 +42,8 @@
         236584.61,
         229997.97,
         229029.56,
-        232838.91
+        232838.91,
+        230572.7
       ],
       "data_stale": false
     },
@@ -59,12 +59,11 @@
       "entry_liquidity_usd": 110509.83,
       "entry_score": 97.76,
       "entry_time": "2026-11-10T10:58:13+00:00",
-      "last_updated_at": "2026-11-12T09:08:49+00:00",
-      "last_price_usd": 0.0009469,
-      "last_liquidity_usd": 92773.6,
-      "estimated_fees_usd": 13.017406436654033,
+      "last_updated_at": "2026-11-12T10:10:38+00:00",
+      "last_price_usd": 0.0009642,
+      "last_liquidity_usd": 93873.39,
+      "estimated_fees_usd": 13.416799224682869,
       "volume_history": [
-        270638.07,
         261999.7,
         259111.46,
         254416.18,
@@ -87,7 +86,8 @@
         301627.36,
         307960.43,
         323134.68,
-        324585.97
+        324585.97,
+        323775.38
       ],
       "data_stale": false
     },
@@ -103,12 +103,11 @@
       "entry_liquidity_usd": 104991.82,
       "entry_score": 119.55,
       "entry_time": "2026-11-10T23:43:26+00:00",
-      "last_updated_at": "2026-11-12T09:08:49+00:00",
-      "last_price_usd": 0.0009457,
-      "last_liquidity_usd": 106561.32,
-      "estimated_fees_usd": 24.523773692519207,
+      "last_updated_at": "2026-11-12T10:10:38+00:00",
+      "last_price_usd": 0.0009285,
+      "last_liquidity_usd": 105856.48,
+      "estimated_fees_usd": 25.091123108036058,
       "volume_history": [
-        676288.38,
         703012.83,
         708116.32,
         711590.09,
@@ -131,7 +130,8 @@
         278773.24,
         274528.19,
         267321.78,
-        271988.78
+        271988.78,
+        272472.56
       ],
       "data_stale": false
     },
@@ -147,37 +147,16 @@
       "entry_liquidity_usd": 265559.33,
       "entry_score": 115.63,
       "entry_time": "2026-11-12T05:08:15+00:00",
-      "last_updated_at": "2026-11-12T09:08:49+00:00",
-      "last_price_usd": 0.006124,
-      "last_liquidity_usd": 262679.49,
-      "estimated_fees_usd": 3.036038127325046,
+      "last_updated_at": "2026-11-12T10:10:38+00:00",
+      "last_price_usd": 0.006038,
+      "last_liquidity_usd": 261531.73,
+      "estimated_fees_usd": 3.8107539029063195,
       "volume_history": [
         1588578.21,
         1644730.98,
         1595617.87,
-        1549979.82
-      ],
-      "data_stale": false
-    },
-    "solana:dnml7vynntacb8e6a4epbeeendw8hwp1evqz4bwkcgjk": {
-      "symbol": "GATO",
-      "name": "GTA6CAT",
-      "chain": "solana",
-      "dex": "meteora",
-      "pair_address": "DnmL7vYnNTACb8e6a4EpbeeeNDW8hwp1EvQZ4BWKCgjK",
-      "pair_url": "https://dexscreener.com/solana/dnml7vynntacb8e6a4epbeeendw8hwp1evqz4bwkcgjk",
-      "invested_usd": 997.0,
-      "entry_price": 0.006088,
-      "entry_liquidity_usd": 143233.54,
-      "entry_score": 102.73,
-      "entry_time": "2026-11-12T07:27:57+00:00",
-      "last_updated_at": "2026-11-12T09:08:49+00:00",
-      "last_price_usd": 0.006088,
-      "last_liquidity_usd": 143233.54,
-      "estimated_fees_usd": 0.3328064706903656,
-      "volume_history": [
-        231809.33,
-        223190.65
+        1549979.82,
+        1509219.62
       ],
       "data_stale": false
     }
@@ -816,25 +795,21 @@
       "net_proceeds_usd": 993.5548,
       "pnl_usd": -3.4452,
       "reason": "GUARD: Likuiditas turun >40.0%"
+    },
+    {
+      "closed_at": "2026-11-12T10:10:38+00:00",
+      "symbol": "GATO",
+      "chain": "solana",
+      "pair_address": "DnmL7vYnNTACb8e6a4EpbeeeNDW8hwp1EvQZ4BWKCgjK",
+      "invested_usd": 997.0,
+      "lp_value_usd": 24.2645,
+      "estimated_fees_usd": 0.5744,
+      "net_proceeds_usd": 21.7146,
+      "pnl_usd": -975.2854,
+      "reason": "STOP LOSS: Harga turun >35.0%"
     }
   ],
   "events": [
-    {
-      "time": "2026-10-21T14:43:05+00:00",
-      "type": "LP_CLOSE",
-      "message": "Closed virtual LP Pepina: GUARD: token price fell more than 35% from entry",
-      "closed_at": "2026-10-21T14:43:05+00:00",
-      "symbol": "Pepina",
-      "chain": "robinhood",
-      "pair_address": "0x55E0a094CA5D911bcDdaeA0D4D2751aca668CB83",
-      "invested_usd": 500.0,
-      "lp_value_usd": 374.2768,
-      "estimated_fees_usd": 5.0989,
-      "proceeds_usd": 379.3756,
-      "pnl_usd": -120.6244,
-      "reason": "GUARD: token price fell more than 35% from entry",
-      "pair_url": "https://dexscreener.com/robinhood/0x55e0a094ca5d911bcddaea0d4d2751aca668cb83"
-    },
     {
       "time": "2026-10-21T14:43:05+00:00",
       "type": "LP_CLOSE",
@@ -1927,7 +1902,22 @@
       "message": "Opened LP GATO on solana",
       "invested_usd": 997.0,
       "score": 102.73
+    },
+    {
+      "time": "2026-11-12T10:10:38+00:00",
+      "type": "LP_CLOSE",
+      "message": "Closed GATO: STOP LOSS: Harga turun >35.0%",
+      "closed_at": "2026-11-12T10:10:38+00:00",
+      "symbol": "GATO",
+      "chain": "solana",
+      "pair_address": "DnmL7vYnNTACb8e6a4EpbeeeNDW8hwp1EvQZ4BWKCgjK",
+      "invested_usd": 997.0,
+      "lp_value_usd": 24.2645,
+      "estimated_fees_usd": 0.5744,
+      "net_proceeds_usd": 21.7146,
+      "pnl_usd": -975.2854,
+      "reason": "STOP LOSS: Harga turun >35.0%"
     }
   ],
-  "last_run_at": "2026-11-12T09:08:49+00:00"
+  "last_run_at": "2026-11-12T10:10:38+00:00"
 }
