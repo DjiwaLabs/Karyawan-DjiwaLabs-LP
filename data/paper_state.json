@@ -15,12 +15,11 @@
       "entry_liquidity_usd": 110509.83,
       "entry_score": 97.76,
       "entry_time": "2026-11-10T10:58:13+00:00",
-      "last_updated_at": "2026-11-13T21:53:53+00:00",
-      "last_price_usd": 0.001664,
-      "last_liquidity_usd": 121191.14,
-      "estimated_fees_usd": 23.24393413196293,
+      "last_updated_at": "2026-11-13T22:51:51+00:00",
+      "last_price_usd": 0.001659,
+      "last_liquidity_usd": 120796.15,
+      "estimated_fees_usd": 23.418429230437333,
       "volume_history": [
-        175603.27,
         170117.11,
         152234.39,
         151092.31,
@@ -43,7 +42,8 @@
         247446.31,
         250045.83,
         250501.96,
-        270218.54
+        270218.54,
+        272976.69
       ],
       "data_stale": false
     },
@@ -59,12 +59,11 @@
       "entry_liquidity_usd": 265559.33,
       "entry_score": 115.63,
       "entry_time": "2026-11-12T05:08:15+00:00",
-      "last_updated_at": "2026-11-13T21:53:53+00:00",
-      "last_price_usd": 0.007344,
-      "last_liquidity_usd": 286076.75,
-      "estimated_fees_usd": 30.23023823590105,
+      "last_updated_at": "2026-11-13T22:51:51+00:00",
+      "last_price_usd": 0.008626,
+      "last_liquidity_usd": 309797.13,
+      "estimated_fees_usd": 30.77123935457822,
       "volume_history": [
-        1583310.35,
         1569122.16,
         1493741.86,
         1422500.31,
@@ -87,7 +86,8 @@
         1609331.38,
         1575683.56,
         1590745.28,
-        1645822.76
+        1645822.76,
+        1735783.28
       ],
       "data_stale": false
     },
@@ -103,10 +103,10 @@
       "entry_liquidity_usd": 139552.24,
       "entry_score": 119.69,
       "entry_time": "2026-11-13T03:00:01+00:00",
-      "last_updated_at": "2026-11-13T21:53:53+00:00",
-      "last_price_usd": 0.001313,
-      "last_liquidity_usd": 125858.1,
-      "estimated_fees_usd": 20.058487715834207,
+      "last_updated_at": "2026-11-13T22:51:51+00:00",
+      "last_price_usd": 0.001502,
+      "last_liquidity_usd": 134611.75,
+      "estimated_fees_usd": 21.138810697904965,
       "volume_history": [
         714812.83,
         866622.94,
@@ -125,7 +125,8 @@
         1213340.6,
         1197374.02,
         1198512.97,
-        1226587.42
+        1226587.42,
+        1261810.5
       ],
       "data_stale": false
     },
@@ -141,10 +142,10 @@
       "entry_liquidity_usd": 93955.33,
       "entry_score": 107.27,
       "entry_time": "2026-11-13T07:25:14+00:00",
-      "last_updated_at": "2026-11-13T21:53:53+00:00",
-      "last_price_usd": 0.001927,
-      "last_liquidity_usd": 116179.28,
-      "estimated_fees_usd": 2.9165235985053557,
+      "last_updated_at": "2026-11-13T22:51:51+00:00",
+      "last_price_usd": 0.001654,
+      "last_liquidity_usd": 107388.85,
+      "estimated_fees_usd": 3.1012548067504526,
       "volume_history": [
         166664.57,
         161959.64,
@@ -159,7 +160,8 @@
         165739.62,
         167561.85,
         154222.49,
-        154903.72
+        154903.72,
+        159429.69
       ],
       "data_stale": false
     },
@@ -175,10 +177,10 @@
       "entry_liquidity_usd": 372758.92,
       "entry_score": 118.64,
       "entry_time": "2026-11-13T09:06:05+00:00",
-      "last_updated_at": "2026-11-13T21:53:53+00:00",
-      "last_price_usd": 0.01244,
-      "last_liquidity_usd": 303051.02,
-      "estimated_fees_usd": 18.174139526049213,
+      "last_updated_at": "2026-11-13T22:51:51+00:00",
+      "last_price_usd": 0.01316,
+      "last_liquidity_usd": 311228.61,
+      "estimated_fees_usd": 19.237298025307904,
       "volume_history": [
         4108015.07,
         4186480.75,
@@ -192,7 +194,8 @@
         1421070.13,
         1434405.49,
         1449712.74,
-        1459145.89
+        1459145.89,
+        1476128.58
       ],
       "data_stale": false
     }
@@ -1984,5 +1987,5 @@
       "score": 118.64
     }
   ],
-  "last_run_at": "2026-11-13T21:53:53+00:00"
+  "last_run_at": "2026-11-13T22:51:51+00:00"
 }
