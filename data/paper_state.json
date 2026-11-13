@@ -1,7 +1,7 @@
 {
   "version": 1,
   "starting_cash_usd": 10000.0,
-  "cash_usd": 23802.58851088322,
+  "cash_usd": 24141.373749275775,
   "positions": {
     "solana:em6rvzgxhd35pz7cvujctpenv4jaztscavhaxbxcbcg7": {
       "symbol": "GLITCH",
@@ -15,12 +15,11 @@
       "entry_liquidity_usd": 120968.28,
       "entry_score": 116.5,
       "entry_time": "2026-11-08T07:07:44+00:00",
-      "last_updated_at": "2026-11-13T02:16:01+00:00",
-      "last_price_usd": 0.001449,
-      "last_liquidity_usd": 101759.79,
-      "estimated_fees_usd": 33.78899488485971,
+      "last_updated_at": "2026-11-13T03:00:01+00:00",
+      "last_price_usd": 0.0015,
+      "last_liquidity_usd": 103104.03,
+      "estimated_fees_usd": 33.981205567973376,
       "volume_history": [
-        203393.15,
         221458.82,
         222035.54,
         224752.89,
@@ -43,7 +42,8 @@
         228800.28,
         207400.44,
         168847.54,
-        165934.45
+        165934.45,
+        163293.85
       ],
       "data_stale": false
     },
@@ -59,12 +59,11 @@
       "entry_liquidity_usd": 110509.83,
       "entry_score": 97.76,
       "entry_time": "2026-11-10T10:58:13+00:00",
-      "last_updated_at": "2026-11-13T02:16:01+00:00",
-      "last_price_usd": 0.001401,
-      "last_liquidity_usd": 112241.09,
-      "estimated_fees_usd": 19.003138484857875,
+      "last_updated_at": "2026-11-13T03:00:01+00:00",
+      "last_price_usd": 0.001291,
+      "last_liquidity_usd": 107197.76,
+      "estimated_fees_usd": 19.203521609633157,
       "volume_history": [
-        321129.11,
         307981.46,
         300494.62,
         300070.21,
@@ -87,51 +86,8 @@
         152234.39,
         151092.31,
         153402.76,
-        158265.52
-      ],
-      "data_stale": false
-    },
-    "solana:b4wmjc6pvjctu3qsvs3ett9mr4m5v5jbkrqctwantc71": {
-      "symbol": "NIO",
-      "name": "Nigga Its Over",
-      "chain": "solana",
-      "dex": "pumpswap",
-      "pair_address": "B4Wmjc6PvjCtU3qSVS3eTT9Mr4M5V5jBkRQctWANTc71",
-      "pair_url": "https://dexscreener.com/solana/b4wmjc6pvjctu3qsvs3ett9mr4m5v5jbkrqctwantc71",
-      "invested_usd": 997.0,
-      "entry_price": 0.000925,
-      "entry_liquidity_usd": 104991.82,
-      "entry_score": 119.55,
-      "entry_time": "2026-11-10T23:43:26+00:00",
-      "last_updated_at": "2026-11-13T02:16:01+00:00",
-      "last_price_usd": 0.0013,
-      "last_liquidity_usd": 124971.94,
-      "estimated_fees_usd": 32.08494804994196,
-      "volume_history": [
-        333325.02,
-        322232.69,
-        299267.99,
-        312371.45,
-        278773.24,
-        274528.19,
-        267321.78,
-        271988.78,
-        272472.56,
-        272917.59,
-        276493.87,
-        293402.67,
-        471388.26,
-        533388.92,
-        557952.57,
-        557466.27,
-        559274.47,
-        581761.92,
-        588161.7,
-        579651.09,
-        571682.02,
-        546763.02,
-        578761.72,
-        592192.36
+        158265.52,
+        158451.53
       ],
       "data_stale": false
     },
@@ -147,10 +103,10 @@
       "entry_liquidity_usd": 265559.33,
       "entry_score": 115.63,
       "entry_time": "2026-11-12T05:08:15+00:00",
-      "last_updated_at": "2026-11-13T02:16:01+00:00",
-      "last_price_usd": 0.005351,
-      "last_liquidity_usd": 244495.09,
-      "estimated_fees_usd": 16.45745504240403,
+      "last_updated_at": "2026-11-13T03:00:01+00:00",
+      "last_price_usd": 0.005216,
+      "last_liquidity_usd": 240303.9,
+      "estimated_fees_usd": 17.03191067724128,
       "volume_history": [
         1588578.21,
         1644730.98,
@@ -171,7 +127,8 @@
         1493741.86,
         1422500.31,
         1346919.67,
-        1269915.46
+        1269915.46,
+        1205084.04
       ],
       "data_stale": false
     },
@@ -187,10 +144,10 @@
       "entry_liquidity_usd": 296611.76,
       "entry_score": 113.42,
       "entry_time": "2026-11-12T15:02:38+00:00",
-      "last_updated_at": "2026-11-13T02:16:01+00:00",
-      "last_price_usd": 0.01293,
-      "last_liquidity_usd": 311088.2,
-      "estimated_fees_usd": 13.099268407315375,
+      "last_updated_at": "2026-11-13T03:00:01+00:00",
+      "last_price_usd": 0.01169,
+      "last_liquidity_usd": 294317.77,
+      "estimated_fees_usd": 14.112137583106149,
       "volume_history": [
         1038648.02,
         2524111.11,
@@ -203,9 +160,30 @@
         3549239.98,
         3553515.4,
         3556001.09,
-        3562675.84
+        3562675.84,
+        3561174.59
       ],
       "data_stale": false
+    },
+    "solana:b4wmjc6pvjctu3qsvs3ett9mr4m5v5jbkrqctwantc71": {
+      "symbol": "NIO",
+      "name": "Nigga Its Over",
+      "chain": "solana",
+      "dex": "pumpswap",
+      "pair_address": "B4Wmjc6PvjCtU3qSVS3eTT9Mr4M5V5jBkRQctWANTc71",
+      "pair_url": "https://dexscreener.com/solana/b4wmjc6pvjctu3qsvs3ett9mr4m5v5jbkrqctwantc71",
+      "invested_usd": 997.0,
+      "entry_price": 0.001612,
+      "entry_liquidity_usd": 139552.24,
+      "entry_score": 119.69,
+      "entry_time": "2026-11-13T03:00:01+00:00",
+      "last_updated_at": "2026-11-13T03:00:01+00:00",
+      "last_price_usd": 0.001612,
+      "last_liquidity_usd": 139552.24,
+      "estimated_fees_usd": 0.0,
+      "volume_history": [
+        714812.83
+      ]
     }
   },
   "closed_trades": [
@@ -854,33 +832,21 @@
       "net_proceeds_usd": 21.7146,
       "pnl_usd": -975.2854,
       "reason": "STOP LOSS: Harga turun >35.0%"
+    },
+    {
+      "closed_at": "2026-11-13T03:00:01+00:00",
+      "symbol": "NIO",
+      "chain": "solana",
+      "pair_address": "B4Wmjc6PvjCtU3qSVS3eTT9Mr4M5V5jBkRQctWANTc71",
+      "invested_usd": 997.0,
+      "lp_value_usd": 1316.1543,
+      "estimated_fees_usd": 32.3736,
+      "net_proceeds_usd": 1338.7852,
+      "pnl_usd": 341.7852,
+      "reason": "TAKE PROFIT: Harga naik >50.0%"
     }
   ],
   "events": [
-    {
-      "time": "2026-10-21T14:43:06+00:00",
-      "type": "LP_CLOSE",
-      "message": "Closed virtual LP microduck: GUARD: pool liquidity fell more than 40% from entry",
-      "closed_at": "2026-10-21T14:43:06+00:00",
-      "symbol": "microduck",
-      "chain": "robinhood",
-      "pair_address": "0xb56232B0764299cfDf7b15A06FB64f55df88b708",
-      "invested_usd": 500.0,
-      "lp_value_usd": 1.8257,
-      "estimated_fees_usd": 19905.2489,
-      "proceeds_usd": 19907.0747,
-      "pnl_usd": 19407.0747,
-      "reason": "GUARD: pool liquidity fell more than 40% from entry",
-      "pair_url": "https://dexscreener.com/robinhood/0xb56232b0764299cfdf7b15a06fb64f55df88b708"
-    },
-    {
-      "time": "2026-10-21T14:43:06+00:00",
-      "type": "LP_OPEN",
-      "message": "Opened virtual LP DOT on solana",
-      "invested_usd": 500.0,
-      "score": 133.49,
-      "pair_url": "https://dexscreener.com/solana/azjdbhjeuqlmkukyfmsnrpguheexkpwedbvv8hcnta1e"
-    },
     {
       "time": "2026-10-21T14:43:06+00:00",
       "type": "LP_OPEN",
@@ -1955,7 +1921,29 @@
       "message": "Opened LP RAMBO on solana",
       "invested_usd": 997.0,
       "score": 113.42
+    },
+    {
+      "time": "2026-11-13T03:00:01+00:00",
+      "type": "LP_CLOSE",
+      "message": "Closed NIO: TAKE PROFIT: Harga naik >50.0%",
+      "closed_at": "2026-11-13T03:00:01+00:00",
+      "symbol": "NIO",
+      "chain": "solana",
+      "pair_address": "B4Wmjc6PvjCtU3qSVS3eTT9Mr4M5V5jBkRQctWANTc71",
+      "invested_usd": 997.0,
+      "lp_value_usd": 1316.1543,
+      "estimated_fees_usd": 32.3736,
+      "net_proceeds_usd": 1338.7852,
+      "pnl_usd": 341.7852,
+      "reason": "TAKE PROFIT: Harga naik >50.0%"
+    },
+    {
+      "time": "2026-11-13T03:00:01+00:00",
+      "type": "LP_OPEN",
+      "message": "Opened LP NIO on solana",
+      "invested_usd": 997.0,
+      "score": 119.69
     }
   ],
-  "last_run_at": "2026-11-13T02:16:01+00:00"
+  "last_run_at": "2026-11-13T03:00:01+00:00"
 }
