@@ -1,7 +1,7 @@
 {
   "version": 1,
   "starting_cash_usd": 10000.0,
-  "cash_usd": 24716.285642537205,
+  "cash_usd": 24535.460985273014,
   "positions": {
     "solana:5e3dxlxgwmtdcoka51wyyakttjfzbwqcoyuhbui5gt2m": {
       "symbol": "GATO",
@@ -15,12 +15,11 @@
       "entry_liquidity_usd": 265559.33,
       "entry_score": 115.63,
       "entry_time": "2026-11-12T05:08:15+00:00",
-      "last_updated_at": "2026-11-14T08:57:17+00:00",
-      "last_price_usd": 0.007972,
-      "last_liquidity_usd": 292947.65,
-      "estimated_fees_usd": 37.22411045338601,
+      "last_updated_at": "2026-11-14T09:53:34+00:00",
+      "last_price_usd": 0.008017,
+      "last_liquidity_usd": 295568.8,
+      "estimated_fees_usd": 37.89532513834498,
       "volume_history": [
-        1263098.75,
         1313911.1,
         1369159.44,
         1383880.38,
@@ -43,7 +42,8 @@
         2040141.68,
         1985816.25,
         1893890.34,
-        1838469.04
+        1838469.04,
+        1809668.23
       ],
       "data_stale": false
     },
@@ -59,12 +59,11 @@
       "entry_liquidity_usd": 93955.33,
       "entry_score": 107.27,
       "entry_time": "2026-11-13T07:25:14+00:00",
-      "last_updated_at": "2026-11-14T08:57:17+00:00",
-      "last_price_usd": 0.001729,
-      "last_liquidity_usd": 107704.7,
-      "estimated_fees_usd": 4.959151791546272,
+      "last_updated_at": "2026-11-14T09:53:34+00:00",
+      "last_price_usd": 0.001749,
+      "last_liquidity_usd": 108691.56,
+      "estimated_fees_usd": 5.1282560099727466,
       "volume_history": [
-        161959.64,
         161876.09,
         170690.36,
         169423.17,
@@ -87,51 +86,8 @@
         149602.77,
         135648.44,
         133775.56,
-        132337.73
-      ],
-      "data_stale": false
-    },
-    "solana:gz15vwspy9kfynkrmpkokp2h9yygvbovoxjsgwsjcvfk": {
-      "symbol": "RAMBO",
-      "name": "RAMBO",
-      "chain": "solana",
-      "dex": "pumpswap",
-      "pair_address": "Gz15vwSPY9KFYNkrMPkoKp2h9yygVBovoXJsGwSJcvFk",
-      "pair_url": "https://dexscreener.com/solana/gz15vwspy9kfynkrmpkokp2h9yygvbovoxjsgwsjcvfk",
-      "invested_usd": 997.0,
-      "entry_price": 0.01868,
-      "entry_liquidity_usd": 372758.92,
-      "entry_score": 118.64,
-      "entry_time": "2026-11-13T09:06:05+00:00",
-      "last_updated_at": "2026-11-14T08:57:17+00:00",
-      "last_price_usd": 0.01361,
-      "last_liquidity_usd": 310917.47,
-      "estimated_fees_usd": 29.06157772818204,
-      "volume_history": [
-        4108015.07,
-        4186480.75,
-        4234364.06,
-        4304499.7,
-        4386653.56,
-        4430563.9,
-        2524184.28,
-        1648417.69,
-        1408204.61,
-        1421070.13,
-        1434405.49,
-        1449712.74,
-        1459145.89,
-        1476128.58,
-        1483784.98,
-        1495496.72,
-        1511144.71,
-        1529985.16,
-        1540209.69,
-        1545075.36,
-        1234635.79,
-        1172015.58,
-        1142897.5,
-        1100021.17
+        132337.73,
+        131041.76
       ],
       "data_stale": false
     },
@@ -147,10 +103,10 @@
       "entry_liquidity_usd": 173565.23,
       "entry_score": 118.55,
       "entry_time": "2026-11-14T01:09:19+00:00",
-      "last_updated_at": "2026-11-14T08:57:17+00:00",
-      "last_price_usd": 0.002071,
-      "last_liquidity_usd": 158754.39,
-      "estimated_fees_usd": 14.55551671455014,
+      "last_updated_at": "2026-11-14T09:53:34+00:00",
+      "last_price_usd": 0.002167,
+      "last_liquidity_usd": 163171.91,
+      "estimated_fees_usd": 16.34769174670694,
       "volume_history": [
         2486089.14,
         2549198.08,
@@ -160,7 +116,8 @@
         2508450.9,
         2489715.21,
         2472210.92,
-        2469165.83
+        2469165.83,
+        2474139.59
       ],
       "data_stale": false
     },
@@ -176,19 +133,40 @@
       "entry_liquidity_usd": 132451.84,
       "entry_score": 118.44,
       "entry_time": "2026-11-14T03:58:21+00:00",
-      "last_updated_at": "2026-11-14T08:57:17+00:00",
-      "last_price_usd": 0.003733,
-      "last_liquidity_usd": 179475.17,
-      "estimated_fees_usd": 1.4635684179077049,
+      "last_updated_at": "2026-11-14T09:53:34+00:00",
+      "last_price_usd": 0.003573,
+      "last_liquidity_usd": 176681.46,
+      "estimated_fees_usd": 1.8168852651968463,
       "volume_history": [
         300301.92,
         336383.75,
         409311.59,
         533692.59,
         648632.07,
-        729625.42
+        729625.42,
+        779093.76
       ],
       "data_stale": false
+    },
+    "solana:gz15vwspy9kfynkrmpkokp2h9yygvbovoxjsgwsjcvfk": {
+      "symbol": "RAMBO",
+      "name": "RAMBO",
+      "chain": "solana",
+      "dex": "pumpswap",
+      "pair_address": "Gz15vwSPY9KFYNkrMPkoKp2h9yygVBovoXJsGwSJcvFk",
+      "pair_url": "https://dexscreener.com/solana/gz15vwspy9kfynkrmpkokp2h9yygvbovoxjsgwsjcvfk",
+      "invested_usd": 997.0,
+      "entry_price": 0.01192,
+      "entry_liquidity_usd": 291943.09,
+      "entry_score": 117.99,
+      "entry_time": "2026-11-14T09:53:34+00:00",
+      "last_updated_at": "2026-11-14T09:53:34+00:00",
+      "last_price_usd": 0.01192,
+      "last_liquidity_usd": 291943.09,
+      "estimated_fees_usd": 0.0,
+      "volume_history": [
+        1038369.13
+      ]
     }
   },
   "closed_trades": [
@@ -897,33 +875,21 @@
       "net_proceeds_usd": 1256.2224,
       "pnl_usd": 259.2224,
       "reason": "TAKE PROFIT: Harga naik >50.0%"
+    },
+    {
+      "closed_at": "2026-11-14T09:53:34+00:00",
+      "symbol": "RAMBO",
+      "chain": "solana",
+      "pair_address": "Gz15vwSPY9KFYNkrMPkoKp2h9yygVBovoXJsGwSJcvFk",
+      "invested_usd": 997.0,
+      "lp_value_usd": 796.4249,
+      "estimated_fees_usd": 29.8819,
+      "net_proceeds_usd": 819.1753,
+      "pnl_usd": -177.8247,
+      "reason": "STOP LOSS: Harga turun >35.0%"
     }
   ],
   "events": [
-    {
-      "time": "2026-10-21T17:38:29+00:00",
-      "type": "LP_OPEN",
-      "message": "Opened virtual LP PANGEA on solana",
-      "invested_usd": 500.0,
-      "score": 114.95,
-      "pair_url": "https://dexscreener.com/solana/6yknbt32e2m9sf9jpbgwetd5qqgpvedndgnn87a9addr"
-    },
-    {
-      "time": "2026-10-22T17:38:23+00:00",
-      "type": "LP_CLOSE",
-      "message": "Closed virtual LP SEVREN: GUARD: token price fell more than 35% from entry",
-      "closed_at": "2026-10-22T17:38:23+00:00",
-      "symbol": "SEVREN",
-      "chain": "robinhood",
-      "pair_address": "0x467154dcdcf38f448e4742b81464a9b9e1d2b3a6b538b92f66f77d3436249825",
-      "invested_usd": 500.0,
-      "lp_value_usd": 397.9857,
-      "estimated_fees_usd": 21.7884,
-      "proceeds_usd": 419.7741,
-      "pnl_usd": -80.2259,
-      "reason": "GUARD: token price fell more than 35% from entry",
-      "pair_url": "https://dexscreener.com/robinhood/0x467154dcdcf38f448e4742b81464a9b9e1d2b3a6b538b92f66f77d3436249825"
-    },
     {
       "time": "2026-10-22T17:38:23+00:00",
       "type": "LP_OPEN",
@@ -1996,7 +1962,29 @@
       "message": "Opened LP WASTED on solana",
       "invested_usd": 997.0,
       "score": 118.44
+    },
+    {
+      "time": "2026-11-14T09:53:34+00:00",
+      "type": "LP_CLOSE",
+      "message": "Closed RAMBO: STOP LOSS: Harga turun >35.0%",
+      "closed_at": "2026-11-14T09:53:34+00:00",
+      "symbol": "RAMBO",
+      "chain": "solana",
+      "pair_address": "Gz15vwSPY9KFYNkrMPkoKp2h9yygVBovoXJsGwSJcvFk",
+      "invested_usd": 997.0,
+      "lp_value_usd": 796.4249,
+      "estimated_fees_usd": 29.8819,
+      "net_proceeds_usd": 819.1753,
+      "pnl_usd": -177.8247,
+      "reason": "STOP LOSS: Harga turun >35.0%"
+    },
+    {
+      "time": "2026-11-14T09:53:34+00:00",
+      "type": "LP_OPEN",
+      "message": "Opened LP RAMBO on solana",
+      "invested_usd": 997.0,
+      "score": 117.99
     }
   ],
-  "last_run_at": "2026-11-14T08:57:17+00:00"
+  "last_run_at": "2026-11-14T09:53:34+00:00"
 }
