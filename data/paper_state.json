@@ -15,12 +15,11 @@
       "entry_liquidity_usd": 265559.33,
       "entry_score": 115.63,
       "entry_time": "2026-11-12T05:08:15+00:00",
-      "last_updated_at": "2026-11-18T15:34:09+00:00",
-      "last_price_usd": 0.004522,
-      "last_liquidity_usd": 227944.86,
-      "estimated_fees_usd": 105.83828137801338,
+      "last_updated_at": "2026-11-18T15:35:08+00:00",
+      "last_price_usd": 0.00456,
+      "last_liquidity_usd": 228923.27,
+      "estimated_fees_usd": 105.85183794172707,
       "volume_history": [
-        1372473.85,
         1461509.64,
         1494424.55,
         1527859.8,
@@ -43,7 +42,8 @@
         1328373.1,
         1389847.97,
         1344180.53,
-        1320109.64
+        1320109.64,
+        1320340.3
       ],
       "data_stale": false,
       "highest_price": 0.006265
@@ -60,12 +60,11 @@
       "entry_liquidity_usd": 291943.09,
       "entry_score": 117.99,
       "entry_time": "2026-11-14T09:53:34+00:00",
-      "last_updated_at": "2026-11-18T15:34:09+00:00",
-      "last_price_usd": 0.009416,
-      "last_liquidity_usd": 261782.34,
-      "estimated_fees_usd": 41.54563969035737,
+      "last_updated_at": "2026-11-18T15:35:08+00:00",
+      "last_price_usd": 0.009414,
+      "last_liquidity_usd": 261739.6,
+      "estimated_fees_usd": 41.5484553822827,
       "volume_history": [
-        396716.69,
         375387.72,
         352731.72,
         344230.63,
@@ -88,7 +87,8 @@
         378906.26,
         386858.68,
         388489.97,
-        389717.35
+        389717.35,
+        389720.81
       ],
       "data_stale": false,
       "highest_price": 0.01192
@@ -105,12 +105,11 @@
       "entry_liquidity_usd": 135963.43,
       "entry_score": 119.94,
       "entry_time": "2026-11-15T09:54:27+00:00",
-      "last_updated_at": "2026-11-18T15:34:09+00:00",
-      "last_price_usd": 0.001588,
-      "last_liquidity_usd": 141776.84,
-      "estimated_fees_usd": 41.410768072706645,
+      "last_updated_at": "2026-11-18T15:35:08+00:00",
+      "last_price_usd": 0.001585,
+      "last_liquidity_usd": 141630.56,
+      "estimated_fees_usd": 41.41589481080381,
       "volume_history": [
-        310058.74,
         291636.39,
         292087.13,
         321188.4,
@@ -133,7 +132,8 @@
         356238.53,
         354557.17,
         354168.46,
-        352760.32
+        352760.32,
+        352802.33
       ],
       "data_stale": false,
       "highest_price": 0.001588
@@ -150,12 +150,11 @@
       "entry_liquidity_usd": 251918.33,
       "entry_score": 75.58,
       "entry_time": "2026-11-16T03:03:31+00:00",
-      "last_updated_at": "2026-11-18T15:34:09+00:00",
-      "last_price_usd": 0.003484,
-      "last_liquidity_usd": 207279.61,
-      "estimated_fees_usd": 11.727757970360088,
+      "last_updated_at": "2026-11-18T15:35:08+00:00",
+      "last_price_usd": 0.003492,
+      "last_liquidity_usd": 207497.89,
+      "estimated_fees_usd": 11.730839125629082,
       "volume_history": [
-        399248.59,
         381163.05,
         390485.0,
         387267.03,
@@ -178,7 +177,8 @@
         308791.38,
         313213.86,
         323975.39,
-        307848.69
+        307848.69,
+        307880.36
       ],
       "data_stale": false,
       "highest_price": 0.005204
@@ -195,14 +195,15 @@
       "entry_liquidity_usd": 56433.59,
       "entry_score": 116.83,
       "entry_time": "2026-11-18T13:23:13+00:00",
-      "last_updated_at": "2026-11-18T15:34:09+00:00",
-      "last_price_usd": 0.0003585,
-      "last_liquidity_usd": 57000.79,
-      "estimated_fees_usd": 5.198163445457566,
+      "last_updated_at": "2026-11-18T15:35:08+00:00",
+      "last_price_usd": 0.0003425,
+      "last_liquidity_usd": 55696.29,
+      "estimated_fees_usd": 5.2385272997000705,
       "volume_history": [
         1076711.21,
         1087948.43,
-        1089210.47
+        1089210.47,
+        1089288.28
       ],
       "data_stale": false,
       "highest_price": 0.0003585
@@ -2078,5 +2079,5 @@
       "score": 116.83
     }
   ],
-  "last_run_at": "2026-11-18T15:34:09+00:00"
+  "last_run_at": "2026-11-18T15:35:08+00:00"
 }
