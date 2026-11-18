@@ -15,12 +15,11 @@
       "entry_liquidity_usd": 291943.09,
       "entry_score": 117.99,
       "entry_time": "2026-11-14T09:53:34+00:00",
-      "last_updated_at": "2026-11-18T16:09:16+00:00",
-      "last_price_usd": 0.009264,
-      "last_liquidity_usd": 258611.31,
-      "estimated_fees_usd": 41.646190714519484,
+      "last_updated_at": "2026-11-18T17:15:16+00:00",
+      "last_price_usd": 0.01081,
+      "last_liquidity_usd": 279687.47,
+      "estimated_fees_usd": 41.821531663149614,
       "volume_history": [
-        352731.72,
         344230.63,
         335935.97,
         338296.52,
@@ -43,7 +42,8 @@
         388489.97,
         389717.35,
         389720.81,
-        385226.21
+        385226.21,
+        384245.24
       ],
       "data_stale": false,
       "highest_price": 0.01192
@@ -60,12 +60,11 @@
       "entry_liquidity_usd": 135963.43,
       "entry_score": 119.94,
       "entry_time": "2026-11-15T09:54:27+00:00",
-      "last_updated_at": "2026-11-18T16:09:16+00:00",
-      "last_price_usd": 0.001438,
-      "last_liquidity_usd": 134361.22,
-      "estimated_fees_usd": 41.60188515611816,
+      "last_updated_at": "2026-11-18T17:15:16+00:00",
+      "last_price_usd": 0.001604,
+      "last_liquidity_usd": 141781.79,
+      "estimated_fees_usd": 41.9450994138389,
       "volume_history": [
-        292087.13,
         321188.4,
         341783.86,
         358315.12,
@@ -88,10 +87,11 @@
         354168.46,
         352760.32,
         352802.33,
-        330913.61
+        330913.61,
+        353867.11
       ],
       "data_stale": false,
-      "highest_price": 0.001588
+      "highest_price": 0.001604
     },
     "solana:b4cp45pgifvm5faxfh6aev8qz3eunqnqgbw7kuc7mhnb": {
       "symbol": "CBUCKS",
@@ -105,12 +105,11 @@
       "entry_liquidity_usd": 251918.33,
       "entry_score": 75.58,
       "entry_time": "2026-11-16T03:03:31+00:00",
-      "last_updated_at": "2026-11-18T16:09:16+00:00",
-      "last_price_usd": 0.003649,
-      "last_liquidity_usd": 212211.11,
-      "estimated_fees_usd": 11.832718600170223,
+      "last_updated_at": "2026-11-18T17:15:16+00:00",
+      "last_price_usd": 0.003489,
+      "last_liquidity_usd": 207491.85,
+      "estimated_fees_usd": 12.031153238169145,
       "volume_history": [
-        390485.0,
         387267.03,
         369796.82,
         318730.75,
@@ -133,7 +132,8 @@
         323975.39,
         307848.69,
         307880.36,
-        285942.38
+        285942.38,
+        281871.79
       ],
       "data_stale": false,
       "highest_price": 0.005204
@@ -150,19 +150,20 @@
       "entry_liquidity_usd": 56433.59,
       "entry_score": 116.83,
       "entry_time": "2026-11-18T13:23:13+00:00",
-      "last_updated_at": "2026-11-18T16:09:16+00:00",
-      "last_price_usd": 0.0003431,
-      "last_liquidity_usd": 55594.77,
-      "estimated_fees_usd": 6.6250371373772,
+      "last_updated_at": "2026-11-18T17:15:16+00:00",
+      "last_price_usd": 0.0003618,
+      "last_liquidity_usd": 57488.48,
+      "estimated_fees_usd": 9.235428157715848,
       "volume_history": [
         1076711.21,
         1087948.43,
         1089210.47,
         1089288.28,
-        1090722.31
+        1090722.31,
+        1133026.77
       ],
       "data_stale": false,
-      "highest_price": 0.0003585
+      "highest_price": 0.0003618
     },
     "solana:5e3dxlxgwmtdcoka51wyyakttjfzbwqcoyuhbui5gt2m": {
       "symbol": "GATO",
@@ -176,14 +177,16 @@
       "entry_liquidity_usd": 210999.79,
       "entry_score": 116.33,
       "entry_time": "2026-11-18T16:09:16+00:00",
-      "last_updated_at": "2026-11-18T16:09:16+00:00",
-      "last_price_usd": 0.003905,
-      "last_liquidity_usd": 210999.79,
-      "estimated_fees_usd": 0.0,
+      "last_updated_at": "2026-11-18T17:15:16+00:00",
+      "last_price_usd": 0.00266,
+      "last_liquidity_usd": 173964.84,
+      "estimated_fees_usd": 1.0822547297534455,
       "volume_history": [
-        1317198.76
+        1317198.76,
+        1429077.47
       ],
-      "highest_price": 0.003905
+      "highest_price": 0.003905,
+      "data_stale": false
     }
   },
   "closed_trades": [
@@ -2068,5 +2071,5 @@
       "score": 116.33
     }
   ],
-  "last_run_at": "2026-11-18T16:09:16+00:00"
+  "last_run_at": "2026-11-18T17:15:16+00:00"
 }
