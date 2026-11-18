@@ -20,10 +20,17 @@ MAX_POOL_AGE_DAYS = 180
 SIMULATED_POOL_FEE_RATE = 0.003   
 SIMULATED_GAS_USD = 1.5           
 SIMULATED_SLIPPAGE = 0.005        
+
+# --- ATURAN PROFIT & LOSS ---
 TAKE_PROFIT_PCT = 0.50            # Ambil untung jika naik 50%
 STOP_LOSS_PRICE_PCT = 0.35        # Cut loss jika harga turun 35%
 STOP_LOSS_LIQ_PCT = 0.40          # Cut loss jika likuiditas turun 40%
 MAX_HOLD_DAYS = 7                 # Keluar paksa jika sudah 7 hari
+
+# --- FITUR BARU: TRAILING STOP ---
+USE_TRAILING_STOP = True          # Aktifkan fitur trailing stop
+TRAILING_TRIGGER_PCT = 0.30       # Aktifkan trailing setelah naik 30%
+TRAILING_DROP_PCT = 0.10          # Jual jika harga turun 10% dari titik tertinggi
 
 # 5. SOP REPORTER (Karyawan 4 - Panongani)
 MAX_EVENTS_KEPT = 100
