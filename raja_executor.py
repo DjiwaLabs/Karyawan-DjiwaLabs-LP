@@ -4,7 +4,8 @@ from datetime import datetime, timezone
 from config import (
     STARTING_CASH_USD, ALLOCATION_PER_POOL_USD, MAX_OPEN_POSITIONS,
     SIMULATED_POOL_FEE_RATE, SIMULATED_GAS_USD, SIMULATED_SLIPPAGE,
-    TAKE_PROFIT_PCT, STOP_LOSS_PRICE_PCT, STOP_LOSS_LIQ_PCT, MAX_HOLD_DAYS
+    TAKE_PROFIT_PCT, STOP_LOSS_PRICE_PCT, STOP_LOSS_LIQ_PCT, MAX_HOLD_DAYS,
+    USE_TRAILING_STOP, TRAILING_TRIGGER_PCT, TRAILING_DROP_PCT # Import aturan baru
 )
 
 def now_utc(): return datetime.now(timezone.utc)
@@ -22,7 +23,7 @@ def event(state, kind, message, extra=None):
     item = {"time": iso_now(), "type": kind, "message": message}
     if extra: item.update(extra)
     state["events"].append(item)
-    state["events"] = state["events"][-100:] # Simpan 100 event terakhir
+    state["events"] = state["events"][-100:]
 
 def execute_trades(pairs, state):
     # 1. CEK POSISI TERBUKA (Cari alasan untuk CLOSE)
@@ -61,11 +62,25 @@ def execute_trades(pairs, state):
         if entry_liq <= 0: entry_liq = m["liquidity_usd"]
         liquidity_ratio = m["liquidity_usd"] / entry_liq
         
+        # --- LOGIKA TRAILING STOP ---
+        if "highest_price" not in pos:
+            pos["highest_price"] = pos["entry_price"]
+            
+        # Update harga tertinggi
+        if m["price_usd"] > pos["highest_price"]:
+            pos["highest_price"] = m["price_usd"]
+            
+        highest_ratio = pos["highest_price"] / max(number(pos.get("entry_price"), 0), 1e-18)
+        drop_from_high = (pos["highest_price"] - m["price_usd"]) / pos["highest_price"]
+
         close_reason = None
         if liquidity_ratio < (1 - STOP_LOSS_LIQ_PCT): 
             close_reason = f"GUARD: Likuiditas turun >{STOP_LOSS_LIQ_PCT*100}%"
         elif price_ratio < (1 - STOP_LOSS_PRICE_PCT): 
             close_reason = f"STOP LOSS: Harga turun >{STOP_LOSS_PRICE_PCT*100}%"
+        # Cek Trailing Stop
+        elif USE_TRAILING_STOP and highest_ratio > (1 + TRAILING_TRIGGER_PCT) and drop_from_high > TRAILING_DROP_PCT:
+            close_reason = f"TRAILING STOP: Turun {drop_from_high*100:.1f}% dari puncak"
         elif price_ratio > (1 + TAKE_PROFIT_PCT) and pos["estimated_fees_usd"] > 10: 
             close_reason = f"TAKE PROFIT: Harga naik >{TAKE_PROFIT_PCT*100}%"
         elif (now_utc() - datetime.fromisoformat(pos["entry_time"])).days >= MAX_HOLD_DAYS:
@@ -91,12 +106,10 @@ def execute_trades(pairs, state):
             state["closed_trades"].append(trade)
             state["closed_trades"] = state["closed_trades"][-100:]
             
-            # Catat Event untuk Panongani
             event(state, "LP_CLOSE", f"Closed {pos.get('symbol')}: {close_reason}", trade)
-            
             del state["positions"][key]
 
-    # 2. BUKA POSISI BARU
+    # 2. BUKA POSISI BARU (Dengan Filter Volume Anjlok)
     eligible = [m for m in pairs if m.get("eligible") and f'{m["chain"].lower()}:{m["pair_address"].lower()}' not in state["positions"]]
     eligible.sort(key=lambda m: (m["score"], m["liquidity_usd"]), reverse=True)
     
@@ -116,8 +129,8 @@ def execute_trades(pairs, state):
             "entry_liquidity_usd": m["liquidity_usd"], "entry_score": m["score"],
             "entry_time": iso_now(), "last_updated_at": iso_now(),
             "last_price_usd": m["price_usd"], "last_liquidity_usd": m["liquidity_usd"],
-            "estimated_fees_usd": 0.0, "volume_history": [m["volume_24h_usd"]]
+            "estimated_fees_usd": 0.0, "volume_history": [m["volume_24h_usd"]],
+            "highest_price": m["price_usd"] # Fitur baru: Simpan harga tertinggi saat masuk
         }
         
-        # Catat Event untuk Panongani
         event(state, "LP_OPEN", f'Opened LP {m["symbol"]} on {m["chain"]}', {"invested_usd": net_allocation, "score": m["score"]})
