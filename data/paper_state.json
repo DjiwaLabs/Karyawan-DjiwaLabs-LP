@@ -1,7 +1,7 @@
 {
   "version": 1,
   "starting_cash_usd": 10000.0,
-  "cash_usd": 24106.675175832177,
+  "cash_usd": 23848.3798515849,
   "positions": {
     "solana:5e3dxlxgwmtdcoka51wyyakttjfzbwqcoyuhbui5gt2m": {
       "symbol": "GATO",
@@ -15,12 +15,11 @@
       "entry_liquidity_usd": 265559.33,
       "entry_score": 115.63,
       "entry_time": "2026-11-12T05:08:15+00:00",
-      "last_updated_at": "2026-11-18T12:09:30+00:00",
-      "last_price_usd": 0.005266,
-      "last_liquidity_usd": 246451.76,
-      "estimated_fees_usd": 103.05870558733928,
+      "last_updated_at": "2026-11-18T13:23:13+00:00",
+      "last_price_usd": 0.004519,
+      "last_liquidity_usd": 228375.9,
+      "estimated_fees_usd": 104.06249192330338,
       "volume_history": [
-        1254892.6,
         1266299.8,
         1303072.32,
         1372473.85,
@@ -43,51 +42,8 @@
         1347845.45,
         1323120.17,
         1335565.96,
-        1328373.1
-      ],
-      "data_stale": false
-    },
-    "solana:em6rvzgxhd35pz7cvujctpenv4jaztscavhaxbxcbcg7": {
-      "symbol": "GLITCH",
-      "name": "Infinite Money Glitch",
-      "chain": "solana",
-      "dex": "pumpswap",
-      "pair_address": "Em6RvzGXhd35pZ7CVUjCTPEnv4jAztScaVHaXBXCBcG7",
-      "pair_url": "https://dexscreener.com/solana/em6rvzgxhd35pz7cvujctpenv4jaztscavhaxbxcbcg7",
-      "invested_usd": 997.0,
-      "entry_price": 0.001243,
-      "entry_liquidity_usd": 93955.33,
-      "entry_score": 107.27,
-      "entry_time": "2026-11-13T07:25:14+00:00",
-      "last_updated_at": "2026-11-18T12:09:30+00:00",
-      "last_price_usd": 0.001008,
-      "last_liquidity_usd": 82760.37,
-      "estimated_fees_usd": 25.951476560428926,
-      "volume_history": [
-        134623.3,
-        127202.6,
-        129546.9,
-        138648.0,
-        149347.8,
-        151121.88,
-        189720.4,
-        220087.7,
-        219075.27,
-        216053.09,
-        209631.03,
-        206057.75,
-        207839.36,
-        212023.5,
-        228340.01,
-        224227.93,
-        229953.66,
-        229562.88,
-        226446.53,
-        223685.56,
-        224535.13,
-        221616.85,
-        222159.09,
-        223239.3
+        1328373.1,
+        1389847.97
       ],
       "data_stale": false
     },
@@ -103,12 +59,11 @@
       "entry_liquidity_usd": 291943.09,
       "entry_score": 117.99,
       "entry_time": "2026-11-14T09:53:34+00:00",
-      "last_updated_at": "2026-11-18T12:09:30+00:00",
-      "last_price_usd": 0.00911,
-      "last_liquidity_usd": 258151.36,
-      "estimated_fees_usd": 40.97162289898487,
+      "last_updated_at": "2026-11-18T13:23:13+00:00",
+      "last_price_usd": 0.009759,
+      "last_liquidity_usd": 267306.39,
+      "estimated_fees_usd": 41.176902661927606,
       "volume_history": [
-        422533.32,
         415751.51,
         413340.85,
         396716.69,
@@ -131,7 +86,8 @@
         371298.25,
         371239.15,
         372565.43,
-        378906.26
+        378906.26,
+        386858.68
       ],
       "data_stale": false
     },
@@ -147,12 +103,11 @@
       "entry_liquidity_usd": 135963.43,
       "entry_score": 119.94,
       "entry_time": "2026-11-15T09:54:27+00:00",
-      "last_updated_at": "2026-11-18T12:09:30+00:00",
+      "last_updated_at": "2026-11-18T13:23:13+00:00",
       "last_price_usd": 0.001539,
-      "last_liquidity_usd": 140031.56,
-      "estimated_fees_usd": 40.371572432091966,
+      "last_liquidity_usd": 139960.27,
+      "estimated_fees_usd": 40.75061126713564,
       "volume_history": [
-        319340.85,
         323742.18,
         324271.7,
         310058.74,
@@ -175,7 +130,8 @@
         357646.18,
         351889.3,
         355325.83,
-        356238.53
+        356238.53,
+        354557.17
       ],
       "data_stale": false
     },
@@ -191,12 +147,11 @@
       "entry_liquidity_usd": 251918.33,
       "entry_score": 75.58,
       "entry_time": "2026-11-16T03:03:31+00:00",
-      "last_updated_at": "2026-11-18T12:09:30+00:00",
-      "last_price_usd": 0.003392,
-      "last_liquidity_usd": 204301.57,
-      "estimated_fees_usd": 11.075103186596492,
+      "last_updated_at": "2026-11-18T13:23:13+00:00",
+      "last_price_usd": 0.003398,
+      "last_liquidity_usd": 204621.65,
+      "estimated_fees_usd": 11.313352215580124,
       "volume_history": [
-        393811.14,
         389658.52,
         381047.45,
         399248.59,
@@ -219,9 +174,30 @@
         247367.11,
         298554.9,
         304302.4,
-        308791.38
+        308791.38,
+        313213.86
       ],
       "data_stale": false
+    },
+    "solana:3mxdjdz1gae5hzic4dj4unldxj5dbcc9jssyq55mfykg": {
+      "symbol": "DIGS",
+      "name": "AiDiglet",
+      "chain": "solana",
+      "dex": "pumpswap",
+      "pair_address": "3mxDjdZ1gAe5HziC4dj4UnLdXJ5DBcC9jsSYq55mFyKg",
+      "pair_url": "https://dexscreener.com/solana/3mxdjdz1gae5hzic4dj4unldxj5dbcc9jssyq55mfykg",
+      "invested_usd": 997.0,
+      "entry_price": 0.0003525,
+      "entry_liquidity_usd": 56433.59,
+      "entry_score": 116.83,
+      "entry_time": "2026-11-18T13:23:13+00:00",
+      "last_updated_at": "2026-11-18T13:23:13+00:00",
+      "last_price_usd": 0.0003525,
+      "last_liquidity_usd": 56433.59,
+      "estimated_fees_usd": 0.0,
+      "volume_history": [
+        1076711.21
+      ]
     }
   },
   "closed_trades": [
@@ -978,31 +954,21 @@
       "net_proceeds_usd": 24.2299,
       "pnl_usd": -972.7701,
       "reason": "STOP LOSS: Harga turun >35.0%"
+    },
+    {
+      "closed_at": "2026-11-18T13:23:13+00:00",
+      "symbol": "GLITCH",
+      "chain": "solana",
+      "pair_address": "Em6RvzGXhd35pZ7CVUjCTPEnv4jAztScaVHaXBXCBcG7",
+      "invested_usd": 997.0,
+      "lp_value_usd": 722.0214,
+      "estimated_fees_usd": 26.4255,
+      "net_proceeds_usd": 741.7047,
+      "pnl_usd": -255.2953,
+      "reason": "STOP LOSS: Harga turun >35.0%"
     }
   ],
   "events": [
-    {
-      "time": "2026-10-23T15:45:46+00:00",
-      "type": "LP_CLOSE",
-      "message": "Closed 1SHARE: TAKE PROFIT: Harga naik >50.0%",
-      "closed_at": "2026-10-23T15:45:46+00:00",
-      "symbol": "1SHARE",
-      "chain": "solana",
-      "pair_address": "51oRdGg8fF1RYyYHzQdVabby46ank1Wu9wPFUZ11Nbh3",
-      "invested_usd": 500.0,
-      "lp_value_usd": 702.2946,
-      "estimated_fees_usd": 10.2767,
-      "net_proceeds_usd": 706.0084,
-      "pnl_usd": 206.0084,
-      "reason": "TAKE PROFIT: Harga naik >50.0%"
-    },
-    {
-      "time": "2026-10-23T15:45:46+00:00",
-      "type": "LP_OPEN",
-      "message": "Opened LP Pepper on solana",
-      "invested_usd": 997.0,
-      "score": 118.49
-    },
     {
       "time": "2026-10-24T00:57:46+00:00",
       "type": "LP_CLOSE",
@@ -2080,7 +2046,29 @@
       "message": "Opened LP CBUCKS on solana",
       "invested_usd": 997.0,
       "score": 75.58
+    },
+    {
+      "time": "2026-11-18T13:23:13+00:00",
+      "type": "LP_CLOSE",
+      "message": "Closed GLITCH: STOP LOSS: Harga turun >35.0%",
+      "closed_at": "2026-11-18T13:23:13+00:00",
+      "symbol": "GLITCH",
+      "chain": "solana",
+      "pair_address": "Em6RvzGXhd35pZ7CVUjCTPEnv4jAztScaVHaXBXCBcG7",
+      "invested_usd": 997.0,
+      "lp_value_usd": 722.0214,
+      "estimated_fees_usd": 26.4255,
+      "net_proceeds_usd": 741.7047,
+      "pnl_usd": -255.2953,
+      "reason": "STOP LOSS: Harga turun >35.0%"
+    },
+    {
+      "time": "2026-11-18T13:23:13+00:00",
+      "type": "LP_OPEN",
+      "message": "Opened LP DIGS on solana",
+      "invested_usd": 997.0,
+      "score": 116.83
     }
   ],
-  "last_run_at": "2026-11-18T12:09:30+00:00"
+  "last_run_at": "2026-11-18T13:23:13+00:00"
 }
