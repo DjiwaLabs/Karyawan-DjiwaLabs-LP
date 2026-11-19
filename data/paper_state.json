@@ -15,12 +15,11 @@
       "entry_liquidity_usd": 291943.09,
       "entry_score": 117.99,
       "entry_time": "2026-11-14T09:53:34+00:00",
-      "last_updated_at": "2026-11-19T18:02:29+00:00",
-      "last_price_usd": 0.01138,
-      "last_liquidity_usd": 288057.44,
-      "estimated_fees_usd": 45.457286172944386,
+      "last_updated_at": "2026-11-19T19:08:14+00:00",
+      "last_price_usd": 0.01084,
+      "last_liquidity_usd": 281364.8,
+      "estimated_fees_usd": 45.56605132079598,
       "volume_history": [
-        389720.81,
         385226.21,
         384245.24,
         379092.26,
@@ -43,7 +42,8 @@
         73368.35,
         64235.7,
         56481.06,
-        54240.76
+        54240.76,
+        55541.8
       ],
       "data_stale": false,
       "highest_price": 0.01192
@@ -60,12 +60,11 @@
       "entry_liquidity_usd": 56433.59,
       "entry_score": 116.83,
       "entry_time": "2026-11-18T13:23:13+00:00",
-      "last_updated_at": "2026-11-19T18:02:29+00:00",
-      "last_price_usd": 0.0004766,
-      "last_liquidity_usd": 68607.79,
-      "estimated_fees_usd": 68.29616799337087,
+      "last_updated_at": "2026-11-19T19:08:14+00:00",
+      "last_price_usd": 0.0004794,
+      "last_liquidity_usd": 68878.22,
+      "estimated_fees_usd": 70.70553528981517,
       "volume_history": [
-        1089288.28,
         1090722.31,
         1133026.77,
         1187333.33,
@@ -88,10 +87,11 @@
         1104321.31,
         1092819.86,
         1071286.47,
-        1052488.89
+        1052488.89,
+        1018999.52
       ],
       "data_stale": false,
-      "highest_price": 0.0004769
+      "highest_price": 0.0004794
     },
     "solana:5bqcndqt4zhv4pdqvx4kxd2rznlfdb64akkd1atrvwsz": {
       "symbol": "STONK",
@@ -105,10 +105,10 @@
       "entry_liquidity_usd": 160703.38,
       "entry_score": 117.21,
       "entry_time": "2026-11-19T02:59:22+00:00",
-      "last_updated_at": "2026-11-19T18:02:29+00:00",
-      "last_price_usd": 0.03913,
-      "last_liquidity_usd": 173155.4,
-      "estimated_fees_usd": 5.676435355719589,
+      "last_updated_at": "2026-11-19T19:08:14+00:00",
+      "last_price_usd": 0.03766,
+      "last_liquidity_usd": 166489.69,
+      "estimated_fees_usd": 6.111657061983967,
       "volume_history": [
         557722.21,
         559126.85,
@@ -122,7 +122,8 @@
         535499.34,
         543528.18,
         528871.37,
-        485369.84
+        485369.84,
+        475825.26
       ],
       "highest_price": 0.04204,
       "data_stale": false
@@ -139,15 +140,16 @@
       "entry_liquidity_usd": 237670.55,
       "entry_score": 118.05,
       "entry_time": "2026-11-19T15:04:22+00:00",
-      "last_updated_at": "2026-11-19T18:02:29+00:00",
-      "last_price_usd": 0.007048,
-      "last_liquidity_usd": 232570.88,
-      "estimated_fees_usd": 13.145882026000773,
+      "last_updated_at": "2026-11-19T19:08:14+00:00",
+      "last_price_usd": 0.006946,
+      "last_liquidity_usd": 231023.29,
+      "estimated_fees_usd": 18.0518729045369,
       "volume_history": [
         8322870.55,
         8314070.09,
         8297927.7,
-        8292267.38
+        8292267.38,
+        8266873.54
       ],
       "highest_price": 0.00726,
       "data_stale": false
@@ -164,15 +166,16 @@
       "entry_liquidity_usd": 134326.94,
       "entry_score": 111.01,
       "entry_time": "2026-11-19T15:04:22+00:00",
-      "last_updated_at": "2026-11-19T18:02:29+00:00",
-      "last_price_usd": 0.001152,
-      "last_liquidity_usd": 132584.18,
-      "estimated_fees_usd": 3.000495073184206,
+      "last_updated_at": "2026-11-19T19:08:14+00:00",
+      "last_price_usd": 0.0009953,
+      "last_liquidity_usd": 123158.4,
+      "estimated_fees_usd": 4.175377354193393,
       "volume_history": [
         1244607.23,
         1116156.15,
         999089.06,
-        964234.15
+        964234.15,
+        973295.37
       ],
       "highest_price": 0.001454,
       "data_stale": false
@@ -2132,5 +2135,5 @@
       "score": 111.01
     }
   ],
-  "last_run_at": "2026-11-19T18:02:29+00:00"
+  "last_run_at": "2026-11-19T19:08:14+00:00"
 }
