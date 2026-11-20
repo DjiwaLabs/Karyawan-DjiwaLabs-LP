@@ -15,12 +15,11 @@
       "entry_liquidity_usd": 291943.09,
       "entry_score": 117.99,
       "entry_time": "2026-11-14T09:53:34+00:00",
-      "last_updated_at": "2026-11-20T04:00:45+00:00",
-      "last_price_usd": 0.01114,
-      "last_liquidity_usd": 283471.83,
-      "estimated_fees_usd": 46.2032399704569,
+      "last_updated_at": "2026-11-20T05:09:52+00:00",
+      "last_price_usd": 0.01244,
+      "last_liquidity_usd": 297874.56,
+      "estimated_fees_usd": 46.26012263775445,
       "volume_history": [
-        310397.91,
         294880.45,
         270059.67,
         254267.71,
@@ -43,10 +42,11 @@
         56807.24,
         55353.88,
         55289.61,
-        57513.81
+        57513.81,
+        167711.81
       ],
       "data_stale": false,
-      "highest_price": 0.01192
+      "highest_price": 0.01244
     },
     "solana:5bqcndqt4zhv4pdqvx4kxd2rznlfdb64akkd1atrvwsz": {
       "symbol": "STONK",
@@ -60,10 +60,10 @@
       "entry_liquidity_usd": 160703.38,
       "entry_score": 117.21,
       "entry_time": "2026-11-19T02:59:22+00:00",
-      "last_updated_at": "2026-11-20T04:00:45+00:00",
-      "last_price_usd": 0.03561,
-      "last_liquidity_usd": 192997.57,
-      "estimated_fees_usd": 9.440730547686192,
+      "last_updated_at": "2026-11-20T05:09:52+00:00",
+      "last_price_usd": 0.03424,
+      "last_liquidity_usd": 184249.28,
+      "estimated_fees_usd": 9.817819720340752,
       "volume_history": [
         557722.21,
         559126.85,
@@ -86,7 +86,8 @@
         431127.56,
         395098.2,
         374132.8,
-        355590.22
+        355590.22,
+        338648.79
       ],
       "highest_price": 0.04204,
       "data_stale": false
@@ -103,10 +104,10 @@
       "entry_liquidity_usd": 237670.55,
       "entry_score": 118.05,
       "entry_time": "2026-11-19T15:04:22+00:00",
-      "last_updated_at": "2026-11-20T04:00:45+00:00",
-      "last_price_usd": 0.008087,
-      "last_liquidity_usd": 247956.75,
-      "estimated_fees_usd": 56.201048019508995,
+      "last_updated_at": "2026-11-20T05:09:52+00:00",
+      "last_price_usd": 0.005563,
+      "last_liquidity_usd": 204298.45,
+      "estimated_fees_usd": 61.961113378564775,
       "volume_history": [
         8322870.55,
         8314070.09,
@@ -120,7 +121,8 @@
         8172198.53,
         8133760.62,
         8107504.5,
-        8068400.41
+        8068400.41,
+        7890239.0
       ],
       "highest_price": 0.008087,
       "data_stale": false
@@ -137,10 +139,10 @@
       "entry_liquidity_usd": 134326.94,
       "entry_score": 111.01,
       "entry_time": "2026-11-19T15:04:22+00:00",
-      "last_updated_at": "2026-11-20T04:00:45+00:00",
-      "last_price_usd": 0.0008793,
-      "last_liquidity_usd": 116042.57,
-      "estimated_fees_usd": 13.577573937936837,
+      "last_updated_at": "2026-11-20T05:09:52+00:00",
+      "last_price_usd": 0.0009744,
+      "last_liquidity_usd": 122306.72,
+      "estimated_fees_usd": 14.688941912292913,
       "volume_history": [
         1244607.23,
         1116156.15,
@@ -154,7 +156,8 @@
         902313.05,
         863125.19,
         858337.06,
-        801460.94
+        801460.94,
+        790894.71
       ],
       "highest_price": 0.001454,
       "data_stale": false
@@ -171,10 +174,10 @@
       "entry_liquidity_usd": 107149.74,
       "entry_score": 119.06,
       "entry_time": "2026-11-19T20:12:56+00:00",
-      "last_updated_at": "2026-11-20T04:00:45+00:00",
-      "last_price_usd": 0.0009644,
-      "last_liquidity_usd": 95778.94,
-      "estimated_fees_usd": 5.133567000932106,
+      "last_updated_at": "2026-11-20T05:09:52+00:00",
+      "last_price_usd": 0.0009375,
+      "last_liquidity_usd": 93811.19,
+      "estimated_fees_usd": 5.914571448583874,
       "volume_history": [
         536578.14,
         524577.67,
@@ -183,7 +186,8 @@
         504048.25,
         512519.05,
         508090.02,
-        492531.59
+        492531.59,
+        487428.36
       ],
       "highest_price": 0.001202,
       "data_stale": false
@@ -2155,5 +2159,5 @@
       "score": 119.06
     }
   ],
-  "last_run_at": "2026-11-20T04:00:45+00:00"
+  "last_run_at": "2026-11-20T05:09:52+00:00"
 }
