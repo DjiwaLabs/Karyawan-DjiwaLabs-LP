@@ -1,7 +1,7 @@
 {
   "version": 1,
   "starting_cash_usd": 10000.0,
-  "cash_usd": 22775.30284637788,
+  "cash_usd": 22555.65977030111,
   "positions": {
     "solana:gz15vwspy9kfynkrmpkokp2h9yygvbovoxjsgwsjcvfk": {
       "symbol": "RAMBO",
@@ -15,12 +15,11 @@
       "entry_liquidity_usd": 291943.09,
       "entry_score": 117.99,
       "entry_time": "2026-11-14T09:53:34+00:00",
-      "last_updated_at": "2026-11-20T21:48:44+00:00",
-      "last_price_usd": 0.01288,
-      "last_liquidity_usd": 297091.26,
-      "estimated_fees_usd": 47.09854318053196,
+      "last_updated_at": "2026-11-21T03:12:28+00:00",
+      "last_price_usd": 0.01259,
+      "last_liquidity_usd": 291364.84,
+      "estimated_fees_usd": 47.390519848338876,
       "volume_history": [
-        254267.71,
         219147.11,
         197343.47,
         179981.7,
@@ -43,7 +42,8 @@
         57513.81,
         167711.81,
         336238.26,
-        343205.49
+        343205.49,
+        343754.83
       ],
       "data_stale": false,
       "highest_price": 0.01292
@@ -60,12 +60,11 @@
       "entry_liquidity_usd": 160703.38,
       "entry_score": 117.21,
       "entry_time": "2026-11-19T02:59:22+00:00",
-      "last_updated_at": "2026-11-20T21:48:44+00:00",
-      "last_price_usd": 0.03276,
-      "last_liquidity_usd": 175504.54,
-      "estimated_fees_usd": 15.194505637989225,
+      "last_updated_at": "2026-11-21T03:12:28+00:00",
+      "last_price_usd": 0.03274,
+      "last_liquidity_usd": 175656.77,
+      "estimated_fees_usd": 16.878787921802846,
       "volume_history": [
-        559126.85,
         556550.01,
         546332.79,
         535974.86,
@@ -88,83 +87,10 @@
         355590.22,
         338648.79,
         237910.89,
-        154124.67
+        154124.67,
+        154242.53
       ],
       "highest_price": 0.04204,
-      "data_stale": false
-    },
-    "solana:af5cn9mu1y8coh68xkbypsjxxdk1lbnxgo76dpprrolb": {
-      "symbol": "ANTS",
-      "name": "Anthropic",
-      "chain": "solana",
-      "dex": "pumpswap",
-      "pair_address": "AF5Cn9Mu1Y8Coh68xKBYpSjxXdk1LbNxgo76dPpRRoLB",
-      "pair_url": "https://dexscreener.com/solana/af5cn9mu1y8coh68xkbypsjxxdk1lbnxgo76dpprrolb",
-      "invested_usd": 997.0,
-      "entry_price": 0.00726,
-      "entry_liquidity_usd": 237670.55,
-      "entry_score": 118.05,
-      "entry_time": "2026-11-19T15:04:22+00:00",
-      "last_updated_at": "2026-11-20T21:48:44+00:00",
-      "last_price_usd": 0.004765,
-      "last_liquidity_usd": 185500.06,
-      "estimated_fees_usd": 144.72632809720332,
-      "volume_history": [
-        8322870.55,
-        8314070.09,
-        8297927.7,
-        8292267.38,
-        8266873.54,
-        8245713.72,
-        8227515.13,
-        8214588.83,
-        8192270.02,
-        8172198.53,
-        8133760.62,
-        8107504.5,
-        8068400.41,
-        7890239.0,
-        1716278.06,
-        401611.26
-      ],
-      "highest_price": 0.008087,
-      "data_stale": false
-    },
-    "solana:7cnc9ggegzeffk8flxiyuhdtmeefpqzond56u1mxhnor": {
-      "symbol": "HOGE",
-      "name": "Hogecoin",
-      "chain": "solana",
-      "dex": "pumpswap",
-      "pair_address": "7CNC9gGegzEfFK8fLXiYUhdtMEeFPQZoND56U1Mxhnor",
-      "pair_url": "https://dexscreener.com/solana/7cnc9ggegzeffk8flxiyuhdtmeefpqzond56u1mxhnor",
-      "invested_usd": 997.0,
-      "entry_price": 0.001188,
-      "entry_liquidity_usd": 134326.94,
-      "entry_score": 111.01,
-      "entry_time": "2026-11-19T15:04:22+00:00",
-      "last_updated_at": "2026-11-20T21:48:44+00:00",
-      "last_price_usd": 0.000922,
-      "last_liquidity_usd": 119656.47,
-      "estimated_fees_usd": 30.387662798175704,
-      "volume_history": [
-        1244607.23,
-        1116156.15,
-        999089.06,
-        964234.15,
-        973295.37,
-        954954.26,
-        921754.56,
-        922472.07,
-        941521.55,
-        902313.05,
-        863125.19,
-        858337.06,
-        801460.94,
-        790894.71,
-        723290.87,
-        500156.19
-      ],
-      "highest_price": 0.001454,
       "data_stale": false
     },
     "solana:tt7dks9yjjzj1fwmgopmkbmdrezzymamrhodcgdfwqn": {
@@ -179,10 +105,10 @@
       "entry_liquidity_usd": 107149.74,
       "entry_score": 119.06,
       "entry_time": "2026-11-19T20:12:56+00:00",
-      "last_updated_at": "2026-11-20T21:48:44+00:00",
-      "last_price_usd": 0.0009049,
-      "last_liquidity_usd": 90358.07,
-      "estimated_fees_usd": 16.490447968435,
+      "last_updated_at": "2026-11-21T03:12:28+00:00",
+      "last_price_usd": 0.0008026,
+      "last_liquidity_usd": 84390.53,
+      "estimated_fees_usd": 19.93738039552853,
       "volume_history": [
         536578.14,
         524577.67,
@@ -194,10 +120,53 @@
         492531.59,
         487428.36,
         346518.54,
-        149828.76
+        149828.76,
+        102026.09
       ],
       "highest_price": 0.001202,
       "data_stale": false
+    },
+    "solana:af5cn9mu1y8coh68xkbypsjxxdk1lbnxgo76dpprrolb": {
+      "symbol": "ANTS",
+      "name": "Anthropic",
+      "chain": "solana",
+      "dex": "pumpswap",
+      "pair_address": "AF5Cn9Mu1Y8Coh68xKBYpSjxXdk1LbNxgo76dPpRRoLB",
+      "pair_url": "https://dexscreener.com/solana/af5cn9mu1y8coh68xkbypsjxxdk1lbnxgo76dpprrolb",
+      "invested_usd": 997.0,
+      "entry_price": 0.004704,
+      "entry_liquidity_usd": 182918.26,
+      "entry_score": 119.83,
+      "entry_time": "2026-11-21T03:12:28+00:00",
+      "last_updated_at": "2026-11-21T03:12:28+00:00",
+      "last_price_usd": 0.004704,
+      "last_liquidity_usd": 182918.26,
+      "estimated_fees_usd": 0.0,
+      "volume_history": [
+        365582.26
+      ],
+      "highest_price": 0.004704
+    },
+    "solana:7cnc9ggegzeffk8flxiyuhdtmeefpqzond56u1mxhnor": {
+      "symbol": "HOGE",
+      "name": "Hogecoin",
+      "chain": "solana",
+      "dex": "pumpswap",
+      "pair_address": "7CNC9gGegzEfFK8fLXiYUhdtMEeFPQZoND56U1Mxhnor",
+      "pair_url": "https://dexscreener.com/solana/7cnc9ggegzeffk8flxiyuhdtmeefpqzond56u1mxhnor",
+      "invested_usd": 997.0,
+      "entry_price": 0.0007399,
+      "entry_liquidity_usd": 107053.48,
+      "entry_score": 114.52,
+      "entry_time": "2026-11-21T03:12:28+00:00",
+      "last_updated_at": "2026-11-21T03:12:28+00:00",
+      "last_price_usd": 0.0007399,
+      "last_liquidity_usd": 107053.48,
+      "estimated_fees_usd": 0.0,
+      "volume_history": [
+        473604.22
+      ],
+      "highest_price": 0.0007399
     }
   },
   "closed_trades": [
@@ -1062,53 +1031,33 @@
       "net_proceeds_usd": 1134.1608,
       "pnl_usd": 137.1608,
       "reason": "TRAILING STOP: Turun 15.4% dari puncak"
-    }
-  ],
-  "events": [
-    {
-      "time": "2026-10-29T22:49:56+00:00",
-      "type": "LP_CLOSE",
-      "message": "Closed BTC: GUARD: Likuiditas turun >40.0%",
-      "closed_at": "2026-10-29T22:49:56+00:00",
-      "symbol": "BTC",
-      "chain": "solana",
-      "pair_address": "2tFYCTqYJ2pyrb7CeA824o2Ybq3jq7agvr3Qpv2uVDmL",
-      "invested_usd": 997.0,
-      "lp_value_usd": 1041.2563,
-      "estimated_fees_usd": 14.7545,
-      "net_proceeds_usd": 1047.7307,
-      "pnl_usd": 50.7307,
-      "reason": "GUARD: Likuiditas turun >40.0%"
     },
     {
-      "time": "2026-10-29T22:49:56+00:00",
-      "type": "LP_OPEN",
-      "message": "Opened LP BTC on solana",
-      "invested_usd": 997.0,
-      "score": 116.47
-    },
-    {
-      "time": "2026-10-30T01:05:56+00:00",
-      "type": "LP_CLOSE",
-      "message": "Closed EXFIL: STOP LOSS: Harga turun >35.0%",
-      "closed_at": "2026-10-30T01:05:56+00:00",
-      "symbol": "EXFIL",
+      "closed_at": "2026-11-21T03:12:28+00:00",
+      "symbol": "ANTS",
       "chain": "solana",
-      "pair_address": "2zPfdGd48k7B2U9yqZ4hJSPAPtoVU9uiEbFQYXEoeXkv",
+      "pair_address": "AF5Cn9Mu1Y8Coh68xKBYpSjxXdk1LbNxgo76dPpRRoLB",
       "invested_usd": 997.0,
-      "lp_value_usd": 799.6901,
-      "estimated_fees_usd": 29.8818,
-      "net_proceeds_usd": 822.4241,
-      "pnl_usd": -174.5759,
+      "lp_value_usd": 802.5286,
+      "estimated_fees_usd": 170.0766,
+      "net_proceeds_usd": 964.7421,
+      "pnl_usd": -32.2579,
       "reason": "STOP LOSS: Harga turun >35.0%"
     },
     {
-      "time": "2026-10-30T01:05:56+00:00",
-      "type": "LP_OPEN",
-      "message": "Opened LP EXFIL on solana",
+      "closed_at": "2026-11-21T03:12:28+00:00",
+      "symbol": "HOGE",
+      "chain": "solana",
+      "pair_address": "7CNC9gGegzEfFK8fLXiYUhdtMEeFPQZoND56U1Mxhnor",
       "invested_usd": 997.0,
-      "score": 119.68
-    },
+      "lp_value_usd": 786.8165,
+      "estimated_fees_usd": 35.912,
+      "net_proceeds_usd": 815.6148,
+      "pnl_usd": -181.3852,
+      "reason": "STOP LOSS: Harga turun >35.0%"
+    }
+  ],
+  "events": [
     {
       "time": "2026-10-30T03:54:22+00:00",
       "type": "LP_CLOSE",
@@ -2164,7 +2113,51 @@
       "message": "Opened LP WASTED on solana",
       "invested_usd": 997.0,
       "score": 119.06
+    },
+    {
+      "time": "2026-11-21T03:12:28+00:00",
+      "type": "LP_CLOSE",
+      "message": "Closed ANTS: STOP LOSS: Harga turun >35.0%",
+      "closed_at": "2026-11-21T03:12:28+00:00",
+      "symbol": "ANTS",
+      "chain": "solana",
+      "pair_address": "AF5Cn9Mu1Y8Coh68xKBYpSjxXdk1LbNxgo76dPpRRoLB",
+      "invested_usd": 997.0,
+      "lp_value_usd": 802.5286,
+      "estimated_fees_usd": 170.0766,
+      "net_proceeds_usd": 964.7421,
+      "pnl_usd": -32.2579,
+      "reason": "STOP LOSS: Harga turun >35.0%"
+    },
+    {
+      "time": "2026-11-21T03:12:28+00:00",
+      "type": "LP_CLOSE",
+      "message": "Closed HOGE: STOP LOSS: Harga turun >35.0%",
+      "closed_at": "2026-11-21T03:12:28+00:00",
+      "symbol": "HOGE",
+      "chain": "solana",
+      "pair_address": "7CNC9gGegzEfFK8fLXiYUhdtMEeFPQZoND56U1Mxhnor",
+      "invested_usd": 997.0,
+      "lp_value_usd": 786.8165,
+      "estimated_fees_usd": 35.912,
+      "net_proceeds_usd": 815.6148,
+      "pnl_usd": -181.3852,
+      "reason": "STOP LOSS: Harga turun >35.0%"
+    },
+    {
+      "time": "2026-11-21T03:12:28+00:00",
+      "type": "LP_OPEN",
+      "message": "Opened LP ANTS on solana",
+      "invested_usd": 997.0,
+      "score": 119.83
+    },
+    {
+      "time": "2026-11-21T03:12:28+00:00",
+      "type": "LP_OPEN",
+      "message": "Opened LP HOGE on solana",
+      "invested_usd": 997.0,
+      "score": 114.52
     }
   ],
-  "last_run_at": "2026-11-20T21:48:44+00:00"
+  "last_run_at": "2026-11-21T03:12:28+00:00"
 }
