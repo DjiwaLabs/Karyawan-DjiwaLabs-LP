@@ -1,7 +1,7 @@
 {
   "version": 1,
   "starting_cash_usd": 10000.0,
-  "cash_usd": 21741.967054840592,
+  "cash_usd": 21566.518628245012,
   "positions": {
     "solana:5bqcndqt4zhv4pdqvx4kxd2rznlfdb64akkd1atrvwsz": {
       "symbol": "STONK",
@@ -15,12 +15,11 @@
       "entry_liquidity_usd": 160703.38,
       "entry_score": 117.21,
       "entry_time": "2026-11-19T02:59:22+00:00",
-      "last_updated_at": "2026-11-21T23:13:45+00:00",
-      "last_price_usd": 0.03448,
-      "last_liquidity_usd": 178804.08,
-      "estimated_fees_usd": 22.611520442912244,
+      "last_updated_at": "2026-11-22T03:10:38+00:00",
+      "last_price_usd": 0.03406,
+      "last_liquidity_usd": 176650.64,
+      "estimated_fees_usd": 23.677006133603154,
       "volume_history": [
-        519231.21,
         517296.91,
         528210.95,
         538236.68,
@@ -43,45 +42,10 @@
         154242.53,
         104748.35,
         208958.85,
-        233141.36
+        233141.36,
+        232225.6
       ],
       "highest_price": 0.04204,
-      "data_stale": false
-    },
-    "solana:tt7dks9yjjzj1fwmgopmkbmdrezzymamrhodcgdfwqn": {
-      "symbol": "WASTED",
-      "name": "WASTED",
-      "chain": "solana",
-      "dex": "pumpswap",
-      "pair_address": "TT7DKs9YjJZj1fwMGoPmKBmDreZzyMAMrHoDCGdfwqN",
-      "pair_url": "https://dexscreener.com/solana/tt7dks9yjjzj1fwmgopmkbmdrezzymamrhodcgdfwqn",
-      "invested_usd": 997.0,
-      "entry_price": 0.001202,
-      "entry_liquidity_usd": 107149.74,
-      "entry_score": 119.06,
-      "entry_time": "2026-11-19T20:12:56+00:00",
-      "last_updated_at": "2026-11-21T23:13:45+00:00",
-      "last_price_usd": 0.0008887,
-      "last_liquidity_usd": 90511.61,
-      "estimated_fees_usd": 30.3308617102576,
-      "volume_history": [
-        536578.14,
-        524577.67,
-        514954.46,
-        511976.37,
-        504048.25,
-        512519.05,
-        508090.02,
-        492531.59,
-        487428.36,
-        346518.54,
-        149828.76,
-        102026.09,
-        107615.84,
-        101390.1,
-        91672.24
-      ],
-      "highest_price": 0.001202,
       "data_stale": false
     },
     "solana:af5cn9mu1y8coh68xkbypsjxxdk1lbnxgo76dpprrolb": {
@@ -96,17 +60,18 @@
       "entry_liquidity_usd": 182918.26,
       "entry_score": 119.83,
       "entry_time": "2026-11-21T03:12:28+00:00",
-      "last_updated_at": "2026-11-21T23:13:45+00:00",
-      "last_price_usd": 0.005483,
-      "last_liquidity_usd": 201283.53,
-      "estimated_fees_usd": 3.3160133563738228,
+      "last_updated_at": "2026-11-22T03:10:38+00:00",
+      "last_price_usd": 0.005636,
+      "last_liquidity_usd": 202902.65,
+      "estimated_fees_usd": 3.8777738569530773,
       "volume_history": [
         365582.26,
         177881.67,
         174108.27,
-        204074.81
+        204074.81,
+        236590.23
       ],
-      "highest_price": 0.005483,
+      "highest_price": 0.005636,
       "data_stale": false
     },
     "solana:7cnc9ggegzeffk8flxiyuhdtmeefpqzond56u1mxhnor": {
@@ -121,15 +86,16 @@
       "entry_liquidity_usd": 107053.48,
       "entry_score": 114.52,
       "entry_time": "2026-11-21T03:12:28+00:00",
-      "last_updated_at": "2026-11-21T23:13:45+00:00",
-      "last_price_usd": 0.0008554,
-      "last_liquidity_usd": 115989.32,
-      "estimated_fees_usd": 9.294317647798561,
+      "last_updated_at": "2026-11-22T03:10:38+00:00",
+      "last_price_usd": 0.0007717,
+      "last_liquidity_usd": 110109.52,
+      "estimated_fees_usd": 11.144951266551205,
       "volume_history": [
         473604.22,
         398788.68,
         406838.26,
-        424735.63
+        424735.63,
+        366669.98
       ],
       "highest_price": 0.0008807,
       "data_stale": false
@@ -146,17 +112,39 @@
       "entry_liquidity_usd": 50582.57,
       "entry_score": 117.7,
       "entry_time": "2026-11-21T10:58:22+00:00",
-      "last_updated_at": "2026-11-21T23:13:45+00:00",
-      "last_price_usd": 0.0002932,
-      "last_liquidity_usd": 55799.4,
-      "estimated_fees_usd": 18.122878835502153,
+      "last_updated_at": "2026-11-22T03:10:38+00:00",
+      "last_price_usd": 0.0002683,
+      "last_liquidity_usd": 53011.97,
+      "estimated_fees_usd": 24.338363650591596,
       "volume_history": [
         675701.11,
         668263.85,
-        664313.06
+        664313.06,
+        670258.33
       ],
       "highest_price": 0.0003084,
       "data_stale": false
+    },
+    "solana:dextcer4k9dwbxtmu8znvvwgevvmvhmb183pf2xxzwvh": {
+      "symbol": "DESSA",
+      "name": "Dessa",
+      "chain": "solana",
+      "dex": "pumpswap",
+      "pair_address": "DEXTCER4k9dwbxTMU8zNVVwGevVmvHMB183pF2xxZwvH",
+      "pair_url": "https://dexscreener.com/solana/dextcer4k9dwbxtmu8znvvwgevvmvhmb183pf2xxzwvh",
+      "invested_usd": 997.0,
+      "entry_price": 0.002498,
+      "entry_liquidity_usd": 140829.8,
+      "entry_score": 118.4,
+      "entry_time": "2026-11-22T03:10:38+00:00",
+      "last_updated_at": "2026-11-22T03:10:38+00:00",
+      "last_price_usd": 0.002498,
+      "last_liquidity_usd": 140829.8,
+      "estimated_fees_usd": 0.0,
+      "volume_history": [
+        334297.95
+      ],
+      "highest_price": 0.002498
     }
   },
   "closed_trades": [
@@ -1057,31 +1045,21 @@
       "net_proceeds_usd": 186.3073,
       "pnl_usd": -810.6927,
       "reason": "GUARD: Likuiditas turun >40.0%"
+    },
+    {
+      "closed_at": "2026-11-22T03:10:38+00:00",
+      "symbol": "WASTED",
+      "chain": "solana",
+      "pair_address": "TT7DKs9YjJZj1fwMGoPmKBmDreZzyMAMrHoDCGdfwqN",
+      "invested_usd": 997.0,
+      "lp_value_usd": 799.3193,
+      "estimated_fees_usd": 32.3909,
+      "net_proceeds_usd": 824.5516,
+      "pnl_usd": -172.4484,
+      "reason": "STOP LOSS: Harga turun >35.0%"
     }
   ],
   "events": [
-    {
-      "time": "2026-10-30T18:53:18+00:00",
-      "type": "LP_CLOSE",
-      "message": "Closed jeff: TAKE PROFIT: Harga naik >50.0%",
-      "closed_at": "2026-10-30T18:53:18+00:00",
-      "symbol": "jeff",
-      "chain": "solana",
-      "pair_address": "JCXWfcZGjgJC8NZa5Qb6JP3cgvqW4vGUg4Tqj87G5ZnY",
-      "invested_usd": 997.0,
-      "lp_value_usd": 1275.279,
-      "estimated_fees_usd": 11.4038,
-      "net_proceeds_usd": 1277.2494,
-      "pnl_usd": 280.2494,
-      "reason": "TAKE PROFIT: Harga naik >50.0%"
-    },
-    {
-      "time": "2026-10-30T18:53:18+00:00",
-      "type": "LP_OPEN",
-      "message": "Opened LP DESSA on solana",
-      "invested_usd": 997.0,
-      "score": 109.16
-    },
     {
       "time": "2026-10-30T21:45:11+00:00",
       "type": "LP_CLOSE",
@@ -2159,7 +2137,29 @@
       "message": "Opened LP DIGS on solana",
       "invested_usd": 997.0,
       "score": 117.7
+    },
+    {
+      "time": "2026-11-22T03:10:38+00:00",
+      "type": "LP_CLOSE",
+      "message": "Closed WASTED: STOP LOSS: Harga turun >35.0%",
+      "closed_at": "2026-11-22T03:10:38+00:00",
+      "symbol": "WASTED",
+      "chain": "solana",
+      "pair_address": "TT7DKs9YjJZj1fwMGoPmKBmDreZzyMAMrHoDCGdfwqN",
+      "invested_usd": 997.0,
+      "lp_value_usd": 799.3193,
+      "estimated_fees_usd": 32.3909,
+      "net_proceeds_usd": 824.5516,
+      "pnl_usd": -172.4484,
+      "reason": "STOP LOSS: Harga turun >35.0%"
+    },
+    {
+      "time": "2026-11-22T03:10:38+00:00",
+      "type": "LP_OPEN",
+      "message": "Opened LP DESSA on solana",
+      "invested_usd": 997.0,
+      "score": 118.4
     }
   ],
-  "last_run_at": "2026-11-21T23:13:45+00:00"
+  "last_run_at": "2026-11-22T03:10:38+00:00"
 }
