@@ -1,7 +1,7 @@
 {
   "version": 1,
   "starting_cash_usd": 10000.0,
-  "cash_usd": 21345.827814230226,
+  "cash_usd": 20760.50353557955,
   "positions": {
     "solana:5bqcndqt4zhv4pdqvx4kxd2rznlfdb64akkd1atrvwsz": {
       "symbol": "STONK",
@@ -15,12 +15,11 @@
       "entry_liquidity_usd": 160703.38,
       "entry_score": 117.21,
       "entry_time": "2026-11-19T02:59:22+00:00",
-      "last_updated_at": "2026-11-24T05:59:39+00:00",
-      "last_price_usd": 0.03612,
-      "last_liquidity_usd": 187068.76,
-      "estimated_fees_usd": 35.32748441345275,
+      "last_updated_at": "2026-11-24T17:40:29+00:00",
+      "last_price_usd": 0.032,
+      "last_liquidity_usd": 165585.22,
+      "estimated_fees_usd": 38.169284365023394,
       "volume_history": [
-        485369.84,
         475825.26,
         463469.72,
         456111.48,
@@ -43,41 +42,10 @@
         211985.93,
         307892.36,
         512931.64,
-        545703.46
+        545703.46,
+        260853.98
       ],
       "highest_price": 0.04204,
-      "data_stale": false
-    },
-    "solana:af5cn9mu1y8coh68xkbypsjxxdk1lbnxgo76dpprrolb": {
-      "symbol": "ANTS",
-      "name": "Anthropic",
-      "chain": "solana",
-      "dex": "pumpswap",
-      "pair_address": "AF5Cn9Mu1Y8Coh68xKBYpSjxXdk1LbNxgo76dPpRRoLB",
-      "pair_url": "https://dexscreener.com/solana/af5cn9mu1y8coh68xkbypsjxxdk1lbnxgo76dpprrolb",
-      "invested_usd": 997.0,
-      "entry_price": 0.004704,
-      "entry_liquidity_usd": 182918.26,
-      "entry_score": 119.83,
-      "entry_time": "2026-11-21T03:12:28+00:00",
-      "last_updated_at": "2026-11-24T05:59:39+00:00",
-      "last_price_usd": 0.004894,
-      "last_liquidity_usd": 193913.84,
-      "estimated_fees_usd": 13.681016545297338,
-      "volume_history": [
-        365582.26,
-        177881.67,
-        174108.27,
-        204074.81,
-        236590.23,
-        306741.52,
-        478858.55,
-        456240.1,
-        417195.07,
-        245475.82,
-        253567.37
-      ],
-      "highest_price": 0.005845,
       "data_stale": false
     },
     "solana:7cnc9ggegzeffk8flxiyuhdtmeefpqzond56u1mxhnor": {
@@ -92,10 +60,10 @@
       "entry_liquidity_usd": 107053.48,
       "entry_score": 114.52,
       "entry_time": "2026-11-21T03:12:28+00:00",
-      "last_updated_at": "2026-11-24T05:59:39+00:00",
-      "last_price_usd": 0.0008327,
-      "last_liquidity_usd": 115946.18,
-      "estimated_fees_usd": 33.215176600221966,
+      "last_updated_at": "2026-11-24T17:40:29+00:00",
+      "last_price_usd": 0.0007298,
+      "last_liquidity_usd": 108600.57,
+      "estimated_fees_usd": 37.88367687388575,
       "volume_history": [
         473604.22,
         398788.68,
@@ -107,7 +75,8 @@
         242617.41,
         211778.74,
         312618.78,
-        403309.61
+        403309.61,
+        341568.11
       ],
       "highest_price": 0.0008807,
       "data_stale": false
@@ -124,10 +93,10 @@
       "entry_liquidity_usd": 50582.57,
       "entry_score": 117.7,
       "entry_time": "2026-11-21T10:58:22+00:00",
-      "last_updated_at": "2026-11-24T05:59:39+00:00",
-      "last_price_usd": 0.00019,
-      "last_liquidity_usd": 48573.91,
-      "estimated_fees_usd": 110.80296959460284,
+      "last_updated_at": "2026-11-24T17:40:29+00:00",
+      "last_price_usd": 0.000191,
+      "last_liquidity_usd": 48502.02,
+      "estimated_fees_usd": 133.02118125129292,
       "volume_history": [
         675701.11,
         668263.85,
@@ -138,31 +107,53 @@
         890101.57,
         922193.11,
         746945.94,
-        707874.39
+        707874.39,
+        655491.46
       ],
       "highest_price": 0.0003228,
       "data_stale": false
     },
-    "solana:dextcer4k9dwbxtmu8znvvwgevvmvhmb183pf2xxzwvh": {
-      "symbol": "DESSA",
-      "name": "Dessa",
+    "solana:cqqm1kxwaelt6t21duqfdeeczrqz6dga7dk2ptk9oj5g": {
+      "symbol": "FIONA",
+      "name": "Fiona the Hippo",
       "chain": "solana",
-      "dex": "pumpswap",
-      "pair_address": "DEXTCER4k9dwbxTMU8zNVVwGevVmvHMB183pF2xxZwvH",
-      "pair_url": "https://dexscreener.com/solana/dextcer4k9dwbxtmu8znvvwgevvmvhmb183pf2xxzwvh",
+      "dex": "meteora",
+      "pair_address": "Cqqm1KxwAELT6t21dUQfDEecZrqZ6dgA7dK2ptK9oj5g",
+      "pair_url": "https://dexscreener.com/solana/cqqm1kxwaelt6t21duqfdeeczrqz6dga7dk2ptk9oj5g",
       "invested_usd": 997.0,
-      "entry_price": 0.001455,
-      "entry_liquidity_usd": 113231.13,
-      "entry_score": 117.3,
-      "entry_time": "2026-11-24T05:59:39+00:00",
-      "last_updated_at": "2026-11-24T05:59:39+00:00",
-      "last_price_usd": 0.001455,
-      "last_liquidity_usd": 113231.13,
+      "entry_price": 0.003215,
+      "entry_liquidity_usd": 158767.12,
+      "entry_score": 113.35,
+      "entry_time": "2026-11-24T17:40:29+00:00",
+      "last_updated_at": "2026-11-24T17:40:29+00:00",
+      "last_price_usd": 0.003215,
+      "last_liquidity_usd": 158767.12,
       "estimated_fees_usd": 0.0,
       "volume_history": [
-        598022.34
+        527588.17
       ],
-      "highest_price": 0.001455
+      "highest_price": 0.003215
+    },
+    "solana:fuzbjcjksvw3rshngheqwpoiwyrhnpcsxlwccmkjbyd6": {
+      "symbol": "FIONA",
+      "name": "Fiona the Hippo",
+      "chain": "solana",
+      "dex": "meteora",
+      "pair_address": "FUzBjcJKSVw3RShNGHEqWPoiwyRhnPCsxLWccMKjByd6",
+      "pair_url": "https://dexscreener.com/solana/fuzbjcjksvw3rshngheqwpoiwyrhnpcsxlwccmkjbyd6",
+      "invested_usd": 997.0,
+      "entry_price": 0.00322,
+      "entry_liquidity_usd": 77794.9,
+      "entry_score": 113.2,
+      "entry_time": "2026-11-24T17:40:29+00:00",
+      "last_updated_at": "2026-11-24T17:40:29+00:00",
+      "last_price_usd": 0.00322,
+      "last_liquidity_usd": 77794.9,
+      "estimated_fees_usd": 0.0,
+      "volume_history": [
+        1850988.61
+      ],
+      "highest_price": 0.00322
     }
   },
   "closed_trades": [
@@ -1099,53 +1090,33 @@
       "net_proceeds_usd": 938.4633,
       "pnl_usd": -58.5367,
       "reason": "TRAILING STOP: Turun 39.3% dari puncak"
-    }
-  ],
-  "events": [
-    {
-      "time": "2026-10-31T19:44:16+00:00",
-      "type": "LP_CLOSE",
-      "message": "Closed EXFIL: TAKE PROFIT: Harga naik >50.0%",
-      "closed_at": "2026-10-31T19:44:16+00:00",
-      "symbol": "EXFIL",
-      "chain": "solana",
-      "pair_address": "2zPfdGd48k7B2U9yqZ4hJSPAPtoVU9uiEbFQYXEoeXkv",
-      "invested_usd": 997.0,
-      "lp_value_usd": 1225.9466,
-      "estimated_fees_usd": 10.9372,
-      "net_proceeds_usd": 1227.6994,
-      "pnl_usd": 230.6994,
-      "reason": "TAKE PROFIT: Harga naik >50.0%"
     },
     {
-      "time": "2026-10-31T19:44:16+00:00",
-      "type": "LP_CLOSE",
-      "message": "Closed DESSA: TAKE PROFIT: Harga naik >50.0%",
-      "closed_at": "2026-10-31T19:44:16+00:00",
+      "closed_at": "2026-11-24T17:40:29+00:00",
+      "symbol": "ANTS",
+      "chain": "solana",
+      "pair_address": "AF5Cn9Mu1Y8Coh68xKBYpSjxXdk1LbNxgo76dPpRRoLB",
+      "invested_usd": 997.0,
+      "lp_value_usd": 636.13,
+      "estimated_fees_usd": 17.2575,
+      "net_proceeds_usd": 647.1206,
+      "pnl_usd": -349.8794,
+      "reason": "STOP LOSS: Harga turun >35.0%"
+    },
+    {
+      "closed_at": "2026-11-24T17:40:29+00:00",
       "symbol": "DESSA",
       "chain": "solana",
       "pair_address": "DEXTCER4k9dwbxTMU8zNVVwGevVmvHMB183pF2xxZwvH",
       "invested_usd": 997.0,
-      "lp_value_usd": 1291.1915,
-      "estimated_fees_usd": 10.2314,
-      "net_proceeds_usd": 1291.9158,
-      "pnl_usd": 294.9158,
-      "reason": "TAKE PROFIT: Harga naik >50.0%"
-    },
-    {
-      "time": "2026-10-31T19:44:16+00:00",
-      "type": "LP_OPEN",
-      "message": "Opened LP DESSA on solana",
-      "invested_usd": 997.0,
-      "score": 114.01
-    },
-    {
-      "time": "2026-10-31T19:44:16+00:00",
-      "type": "LP_OPEN",
-      "message": "Opened LP EXFIL on solana",
-      "invested_usd": 997.0,
-      "score": 67.41
-    },
+      "lp_value_usd": 765.6987,
+      "estimated_fees_usd": 8.7285,
+      "net_proceeds_usd": 767.5551,
+      "pnl_usd": -229.4449,
+      "reason": "STOP LOSS: Harga turun >35.0%"
+    }
+  ],
+  "events": [
     {
       "time": "2026-10-31T20:43:08+00:00",
       "type": "LP_CLOSE",
@@ -2201,7 +2172,51 @@
       "message": "Opened LP DESSA on solana",
       "invested_usd": 997.0,
       "score": 117.3
+    },
+    {
+      "time": "2026-11-24T17:40:29+00:00",
+      "type": "LP_CLOSE",
+      "message": "Closed ANTS: STOP LOSS: Harga turun >35.0%",
+      "closed_at": "2026-11-24T17:40:29+00:00",
+      "symbol": "ANTS",
+      "chain": "solana",
+      "pair_address": "AF5Cn9Mu1Y8Coh68xKBYpSjxXdk1LbNxgo76dPpRRoLB",
+      "invested_usd": 997.0,
+      "lp_value_usd": 636.13,
+      "estimated_fees_usd": 17.2575,
+      "net_proceeds_usd": 647.1206,
+      "pnl_usd": -349.8794,
+      "reason": "STOP LOSS: Harga turun >35.0%"
+    },
+    {
+      "time": "2026-11-24T17:40:29+00:00",
+      "type": "LP_CLOSE",
+      "message": "Closed DESSA: STOP LOSS: Harga turun >35.0%",
+      "closed_at": "2026-11-24T17:40:29+00:00",
+      "symbol": "DESSA",
+      "chain": "solana",
+      "pair_address": "DEXTCER4k9dwbxTMU8zNVVwGevVmvHMB183pF2xxZwvH",
+      "invested_usd": 997.0,
+      "lp_value_usd": 765.6987,
+      "estimated_fees_usd": 8.7285,
+      "net_proceeds_usd": 767.5551,
+      "pnl_usd": -229.4449,
+      "reason": "STOP LOSS: Harga turun >35.0%"
+    },
+    {
+      "time": "2026-11-24T17:40:29+00:00",
+      "type": "LP_OPEN",
+      "message": "Opened LP FIONA on solana",
+      "invested_usd": 997.0,
+      "score": 113.35
+    },
+    {
+      "time": "2026-11-24T17:40:29+00:00",
+      "type": "LP_OPEN",
+      "message": "Opened LP FIONA on solana",
+      "invested_usd": 997.0,
+      "score": 113.2
     }
   ],
-  "last_run_at": "2026-11-24T05:59:39+00:00"
+  "last_run_at": "2026-11-24T17:40:29+00:00"
 }
