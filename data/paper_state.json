@@ -1,7 +1,7 @@
 {
   "version": 1,
   "starting_cash_usd": 10000.0,
-  "cash_usd": 20411.914399077228,
+  "cash_usd": 20205.91739337729,
   "positions": {
     "solana:7cnc9ggegzeffk8flxiyuhdtmeefpqzond56u1mxhnor": {
       "symbol": "HOGE",
@@ -15,10 +15,10 @@
       "entry_liquidity_usd": 107053.48,
       "entry_score": 114.52,
       "entry_time": "2026-11-21T03:12:28+00:00",
-      "last_updated_at": "2026-11-26T15:11:56+00:00",
-      "last_price_usd": 0.00051,
-      "last_liquidity_usd": 90933.26,
-      "estimated_fees_usd": 55.7745454219408,
+      "last_updated_at": "2026-11-26T23:50:33+00:00",
+      "last_price_usd": 0.0004855,
+      "last_liquidity_usd": 89112.5,
+      "estimated_fees_usd": 59.322968877650574,
       "volume_history": [
         473604.22,
         398788.68,
@@ -36,7 +36,8 @@
         179448.39,
         169632.88,
         189634.65,
-        149080.82
+        149080.82,
+        184598.1
       ],
       "highest_price": 0.0008807,
       "data_stale": false
@@ -53,10 +54,10 @@
       "entry_liquidity_usd": 50582.57,
       "entry_score": 117.7,
       "entry_time": "2026-11-21T10:58:22+00:00",
-      "last_updated_at": "2026-11-26T15:11:56+00:00",
-      "last_price_usd": 0.0002541,
-      "last_liquidity_usd": 59463.98,
-      "estimated_fees_usd": 207.08366467259043,
+      "last_updated_at": "2026-11-26T23:50:33+00:00",
+      "last_price_usd": 0.0002353,
+      "last_liquidity_usd": 58562.8,
+      "estimated_fees_usd": 221.2881360645784,
       "volume_history": [
         675701.11,
         668263.85,
@@ -73,7 +74,8 @@
         738537.03,
         891130.25,
         971100.84,
-        892139.11
+        892139.11,
+        888433.97
       ],
       "highest_price": 0.0003228,
       "data_stale": false
@@ -90,41 +92,19 @@
       "entry_liquidity_usd": 254465.19,
       "entry_score": 57.71,
       "entry_time": "2026-11-25T02:24:58+00:00",
-      "last_updated_at": "2026-11-26T15:11:56+00:00",
-      "last_price_usd": 0.006054,
-      "last_liquidity_usd": 277295.66,
-      "estimated_fees_usd": 4.162734411864501,
+      "last_updated_at": "2026-11-26T23:50:33+00:00",
+      "last_price_usd": 0.006724,
+      "last_liquidity_usd": 292722.71,
+      "estimated_fees_usd": 5.114500824501439,
       "volume_history": [
         115190.62,
         298558.62,
         372021.09,
         270263.19,
-        246936.28
+        246936.28,
+        248816.43
       ],
-      "highest_price": 0.006103,
-      "data_stale": false
-    },
-    "solana:cqqm1kxwaelt6t21duqfdeeczrqz6dga7dk2ptk9oj5g": {
-      "symbol": "FIONA",
-      "name": "Fiona the Hippo",
-      "chain": "solana",
-      "dex": "meteora",
-      "pair_address": "Cqqm1KxwAELT6t21dUQfDEecZrqZ6dgA7dK2ptK9oj5g",
-      "pair_url": "https://dexscreener.com/solana/cqqm1kxwaelt6t21duqfdeeczrqz6dga7dk2ptk9oj5g",
-      "invested_usd": 997.0,
-      "entry_price": 0.002016,
-      "entry_liquidity_usd": 112654.69,
-      "entry_score": 115.55,
-      "entry_time": "2026-11-26T05:00:21+00:00",
-      "last_updated_at": "2026-11-26T15:11:56+00:00",
-      "last_price_usd": 0.001721,
-      "last_liquidity_usd": 116585.71,
-      "estimated_fees_usd": 2.7700738239203604,
-      "volume_history": [
-        284260.36,
-        224191.22
-      ],
-      "highest_price": 0.002016,
+      "highest_price": 0.006724,
       "data_stale": false
     },
     "solana:5bqcndqt4zhv4pdqvx4kxd2rznlfdb64akkd1atrvwsz": {
@@ -139,16 +119,38 @@
       "entry_liquidity_usd": 130274.29,
       "entry_score": 86.03,
       "entry_time": "2026-11-26T05:00:21+00:00",
-      "last_updated_at": "2026-11-26T15:11:56+00:00",
-      "last_price_usd": 0.03102,
-      "last_liquidity_usd": 129675.43,
-      "estimated_fees_usd": 1.8905155852499997,
+      "last_updated_at": "2026-11-26T23:50:33+00:00",
+      "last_price_usd": 0.03148,
+      "last_liquidity_usd": 131589.64,
+      "estimated_fees_usd": 3.6266578338708046,
       "volume_history": [
         151006.97,
-        234960.67
+        234960.67,
+        250274.03
       ],
-      "highest_price": 0.03119,
+      "highest_price": 0.03148,
       "data_stale": false
+    },
+    "solana:cqqm1kxwaelt6t21duqfdeeczrqz6dga7dk2ptk9oj5g": {
+      "symbol": "FIONA",
+      "name": "Fiona the Hippo",
+      "chain": "solana",
+      "dex": "meteora",
+      "pair_address": "Cqqm1KxwAELT6t21dUQfDEecZrqZ6dgA7dK2ptK9oj5g",
+      "pair_url": "https://dexscreener.com/solana/cqqm1kxwaelt6t21duqfdeeczrqz6dga7dk2ptk9oj5g",
+      "invested_usd": 997.0,
+      "entry_price": 0.001285,
+      "entry_liquidity_usd": 121766.25,
+      "entry_score": 117.49,
+      "entry_time": "2026-11-26T23:50:33+00:00",
+      "last_updated_at": "2026-11-26T23:50:33+00:00",
+      "last_price_usd": 0.001285,
+      "last_liquidity_usd": 121766.25,
+      "estimated_fees_usd": 0.0,
+      "volume_history": [
+        257681.46
+      ],
+      "highest_price": 0.001285
     }
   },
   "closed_trades": [
@@ -1145,31 +1147,21 @@
       "net_proceeds_usd": 797.5255,
       "pnl_usd": -199.4745,
       "reason": "STOP LOSS: Harga turun >35.0%"
+    },
+    {
+      "closed_at": "2026-11-26T23:50:33+00:00",
+      "symbol": "FIONA",
+      "chain": "solana",
+      "pair_address": "Cqqm1KxwAELT6t21dUQfDEecZrqZ6dgA7dK2ptK9oj5g",
+      "invested_usd": 997.0,
+      "lp_value_usd": 795.9787,
+      "estimated_fees_usd": 5.0293,
+      "net_proceeds_usd": 794.003,
+      "pnl_usd": -202.997,
+      "reason": "STOP LOSS: Harga turun >35.0%"
     }
   ],
   "events": [
-    {
-      "time": "2026-11-02T22:22:20+00:00",
-      "type": "LP_CLOSE",
-      "message": "Closed GATO: TAKE PROFIT: Harga naik >50.0%",
-      "closed_at": "2026-11-02T22:22:20+00:00",
-      "symbol": "GATO",
-      "chain": "solana",
-      "pair_address": "5E3dXLXGwmTDCokA51WYYaKttjFZBwqCoyUHBUi5gt2m",
-      "invested_usd": 997.0,
-      "lp_value_usd": 1221.9438,
-      "estimated_fees_usd": 15.8952,
-      "net_proceeds_usd": 1228.6498,
-      "pnl_usd": 231.6498,
-      "reason": "TAKE PROFIT: Harga naik >50.0%"
-    },
-    {
-      "time": "2026-11-02T22:22:20+00:00",
-      "type": "LP_OPEN",
-      "message": "Opened LP GATO on solana",
-      "invested_usd": 997.0,
-      "score": 117.02
-    },
     {
       "time": "2026-11-03T01:09:45+00:00",
       "type": "LP_CLOSE",
@@ -2247,7 +2239,29 @@
       "message": "Opened LP STONK on solana",
       "invested_usd": 997.0,
       "score": 86.03
+    },
+    {
+      "time": "2026-11-26T23:50:33+00:00",
+      "type": "LP_CLOSE",
+      "message": "Closed FIONA: STOP LOSS: Harga turun >35.0%",
+      "closed_at": "2026-11-26T23:50:33+00:00",
+      "symbol": "FIONA",
+      "chain": "solana",
+      "pair_address": "Cqqm1KxwAELT6t21dUQfDEecZrqZ6dgA7dK2ptK9oj5g",
+      "invested_usd": 997.0,
+      "lp_value_usd": 795.9787,
+      "estimated_fees_usd": 5.0293,
+      "net_proceeds_usd": 794.003,
+      "pnl_usd": -202.997,
+      "reason": "STOP LOSS: Harga turun >35.0%"
+    },
+    {
+      "time": "2026-11-26T23:50:33+00:00",
+      "type": "LP_OPEN",
+      "message": "Opened LP FIONA on solana",
+      "invested_usd": 997.0,
+      "score": 117.49
     }
   ],
-  "last_run_at": "2026-11-26T15:11:56+00:00"
+  "last_run_at": "2026-11-26T23:50:33+00:00"
 }
