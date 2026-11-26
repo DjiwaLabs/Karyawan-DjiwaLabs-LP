@@ -1,53 +1,8 @@
 {
   "version": 1,
   "starting_cash_usd": 10000.0,
-  "cash_usd": 20695.56594668388,
+  "cash_usd": 20411.914399077228,
   "positions": {
-    "solana:5bqcndqt4zhv4pdqvx4kxd2rznlfdb64akkd1atrvwsz": {
-      "symbol": "STONK",
-      "name": "STONK",
-      "chain": "solana",
-      "dex": "orca",
-      "pair_address": "5BQCndqT4ZHv4PDqVX4kXD2rZNLfDb64akKd1ATrVwsz",
-      "pair_url": "https://dexscreener.com/solana/5bqcndqt4zhv4pdqvx4kxd2rznlfdb64akkd1atrvwsz",
-      "invested_usd": 997.0,
-      "entry_price": 0.04009,
-      "entry_liquidity_usd": 160703.38,
-      "entry_score": 117.21,
-      "entry_time": "2026-11-19T02:59:22+00:00",
-      "last_updated_at": "2026-11-25T22:29:48+00:00",
-      "last_price_usd": 0.03037,
-      "last_liquidity_usd": 126602.21,
-      "estimated_fees_usd": 45.4319905449883,
-      "volume_history": [
-        447118.64,
-        440934.63,
-        431127.56,
-        395098.2,
-        374132.8,
-        355590.22,
-        338648.79,
-        237910.89,
-        154124.67,
-        154242.53,
-        104748.35,
-        208958.85,
-        233141.36,
-        232225.6,
-        238063.86,
-        177148.59,
-        211985.93,
-        307892.36,
-        512931.64,
-        545703.46,
-        260853.98,
-        80532.61,
-        29131.47,
-        92793.76
-      ],
-      "highest_price": 0.04204,
-      "data_stale": false
-    },
     "solana:7cnc9ggegzeffk8flxiyuhdtmeefpqzond56u1mxhnor": {
       "symbol": "HOGE",
       "name": "Hogecoin",
@@ -60,10 +15,10 @@
       "entry_liquidity_usd": 107053.48,
       "entry_score": 114.52,
       "entry_time": "2026-11-21T03:12:28+00:00",
-      "last_updated_at": "2026-11-25T22:29:48+00:00",
-      "last_price_usd": 0.0006738,
-      "last_liquidity_usd": 104655.14,
-      "estimated_fees_usd": 49.07453663333991,
+      "last_updated_at": "2026-11-26T05:00:21+00:00",
+      "last_price_usd": 0.0006152,
+      "last_liquidity_usd": 100001.6,
+      "estimated_fees_usd": 51.58428104093517,
       "volume_history": [
         473604.22,
         398788.68,
@@ -79,7 +34,8 @@
         341568.11,
         231936.06,
         179448.39,
-        169632.88
+        169632.88,
+        189634.65
       ],
       "highest_price": 0.0008807,
       "data_stale": false
@@ -96,10 +52,10 @@
       "entry_liquidity_usd": 50582.57,
       "entry_score": 117.7,
       "entry_time": "2026-11-21T10:58:22+00:00",
-      "last_updated_at": "2026-11-25T22:29:48+00:00",
-      "last_price_usd": 0.0002713,
-      "last_liquidity_usd": 60538.2,
-      "estimated_fees_usd": 180.97451119611688,
+      "last_updated_at": "2026-11-26T05:00:21+00:00",
+      "last_price_usd": 0.0002849,
+      "last_liquidity_usd": 62829.76,
+      "estimated_fees_usd": 190.7418759227147,
       "volume_history": [
         675701.11,
         668263.85,
@@ -114,34 +70,10 @@
         655491.46,
         603389.44,
         738537.03,
-        891130.25
+        891130.25,
+        971100.84
       ],
       "highest_price": 0.0003228,
-      "data_stale": false
-    },
-    "solana:cqqm1kxwaelt6t21duqfdeeczrqz6dga7dk2ptk9oj5g": {
-      "symbol": "FIONA",
-      "name": "Fiona the Hippo",
-      "chain": "solana",
-      "dex": "meteora",
-      "pair_address": "Cqqm1KxwAELT6t21dUQfDEecZrqZ6dgA7dK2ptK9oj5g",
-      "pair_url": "https://dexscreener.com/solana/cqqm1kxwaelt6t21duqfdeeczrqz6dga7dk2ptk9oj5g",
-      "invested_usd": 997.0,
-      "entry_price": 0.003215,
-      "entry_liquidity_usd": 158767.12,
-      "entry_score": 113.35,
-      "entry_time": "2026-11-24T17:40:29+00:00",
-      "last_updated_at": "2026-11-25T22:29:48+00:00",
-      "last_price_usd": 0.00241,
-      "last_liquidity_usd": 111519.32,
-      "estimated_fees_usd": 12.382572639205183,
-      "volume_history": [
-        527588.17,
-        384523.65,
-        354500.42,
-        302789.95
-      ],
-      "highest_price": 0.003215,
       "data_stale": false
     },
     "solana:b4cp45pgifvm5faxfh6aev8qz3eunqnqgbw7kuc7mhnb": {
@@ -156,17 +88,60 @@
       "entry_liquidity_usd": 254465.19,
       "entry_score": 57.71,
       "entry_time": "2026-11-25T02:24:58+00:00",
-      "last_updated_at": "2026-11-25T22:29:48+00:00",
-      "last_price_usd": 0.005778,
-      "last_liquidity_usd": 270520.14,
-      "estimated_fees_usd": 2.1989961425879683,
+      "last_updated_at": "2026-11-26T05:00:21+00:00",
+      "last_price_usd": 0.006103,
+      "last_liquidity_usd": 278175.73,
+      "estimated_fees_usd": 2.968915835509106,
       "volume_history": [
         115190.62,
         298558.62,
-        372021.09
+        372021.09,
+        270263.19
       ],
-      "highest_price": 0.005778,
+      "highest_price": 0.006103,
       "data_stale": false
+    },
+    "solana:cqqm1kxwaelt6t21duqfdeeczrqz6dga7dk2ptk9oj5g": {
+      "symbol": "FIONA",
+      "name": "Fiona the Hippo",
+      "chain": "solana",
+      "dex": "meteora",
+      "pair_address": "Cqqm1KxwAELT6t21dUQfDEecZrqZ6dgA7dK2ptK9oj5g",
+      "pair_url": "https://dexscreener.com/solana/cqqm1kxwaelt6t21duqfdeeczrqz6dga7dk2ptk9oj5g",
+      "invested_usd": 997.0,
+      "entry_price": 0.002016,
+      "entry_liquidity_usd": 112654.69,
+      "entry_score": 115.55,
+      "entry_time": "2026-11-26T05:00:21+00:00",
+      "last_updated_at": "2026-11-26T05:00:21+00:00",
+      "last_price_usd": 0.002016,
+      "last_liquidity_usd": 112654.69,
+      "estimated_fees_usd": 0.0,
+      "volume_history": [
+        284260.36
+      ],
+      "highest_price": 0.002016
+    },
+    "solana:5bqcndqt4zhv4pdqvx4kxd2rznlfdb64akkd1atrvwsz": {
+      "symbol": "STONK",
+      "name": "STONK",
+      "chain": "solana",
+      "dex": "orca",
+      "pair_address": "5BQCndqT4ZHv4PDqVX4kXD2rZNLfDb64akKd1ATrVwsz",
+      "pair_url": "https://dexscreener.com/solana/5bqcndqt4zhv4pdqvx4kxd2rznlfdb64akkd1atrvwsz",
+      "invested_usd": 997.0,
+      "entry_price": 0.03119,
+      "entry_liquidity_usd": 130274.29,
+      "entry_score": 86.03,
+      "entry_time": "2026-11-26T05:00:21+00:00",
+      "last_updated_at": "2026-11-26T05:00:21+00:00",
+      "last_price_usd": 0.03119,
+      "last_liquidity_usd": 130274.29,
+      "estimated_fees_usd": 0.0,
+      "volume_history": [
+        151006.97
+      ],
+      "highest_price": 0.03119
     }
   },
   "closed_trades": [
@@ -1139,53 +1114,33 @@
       "net_proceeds_usd": 935.0624,
       "pnl_usd": -61.9376,
       "reason": "GUARD: Likuiditas turun >40.0%"
+    },
+    {
+      "closed_at": "2026-11-26T05:00:21+00:00",
+      "symbol": "STONK",
+      "chain": "solana",
+      "pair_address": "5BQCndqT4ZHv4PDqVX4kXD2rZNLfDb64akKd1ATrVwsz",
+      "invested_usd": 997.0,
+      "lp_value_usd": 879.3967,
+      "estimated_fees_usd": 47.0586,
+      "net_proceeds_usd": 918.8229,
+      "pnl_usd": -78.1771,
+      "reason": "TIME EXIT: Ditahan >7 hari"
+    },
+    {
+      "closed_at": "2026-11-26T05:00:21+00:00",
+      "symbol": "FIONA",
+      "chain": "solana",
+      "pair_address": "Cqqm1KxwAELT6t21dUQfDEecZrqZ6dgA7dK2ptK9oj5g",
+      "invested_usd": 997.0,
+      "lp_value_usd": 789.496,
+      "estimated_fees_usd": 15.0522,
+      "net_proceeds_usd": 797.5255,
+      "pnl_usd": -199.4745,
+      "reason": "STOP LOSS: Harga turun >35.0%"
     }
   ],
   "events": [
-    {
-      "time": "2026-11-01T22:43:00+00:00",
-      "type": "LP_CLOSE",
-      "message": "Closed GATO: TAKE PROFIT: Harga naik >50.0%",
-      "closed_at": "2026-11-01T22:43:00+00:00",
-      "symbol": "GATO",
-      "chain": "solana",
-      "pair_address": "5E3dXLXGwmTDCokA51WYYaKttjFZBwqCoyUHBUi5gt2m",
-      "invested_usd": 997.0,
-      "lp_value_usd": 1228.1187,
-      "estimated_fees_usd": 48.3834,
-      "net_proceeds_usd": 1267.1196,
-      "pnl_usd": 270.1196,
-      "reason": "TAKE PROFIT: Harga naik >50.0%"
-    },
-    {
-      "time": "2026-11-01T22:43:00+00:00",
-      "type": "LP_OPEN",
-      "message": "Opened LP GATO on solana",
-      "invested_usd": 997.0,
-      "score": 118.27
-    },
-    {
-      "time": "2026-11-02T02:57:54+00:00",
-      "type": "LP_CLOSE",
-      "message": "Closed DESSA: STOP LOSS: Harga turun >35.0%",
-      "closed_at": "2026-11-02T02:57:54+00:00",
-      "symbol": "DESSA",
-      "chain": "solana",
-      "pair_address": "DEXTCER4k9dwbxTMU8zNVVwGevVmvHMB183pF2xxZwvH",
-      "invested_usd": 997.0,
-      "lp_value_usd": 770.8754,
-      "estimated_fees_usd": 39.003,
-      "net_proceeds_usd": 802.829,
-      "pnl_usd": -194.171,
-      "reason": "STOP LOSS: Harga turun >35.0%"
-    },
-    {
-      "time": "2026-11-02T02:57:54+00:00",
-      "type": "LP_OPEN",
-      "message": "Opened LP DESSA on solana",
-      "invested_usd": 997.0,
-      "score": 118.06
-    },
     {
       "time": "2026-11-02T22:22:20+00:00",
       "type": "LP_CLOSE",
@@ -2241,7 +2196,51 @@
       "message": "Opened LP CBUCKS on solana",
       "invested_usd": 997.0,
       "score": 57.71
+    },
+    {
+      "time": "2026-11-26T05:00:21+00:00",
+      "type": "LP_CLOSE",
+      "message": "Closed STONK: TIME EXIT: Ditahan >7 hari",
+      "closed_at": "2026-11-26T05:00:21+00:00",
+      "symbol": "STONK",
+      "chain": "solana",
+      "pair_address": "5BQCndqT4ZHv4PDqVX4kXD2rZNLfDb64akKd1ATrVwsz",
+      "invested_usd": 997.0,
+      "lp_value_usd": 879.3967,
+      "estimated_fees_usd": 47.0586,
+      "net_proceeds_usd": 918.8229,
+      "pnl_usd": -78.1771,
+      "reason": "TIME EXIT: Ditahan >7 hari"
+    },
+    {
+      "time": "2026-11-26T05:00:21+00:00",
+      "type": "LP_CLOSE",
+      "message": "Closed FIONA: STOP LOSS: Harga turun >35.0%",
+      "closed_at": "2026-11-26T05:00:21+00:00",
+      "symbol": "FIONA",
+      "chain": "solana",
+      "pair_address": "Cqqm1KxwAELT6t21dUQfDEecZrqZ6dgA7dK2ptK9oj5g",
+      "invested_usd": 997.0,
+      "lp_value_usd": 789.496,
+      "estimated_fees_usd": 15.0522,
+      "net_proceeds_usd": 797.5255,
+      "pnl_usd": -199.4745,
+      "reason": "STOP LOSS: Harga turun >35.0%"
+    },
+    {
+      "time": "2026-11-26T05:00:21+00:00",
+      "type": "LP_OPEN",
+      "message": "Opened LP FIONA on solana",
+      "invested_usd": 997.0,
+      "score": 115.55
+    },
+    {
+      "time": "2026-11-26T05:00:21+00:00",
+      "type": "LP_OPEN",
+      "message": "Opened LP STONK on solana",
+      "invested_usd": 997.0,
+      "score": 86.03
     }
   ],
-  "last_run_at": "2026-11-25T22:29:48+00:00"
+  "last_run_at": "2026-11-26T05:00:21+00:00"
 }
