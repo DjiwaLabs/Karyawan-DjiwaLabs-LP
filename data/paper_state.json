@@ -1,7 +1,7 @@
 {
   "version": 1,
   "starting_cash_usd": 10000.0,
-  "cash_usd": 20049.186677400903,
+  "cash_usd": 20159.953515369252,
   "positions": {
     "solana:3mxdjdz1gae5hzic4dj4unldxj5dbcc9jssyq55mfykg": {
       "symbol": "DIGS",
@@ -15,10 +15,10 @@
       "entry_liquidity_usd": 50582.57,
       "entry_score": 117.7,
       "entry_time": "2026-11-21T10:58:22+00:00",
-      "last_updated_at": "2026-11-27T18:56:56+00:00",
-      "last_price_usd": 0.0002477,
-      "last_liquidity_usd": 60743.72,
-      "estimated_fees_usd": 250.6849695223685,
+      "last_updated_at": "2026-11-28T01:57:48+00:00",
+      "last_price_usd": 0.0002385,
+      "last_liquidity_usd": 59849.13,
+      "estimated_fees_usd": 261.33473154509505,
       "volume_history": [
         675701.11,
         668263.85,
@@ -38,38 +38,10 @@
         892139.11,
         888433.97,
         736904.51,
-        454882.25
+        454882.25,
+        262781.5
       ],
       "highest_price": 0.0003228,
-      "data_stale": false
-    },
-    "solana:b4cp45pgifvm5faxfh6aev8qz3eunqnqgbw7kuc7mhnb": {
-      "symbol": "CBUCKS",
-      "name": "Cartoon Money",
-      "chain": "solana",
-      "dex": "pumpswap",
-      "pair_address": "B4Cp45PGifVM5FAXfh6AeV8QZ3eUNQnqGBw7KuC7MHnB",
-      "pair_url": "https://dexscreener.com/solana/b4cp45pgifvm5faxfh6aev8qz3eunqnqgbw7kuc7mhnb",
-      "invested_usd": 997.0,
-      "entry_price": 0.005143,
-      "entry_liquidity_usd": 254465.19,
-      "entry_score": 57.71,
-      "entry_time": "2026-11-25T02:24:58+00:00",
-      "last_updated_at": "2026-11-27T18:56:56+00:00",
-      "last_price_usd": 0.006909,
-      "last_liquidity_usd": 297183.5,
-      "estimated_fees_usd": 7.332688069732399,
-      "volume_history": [
-        115190.62,
-        298558.62,
-        372021.09,
-        270263.19,
-        246936.28,
-        248816.43,
-        339580.63,
-        393569.63
-      ],
-      "highest_price": 0.007137,
       "data_stale": false
     },
     "solana:5bqcndqt4zhv4pdqvx4kxd2rznlfdb64akkd1atrvwsz": {
@@ -84,16 +56,17 @@
       "entry_liquidity_usd": 130274.29,
       "entry_score": 86.03,
       "entry_time": "2026-11-26T05:00:21+00:00",
-      "last_updated_at": "2026-11-27T18:56:56+00:00",
-      "last_price_usd": 0.03321,
-      "last_liquidity_usd": 139062.93,
-      "estimated_fees_usd": 7.78935655256482,
+      "last_updated_at": "2026-11-28T01:57:48+00:00",
+      "last_price_usd": 0.03272,
+      "last_liquidity_usd": 137179.72,
+      "estimated_fees_usd": 9.483544366766887,
       "volume_history": [
         151006.97,
         234960.67,
         250274.03,
         293264.88,
-        346635.33
+        346635.33,
+        319006.15
       ],
       "highest_price": 0.03389,
       "data_stale": false
@@ -110,14 +83,15 @@
       "entry_liquidity_usd": 121766.25,
       "entry_score": 117.49,
       "entry_time": "2026-11-26T23:50:33+00:00",
-      "last_updated_at": "2026-11-27T18:56:56+00:00",
-      "last_price_usd": 0.000996,
-      "last_liquidity_usd": 97586.57,
-      "estimated_fees_usd": 5.885297997164107,
+      "last_updated_at": "2026-11-28T01:57:48+00:00",
+      "last_price_usd": 0.001282,
+      "last_liquidity_usd": 91346.75,
+      "estimated_fees_usd": 8.316399522066806,
       "volume_history": [
         257681.46,
         250496.14,
-        246540.87
+        246540.87,
+        261423.67
       ],
       "highest_price": 0.001285,
       "data_stale": false
@@ -134,16 +108,38 @@
       "entry_liquidity_usd": 141900.0,
       "entry_score": 118.05,
       "entry_time": "2026-11-27T08:26:14+00:00",
-      "last_updated_at": "2026-11-27T18:56:56+00:00",
-      "last_price_usd": 0.001926,
-      "last_liquidity_usd": 148984.39,
-      "estimated_fees_usd": 3.2693088020376417,
+      "last_updated_at": "2026-11-28T01:57:48+00:00",
+      "last_price_usd": 0.002654,
+      "last_liquidity_usd": 176201.95,
+      "estimated_fees_usd": 5.408370284243799,
       "volume_history": [
         402118.7,
-        341497.13
+        341497.13,
+        549845.67
       ],
-      "highest_price": 0.001926,
+      "highest_price": 0.002654,
       "data_stale": false
+    },
+    "solana:b4cp45pgifvm5faxfh6aev8qz3eunqnqgbw7kuc7mhnb": {
+      "symbol": "CBUCKS",
+      "name": "Cartoon Money",
+      "chain": "solana",
+      "dex": "pumpswap",
+      "pair_address": "B4Cp45PGifVM5FAXfh6AeV8QZ3eUNQnqGBw7KuC7MHnB",
+      "pair_url": "https://dexscreener.com/solana/b4cp45pgifvm5faxfh6aev8qz3eunqnqgbw7kuc7mhnb",
+      "invested_usd": 997.0,
+      "entry_price": 0.006388,
+      "entry_liquidity_usd": 285812.72,
+      "entry_score": 84.37,
+      "entry_time": "2026-11-28T01:57:48+00:00",
+      "last_updated_at": "2026-11-28T01:57:48+00:00",
+      "last_price_usd": 0.006388,
+      "last_liquidity_usd": 285812.72,
+      "estimated_fees_usd": 0.0,
+      "volume_history": [
+        332498.03
+      ],
+      "highest_price": 0.006388
     }
   },
   "closed_trades": [
@@ -1164,31 +1160,21 @@
       "net_proceeds_usd": 843.2693,
       "pnl_usd": -153.7307,
       "reason": "STOP LOSS: Harga turun >35.0%"
+    },
+    {
+      "closed_at": "2026-11-28T01:57:48+00:00",
+      "symbol": "CBUCKS",
+      "chain": "solana",
+      "pair_address": "B4Cp45PGifVM5FAXfh6AeV8QZ3eUNQnqGBw7KuC7MHnB",
+      "invested_usd": 997.0,
+      "lp_value_usd": 1111.1415,
+      "estimated_fees_usd": 8.2222,
+      "net_proceeds_usd": 1110.7668,
+      "pnl_usd": 113.7668,
+      "reason": "TRAILING STOP: Turun 10.5% dari puncak"
     }
   ],
   "events": [
-    {
-      "time": "2026-11-03T15:59:02+00:00",
-      "type": "LP_CLOSE",
-      "message": "Closed DESSA: STOP LOSS: Harga turun >35.0%",
-      "closed_at": "2026-11-03T15:59:02+00:00",
-      "symbol": "DESSA",
-      "chain": "solana",
-      "pair_address": "DEXTCER4k9dwbxTMU8zNVVwGevVmvHMB183pF2xxZwvH",
-      "invested_usd": 997.0,
-      "lp_value_usd": 773.6125,
-      "estimated_fees_usd": 22.2249,
-      "net_proceeds_usd": 788.8582,
-      "pnl_usd": -208.1418,
-      "reason": "STOP LOSS: Harga turun >35.0%"
-    },
-    {
-      "time": "2026-11-03T15:59:02+00:00",
-      "type": "LP_OPEN",
-      "message": "Opened LP DESSA on solana",
-      "invested_usd": 997.0,
-      "score": 119.52
-    },
     {
       "time": "2026-11-04T15:59:52+00:00",
       "type": "LP_CLOSE",
@@ -2266,7 +2252,29 @@
       "message": "Opened LP JOB on solana",
       "invested_usd": 997.0,
       "score": 118.05
+    },
+    {
+      "time": "2026-11-28T01:57:48+00:00",
+      "type": "LP_CLOSE",
+      "message": "Closed CBUCKS: TRAILING STOP: Turun 10.5% dari puncak",
+      "closed_at": "2026-11-28T01:57:48+00:00",
+      "symbol": "CBUCKS",
+      "chain": "solana",
+      "pair_address": "B4Cp45PGifVM5FAXfh6AeV8QZ3eUNQnqGBw7KuC7MHnB",
+      "invested_usd": 997.0,
+      "lp_value_usd": 1111.1415,
+      "estimated_fees_usd": 8.2222,
+      "net_proceeds_usd": 1110.7668,
+      "pnl_usd": 113.7668,
+      "reason": "TRAILING STOP: Turun 10.5% dari puncak"
+    },
+    {
+      "time": "2026-11-28T01:57:48+00:00",
+      "type": "LP_OPEN",
+      "message": "Opened LP CBUCKS on solana",
+      "invested_usd": 997.0,
+      "score": 84.37
     }
   ],
-  "last_run_at": "2026-11-27T18:56:56+00:00"
+  "last_run_at": "2026-11-28T01:57:48+00:00"
 }
